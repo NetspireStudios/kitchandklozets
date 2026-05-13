@@ -1457,5 +1457,81 @@ section { position: relative; }
   margin: 0; max-width: 56ch;
 }
 
+/* ── ABOUT page pillars ─────────────────── */
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.2vw, 32px);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+@media (max-width: 880px) { .about-pillars { grid-template-columns: 1fr; } }
+.about-pillar {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 24px;
+}
+.about-pillar .display {
+  font-size: clamp(20px, 1.9vw, 26px);
+  color: var(--walnut);
+  margin: 6px 0 10px;
+}
+.about-pillar p {
+  font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0;
+}
+
+/* ── PROJECTS placeholder ───────────────── */
+.projects-placeholder {
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.projects-placeholder-card {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 48px);
+  max-width: 720px;
+}
+.projects-placeholder-card .display {
+  font-size: clamp(24px, 2.6vw, 34px);
+  color: var(--walnut);
+  margin: 6px 0 14px;
+}
+.projects-placeholder-card p {
+  color: var(--muted); font-size: 15px; line-height: 1.65;
+  margin: 0 0 22px;
+}
+.projects-placeholder-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── CONTACT cards ──────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+@media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-card {
+  display: block;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 24px;
+  transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing), border-color 0.3s var(--easing);
+}
+a.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rule-strong);
+}
+.contact-card .display {
+  font-size: clamp(22px, 2vw, 28px);
+  color: var(--walnut);
+  margin: 6px 0 10px;
+  letter-spacing: -0.02em;
+}
+.contact-card p {
+  font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }

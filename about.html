@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>About the Workshop | Kitch &amp; Klozets · Custom Cabinetmakers, Watertown MA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Family-run cabinet shop in Watertown, Massachusetts. Six cabinetmakers, founded 2008, building custom kitchens and closets for Greater Boston homes."/>
+<meta name="theme-color" content="#3B2A1E"/>
+<meta name="color-scheme" content="light"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta name="geo.region" content="US-MA"/>
+<meta name="geo.placename" content="Watertown"/>
+<link rel="canonical" href="https://kitchandklozets.com/about"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kitch &amp; Klozets"/>
+<meta property="og:title" content="About the Workshop | Kitch &amp; Klozets"/>
+<meta property="og:description" content="Family-run cabinetmaker in Watertown, MA. Six cabinetmakers, in-house shop, since 2008."/>
+<meta property="og:url" content="https://kitchandklozets.com/about"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About Kitch &amp; Klozets"/>
+<meta name="twitter:description" content="Family-run cabinet shop in Watertown, MA. Six cabinetmakers, since 2008."/>
+
+<link rel="icon" type="image/png" href="/assets/logo.png"/>
+<link rel="apple-touch-icon" href="/assets/logo.png"/>
+
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
+
+<link rel="stylesheet" href="/styles.css"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": { "@id": "https://kitchandklozets.com/#business" },
+  "url": "https://kitchandklozets.com/about",
+  "name": "About Kitch & Klozets",
+  "description": "Family-run cabinet shop in Watertown, Massachusetts, founded in 2008. Six cabinetmakers building custom kitchens, closets, vanities, and built-ins for Greater Boston homes.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kitchandklozets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About" }
+    ]
+  }
+}
+</script>
+</head>
+<body style="background-color: rgb(250, 238, 223)">
+<a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<div id="root"></div>
+
+<script type="text/babel" src="/data.jsx"></script>
+<script type="text/babel" src="/catalog-data.jsx"></script>
+<script type="text/babel" src="/utils.jsx"></script>
+<script type="text/babel" src="/top.jsx"></script>
+<script type="text/babel" src="/middle.jsx"></script>
+<script type="text/babel" src="/bottom.jsx"></script>
+<script type="text/babel" src="/catalog.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  React.useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll("[data-reveal]:not(.in-view)").forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  React.useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 720) setDrawerOpen(false); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return (
+    <>
+      <Nav onMenu={() => setDrawerOpen(true)}/>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+      <main id="top">
+        <section className="catalog-page">
+          <div className="container">
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]}/>
+            <header className="cat-hero" data-reveal>
+              <span className="eyebrow">The workshop · since 2008</span>
+              <h1 className="display">A six-person cabinet shop in Watertown.</h1>
+              <p className="cat-lede">
+                Kitch &amp; Klozets is a family-run cabinetmaker building custom kitchens, closets, vanities, and built-ins out of solid hardwood. Founded in 2008, in our Watertown, Massachusetts shop, on the same bench every cabinet still leaves through. We design, build, finish, and install every piece in-house. No outsourced joinery, no subcontracted finishing, no flat-pack carcasses.
+              </p>
+            </header>
+
+            <div className="about-pillars" data-reveal>
+              <div className="about-pillar">
+                <span className="eyebrow">In-house</span>
+                <h3 className="display">Design through install</h3>
+                <p>One project manager from the first coffee to the last adjustment. The crew that draws your kitchen is the crew that builds it.</p>
+              </div>
+              <div className="about-pillar">
+                <span className="eyebrow">Materials</span>
+                <h3 className="display">Solid hardwood, locally sourced</h3>
+                <p>Six FSC-certified species, all from mills within 300 miles of the shop. No plywood face frames; no MDF substrate.</p>
+              </div>
+              <div className="about-pillar">
+                <span className="eyebrow">Warranty</span>
+                <h3 className="display">10 years on every joint</h3>
+                <p>If a joint we cut ever fails in normal use, we come back and fix it. Hardware, finish, the whole assembly.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <ByTheBench/>
+        <Workshop/>
+        <Testimonials/>
+        <CTA/>
+      </main>
+      <Footer/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

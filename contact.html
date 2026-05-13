@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Contact | Kitch &amp; Klozets · Custom Cabinet Shop, Watertown MA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Call (548) 333-1419 or email sales@kitchandklozets.com. Open seven days a week, 9am–5pm. 84 Pleasant Street, Watertown, Massachusetts."/>
+<meta name="theme-color" content="#3B2A1E"/>
+<meta name="color-scheme" content="light"/>
+<meta name="robots" content="index, follow"/>
+<meta name="geo.region" content="US-MA"/>
+<meta name="geo.placename" content="Watertown"/>
+<link rel="canonical" href="https://kitchandklozets.com/contact"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kitch &amp; Klozets"/>
+<meta property="og:title" content="Contact Kitch &amp; Klozets"/>
+<meta property="og:description" content="Call (548) 333-1419 or email sales@kitchandklozets.com. Open seven days a week."/>
+<meta property="og:url" content="https://kitchandklozets.com/contact"/>
+<meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+
+<link rel="icon" type="image/png" href="/assets/logo.png"/>
+<link rel="apple-touch-icon" href="/assets/logo.png"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
+
+<link rel="stylesheet" href="/styles.css"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://kitchandklozets.com/contact",
+  "name": "Contact Kitch & Klozets",
+  "description": "Phone, email, address, and hours for Kitch & Klozets, a custom cabinet shop in Watertown, MA.",
+  "mainEntity": { "@id": "https://kitchandklozets.com/#business" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kitchandklozets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact" }
+    ]
+  }
+}
+</script>
+</head>
+<body style="background-color: rgb(250, 238, 223)">
+<a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<div id="root"></div>
+
+<script type="text/babel" src="/data.jsx"></script>
+<script type="text/babel" src="/catalog-data.jsx"></script>
+<script type="text/babel" src="/utils.jsx"></script>
+<script type="text/babel" src="/top.jsx"></script>
+<script type="text/babel" src="/middle.jsx"></script>
+<script type="text/babel" src="/bottom.jsx"></script>
+<script type="text/babel" src="/catalog.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  React.useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll("[data-reveal]:not(.in-view)").forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <>
+      <Nav onMenu={() => setDrawerOpen(true)}/>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+      <main id="top">
+        <section className="catalog-page">
+          <div className="container">
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]}/>
+            <header className="cat-hero" data-reveal>
+              <span className="eyebrow">Get in touch</span>
+              <h1 className="display">The fastest way is to call.</h1>
+              <p className="cat-lede">
+                The shop picks up seven days a week, 9am to 5pm. Email, the inquiry form, or a knock on the door all work too. The first conversation is about ten minutes; if it sounds like a fit, we book a free in-home visit.
+              </p>
+            </header>
+
+            <div className="contact-grid" data-reveal>
+              <a className="contact-card" href="tel:+15483331419">
+                <span className="eyebrow">Phone</span>
+                <div className="display">(548) 333-1419</div>
+                <p>Best for quick scoping questions, lead-time checks, and scheduling a site visit.</p>
+              </a>
+              <a className="contact-card" href="mailto:sales@kitchandklozets.com">
+                <span className="eyebrow">Email</span>
+                <div className="display">sales@kitchandklozets.com</div>
+                <p>Send drawings, photos of the room, inspiration shots, or a rough wishlist. Replies within one business day.</p>
+              </a>
+              <div className="contact-card">
+                <span className="eyebrow">Workshop</span>
+                <div className="display">84 Pleasant Street</div>
+                <p>Watertown, MA 02472. Walk-ins welcome during hours; appointments preferred so the right cabinetmaker is there.</p>
+              </div>
+              <div className="contact-card">
+                <span className="eyebrow">Hours</span>
+                <div className="display">7 days, 9am–5pm</div>
+                <p>Sales hours, every day. Build crew runs Monday through Friday and most Saturdays.</p>
+              </div>
+            </div>
+
+            <div className="product-form-section" id="inquire" data-reveal style={{ marginTop: 48 }}>
+              <div className="product-form-head">
+                <span className="eyebrow">Send an inquiry</span>
+                <h2 className="display">Tell us about your project.</h2>
+                <p>Use the form if email is easier. We'll reply within one business day from sales@kitchandklozets.com.</p>
+              </div>
+              <ContactForm product="General inquiry" category="General"/>
+            </div>
+          </div>
+        </section>
+
+        <CTA/>
+      </main>
+      <Footer/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
