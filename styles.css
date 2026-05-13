@@ -2011,7 +2011,8 @@ a.contact-card:hover {
   border-top: 1px solid var(--rule);
 }
 .product-faq-head {
-  margin-bottom: clamp(24px, 3vw, 40px);
+  max-width: 880px;
+  margin: 0 auto clamp(28px, 3.5vw, 44px);
 }
 .product-faq-head .display {
   font-size: clamp(26px, 3vw, 42px);
