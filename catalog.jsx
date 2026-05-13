@@ -204,25 +204,32 @@ function ProductLayout({ category, section, product }) {
 }
 
 function ContactForm({ product, category }) {
-  const [state, setState] = React.useState({ name: "", email: "", phone: "", message: "" });
+  const [state, setState] = React.useState({ name: "", email: "", phone: "", message: "", company: "" });
   const [sent, setSent]   = React.useState(false);
   const [busy, setBusy]   = React.useState(false);
   const [err,  setErr]    = React.useState(null);
 
   const update = (k) => (e) => setState({ ...state, [k]: e.target.value });
 
+  const endpoint = (typeof window !== "undefined" && window.CONTACT_ENDPOINT) || "/api/contact";
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setBusy(true); setErr(null);
     try {
-      // Stub: this will become a Firebase HTTPS Function call that relays
-      // the lead via Resend. For now, just simulate and log to console so
-      // the form is usable in development.
-      await new Promise(r => setTimeout(r, 700));
-      console.log("Lead captured (stub):", { ...state, product, category, ts: new Date().toISOString() });
+      const r = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...state, product, category })
+      });
+      if (!r.ok) {
+        let msg = "Submission failed.";
+        try { const j = await r.json(); if (j && j.error) msg = j.error; } catch (_) {}
+        throw new Error(msg);
+      }
       setSent(true);
     } catch (e2) {
-      setErr("Something went wrong. Please call (548) 333-1419 or email sales@kitchandklozets.com.");
+      setErr(e2.message + " Please call (548) 333-1419 or email sales@kitchandklozets.com.");
     } finally {
       setBusy(false);
     }
@@ -241,6 +248,10 @@ function ContactForm({ product, category }) {
     <form className="contact-form" onSubmit={onSubmit} noValidate>
       <input type="hidden" name="product" value={product || ""}/>
       <input type="hidden" name="category" value={category || ""}/>
+      {/* Honeypot: invisible to users, bots fill it. Server drops these submissions. */}
+      <input type="text" name="company" autoComplete="off" tabIndex="-1" aria-hidden="true"
+        value={state.company} onChange={update("company")}
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}/>
 
       <div className="cf-row">
         <label className="cf-field">

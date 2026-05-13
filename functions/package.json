@@ -1,0 +1,14 @@
+{
+  "name": "kitchandklozets-functions",
+  "description": "Cloud Functions for kitchandklozets.com — relays contact form submissions to Resend and Firestore.",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.1.0",
+    "resend": "^4.0.0"
+  },
+  "private": true
+}

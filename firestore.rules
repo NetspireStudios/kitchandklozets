@@ -1,0 +1,19 @@
+rules_version = '2';
+
+// Contact form submissions are written by the Cloud Function only.
+// No client should be reading or writing to this collection directly.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Only admins should ever read /contacts via the Firebase console.
+    // Client SDK access is denied entirely.
+    match /contacts/{doc} {
+      allow read, write: if false;
+    }
+
+    // Default deny everything else.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
