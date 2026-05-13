@@ -207,7 +207,7 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">
-              <div className="mark">k&amp;</div>
+              <div className="mark"><img src="assets/logo.png" alt=""/></div>
               <div className="display name">Kitchen &amp; Klosets</div>
             </div>
             <div className="footer-about">

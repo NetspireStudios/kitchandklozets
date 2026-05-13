@@ -6,7 +6,7 @@ function Nav({ onMenu }) {
     <header className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav-inner">
         <a href="#top" className="nav-logo" aria-label="Kitchen and Klosets, home">
-          <div className="nav-mark">k&amp;</div>
+          <img className="nav-mark" src="assets/logo.png" alt="" width="44" height="44"/>
           <div className="nav-title">
             <b>Kitchen &amp; Klosets</b>
             <small>Cabinetmakers · 2008</small>
@@ -37,7 +37,7 @@ function MobileDrawer({ open, onClose }) {
       <aside className={`drawer ${open ? "open" : ""}`} aria-hidden={!open}>
         <div className="drawer-head">
           <div className="nav-logo">
-            <div className="nav-mark">k&amp;</div>
+            <img className="nav-mark" src="assets/logo.png" alt="" width="44" height="44"/>
             <div className="nav-title"><b>Kitchen &amp; Klosets</b></div>
           </div>
           <button className="nav-toggle" onClick={onClose} aria-label="Close menu">
