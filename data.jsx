@@ -1,4 +1,43 @@
-// data.jsx — all content + image refs in one place
+// data.jsx — content + image refs + single-source brand config
+//
+// CONFIG is the canonical place for business identity (name, contact, hours,
+// service area). Any component that needs to display the phone number,
+// address, or service-area cities should read from window.CONFIG instead of
+// hardcoding the value. Updating one entry here is meant to ripple through
+// the whole site on the next deploy.
+
+const CONFIG = {
+  brand: {
+    name:    "Kitch & Klozets",
+    short:   "Kitch & Klozets",
+    tagline: "Cabinetmakers · Watertown MA",
+    sinceYear: 2008,
+  },
+  contact: {
+    phone:        "(548) 333-1419",
+    phoneTel:     "tel:+15483331419",
+    email:        "sales@kitchandklozets.com",
+    emailMailto:  "mailto:sales@kitchandklozets.com",
+  },
+  address: {
+    street:  "84 Pleasant Street",
+    city:    "Watertown",
+    region:  "MA",
+    postal:  "02472",
+    country: "US",
+  },
+  hours: {
+    summary: "Open 7 days a week, 9am–5pm",
+    weekdayOpens:  "09:00",
+    weekdayCloses: "17:00",
+  },
+  domain: "kitchandklozets.com",
+  url:    "https://kitchandklozets.com",
+  serviceArea: [
+    "Watertown", "Cambridge", "Newton", "Brookline",
+    "Belmont", "Wellesley", "Arlington", "Somerville"
+  ],
+};
 
 // Unsplash photo IDs (cabinet / closet / interior / workshop). The .ph parent
 // always carries a gradient so a failed load still reads as a tinted placeholder.
@@ -93,4 +132,4 @@ const NAV_LINKS = [
   { label: "Contact",  href: "/contact" },
 ];
 
-Object.assign(window, { IMG, WOODS, SERVICES, STATS, WORKSHOP, PINS, TESTIMONIALS, NAV_LINKS });
+Object.assign(window, { CONFIG, IMG, WOODS, SERVICES, STATS, WORKSHOP, PINS, TESTIMONIALS, NAV_LINKS });

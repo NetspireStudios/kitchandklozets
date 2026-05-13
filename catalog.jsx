@@ -188,13 +188,13 @@ function CatalogProductCard({ product, index }) {
   );
 }
 
+const EMPTY_FILTERS = { style: "", color: "", finish: "", layout: "", material: "", q: "" };
+
 function CategoryLayout({ slug }) {
+  // Hooks must run unconditionally; do all of them before any early return.
   const cat = CATALOG[slug];
-  if (!cat) return <p className="container">Category not found.</p>;
-
-  const all = React.useMemo(() => flattenProducts(slug), [slug]);
-  const [filters, setFilters] = React.useState({ style: "", color: "", finish: "", layout: "", material: "", q: "" });
-
+  const all = React.useMemo(() => (cat ? flattenProducts(slug) : []), [slug, cat]);
+  const [filters, setFilters] = React.useState(EMPTY_FILTERS);
   const filtered = React.useMemo(() => {
     const q = filters.q.trim().toLowerCase();
     return all.filter(p => {
@@ -207,6 +207,8 @@ function CategoryLayout({ slug }) {
       return true;
     });
   }, [all, filters]);
+
+  if (!cat) return <p className="container">Category not found.</p>;
 
   return (
     <section className="catalog-page category-page">
