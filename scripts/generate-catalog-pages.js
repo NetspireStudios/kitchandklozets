@@ -300,6 +300,7 @@ const urls = [];
 const pushUrl = (loc, priority, changefreq) => urls.push({ loc, priority, changefreq });
 
 pushUrl(`${BASE}/`,         "1.0", "monthly");
+pushUrl(`${BASE}/products`, "0.9", "monthly");
 pushUrl(`${BASE}/about`,    "0.7", "monthly");
 pushUrl(`${BASE}/projects`, "0.5", "monthly");
 pushUrl(`${BASE}/faq`,      "0.7", "monthly");

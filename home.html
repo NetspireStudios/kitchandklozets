@@ -249,9 +249,35 @@ function App() {
       <main>
         <Hero/>
         <Services/>
+        <ProductsStrip
+          eyebrow="Featured this month"
+          title="Pieces worth a longer look."
+          hint="Six builds we keep getting asked about. One click takes you to the inquiry form for that piece."
+          picks={[
+            { cat: "whole-house",     sec: "modern",     slug: "walnut-modern-suite" },
+            { cat: "kitchens",        sec: "shaker",     slug: "painted-shaker-island-kitchen" },
+            { cat: "bedroom",         sec: "wardrobes",  slug: "his-and-hers-walk-in" },
+            { cat: "bathroom",        sec: "vanities",   slug: "single-walnut-floating-vanity" },
+            { cat: "interior-doors",  sec: "hinged",     slug: "prehung-walnut-two-panel" },
+            { cat: "aluminum",        sec: "patio-doors", slug: "three-panel-aluminum-slider" }
+          ]}
+          allHref="/products"/>
         <ByTheBench/>
         <WoodLibrary/>
         <Workshop/>
+        <ProductsStrip
+          eyebrow="Best sellers"
+          title="What keeps the shop busy."
+          hint="The pieces clients ask us to build again and again, across all eight categories."
+          picks={[
+            { cat: "kitchens",     sec: "shaker",     slug: "stained-white-oak-shaker-kitchen" },
+            { cat: "whole-house",  sec: "modern",     slug: "white-oak-modern-suite" },
+            { cat: "bathroom",     sec: "vanities",   slug: "double-painted-shaker-vanity" },
+            { cat: "bedroom",      sec: "wardrobes",  slug: "white-oak-fitted-wardrobe" },
+            { cat: "kitchens",     sec: "inset",      slug: "beaded-inset-cherry-kitchen" },
+            { cat: "rta-cabinets", sec: "kitchen-rta", slug: "rta-painted-shaker-kitchen" }
+          ]}
+          allHref="/products"/>
         <Testimonials/>
         <FAQ/>
         <MapGallery/>
