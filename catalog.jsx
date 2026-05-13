@@ -15,38 +15,46 @@ function productAttrs(catSlug, secSlug, product) {
   const text = `${product.title} ${product.blurb}`.toLowerCase();
   const has = (w) => text.includes(w);
 
+  // Style — most specific to least.
   let style = "Transitional";
-  if (catSlug === "whole-house" && secSlug === "modern")     style = "Modern";
-  else if (catSlug === "whole-house" && secSlug === "classical") style = "Traditional";
-  else if (catSlug === "whole-house" && secSlug === "industrial") style = "Modern";
-  else if (catSlug === "whole-house" && secSlug === "regional")   style = "Traditional";
-  else if (catSlug === "kitchens"    && secSlug === "modern")     style = "Modern";
-  else if (catSlug === "kitchens"    && secSlug === "shaker")     style = "Transitional";
-  else if (catSlug === "kitchens"    && secSlug === "inset")      style = "Traditional";
+  if      (catSlug === "whole-house"  && secSlug === "modern")     style = "Modern";
+  else if (catSlug === "whole-house"  && secSlug === "classical")  style = "Traditional";
+  else if (catSlug === "whole-house"  && secSlug === "industrial") style = "Modern";
+  else if (catSlug === "whole-house"  && secSlug === "regional")   style = "Traditional";
+  else if (catSlug === "kitchens"     && secSlug === "modern")     style = "Modern";
+  else if (catSlug === "kitchens"     && secSlug === "shaker")     style = "Transitional";
+  else if (catSlug === "bathroom"     && secSlug === "modern-vanities")       style = "Modern";
+  else if (catSlug === "bathroom"     && secSlug === "traditional-vanities")  style = "Traditional";
+  else if (catSlug === "bathroom"     && secSlug === "transitional-vanities") style = "Transitional";
+  else if (catSlug === "aluminum")    style = "Modern";
   else if (has("modern") || has("slab") || has("flush") || has("floating") || has("loft")) style = "Modern";
   else if (has("classical") || has("raised") || has("beaded") || has("farmhouse") || has("shingle") || has("traditional") || has("victorian") || has("colonial")) style = "Traditional";
 
+  // Color — section signal first, then text scan.
   let color = "Wood Tones";
-  if      (has("ebonized") || has("blackened") || has("inky") || has("black painted") || has("india-ink")) color = "Black";
-  else if (has("white oak"))                              color = "Wood Tones";
-  else if (has("painted white") || has("painted maple") || has("cream") || has("bone") || has("soft white")) color = "White";
-  else if (has("walnut"))                                 color = "Brown";
-  else if (has("cherry") || has("chestnut"))              color = "Brown";
-  else if (has("ash") && has("ebonized"))                 color = "Black";
-  else if (has("gray") || has("grey") || has("charcoal")) color = "Gray";
+  if      (catSlug === "kitchens" && secSlug === "white")  color = "White";
+  else if (catSlug === "kitchens" && secSlug === "black")  color = "Black";
+  else if (catSlug === "kitchens" && secSlug === "grey")   color = "Gray";
+  else if (has("ebonized") || has("blackened") || has("inky") || has("matte black") || has("black painted") || has("india-ink")) color = "Black";
+  else if (has("painted white") || has("painted maple") || has("cream") || has("bone") || has("soft white") || has("chalk-white")) color = "White";
+  else if (has("walnut") || has("cherry") || has("chestnut")) color = "Brown";
+  else if (has("gray") || has("grey") || has("charcoal") || has("fog"))      color = "Gray";
   else if (has("sage") || has("green"))                   color = "Green";
   else if (has("beige") || has("tobacco"))                color = "Beige";
   else if (has("brass") || has("bronze") || has("steel") || has("aluminum") || has("metallic")) color = "Metallic";
+  else if (has("white oak") || has("oak"))                color = "Wood Tones";
 
+  // Finish.
   let finish = "Matte";
   if (has("lacquer") || has("glaz") || has("gloss") || has("polished")) finish = "Glossy";
 
+  // Material.
   let material = "Solid Wood";
   if      (catSlug === "aluminum")            material = "Stainless Steel";
   else if (catSlug === "wpc-doors")           material = "Wood Veneer";
   else if (secSlug === "wpc-interior")        material = "Wood Veneer";
   else if (has("veneer"))                     material = "Wood Veneer";
-  else if (has("stone") || has("quartz") || has("marble") || has("soapstone")) material = "Sintered Stone";
+  else if (has("quartz") || has("marble") || has("soapstone") || has("sintered")) material = "Sintered Stone";
   else if (has("teak"))                       material = "Solid Wood";
   else if (catSlug === "rta-cabinets")        material = "Solid Wood";
 
@@ -54,7 +62,10 @@ function productAttrs(catSlug, secSlug, product) {
 
   if (catSlug === "kitchens") {
     let layout = "Irregular & Mix";
-    if      (has("u-shape") || has("u shape"))                   layout = "U-shape";
+    if      (catSlug === "kitchens" && secSlug === "u-shape")   layout = "U-shape";
+    else if (catSlug === "kitchens" && secSlug === "l-shape")   layout = "L-shape";
+    else if (catSlug === "kitchens" && secSlug === "one-wall")  layout = "Single-Wall";
+    else if (has("u-shape") || has("u shape"))                   layout = "U-shape";
     else if (has("l-shape") || has("l shape"))                   layout = "L-shape";
     else if (has("one-wall") || has("single-wall") || has("single wall")) layout = "Single-Wall";
     else if (has("galley"))                                      layout = "Galley";
@@ -70,18 +81,42 @@ function flattenProducts(catSlug) {
   const cats = catSlug ? [CATALOG[catSlug]] : Object.values(CATALOG);
   for (const cat of cats) {
     if (!cat) continue;
-    for (const sec of Object.values(cat.sections)) {
-      for (const prod of sec.products) {
+    // Hierarchical: category has sections, each section has products.
+    if (cat.sections) {
+      for (const sec of Object.values(cat.sections)) {
+        for (const prod of sec.products) {
+          out.push({
+            ...prod,
+            catSlug: cat.slug, catTitle: cat.title,
+            secSlug: sec.slug, secTitle: sec.title,
+            attrs: productAttrs(cat.slug, sec.slug, prod),
+          });
+        }
+      }
+    }
+    // Flat: category has products directly, no section level.
+    if (cat.products) {
+      for (const prod of cat.products) {
         out.push({
           ...prod,
           catSlug: cat.slug, catTitle: cat.title,
-          secSlug: sec.slug, secTitle: sec.title,
-          attrs: productAttrs(cat.slug, sec.slug, prod),
+          secSlug: null, secTitle: cat.title,
+          attrs: productAttrs(cat.slug, null, prod),
         });
       }
     }
   }
   return out;
+}
+
+// Build a product URL respecting flat vs hierarchical categories.
+function productPath(catSlug, secSlug, prodSlug) {
+  return secSlug ? `/${catSlug}/${secSlug}/${prodSlug}` : `/${catSlug}/${prodSlug}`;
+}
+
+// Build a section URL (only meaningful for hierarchical categories).
+function sectionPath(catSlug, secSlug) {
+  return secSlug ? `/${catSlug}/${secSlug}` : `/${catSlug}`;
 }
 
 function Breadcrumbs({ items }) {
@@ -123,17 +158,32 @@ function CategoryTabs({ active }) {
 
 function ProductFilters({ showLayout, value, onChange, count }) {
   const update = (key) => (e) => onChange({ ...value, [key]: e.target.value });
+  const likes = useLikes();
+  const likedCount = Object.keys(likes).length;
+  const anyActive = value.style || value.color || value.finish || value.layout || value.material || value.q || value.favoritesOnly;
   return (
     <div className="filters-bar" role="region" aria-label="Filter products">
       <div className="filter-count" aria-live="polite">
         <b>Filter ({count})</b>
-        {(value.style || value.color || value.finish || value.layout || value.material || value.q) && (
+        {anyActive && (
           <button type="button" className="filter-reset"
-            onClick={() => onChange({ style: "", color: "", finish: "", layout: "", material: "", q: "" })}>
+            onClick={() => onChange(EMPTY_FILTERS)}>
             Reset ×
           </button>
         )}
       </div>
+      <button type="button"
+        className={`filter-fav ${value.favoritesOnly ? "active" : ""}`}
+        onClick={() => onChange({ ...value, favoritesOnly: !value.favoritesOnly })}
+        aria-pressed={!!value.favoritesOnly}
+        title={likedCount === 0 ? "No favorites yet — tap the heart on any product to add it" : `Show your ${likedCount} favorite${likedCount === 1 ? "" : "s"}`}>
+        <svg viewBox="0 0 24 24" width="14" height="14"
+             fill={value.favoritesOnly ? "currentColor" : "none"}
+             stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Favorites{likedCount ? ` (${likedCount})` : ""}
+      </button>
       <select className="filter-select" value={value.style} onChange={update("style")} aria-label="Filter by style">
         <option value="">By Style</option>
         {STYLE_OPTIONS.map(o => <option key={o} value={o}>{o}</option>)}
@@ -171,7 +221,7 @@ function ProductFilters({ showLayout, value, onChange, count }) {
 function CatalogProductCard({ product, index }) {
   const colors = ["#3B2A1E","#7a3a23","#5B4434","#7E8B6F","#26211c","#B85A3F"];
   return (
-    <a href={`/${product.catSlug}/${product.secSlug}/${product.slug}`}
+    <a href={productPath(product.catSlug, product.secSlug, product.slug)}
        className="product-card" data-reveal
        style={{ "--delay": `${(index % 8) * 50}ms` }}>
       <div className="product-thumb ph"
@@ -184,17 +234,85 @@ function CatalogProductCard({ product, index }) {
       </div>
       <h3 className="display">{product.title}</h3>
       <p>{product.blurb}</p>
+      <LikeButton productKey={`${product.catSlug}/${product.secSlug || ""}/${product.slug}`} variant="card"/>
     </a>
   );
 }
 
-const EMPTY_FILTERS = { style: "", color: "", finish: "", layout: "", material: "", q: "" };
+const EMPTY_FILTERS = { style: "", color: "", finish: "", layout: "", material: "", q: "", favoritesOnly: false };
+
+// ── per-device favorites (localStorage) ─────────────────────────────────
+// Each device tracks the products it has liked. Cross-tab sync via "storage";
+// in-tab sync via a custom event so multiple LikeButton instances stay in
+// sync without re-reading localStorage on every render.
+const LIKES_KEY   = "kk_likes_v1";
+const LIKES_EVENT = "kk_likes_changed";
+
+function readLikes() {
+  try { return JSON.parse(localStorage.getItem(LIKES_KEY) || "{}"); }
+  catch (_) { return {}; }
+}
+function writeLikes(map) {
+  try {
+    localStorage.setItem(LIKES_KEY, JSON.stringify(map));
+    window.dispatchEvent(new Event(LIKES_EVENT));
+  } catch (_) { /* private mode / quota: ignore */ }
+}
+function toggleLikeFor(key) {
+  const map = readLikes();
+  if (map[key]) delete map[key];
+  else map[key] = Date.now();
+  writeLikes(map);
+  return !!map[key];
+}
+function useLikes() {
+  const [likes, setLikes] = React.useState({});
+  React.useEffect(() => {
+    const read = () => setLikes(readLikes());
+    read();
+    window.addEventListener(LIKES_EVENT, read);
+    window.addEventListener("storage", read);
+    return () => {
+      window.removeEventListener(LIKES_EVENT, read);
+      window.removeEventListener("storage", read);
+    };
+  }, []);
+  return likes;
+}
+function productLikeKey(catSlug, secSlug, prodSlug) {
+  return `${catSlug}/${secSlug || "_"}/${prodSlug}`;
+}
+
+function LikeButton({ productKey, variant = "default" }) {
+  const likes = useLikes();
+  const liked = !!likes[productKey];
+  const onClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleLikeFor(productKey);
+  };
+  return (
+    <button type="button"
+      className={`like-btn ${liked ? "liked" : ""} like-btn-${variant}`}
+      onClick={onClick}
+      aria-label={liked ? "Remove from favorites" : "Add to favorites"}
+      aria-pressed={liked}>
+      <svg viewBox="0 0 24 24" width="18" height="18"
+           fill={liked ? "currentColor" : "none"}
+           stroke="currentColor" strokeWidth="2"
+           strokeLinejoin="round" strokeLinecap="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </button>
+  );
+}
 
 function CategoryLayout({ slug }) {
   // Hooks must run unconditionally; do all of them before any early return.
   const cat = CATALOG[slug];
   const all = React.useMemo(() => (cat ? flattenProducts(slug) : []), [slug, cat]);
   const [filters, setFilters] = React.useState(EMPTY_FILTERS);
+  const likes = useLikes();
   const filtered = React.useMemo(() => {
     const q = filters.q.trim().toLowerCase();
     return all.filter(p => {
@@ -203,12 +321,15 @@ function CategoryLayout({ slug }) {
       if (filters.finish   && p.attrs.finish   !== filters.finish)   return false;
       if (filters.layout   && p.attrs.layout   !== filters.layout)   return false;
       if (filters.material && p.attrs.material !== filters.material) return false;
-      if (q && !(p.title.toLowerCase().includes(q) || p.blurb.toLowerCase().includes(q) || p.secTitle.toLowerCase().includes(q))) return false;
+      if (q && !(p.title.toLowerCase().includes(q) || p.blurb.toLowerCase().includes(q) || (p.secTitle || "").toLowerCase().includes(q))) return false;
+      if (filters.favoritesOnly && !likes[productLikeKey(p.catSlug, p.secSlug, p.slug)]) return false;
       return true;
     });
-  }, [all, filters]);
+  }, [all, filters, likes]);
 
   if (!cat) return <p className="container">Category not found.</p>;
+
+  const hasSections = !!cat.sections;
 
   return (
     <section className="catalog-page category-page">
@@ -234,8 +355,10 @@ function CategoryLayout({ slug }) {
 
         {filtered.length === 0 ? (
           <div className="no-results">
-            <p>No products match these filters. <button type="button" className="link-underline"
-              onClick={() => setFilters({ style: "", color: "", finish: "", layout: "", material: "", q: "" })}>Reset filters →</button></p>
+            <p>{filters.favoritesOnly
+                ? "No favorites in this category yet. Tap the heart on any product to add it."
+                : "No products match these filters."} <button type="button" className="link-underline"
+              onClick={() => setFilters(EMPTY_FILTERS)}>Reset filters →</button></p>
           </div>
         ) : (
           <div className="catalog-products-grid">
@@ -243,16 +366,18 @@ function CategoryLayout({ slug }) {
           </div>
         )}
 
-        <div className="cat-sections-shortlist" data-reveal>
-          <span className="eyebrow">Browse by section</span>
-          <div className="cat-sections-shortlist-row">
-            {Object.values(cat.sections).map(sec => (
-              <a key={sec.slug} href={`/${slug}/${sec.slug}`} className="link-underline">
-                {sec.title}
-              </a>
-            ))}
+        {hasSections && (
+          <div className="cat-sections-shortlist" data-reveal>
+            <span className="eyebrow">Browse by section</span>
+            <div className="cat-sections-shortlist-row">
+              {Object.values(cat.sections).map(sec => (
+                <a key={sec.slug} href={`/${slug}/${sec.slug}`} className="link-underline">
+                  {sec.title}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
@@ -303,7 +428,7 @@ function SectionLayout({ category, section }) {
 function ProductCard({ cat, sec, product, index }) {
   const colors = ["#3B2A1E","#7a3a23","#5B4434","#7E8B6F","#26211c","#B85A3F"];
   return (
-    <a href={`/${cat}/${sec}/${product.slug}`} className="product-card" data-reveal
+    <a href={productPath(cat, sec, product.slug)} className="product-card" data-reveal
        style={{ "--delay": `${index * 80}ms` }}>
       <div className="product-thumb ph"
            style={{ background: `linear-gradient(160deg, ${colors[index % colors.length]}, #1c130a)` }}>
@@ -315,33 +440,41 @@ function ProductCard({ cat, sec, product, index }) {
       </div>
       <h3 className="display">{product.title}</h3>
       <p>{product.blurb}</p>
+      <LikeButton productKey={productLikeKey(cat, sec, product.slug)} variant="card"/>
     </a>
   );
 }
 
 function ProductLayout({ category, section, product }) {
   const cat = CATALOG[category];
-  const sec = cat?.sections?.[section];
-  const p = sec?.products?.find(x => x.slug === product);
-  if (!p) return <p className="container">Product not found.</p>;
-  const sibling = sec.products.find(x => x.slug !== product);
+  // section may be null/undefined for flat categories (wpc-doors, rta-cabinets).
+  const sec = section ? cat?.sections?.[section] : null;
+  const productList = sec ? sec.products : (cat?.products || []);
+  const p = productList.find(x => x.slug === product);
+
+  if (!cat || !p) return <p className="container">Product not found.</p>;
+
+  const sectionTitle = sec ? sec.title : cat.title;
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: cat.title, href: `/${category}` },
+    ...(sec ? [{ label: sec.title, href: `/${category}/${section}` }] : []),
+    { label: p.title }
+  ];
+
   return (
     <section className="catalog-page product-page">
       <div className="container">
-        <Breadcrumbs items={[
-          { label: "Home", href: "/" },
-          { label: cat.title, href: `/${category}` },
-          { label: sec.title, href: `/${category}/${section}` },
-          { label: p.title }
-        ]}/>
+        <Breadcrumbs items={breadcrumbItems}/>
 
         <div className="product-hero-grid" data-reveal>
           <div className="product-hero-img ph"
                style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
             <CabinetOverlay opacity={0.3}/>
+            <LikeButton productKey={productLikeKey(category, section, product)} variant="hero"/>
           </div>
           <div className="product-hero-body">
-            <span className="eyebrow">{sec.title}</span>
+            <span className="eyebrow">{sectionTitle}</span>
             <h1 className="display product-title">{p.title}</h1>
             <p className="product-blurb">{p.blurb}</p>
             <div className="product-cta-row">
@@ -378,6 +511,8 @@ function ProductLayout({ category, section, product }) {
           </div>
         </div>
 
+        <ProductFAQ/>
+
         <div className="product-form-section" id="inquire" data-reveal>
           <div className="product-form-head">
             <span className="eyebrow">Inquire · no obligation</span>
@@ -387,13 +522,69 @@ function ProductLayout({ category, section, product }) {
           <ContactForm product={p.title} category={cat.title}/>
         </div>
 
-        {sibling && (
-          <div className="product-sibling" data-reveal>
-            <a href={`/${category}/${section}/${sibling.slug}`} className="link-underline">
-              Also in {sec.title}: {sibling.title} →
-            </a>
-          </div>
-        )}
+        <SimilarProducts catSlug={category} secSlug={section || null} currentSlug={product}/>
+      </div>
+    </section>
+  );
+}
+
+// Short FAQ shown on every product page. Original copy.
+const PRODUCT_FAQ = [
+  { q: "How long does a build like this take?",
+    a: "About four months end to end. One week to measure, two to three weeks to draw, one week of material picks, eight to ten weeks on the bench, and two weeks of on-site install. Adjustments are scheduled a month after the room sees real use." },
+  { q: "What ballpark does this cost?",
+    a: "We don't publish a list price because every project is drawn to your room and your material picks. A free in-home consultation gives you a real number against your floor plan; the fixed quote arrives within two weeks." },
+  { q: "Do you install or just deliver?",
+    a: "We design, build, finish, and install in-house. For broader remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Boston contractors we've worked with for years." },
+  { q: "Can the materials be swapped?",
+    a: "Yes. The page shows a representative finish, but every species, hardware, and stone pick is up to you. Six FSC-certified hardwoods, four door styles, and an open hardware catalog." }
+];
+
+function ProductFAQ() {
+  const [open, setOpen] = React.useState(0);
+  return (
+    <section className="product-faq faq" data-reveal>
+      <header className="product-faq-head">
+        <span className="eyebrow">Common questions</span>
+        <h2 className="display">Before you ask.</h2>
+      </header>
+      <div className="faq-list">
+        {PRODUCT_FAQ.map((item, i) => (
+          <details key={i} className="faq-item" open={open === i}
+            onToggle={(e) => { if (e.currentTarget.open) setOpen(i); }}>
+            <summary>
+              <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
+              <span className="faq-q">{item.q}</span>
+              <span className="faq-mark">＋</span>
+            </summary>
+            <div className="faq-a">{item.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function SimilarProducts({ catSlug, secSlug, currentSlug }) {
+  const all = React.useMemo(() => flattenProducts(catSlug), [catSlug]);
+  const candidates = all.filter(p => p.slug !== currentSlug);
+  // Prefer same section first, then anything else in the category.
+  const inSection  = secSlug ? candidates.filter(p => p.secSlug === secSlug) : [];
+  const elsewhere  = candidates.filter(p => !inSection.includes(p));
+  const picks = [...inSection, ...elsewhere].slice(0, 3);
+  if (picks.length === 0) return null;
+  const cat = CATALOG[catSlug];
+  return (
+    <section className="similar-products" data-reveal>
+      <header className="similar-head">
+        <div>
+          <span className="eyebrow">You might also like</span>
+          <h2 className="display">More in {cat.title}.</h2>
+        </div>
+        <a href={`/${catSlug}`} className="link-underline">See all {cat.title} →</a>
+      </header>
+      <div className="similar-grid">
+        {picks.map((p, i) => <CatalogProductCard key={`${p.catSlug}-${p.secSlug}-${p.slug}`} product={p} index={i}/>)}
       </div>
     </section>
   );
@@ -512,13 +703,24 @@ function MegaMenu({ open, onClose }) {
             ))}
           </nav>
 
-          {/* Middle: sections of the currently-active category. */}
-          <div className="mm-col mm-col-secs" aria-label={activeCat ? `${activeCat.title} sections` : ""}>
-            {activeCat && Object.values(activeCat.sections).map(sec => (
+          {/* Middle: sections of the currently-active category. Flat
+              categories (no sections) show their products directly. */}
+          <div className="mm-col mm-col-secs" aria-label={activeCat ? `${activeCat.title} items` : ""}>
+            {activeCat && activeCat.sections && Object.values(activeCat.sections).map(sec => (
               <a key={sec.slug} href={`/${active}/${sec.slug}`} className="mm-sec" role="menuitem">
                 {sec.title}
               </a>
             ))}
+            {activeCat && !activeCat.sections && activeCat.products && activeCat.products.slice(0, 8).map(prod => (
+              <a key={prod.slug} href={`/${active}/${prod.slug}`} className="mm-sec" role="menuitem">
+                {prod.title}
+              </a>
+            ))}
+            {activeCat && !activeCat.sections && activeCat.products && activeCat.products.length > 8 && (
+              <a href={`/${active}`} className="mm-sec mm-sec-more" role="menuitem">
+                See all {activeCat.products.length} {activeCat.title} →
+              </a>
+            )}
           </div>
 
           {/* Right: small promo / quick action for the active category. */}
@@ -542,12 +744,21 @@ function MegaMenu({ open, onClose }) {
 }
 
 function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
-  // picks: [{ cat: "kitchens", sec: "shaker", slug: "painted-shaker-island-kitchen" }, ...]
+  // picks: [{ cat, sec?, slug }, ...]  — sec is optional for flat categories
   const items = picks
     .map(p => {
-      const product = CATALOG[p.cat]?.sections?.[p.sec]?.products?.find(x => x.slug === p.slug);
+      const cat = CATALOG[p.cat];
+      if (!cat) return null;
+      let product, secTitle;
+      if (p.sec && cat.sections?.[p.sec]) {
+        product = cat.sections[p.sec].products.find(x => x.slug === p.slug);
+        secTitle = cat.sections[p.sec].title;
+      } else if (cat.products) {
+        product = cat.products.find(x => x.slug === p.slug);
+        secTitle = cat.title;
+      }
       if (!product) return null;
-      return { ...product, catSlug: p.cat, secSlug: p.sec, catTitle: CATALOG[p.cat].title, secTitle: CATALOG[p.cat].sections[p.sec].title };
+      return { ...product, catSlug: p.cat, secSlug: p.sec || null, catTitle: cat.title, secTitle };
     })
     .filter(Boolean);
 
@@ -565,7 +776,7 @@ function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
         <div className="products-strip-row">
           {items.map((p, i) => (
             <a key={`${p.catSlug}-${p.slug}`}
-               href={`/${p.catSlug}/${p.secSlug}/${p.slug}`}
+               href={productPath(p.catSlug, p.secSlug, p.slug)}
                className="strip-card" data-reveal
                style={{ "--delay": `${i * 60}ms` }}>
               <div className="strip-thumb ph"
@@ -578,6 +789,7 @@ function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
               </div>
               <h3 className="display">{p.title}</h3>
               <p>{p.blurb}</p>
+              <LikeButton productKey={productLikeKey(p.catSlug, p.secSlug, p.slug)} variant="card"/>
             </a>
           ))}
         </div>
@@ -597,6 +809,8 @@ Object.assign(window, {
   CategoryLayout, SectionLayout, ProductLayout,
   CategoryTabs, ProductFilters, CatalogProductCard,
   ProductCard, ContactForm, MegaMenu, ProductsStrip,
-  productAttrs, flattenProducts,
-  STYLE_OPTIONS, COLOR_OPTIONS, FINISH_OPTIONS, LAYOUT_OPTIONS, MATERIAL_OPTIONS
+  LikeButton, SimilarProducts, ProductFAQ,
+  useLikes, readLikes, writeLikes, toggleLikeFor, productLikeKey,
+  productAttrs, flattenProducts, productPath, sectionPath,
+  STYLE_OPTIONS, COLOR_OPTIONS, FINISH_OPTIONS, LAYOUT_OPTIONS, MATERIAL_OPTIONS, EMPTY_FILTERS
 });

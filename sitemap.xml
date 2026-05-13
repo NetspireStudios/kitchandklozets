@@ -175,55 +175,109 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-color</loc>
+    <loc>https://kitchandklozets.com/kitchens/white</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-color/two-tone-white-and-charcoal-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/white/white-painted-island-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-color/black-painted-shaker-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/white/bleached-oak-flush-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-layout</loc>
+    <loc>https://kitchandklozets.com/kitchens/black</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-layout/u-shape-galley-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/black/matte-black-painted-shaker-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/by-layout/one-wall-pied-a-terre-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/black/ebonized-oak-slab-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/inset</loc>
+    <loc>https://kitchandklozets.com/kitchens/grey</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/inset/beaded-inset-cherry-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/grey/charcoal-island-two-tone-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/kitchens/inset/flush-inset-painted-kitchen</loc>
+    <loc>https://kitchandklozets.com/kitchens/grey/fog-grey-shaker-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/l-shape</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/l-shape/l-shape-painted-shaker-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/l-shape/l-shape-walnut-flat-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/u-shape</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/u-shape/u-shape-galley-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/u-shape/u-shape-white-oak-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/one-wall</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/one-wall/one-wall-pied-a-terre-kitchen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/kitchens/one-wall/one-wall-painted-galley-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -349,6 +403,60 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://kitchandklozets.com/bathroom/modern-vanities</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/modern-vanities/floating-walnut-modern-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/modern-vanities/white-oak-edge-banded-modern-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/traditional-vanities</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/traditional-vanities/beaded-inset-painted-traditional-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/traditional-vanities/cherry-raised-panel-traditional-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/transitional-vanities</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/transitional-vanities/shaker-double-transitional-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/bathroom/transitional-vanities/two-tone-transitional-vanity</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://kitchandklozets.com/bathroom/shower-rooms</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -398,24 +506,6 @@
   </url>
   <url>
     <loc>https://kitchandklozets.com/bathroom/toilets/wc-half-wall-storage</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/bathroom/mirrors-storage</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/bathroom/mirrors-storage/recessed-medicine-cabinet</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/bathroom/mirrors-storage/linen-tower-with-hamper</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -523,91 +613,61 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/standard</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/wpc-doors/standard/standard-wpc-slab</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/standard-wpc-slab</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/standard/standard-wpc-shaker</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/standard-wpc-shaker</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/decorative</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/wpc-doors/decorative/decorative-applied-molding</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/decorative-applied-molding</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/decorative/decorative-bead-board</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/decorative-bead-board</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/heavy-duty</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/wpc-doors/heavy-duty/hd-laundry-passage</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/hd-laundry-passage</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/heavy-duty/hd-garage-entry</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/hd-garage-entry</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/sliding-wpc</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/wpc-doors/sliding-wpc/wpc-pocket-slab</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/wpc-pocket-slab</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/sliding-wpc/wpc-barn-veneer</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/wpc-barn-veneer</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/custom-finish</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/wpc-doors/custom-finish/custom-glazed-wpc</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/custom-glazed-wpc</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/wpc-doors/custom-finish/custom-veneer-wpc</loc>
+    <loc>https://kitchandklozets.com/wpc-doors/custom-veneer-wpc</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -619,91 +679,61 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/kitchen-rta</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/kitchen-rta/rta-painted-shaker-kitchen</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-painted-shaker-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/kitchen-rta/rta-stained-oak-kitchen</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-stained-oak-kitchen</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/bath-rta</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/bath-rta/rta-30-vanity</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-30-vanity</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/bath-rta/rta-60-double-vanity</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-60-double-vanity</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/closet-rta</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/closet-rta/rta-walk-in-kit</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-walk-in-kit</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/closet-rta/rta-reach-in-kit</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-reach-in-kit</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/pantry-rta</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/pantry-rta/rta-walk-in-pantry</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-walk-in-pantry</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/pantry-rta/rta-shallow-pantry</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/rta-shallow-pantry</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/modular</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/modular/modular-media-wall</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/modular-media-wall</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/rta-cabinets/modular/modular-home-office</loc>
+    <loc>https://kitchandklozets.com/rta-cabinets/modular-home-office</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -727,79 +757,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/aluminum/entry-doors/double-aluminum-entry</loc>
+    <loc>https://kitchandklozets.com/aluminum/entry-doors/three-panel-aluminum-slider</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/aluminum/patio-doors</loc>
+    <loc>https://kitchandklozets.com/aluminum/windows</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/aluminum/patio-doors/three-panel-aluminum-slider</loc>
+    <loc>https://kitchandklozets.com/aluminum/windows/single-casement-aluminum</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kitchandklozets.com/aluminum/patio-doors/bifold-aluminum-patio</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/casement-windows</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/casement-windows/single-casement-aluminum</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/casement-windows/trio-casement-aluminum</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/sliding-windows</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/sliding-windows/two-panel-aluminum-slider</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/sliding-windows/three-panel-aluminum-slider-window</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/custom-aluminum</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/custom-aluminum/arched-transom-aluminum</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://kitchandklozets.com/aluminum/custom-aluminum/oversized-fixed-aluminum</loc>
+    <loc>https://kitchandklozets.com/aluminum/windows/three-panel-aluminum-slider-window</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

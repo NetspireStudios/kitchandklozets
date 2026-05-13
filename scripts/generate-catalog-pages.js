@@ -146,12 +146,20 @@ function buildCategoryPage(catSlug) {
     keywords: cat.keywords || ""
   });
 
-  const itemList = Object.values(cat.sections).map((sec, i) => ({
-    "@type": "ListItem",
-    "position": i + 1,
-    "name": sec.title,
-    "url": `${BASE}/${catSlug}/${sec.slug}`
-  }));
+  // Schema item list uses sections for hierarchical categories, products for flat.
+  const itemList = cat.sections
+    ? Object.values(cat.sections).map((sec, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": sec.title,
+        "url": `${BASE}/${catSlug}/${sec.slug}`
+      }))
+    : (cat.products || []).map((prod, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": prod.title,
+        "url": `${BASE}/${catSlug}/${prod.slug}`
+      }));
 
   const collectionSchema = `<script type="application/ld+json">
 ${JSON.stringify({
@@ -218,12 +226,21 @@ ${JSON.stringify({
   return wrap(head, [collectionSchema, bc], APP_BOILERPLATE(inner));
 }
 
-// ─── product page ──────────────────────────────────────────────────────────
+// ─── product page (handles flat and hierarchical) ──────────────────────────
 function buildProductPage(catSlug, secSlug, prodSlug) {
   const cat = CATALOG[catSlug];
-  const sec = cat.sections[secSlug];
-  const prod = sec.products.find(p => p.slug === prodSlug);
-  const canonical = `${BASE}/${catSlug}/${secSlug}/${prodSlug}`;
+  let prod, secTitle, urlBase;
+  if (secSlug) {
+    const sec = cat.sections[secSlug];
+    prod = sec.products.find(p => p.slug === prodSlug);
+    secTitle = sec.title;
+    urlBase = `${BASE}/${catSlug}/${secSlug}`;
+  } else {
+    prod = cat.products.find(p => p.slug === prodSlug);
+    secTitle = null;
+    urlBase = `${BASE}/${catSlug}`;
+  }
+  const canonical = `${urlBase}/${prodSlug}`;
   const title = `${prod.title} | Kitch & Klozets`;
   const desc  = prod.blurb.replace(/\s+/g, " ").slice(0, 158);
 
@@ -258,11 +275,12 @@ ${JSON.stringify({
   const bc = breadcrumbSchema([
     { name: "Home",      url: `${BASE}/` },
     { name: cat.title,   url: `${BASE}/${catSlug}` },
-    { name: sec.title,   url: `${BASE}/${catSlug}/${secSlug}` },
+    ...(secTitle ? [{ name: secTitle, url: urlBase }] : []),
     { name: prod.title }
   ]);
 
-  const inner = `<ProductLayout category="${catSlug}" section="${secSlug}" product="${prodSlug}"/>`;
+  const secAttr = secSlug ? ` section="${secSlug}"` : "";
+  const inner = `<ProductLayout category="${catSlug}"${secAttr} product="${prodSlug}"/>`;
   return wrap(head, [productSchema, bc], APP_BOILERPLATE(inner));
 }
 
@@ -275,21 +293,31 @@ function writeFile(relPath, content) {
 }
 
 // ─── generate everything ───────────────────────────────────────────────────
-let cats = 0, secs = 0, prods = 0;
+let cats = 0, secs = 0, prods = 0, flatCats = 0;
 
 Object.keys(CATALOG).forEach((catSlug) => {
+  const cat = CATALOG[catSlug];
   writeFile(`${catSlug}/index.html`, buildCategoryPage(catSlug));
   cats++;
 
-  Object.keys(CATALOG[catSlug].sections).forEach((secSlug) => {
-    writeFile(`${catSlug}/${secSlug}/index.html`, buildSectionPage(catSlug, secSlug));
-    secs++;
+  if (cat.sections) {
+    Object.keys(cat.sections).forEach((secSlug) => {
+      writeFile(`${catSlug}/${secSlug}/index.html`, buildSectionPage(catSlug, secSlug));
+      secs++;
+      cat.sections[secSlug].products.forEach((prod) => {
+        writeFile(`${catSlug}/${secSlug}/${prod.slug}/index.html`, buildProductPage(catSlug, secSlug, prod.slug));
+        prods++;
+      });
+    });
+  }
 
-    CATALOG[catSlug].sections[secSlug].products.forEach((prod) => {
-      writeFile(`${catSlug}/${secSlug}/${prod.slug}/index.html`, buildProductPage(catSlug, secSlug, prod.slug));
+  if (cat.products) {
+    flatCats++;
+    cat.products.forEach((prod) => {
+      writeFile(`${catSlug}/${prod.slug}/index.html`, buildProductPage(catSlug, null, prod.slug));
       prods++;
     });
-  });
+  }
 });
 
 console.log(`\nDone. ${cats} categories, ${secs} sections, ${prods} products = ${cats + secs + prods} files written.`);
@@ -307,13 +335,21 @@ pushUrl(`${BASE}/faq`,      "0.7", "monthly");
 pushUrl(`${BASE}/contact`,  "0.8", "monthly");
 
 Object.keys(CATALOG).forEach((catSlug) => {
+  const cat = CATALOG[catSlug];
   pushUrl(`${BASE}/${catSlug}`, "0.9", "monthly");
-  Object.keys(CATALOG[catSlug].sections).forEach((secSlug) => {
-    pushUrl(`${BASE}/${catSlug}/${secSlug}`, "0.7", "monthly");
-    CATALOG[catSlug].sections[secSlug].products.forEach((prod) => {
-      pushUrl(`${BASE}/${catSlug}/${secSlug}/${prod.slug}`, "0.6", "monthly");
+  if (cat.sections) {
+    Object.keys(cat.sections).forEach((secSlug) => {
+      pushUrl(`${BASE}/${catSlug}/${secSlug}`, "0.7", "monthly");
+      cat.sections[secSlug].products.forEach((prod) => {
+        pushUrl(`${BASE}/${catSlug}/${secSlug}/${prod.slug}`, "0.6", "monthly");
+      });
     });
-  });
+  }
+  if (cat.products) {
+    cat.products.forEach((prod) => {
+      pushUrl(`${BASE}/${catSlug}/${prod.slug}`, "0.6", "monthly");
+    });
+  }
 });
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

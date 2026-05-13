@@ -72,13 +72,13 @@ const CATALOG = {
     slug: "kitchens",
     title: "Kitchen Cabinets",
     short: "Cabinets built as a room, not a kit.",
-    blurb: "Custom kitchen cabinetry, islands, ranges, and hoods in solid hardwood. Shaker, inset, and slab doors. Every kitchen leaves the shop assembled, photographed, and hand-installed by the team that built it.",
-    keywords: "custom kitchen cabinets Watertown MA, shaker kitchen Boston, walnut kitchen Cambridge, inset cabinetry Newton",
+    blurb: "Custom kitchen cabinetry, islands, ranges, and hoods in solid hardwood. Shaker, slab, and inset doors, painted or stained. Every kitchen leaves the shop assembled, photographed, and hand-installed by the team that built it.",
+    keywords: "custom kitchen cabinets Watertown MA, shaker kitchen Boston, walnut kitchen Cambridge, white kitchen design, L-shape U-shape one-wall kitchen",
     sections: {
       "modern": {
         slug: "modern",
         title: "Modern Kitchens",
-        blurb: "Flush-inset and slab doors, integrated push-to-open hardware, and a single material carried across cabinets, island, and panels.",
+        blurb: "Flush-inset and slab doors, integrated push-to-open hardware, and a single material carried across cabinets, island, and appliance panels.",
         products: [
           { slug: "walnut-slab-kitchen", title: "Walnut Slab Kitchen",
             blurb: "Edge-banded walnut slab doors, push-to-open drawers, paneled refrigerator and dishwasher, and a 10-foot honed-quartzite island." },
@@ -92,42 +92,75 @@ const CATALOG = {
         blurb: "The most-requested style we build. Five-piece doors with a flat center panel; painted, stained, or natural-oiled.",
         products: [
           { slug: "painted-shaker-island-kitchen", title: "Painted Shaker Island Kitchen",
-            blurb: "Hand-painted maple in a soft white, shaker doors with a 2-inch stile, unlacquered brass bar pulls, and a painted-base contrasting island." },
+            blurb: "Hand-painted maple in a soft white, shaker doors with a 2-inch stile, unlacquered brass bar pulls, and a contrasting painted island." },
           { slug: "stained-white-oak-shaker-kitchen", title: "Stained White Oak Shaker Kitchen",
-            blurb: "Quarter-sawn white oak shakers with a warm-tobacco stain, blackened-iron knobs and pulls, and a soapstone perimeter with a butcher-block island." }
+            blurb: "Quarter-sawn white oak shakers with a warm-tobacco stain, blackened-iron knobs, and a soapstone perimeter with a butcher-block island." }
         ]
       },
-      "by-color": {
-        slug: "by-color",
-        title: "Kitchens by Color (White · Black · Grey)",
-        blurb: "Painted kitchens, mixed and matched. Two-tone uppers and lowers, contrasting islands, and inky cabinet runs.",
+      "white": {
+        slug: "white",
+        title: "White Kitchens",
+        blurb: "Painted maple and bleached oak in chalk, cream, and bone whites. Classical or modern, depending on which door style you pick.",
         products: [
-          { slug: "two-tone-white-and-charcoal-kitchen", title: "Two-Tone White & Charcoal Kitchen",
-            blurb: "Cream-painted uppers and perimeter with a deep-charcoal island and stained-oak open shelving. Brushed-nickel hardware throughout." },
-          { slug: "black-painted-shaker-kitchen", title: "Black Painted Shaker Kitchen",
-            blurb: "Inky-black painted maple with shaker doors, antique-brass pulls, and an unlacquered-brass plumbing trim package." }
+          { slug: "white-painted-island-kitchen", title: "White Painted Island Kitchen",
+            blurb: "Hand-painted maple in a soft chalk-white shaker, a contrasting walnut island with a marble waterfall edge, and brushed-brass cup pulls." },
+          { slug: "bleached-oak-flush-kitchen", title: "Bleached Oak Flush Kitchen",
+            blurb: "Bleached rift-cut white oak with a cerused finish, flush-inset doors, recessed finger pulls, and a paneled refrigerator wall." }
         ]
       },
-      "by-layout": {
-        slug: "by-layout",
-        title: "Kitchens by Layout (L · U · One-Wall)",
-        blurb: "Drawn to your room's shape. L-shape and U-shape for the family kitchen, one-wall for studio and apartment galleys.",
+      "black": {
+        slug: "black",
+        title: "Black Kitchens",
+        blurb: "Inky painted maple and ebonized oak. Read as moody and modern; pair with brass or blackened-steel hardware.",
         products: [
-          { slug: "u-shape-galley-kitchen", title: "U-Shape Galley Kitchen",
-            blurb: "Three-wall cabinet run with paneled appliances, a corner pantry tower, and an integrated booth at the window." },
-          { slug: "one-wall-pied-a-terre-kitchen", title: "One-Wall Pied-à-Terre Kitchen",
-            blurb: "Single-wall walnut run for a Beacon Hill townhouse, full-height pantry tower, and a hidden bar at the end of the run." }
+          { slug: "matte-black-painted-shaker-kitchen", title: "Matte Black Painted Shaker Kitchen",
+            blurb: "Hand-painted maple in a deep matte black, shaker doors, antique-brass cup pulls, and a soapstone counter with a polished bullnose edge." },
+          { slug: "ebonized-oak-slab-kitchen", title: "Ebonized Oak Slab Kitchen",
+            blurb: "Ebonized rift-cut oak in a slab style, blackened-steel bar pulls, and a single-slab honed-marble island with a brass foot rail." }
         ]
       },
-      "inset": {
-        slug: "inset",
-        title: "Inset Kitchens",
-        blurb: "Beaded and flush-inset doors fit into the face frame, not over it. The traditional cabinet construction, still our shop's specialty.",
+      "grey": {
+        slug: "grey",
+        title: "Grey Kitchens",
+        blurb: "Fog, charcoal, and graphite painted finishes. Two-tone layouts with a contrasting island also live here.",
         products: [
-          { slug: "beaded-inset-cherry-kitchen", title: "Beaded Inset Cherry Kitchen",
-            blurb: "Solid cherry beaded-inset cabinetry with raised panels, antique-brass hinges visible on the face, and a stepped crown molding." },
-          { slug: "flush-inset-painted-kitchen", title: "Flush Inset Painted Kitchen",
-            blurb: "Hand-painted poplar with flush-inset doors, brushed-nickel knife hinges, and a soapstone backsplash carried 18 inches above the counter." }
+          { slug: "charcoal-island-two-tone-kitchen", title: "Charcoal Island Two-Tone Kitchen",
+            blurb: "Cream-painted perimeter with a deep-charcoal island, brushed-nickel hardware throughout, and stained-oak open shelving above the range." },
+          { slug: "fog-grey-shaker-kitchen", title: "Fog Grey Shaker Kitchen",
+            blurb: "Fog-grey painted maple shaker, unlacquered-brass hardware, white-oak open shelving, and a soapstone backsplash carried to the underside of the upper cabinets." }
+        ]
+      },
+      "l-shape": {
+        slug: "l-shape",
+        title: "L-shape Kitchens",
+        blurb: "Two-wall cabinet runs that meet in a corner. The most common layout for family kitchens with an adjacent dining area.",
+        products: [
+          { slug: "l-shape-painted-shaker-kitchen", title: "L-shape Painted Shaker Kitchen",
+            blurb: "L-shaped run in painted-maple shaker with a corner pantry tower, a tambour appliance garage, and an island anchored along the long wall." },
+          { slug: "l-shape-walnut-flat-kitchen", title: "L-shape Walnut Flat-Panel Kitchen",
+            blurb: "Walnut flat-panel L-shape with a built-in coffee bar at the short return, an appliance garage at the corner, and brass push-to-open hardware." }
+        ]
+      },
+      "u-shape": {
+        slug: "u-shape",
+        title: "U-shape Kitchens",
+        blurb: "Three-wall layouts with paneled appliances and uninterrupted counter runs. Best in rooms that don't need the kitchen to flow into a separate dining space.",
+        products: [
+          { slug: "u-shape-galley-kitchen", title: "U-shape Galley Kitchen",
+            blurb: "Three-wall cabinet run with paneled appliances, a corner pantry tower, and an integrated booth at the window between the cabinet legs." },
+          { slug: "u-shape-white-oak-kitchen", title: "U-shape White Oak Kitchen",
+            blurb: "Three-wall white-oak run with an integrated stone backsplash carried around all three walls, paneled appliances, and a window banquette." }
+        ]
+      },
+      "one-wall": {
+        slug: "one-wall",
+        title: "One-wall Kitchens",
+        blurb: "Single-run kitchens for apartments, pied-à-terres, and ADUs. Maximize the wall, conceal the appliances, hide the pantry at the end.",
+        products: [
+          { slug: "one-wall-pied-a-terre-kitchen", title: "One-wall Pied-à-Terre Kitchen",
+            blurb: "Single-wall walnut run for a Beacon Hill townhouse, full-height pantry tower, and a hidden bar at the end of the run." },
+          { slug: "one-wall-painted-galley-kitchen", title: "One-wall Painted Galley Kitchen",
+            blurb: "Single-wall painted-white shaker for a studio kitchen, concealed appliances behind paneled fronts, marble backsplash to the ceiling, and a pull-out pantry." }
         ]
       }
     }
@@ -202,18 +235,51 @@ const CATALOG = {
     slug: "bathroom",
     title: "Bathroom Cabinetry",
     short: "Vanities, shower rooms, and bath storage.",
-    blurb: "Bathroom millwork built to the room: single and double vanities with integrated stone, wet-room and shower paneling, soaking tub surrounds, and mirror cabinets with concealed power.",
-    keywords: "custom bathroom vanity Watertown MA, double vanity Boston, custom shower paneling, integrated stone vanity",
+    blurb: "Bathroom millwork built to the room: single and double vanities with integrated stone, wet-room and shower paneling, soaking tub surrounds, and water-closet enclosures.",
+    keywords: "custom bathroom vanity Watertown MA, modern traditional transitional vanity, double vanity Boston, custom shower paneling",
     sections: {
       "vanities": {
         slug: "vanities",
-        title: "Vanities",
+        title: "Bathroom Vanities",
         blurb: "Single and double vanities in solid hardwood with integrated stone tops, concealed outlets, and undermount full-extension drawers.",
         products: [
           { slug: "single-walnut-floating-vanity", title: "Single Walnut Floating Vanity",
             blurb: "48-inch wall-floated walnut vanity with a single integrated quartz sink, concealed under-mount outlets, and brushed-brass tip-out trays." },
           { slug: "double-painted-shaker-vanity", title: "Double Painted Shaker Vanity",
             blurb: "Hand-painted maple double vanity, marble top with two integrated basins, beaded inset doors, and a pair of stacked drawer towers." }
+        ]
+      },
+      "modern-vanities": {
+        slug: "modern-vanities",
+        title: "Modern Bathroom Vanities",
+        blurb: "Slab and flush-inset fronts, integrated stone tops, push-to-open hardware, and concealed power.",
+        products: [
+          { slug: "floating-walnut-modern-vanity", title: "Floating Walnut Modern Vanity",
+            blurb: "Wall-floated walnut vanity with a single integrated quartz sink, push-to-open drawers, and concealed under-mount outlets behind a hinged kick panel." },
+          { slug: "white-oak-edge-banded-modern-vanity", title: "White Oak Edge-Banded Modern Vanity",
+            blurb: "Rift-cut white oak in an edge-banded slab style, brushed-bronze touch latches, and a single-slab honed quartzite top with an integrated trough basin." }
+        ]
+      },
+      "traditional-vanities": {
+        slug: "traditional-vanities",
+        title: "Traditional Bathroom Vanities",
+        blurb: "Beaded inset and raised-panel doors in painted maple, poplar, and cherry. Brass cup pulls and turned bun feet.",
+        products: [
+          { slug: "beaded-inset-painted-traditional-vanity", title: "Beaded Inset Painted Traditional Vanity",
+            blurb: "Hand-painted maple with beaded-inset doors, a marble top with an integrated under-mount basin, antique-brass bin pulls, and turned bun feet." },
+          { slug: "cherry-raised-panel-traditional-vanity", title: "Cherry Raised Panel Traditional Vanity",
+            blurb: "Solid cherry raised-panel vanity, soapstone top with a polished bullnose edge, and antique-brass cup pulls on the drawers." }
+        ]
+      },
+      "transitional-vanities": {
+        slug: "transitional-vanities",
+        title: "Transitional Bathroom Vanities",
+        blurb: "Shaker doors with mixed hardware metals. Bridges modern and traditional; the most flexible style across most homes.",
+        products: [
+          { slug: "shaker-double-transitional-vanity", title: "Shaker Double Transitional Vanity",
+            blurb: "Painted-shaker double vanity, mixed brass-and-nickel hardware, single-slab quartzite top, and two open lower towers for rolled towels." },
+          { slug: "two-tone-transitional-vanity", title: "Two-Tone Transitional Vanity",
+            blurb: "Two-tone cream perimeter and walnut drawer bank, shaker doors, marble top with concealed plumbing, and brushed-brass towel rails." }
         ]
       },
       "shower-rooms": {
@@ -240,24 +306,13 @@ const CATALOG = {
       },
       "toilets": {
         slug: "toilets",
-        title: "Toilet Enclosures",
+        title: "Toilets",
         blurb: "Water-closet doors, half-walls, and integrated paper and storage niches that hide the necessary in a finished room.",
         products: [
           { slug: "water-closet-pocket-door", title: "Water-Closet Pocket Door",
             blurb: "Solid white-oak pocket door with a flush-set occupancy indicator, paneled head jamb, and a brushed-bronze pull at hand height." },
           { slug: "wc-half-wall-storage", title: "Half-Wall WC with Storage",
             blurb: "Three-foot painted half-wall enclosing the WC, with three open niches for paper and reading material and a hinged top cap for cleaning access." }
-        ]
-      },
-      "mirrors-storage": {
-        slug: "mirrors-storage",
-        title: "Mirrors & Storage",
-        blurb: "Medicine cabinets recessed into the wall, lighted mirrors with concealed power, and tall linen towers for small bathrooms.",
-        products: [
-          { slug: "recessed-medicine-cabinet", title: "Recessed Medicine Cabinet with Lit Mirror",
-            blurb: "Wall-recessed medicine cabinet with an anti-fog lit mirror, two integrated outlets, and a USB-C charging tray on the bottom shelf." },
-          { slug: "linen-tower-with-hamper", title: "Linen Tower with Hidden Hamper",
-            blurb: "84-inch linen tower in painted poplar with three drawers, two adjustable shelves, and a pull-out canvas hamper at the kick." }
         ]
       }
     }
@@ -334,128 +389,60 @@ const CATALOG = {
     short: "Wood-plastic composite doors faced in real wood.",
     blurb: "WPC-core doors for kitchens, baths, laundries, and high-humidity rooms. Lighter than solid stock, more dimensionally stable, and faced in real hardwood veneer for a furniture-grade finish.",
     keywords: "WPC doors Boston, wood plastic composite cabinetry, moisture-resistant doors MA",
-    sections: {
-      "standard": {
-        slug: "standard",
-        title: "Standard",
-        blurb: "Flush-slab and shaker passage doors in the most common sizes. Stocked widths from 24 to 36 inches.",
-        products: [
-          { slug: "standard-wpc-slab", title: "Standard WPC Flush Slab",
-            blurb: "32 by 80 WPC slab door faced in painted MDF, sealed bottom edge, pre-bored for a standard 2-3/8-inch backset latch." },
-          { slug: "standard-wpc-shaker", title: "Standard WPC Shaker",
-            blurb: "30 by 80 WPC-core shaker passage door, painted MDF face with a 2-inch stile, supplied as a slab without hardware." }
-        ]
-      },
-      "decorative": {
-        slug: "decorative",
-        title: "Decorative",
-        blurb: "Carved-face panels, applied moldings, and architectural detail with the dimensional stability of a composite core.",
-        products: [
-          { slug: "decorative-applied-molding", title: "Applied-Molding WPC Door",
-            blurb: "Flush WPC slab with field-applied painted molding in a six-panel layout. Finished as one piece in our spray booth." },
-          { slug: "decorative-bead-board", title: "Beadboard WPC Door",
-            blurb: "Painted WPC door with a beadboard center panel, square stile and rail, and a flat-stock cap. For pantries, mudrooms, and cottage baths." }
-        ]
-      },
-      "heavy-duty": {
-        slug: "heavy-duty",
-        title: "Heavy-Duty",
-        blurb: "Reinforced cores for high-use rooms: laundry, basement, garage entry, and back-of-house in restaurants and B&Bs.",
-        products: [
-          { slug: "hd-laundry-passage", title: "Heavy-Duty Laundry Passage Door",
-            blurb: "Reinforced WPC core with a moisture-sealed bottom, ball-bearing hinges, and a kickplate-rated bottom rail." },
-          { slug: "hd-garage-entry", title: "Heavy-Duty Garage Entry Door",
-            blurb: "WPC slab with a steel reinforcement plate at the strike, a self-closing hinge package, and a fire-rated seal." }
-        ]
-      },
-      "sliding-wpc": {
-        slug: "sliding-wpc",
-        title: "Sliding",
-        blurb: "Pocket and barn-style sliders with WPC cores. Lighter for ceiling-mounted hardware and easier on the track over time.",
-        products: [
-          { slug: "wpc-pocket-slab", title: "WPC Pocket Slab Door",
-            blurb: "Flush WPC pocket slab faced in painted MDF with soft-close hardware, flush pull, and an integrated edge-seal at the strike jamb." },
-          { slug: "wpc-barn-veneer", title: "WPC Barn Slider, Veneered",
-            blurb: "60-inch WPC slider faced in walnut veneer, ceiling-mounted track concealed by a 1x4 trim cap, and a black-steel pull." }
-        ]
-      },
-      "custom-finish": {
-        slug: "custom-finish",
-        title: "Custom Finish",
-        blurb: "Specialty paint, glaze, lacquer, and veneer combinations finished in our spray booth before delivery.",
-        products: [
-          { slug: "custom-glazed-wpc", title: "Custom Glazed WPC Door",
-            blurb: "Painted WPC door with a hand-applied glaze settled into the door's profile and a satin-conversion-varnish topcoat." },
-          { slug: "custom-veneer-wpc", title: "Custom Veneer WPC Door",
-            blurb: "WPC core with book-matched veneer of your choice (walnut, oak, cherry, or ash). Cataloged, sequenced, and finished as a set." }
-        ]
-      }
-    }
+    flat: true,
+    products: [
+      { slug: "standard-wpc-slab", title: "Standard WPC Flush Slab",
+        blurb: "32 by 80 WPC slab door faced in painted MDF, sealed bottom edge, pre-bored for a standard 2-3/8-inch backset latch." },
+      { slug: "standard-wpc-shaker", title: "Standard WPC Shaker",
+        blurb: "30 by 80 WPC-core shaker passage door, painted MDF face with a 2-inch stile, supplied as a slab without hardware." },
+      { slug: "decorative-applied-molding", title: "Applied-Molding WPC Door",
+        blurb: "Flush WPC slab with field-applied painted molding in a six-panel layout. Finished as one piece in our spray booth." },
+      { slug: "decorative-bead-board", title: "Beadboard WPC Door",
+        blurb: "Painted WPC door with a beadboard center panel, square stile and rail, and a flat-stock cap. For pantries, mudrooms, and cottage baths." },
+      { slug: "hd-laundry-passage", title: "Heavy-Duty Laundry Passage Door",
+        blurb: "Reinforced WPC core with a moisture-sealed bottom, ball-bearing hinges, and a kickplate-rated bottom rail." },
+      { slug: "hd-garage-entry", title: "Heavy-Duty Garage Entry Door",
+        blurb: "WPC slab with a steel reinforcement plate at the strike, a self-closing hinge package, and a fire-rated seal." },
+      { slug: "wpc-pocket-slab", title: "WPC Pocket Slab Door",
+        blurb: "Flush WPC pocket slab faced in painted MDF with soft-close hardware, flush pull, and an integrated edge-seal at the strike jamb." },
+      { slug: "wpc-barn-veneer", title: "WPC Barn Slider, Veneered",
+        blurb: "60-inch WPC slider faced in walnut veneer, ceiling-mounted track concealed by a 1x4 trim cap, and a black-steel pull." },
+      { slug: "custom-glazed-wpc", title: "Custom Glazed WPC Door",
+        blurb: "Painted WPC door with a hand-applied glaze settled into the door's profile and a satin-conversion-varnish topcoat." },
+      { slug: "custom-veneer-wpc", title: "Custom Veneer WPC Door",
+        blurb: "WPC core with book-matched veneer of your choice (walnut, oak, cherry, or ash). Cataloged, sequenced, and finished as a set." }
+    ]
   },
 
   "rta-cabinets": {
     slug: "rta-cabinets",
     title: "RTA Cabinets",
     short: "Ready-to-assemble cabinetry for the trade.",
-    blurb: "For contractors, kitchen designers, and home flippers. Solid-hardwood face frames and doors shipped flat with a clear assembly sheet. Five product lines covering kitchen, bath, closet, pantry, and modular wall systems.",
+    blurb: "For contractors, kitchen designers, and home flippers. Solid-hardwood face frames and doors shipped flat with a clear assembly sheet. Kitchen, bath, closet, pantry, and modular wall systems.",
     keywords: "RTA cabinets wholesale Boston, contractor cabinet supplier, flat pack solid wood cabinets, kitchen RTA Massachusetts",
-    sections: {
-      "kitchen-rta": {
-        slug: "kitchen-rta",
-        title: "Kitchen RTA",
-        blurb: "Base, wall, and tall kitchen cabinets in standard 3-inch-increment widths. Painted-maple or stained-oak shaker doors.",
-        products: [
-          { slug: "rta-painted-shaker-kitchen", title: "Painted Shaker Kitchen RTA",
-            blurb: "Painted-maple shaker doors, plywood box, soft-close hinges and slides, and a 30-minute assembly time per box with a cam-lock system." },
-          { slug: "rta-stained-oak-kitchen", title: "Stained White Oak Kitchen RTA",
-            blurb: "Quarter-sawn oak shaker doors in a warm-tobacco stain, plywood box, soft-close hardware, and matching plywood end panels." }
-        ]
-      },
-      "bath-rta": {
-        slug: "bath-rta",
-        title: "Bath RTA",
-        blurb: "Single and double vanity cabinets in standard 30 to 72-inch widths. Sized for off-the-shelf stone tops.",
-        products: [
-          { slug: "rta-30-vanity", title: "30-Inch RTA Vanity",
-            blurb: "30-inch single-sink shaker vanity in painted maple, two doors and one false drawer front, sized for a 31-inch stone top." },
-          { slug: "rta-60-double-vanity", title: "60-Inch RTA Double Vanity",
-            blurb: "60-inch double-sink shaker vanity in painted maple, four doors and two false drawer fronts, sized for a 61-inch double-basin top." }
-        ]
-      },
-      "closet-rta": {
-        slug: "closet-rta",
-        title: "Closet RTA",
-        blurb: "Walk-in and reach-in closet systems shipped as a kit. Includes towers, drawer banks, hanging rails, and end panels.",
-        products: [
-          { slug: "rta-walk-in-kit", title: "RTA Walk-In Closet Kit",
-            blurb: "8x10 walk-in kit with two drawer towers, two hanging sections, one shoe ladder, and an optional island upgrade." },
-          { slug: "rta-reach-in-kit", title: "RTA Reach-In Closet Kit",
-            blurb: "6-foot reach-in kit with one drawer tower, a double-hang section, and a shelf bank. Trim and end caps included." }
-        ]
-      },
-      "pantry-rta": {
-        slug: "pantry-rta",
-        title: "Pantry RTA",
-        blurb: "Walk-in pantry kits and shallow-depth wall pantries. Adjustable shelving, drawer banks, and counter-height appliance garages.",
-        products: [
-          { slug: "rta-walk-in-pantry", title: "RTA Walk-In Pantry Kit",
-            blurb: "4x6 walk-in pantry kit with three adjustable-shelf towers, a counter-height workstation, and an appliance garage with a tambour door." },
-          { slug: "rta-shallow-pantry", title: "RTA Shallow Wall Pantry",
-            blurb: "10-inch-deep wall pantry with five adjustable shelves, painted-maple shaker doors, and a baseboard return." }
-        ]
-      },
-      "modular": {
-        slug: "modular",
-        title: "Modular Systems",
-        blurb: "Modular wall systems for living rooms, home offices, and media walls. Mix and match base cabinets, open shelves, and tall towers.",
-        products: [
-          { slug: "modular-media-wall", title: "Modular Media Wall Kit",
-            blurb: "Three-bay media wall kit with base cabinets, a center open run for a TV, and two tall side towers. Ships in five boxes." },
-          { slug: "modular-home-office", title: "Modular Home Office Kit",
-            blurb: "Wall-to-wall home office kit with a desk run, two file towers, a printer cabinet, and a stretch of open shelving above." }
-        ]
-      }
-    }
+    flat: true,
+    products: [
+      { slug: "rta-painted-shaker-kitchen", title: "Painted Shaker Kitchen RTA",
+        blurb: "Painted-maple shaker doors, plywood box, soft-close hinges and slides, and a 30-minute assembly time per box with a cam-lock system." },
+      { slug: "rta-stained-oak-kitchen", title: "Stained White Oak Kitchen RTA",
+        blurb: "Quarter-sawn oak shaker doors in a warm-tobacco stain, plywood box, soft-close hardware, and matching plywood end panels." },
+      { slug: "rta-30-vanity", title: "30-Inch RTA Vanity",
+        blurb: "30-inch single-sink shaker vanity in painted maple, two doors and one false drawer front, sized for a 31-inch stone top." },
+      { slug: "rta-60-double-vanity", title: "60-Inch RTA Double Vanity",
+        blurb: "60-inch double-sink shaker vanity in painted maple, four doors and two false drawer fronts, sized for a 61-inch double-basin top." },
+      { slug: "rta-walk-in-kit", title: "RTA Walk-In Closet Kit",
+        blurb: "8x10 walk-in kit with two drawer towers, two hanging sections, one shoe ladder, and an optional island upgrade." },
+      { slug: "rta-reach-in-kit", title: "RTA Reach-In Closet Kit",
+        blurb: "6-foot reach-in kit with one drawer tower, a double-hang section, and a shelf bank. Trim and end caps included." },
+      { slug: "rta-walk-in-pantry", title: "RTA Walk-In Pantry Kit",
+        blurb: "4x6 walk-in pantry kit with three adjustable-shelf towers, a counter-height workstation, and an appliance garage with a tambour door." },
+      { slug: "rta-shallow-pantry", title: "RTA Shallow Wall Pantry",
+        blurb: "10-inch-deep wall pantry with five adjustable shelves, painted-maple shaker doors, and a baseboard return." },
+      { slug: "modular-media-wall", title: "Modular Media Wall Kit",
+        blurb: "Three-bay media wall kit with base cabinets, a center open run for a TV, and two tall side towers. Ships in five boxes." },
+      { slug: "modular-home-office", title: "Modular Home Office Kit",
+        blurb: "Wall-to-wall home office kit with a desk run, two file towers, a printer cabinet, and a stretch of open shelving above." }
+    ]
   },
 
   "aluminum": {
@@ -466,58 +453,25 @@ const CATALOG = {
     keywords: "aluminum entry doors Boston, casement windows Watertown MA, patio slider doors, thermally broken aluminum",
     sections: {
       "entry-doors": {
-        slug: "entry-doors",
-        title: "Entry Doors",
-        blurb: "Thermally-broken aluminum entry doors with multi-point locks, weather seals, and an option for an interior hardwood face.",
+        slug: "doors",
+        title: "Aluminum Doors",
+        blurb: "Thermally-broken entry doors and sliding patio doors with multi-point locks, weather seals, and an option for an interior hardwood face.",
         products: [
           { slug: "aluminum-entry-with-sidelight", title: "Aluminum Entry with Sidelight",
             blurb: "36-inch thermally-broken aluminum entry door with one fixed sidelight, multi-point lock, and a painted exterior in your color." },
-          { slug: "double-aluminum-entry", title: "Double Aluminum Entry",
-            blurb: "Pair of 32-inch aluminum entry doors with an astragal, three-point lock on the active leaf, and weather-seal sweeps at each threshold." }
+          { slug: "three-panel-aluminum-slider", title: "Three-Panel Aluminum Patio Slider",
+            blurb: "9-foot three-panel aluminum patio slider with a center fixed panel, two operating panels, and a concealed bottom track flush to the floor." }
         ]
       },
-      "patio-doors": {
-        slug: "patio-doors",
-        title: "Patio Doors",
-        blurb: "Aluminum sliding and bi-fold patio doors. Two, three, and four-panel configurations with concealed bottom tracks.",
-        products: [
-          { slug: "three-panel-aluminum-slider", title: "Three-Panel Aluminum Slider",
-            blurb: "9-foot three-panel aluminum patio slider with a center fixed panel, two operating panels, and a concealed bottom track flush to the floor." },
-          { slug: "bifold-aluminum-patio", title: "Bi-Fold Aluminum Patio Door",
-            blurb: "12-foot four-panel aluminum bi-fold with a tracking foot at the bottom rail, a hardwood interior cap, and matching exterior trim." }
-        ]
-      },
-      "casement-windows": {
-        slug: "casement-windows",
-        title: "Casement Windows",
-        blurb: "Crank-out casements with concealed multi-point locks. Operated singly or as a pair with a fixed center.",
+      "windows": {
+        slug: "windows",
+        title: "Aluminum Windows",
+        blurb: "Crank-out casements and horizontal sliders with concealed multi-point locks. Thermally-broken frames, low-E argon glazing.",
         products: [
           { slug: "single-casement-aluminum", title: "Single Aluminum Casement",
-            blurb: "30 by 48-inch single casement with a concealed crank, multi-point lock, and a low-E argon-filled insulated unit." },
-          { slug: "trio-casement-aluminum", title: "Casement Trio with Fixed Center",
-            blurb: "Three-window assembly: two crank-out casements flanking a fixed center pane, with mulled aluminum frames and a hardwood interior return." }
-        ]
-      },
-      "sliding-windows": {
-        slug: "sliding-windows",
-        title: "Sliding Windows",
-        blurb: "Horizontal sliding windows for kitchens, baths, and laundry rooms where a casement crank is in the way.",
-        products: [
-          { slug: "two-panel-aluminum-slider", title: "Two-Panel Aluminum Sliding Window",
-            blurb: "36 by 24-inch horizontal slider with a fixed and an operating sash, recessed pulls, and a tilt-out clean feature." },
+            blurb: "30 by 48-inch single casement with a concealed crank, multi-point lock, and a low-E argon-filled insulated glazing unit." },
           { slug: "three-panel-aluminum-slider-window", title: "Three-Panel Aluminum Sliding Window",
             blurb: "60 by 36-inch three-panel slider with a center fixed pane and two operating side sashes, low-E argon-filled glazing." }
-        ]
-      },
-      "custom-aluminum": {
-        slug: "custom-aluminum",
-        title: "Custom Aluminum",
-        blurb: "Arched, transom, and oversized custom-shape aluminum windows. Curved-glass options for round and elliptical openings.",
-        products: [
-          { slug: "arched-transom-aluminum", title: "Arched Transom Aluminum",
-            blurb: "Custom arched transom over an entry door, mulled to the door head and powder-coated to match. Insulated curved glass." },
-          { slug: "oversized-fixed-aluminum", title: "Oversized Fixed Aluminum Picture Window",
-            blurb: "8 by 6-foot single fixed aluminum picture window, thermally-broken frame, low-E argon, and a slim 1.5-inch sightline." }
         ]
       }
     }
