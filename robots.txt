@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_wireframes/
+
+Sitemap: https://kitchandklozets.com/sitemap.xml

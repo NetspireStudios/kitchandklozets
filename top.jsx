@@ -5,11 +5,11 @@ function Nav({ onMenu }) {
   return (
     <header className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav-inner">
-        <a href="#top" className="nav-logo" aria-label="Kitchen and Klosets, home">
+        <a href="#top" className="nav-logo" aria-label="Kitch and Klozets, home">
           <img className="nav-mark" src="assets/logo.png" alt="" width="64" height="64"/>
           <div className="nav-title">
-            <b>Kitchen &amp; Klosets</b>
-            <small>Cabinetmakers · 2008</small>
+            <b>Kitch &amp; Klozets</b>
+            <small>Cabinetmakers · Watertown MA</small>
           </div>
         </a>
         <nav className="nav-links">
@@ -38,7 +38,7 @@ function MobileDrawer({ open, onClose }) {
         <div className="drawer-head">
           <div className="nav-logo">
             <img className="nav-mark" src="assets/logo.png" alt="" width="64" height="64"/>
-            <div className="nav-title"><b>Kitchen &amp; Klosets</b></div>
+            <div className="nav-title"><b>Kitch &amp; Klozets</b></div>
           </div>
           <button className="nav-toggle" onClick={onClose} aria-label="Close menu">
             <svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 3l14 14M17 3L3 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
@@ -88,12 +88,12 @@ function Hero() {
               <span className="eyebrow">Family-run · Watertown, MA</span>
             </div>
             <h1 className="display hero-title">
-              Cabinets your<br/>
-              <span className="accent">grandkids</span> will<br/>
-              still slam.
+              Custom cabinets<br/>
+              your <span className="accent">grandkids</span><br/>
+              will still slam.
             </h1>
             <p className="hero-lede">
-              A six-person shop in Watertown, building furniture-grade kitchens and closets out of solid hardwood. No flat-pack. No MDF carcasses. No flashy promises.
+              A six-person cabinet shop in Watertown, MA, building furniture-grade custom kitchens, closets, and built-ins out of solid hardwood. Serving Cambridge, Newton, Brookline, Belmont, and Greater Boston since 2008.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-walnut" href="#cta">

@@ -42,7 +42,7 @@ function Workshop() {
                 <p>{s.d}</p>
               </div>
               <div className="ph tl-thumb" style={{ background: `linear-gradient(160deg, ${s.tint}, #2A1F15)` }}>
-                <Img src={s.img} alt={s.t} w={600}/>
+                <Img src={s.img} alt={`${s.t} stage of a custom cabinetry project by Kitch and Klozets`} w={600}/>
                 <CabinetOverlay opacity={0.28}/>
               </div>
             </div>
@@ -152,7 +152,7 @@ function Testimonials() {
             <article key={i} className="testimonial" data-reveal style={{ "--rot": `${t.rot}deg`, "--delay": `${i * 80}ms` }}>
               <span className="tape"/>
               <div className="ph" style={{ background: `linear-gradient(160deg, ${["#3B2A1E","#7E8B6F","#B85A3F"][i]}, #1c130a)` }}>
-                <Img src={t.img} alt={t.n} w={500}/>
+                <Img src={t.img} alt={`Custom kitchen and closet project for ${t.n} in ${t.loc}`} w={500}/>
                 <CabinetOverlay opacity={0.32}/>
               </div>
               <div className="testimonial-body">
@@ -163,6 +163,62 @@ function Testimonials() {
                 </div>
               </div>
             </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const FAQ_ITEMS = [
+  {
+    q: "How much do custom kitchen cabinets cost in Massachusetts?",
+    a: "A custom solid-hardwood kitchen from us typically runs $45,000–$120,000 depending on size, wood species, and hardware. A free in-home consultation gives you a real number against your floor plan; we send a fixed quote within two weeks, not a moving estimate."
+  },
+  {
+    q: "How long does a custom kitchen or closet project take?",
+    a: "About four months end to end. One week of site measurement, two to three weeks of hand-drawn elevations, one week of material picks, eight to ten weeks on the bench in our Watertown shop, and two weeks of on-site install. We quote a date and hold it."
+  },
+  {
+    q: "What's the difference between custom, semi-custom, and stock cabinets?",
+    a: "Stock cabinets are pre-built in fixed sizes with stapled MDF carcasses. Semi-custom lets you pick a finish but still uses modular boxes. Custom (our entire product) is drawn to your exact room, joined in solid hardwood, and finished by hand in our shop. Different category, different lifespan."
+  },
+  {
+    q: "What wood species and door styles do you offer?",
+    a: "Six FSC-certified hardwoods, all sourced within 300 miles of the shop: black walnut, rift white oak, cherry, hard maple, ebonized ash, and reclaimed chestnut. Door styles include shaker, inset, beaded inset, and slab. Finishes are hand-applied; no stains or fillers."
+  },
+  {
+    q: "Do you handle the full remodel or just build the cabinetry?",
+    a: "We build, finish, and install all the cabinetry, vanities, built-ins, and millwork. For full remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Boston contractors we've worked with for years."
+  }
+];
+
+function FAQ() {
+  const [open, setOpen] = React.useState(0);
+  return (
+    <section className="faq" id="faq">
+      <div className="container">
+        <div className="section-head" data-reveal>
+          <div>
+            <span className="eyebrow">Common questions</span>
+            <h2 className="display">What homeowners ask us first.</h2>
+          </div>
+          <p className="hint">
+            Pricing, lead time, materials, scope. Short answers; longer ones happen at the kitchen table.
+          </p>
+        </div>
+
+        <div className="faq-list" data-reveal>
+          {FAQ_ITEMS.map((item, i) => (
+            <details key={i} className="faq-item" open={open === i}
+              onToggle={(e) => { if (e.currentTarget.open) setOpen(i); }}>
+              <summary>
+                <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="faq-q">{item.q}</span>
+                <span className="faq-mark">＋</span>
+              </summary>
+              <div className="faq-a">{item.a}</div>
+            </details>
           ))}
         </div>
       </div>
@@ -208,7 +264,7 @@ function Footer() {
           <div>
             <div className="footer-brand">
               <div className="mark"><img src="assets/logo.png" alt=""/></div>
-              <div className="display name">Kitchen &amp; Klosets</div>
+              <div className="display name">Kitch &amp; Klozets</div>
             </div>
             <div className="footer-about">
               84 Pleasant Street, Watertown MA 02472<br/>
@@ -236,7 +292,7 @@ function Footer() {
           ))}
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Kitchen &amp; Klosets · Made in Watertown</span>
+          <span>© 2026 Kitch &amp; Klozets · Custom cabinetmakers · Watertown, MA</span>
           <span>10-year warranty on every joint we cut</span>
         </div>
       </div>
@@ -244,4 +300,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { Workshop, MapGallery, Testimonials, CTA, Footer });
+Object.assign(window, { Workshop, MapGallery, Testimonials, FAQ, CTA, Footer });
