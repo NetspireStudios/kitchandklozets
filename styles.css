@@ -1,7 +1,7 @@
 /* Kitchen & Klosets — Warm Craftsman site
    Responsive, mobile-first. Fluid type via clamp(). */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap");
 
 :root {
   --bg:         #EFE7D7;
@@ -36,7 +36,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: "Inter Tight", system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -51,7 +51,7 @@ button { font-family: inherit; }
 img { display: block; max-width: 100%; }
 
 .display {
-  font-family: "Inter Tight", system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 0.96;
@@ -365,7 +365,7 @@ section { position: relative; }
   font-size: 18px; color: var(--walnut);
 }
 .polaroid-cap small {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 11px; color: var(--muted);
   letter-spacing: 0;
 }
