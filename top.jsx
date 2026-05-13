@@ -54,6 +54,9 @@ function Nav({ onMenu }) {
 function MobileDrawer({ open, onClose }) {
   useScrollLock(open);
   const [prodExpanded, setProdExpanded] = React.useState(false);
+  const [openCat, setOpenCat] = React.useState(null);
+  const toggleCat = (slug) => setOpenCat(prev => prev === slug ? null : slug);
+
   return (
     <>
       <div className={`drawer-backdrop ${open ? "open" : ""}`} onClick={onClose}/>
@@ -79,11 +82,31 @@ function MobileDrawer({ open, onClose }) {
                 </button>
                 {prodExpanded && (
                   <div className="drawer-group-list">
-                    {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => (
-                      <a key={cat.slug} href={`/${cat.slug}`} onClick={onClose}>
-                        {cat.title}
-                      </a>
-                    ))}
+                    {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => {
+                      const isOpen = openCat === cat.slug;
+                      return (
+                        <div key={cat.slug} className={`drawer-subgroup ${isOpen ? "open" : ""}`}>
+                          <button className="drawer-subgroup-trigger"
+                            onClick={() => toggleCat(cat.slug)}
+                            aria-expanded={isOpen}>
+                            <span>{cat.title}</span>
+                            <span className="drawer-subgroup-caret" aria-hidden="true">▾</span>
+                          </button>
+                          {isOpen && (
+                            <div className="drawer-subgroup-list">
+                              <a href={`/${cat.slug}`} className="drawer-subgroup-all" onClick={onClose}>
+                                See all in {cat.title} →
+                              </a>
+                              {Object.values(cat.sections).map(sec => (
+                                <a key={sec.slug} href={`/${cat.slug}/${sec.slug}`} onClick={onClose}>
+                                  {sec.title}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>

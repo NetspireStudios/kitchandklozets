@@ -293,20 +293,52 @@ function ContactForm({ product, category }) {
 
 function MegaMenu({ open, onClose }) {
   const cats = listCategories();
+  const [active, setActive] = React.useState(cats[0]?.slug || null);
   if (!open) return null;
+  const activeCat = active ? CATALOG[active] : null;
   return (
     <div className="mega-menu" onMouseLeave={onClose} role="menu" aria-label="Products">
       <div className="mega-menu-inner">
-        <div className="mega-menu-grid">
-          {cats.map(cat => (
-            <a key={cat.slug} href={`/${cat.slug}`} className="mega-menu-item" role="menuitem">
-              <div className="mm-title">{cat.title}</div>
-              <div className="mm-short">{cat.short}</div>
-              <div className="mm-sections">
-                {Object.values(cat.sections).slice(0, 4).map(s => s.title).join(" · ")}
+        <div className="mega-menu-cols">
+
+          {/* Left: 8 categories. Hover or focus reveals their sections on the right.
+              Click navigates to the category page itself. */}
+          <nav className="mm-col mm-col-cats" aria-label="Product categories">
+            {cats.map(cat => (
+              <a key={cat.slug} href={`/${cat.slug}`}
+                 className={`mm-cat ${active === cat.slug ? "active" : ""}`}
+                 onMouseEnter={() => setActive(cat.slug)}
+                 onFocus={() => setActive(cat.slug)}
+                 role="menuitem">
+                <span className="mm-cat-title">{cat.title}</span>
+                <span className="mm-cat-arrow" aria-hidden="true">›</span>
+              </a>
+            ))}
+          </nav>
+
+          {/* Middle: sections of the currently-active category. */}
+          <div className="mm-col mm-col-secs" aria-label={activeCat ? `${activeCat.title} sections` : ""}>
+            {activeCat && Object.values(activeCat.sections).map(sec => (
+              <a key={sec.slug} href={`/${active}/${sec.slug}`} className="mm-sec" role="menuitem">
+                {sec.title}
+              </a>
+            ))}
+          </div>
+
+          {/* Right: small promo / quick action for the active category. */}
+          <aside className="mm-col mm-col-promo" aria-hidden="true">
+            {activeCat && (
+              <div className="mm-promo">
+                <span className="eyebrow">Browse the full set</span>
+                <h4 className="display">{activeCat.title}</h4>
+                <p>{activeCat.short}</p>
+                <a className="link-underline mm-promo-cta" href={`/${active}`}>
+                  See all in {activeCat.title} <span aria-hidden="true">→</span>
+                </a>
               </div>
-            </a>
-          ))}
+            )}
+          </aside>
+
         </div>
       </div>
     </div>
