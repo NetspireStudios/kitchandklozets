@@ -88,9 +88,7 @@ function Hero() {
               <span className="eyebrow">Family-run · Watertown, MA</span>
             </div>
             <h1 className="display hero-title">
-              Custom cabinets<br/>
-              your <span className="accent">grandkids</span><br/>
-              will still slam.
+              Custom cabinets your <span className="accent">grandkids</span> will still slam.
             </h1>
             <p className="hero-lede">
               A six-person cabinet shop in Watertown, MA, building furniture-grade custom kitchens, closets, and built-ins out of solid hardwood. Serving Cambridge, Newton, Brookline, Belmont, and Greater Boston since 2008.
