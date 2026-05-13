@@ -293,3 +293,38 @@ Object.keys(CATALOG).forEach((catSlug) => {
 });
 
 console.log(`\nDone. ${cats} categories, ${secs} sections, ${prods} products = ${cats + secs + prods} files written.`);
+
+// ─── sitemap.xml ───────────────────────────────────────────────────────────
+const TODAY = new Date().toISOString().slice(0, 10);
+const urls = [];
+const pushUrl = (loc, priority, changefreq) => urls.push({ loc, priority, changefreq });
+
+pushUrl(`${BASE}/`,         "1.0", "monthly");
+pushUrl(`${BASE}/about`,    "0.7", "monthly");
+pushUrl(`${BASE}/projects`, "0.5", "monthly");
+pushUrl(`${BASE}/faq`,      "0.7", "monthly");
+pushUrl(`${BASE}/contact`,  "0.8", "monthly");
+
+Object.keys(CATALOG).forEach((catSlug) => {
+  pushUrl(`${BASE}/${catSlug}`, "0.9", "monthly");
+  Object.keys(CATALOG[catSlug].sections).forEach((secSlug) => {
+    pushUrl(`${BASE}/${catSlug}/${secSlug}`, "0.7", "monthly");
+    CATALOG[catSlug].sections[secSlug].products.forEach((prod) => {
+      pushUrl(`${BASE}/${catSlug}/${secSlug}/${prod.slug}`, "0.6", "monthly");
+    });
+  });
+});
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-0.9">
+${urls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join("\n")}
+</urlset>
+`;
+
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);
+console.log(`Wrote sitemap.xml with ${urls.length} URLs.`);
