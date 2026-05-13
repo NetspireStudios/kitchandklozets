@@ -85,11 +85,12 @@ const TESTIMONIALS = [
 ];
 
 const NAV_LINKS = [
-  ["What we build", "#services"],
-  ["Wood library",  "#wood"],
-  ["The workshop",  "#workshop"],
-  ["Past projects", "#map"],
-  ["Visit us",      "#cta"],
+  { label: "Home",     href: "/" },
+  { label: "Products", mega: true },
+  { label: "About",    href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "FAQ",      href: "/faq" },
+  { label: "Contact",  href: "/contact" },
 ];
 
 Object.assign(window, { IMG, WOODS, SERVICES, STATS, WORKSHOP, PINS, TESTIMONIALS, NAV_LINKS });

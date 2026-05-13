@@ -2,56 +2,99 @@
 
 function Nav({ onMenu }) {
   const scrolled = useScrolled(8);
+  const [megaOpen, setMegaOpen] = React.useState(false);
+  const closeMega = () => setMegaOpen(false);
+  React.useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") closeMega(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
   return (
-    <header className={`nav ${scrolled ? "scrolled" : ""}`}>
+    <header className={`nav ${scrolled ? "scrolled" : ""} ${megaOpen ? "mega-open" : ""}`}
+            onMouseLeave={closeMega}>
       <div className="container nav-inner">
-        <a href="#top" className="nav-logo" aria-label="Kitch and Klozets, home">
-          <img className="nav-mark" src="assets/logo.png" alt="" width="64" height="64"/>
+        <a href="/" className="nav-logo" aria-label="Kitch and Klozets, home">
+          <img className="nav-mark" src="/assets/logo.png" alt="" width="64" height="64"/>
           <div className="nav-title">
             <b>Kitch &amp; Klozets</b>
             <small>Cabinetmakers · Watertown MA</small>
           </div>
         </a>
-        <nav className="nav-links">
-          {NAV_LINKS.map(([label, href]) => (
-            <a key={href} href={href} className="link-underline">{label}</a>
+        <nav className="nav-links" aria-label="Primary">
+          {NAV_LINKS.map((item) => (
+            item.mega ? (
+              <button key={item.label}
+                className={`nav-mega-trigger link-underline ${megaOpen ? "active" : ""}`}
+                onMouseEnter={() => setMegaOpen(true)}
+                onFocus={() => setMegaOpen(true)}
+                onClick={() => setMegaOpen(o => !o)}
+                aria-haspopup="true" aria-expanded={megaOpen}>
+                {item.label}
+                <span className="nav-mega-caret" aria-hidden="true">▾</span>
+              </button>
+            ) : (
+              <a key={item.label} href={item.href} className="link-underline"
+                 onMouseEnter={closeMega}>{item.label}</a>
+            )
           ))}
         </nav>
         <div className="nav-cta">
           <a href="tel:+15483331419" className="nav-phone">(548) 333-1419</a>
-          <a href="#cta" className="btn btn-walnut">Get a quote</a>
+          <a href="/contact" className="btn btn-walnut">Get a quote</a>
           <button className="nav-toggle" onClick={onMenu} aria-label="Open menu">
             <svg width="22" height="14" viewBox="0 0 22 14"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
           </button>
         </div>
       </div>
+      <MegaMenu open={megaOpen} onClose={closeMega}/>
     </header>
   );
 }
 
 function MobileDrawer({ open, onClose }) {
   useScrollLock(open);
+  const [prodExpanded, setProdExpanded] = React.useState(false);
   return (
     <>
       <div className={`drawer-backdrop ${open ? "open" : ""}`} onClick={onClose}/>
       <aside className={`drawer ${open ? "open" : ""}`} aria-hidden={!open}>
         <div className="drawer-head">
-          <div className="nav-logo">
-            <img className="nav-mark" src="assets/logo.png" alt="" width="64" height="64"/>
+          <a href="/" className="nav-logo" onClick={onClose}>
+            <img className="nav-mark" src="/assets/logo.png" alt="" width="64" height="64"/>
             <div className="nav-title"><b>Kitch &amp; Klozets</b></div>
-          </div>
+          </a>
           <button className="nav-toggle" onClick={onClose} aria-label="Close menu">
             <svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 3l14 14M17 3L3 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
           </button>
         </div>
         <div className="drawer-links">
-          {NAV_LINKS.map(([label, href]) => (
-            <a key={href} href={href} onClick={onClose}>{label}</a>
+          {NAV_LINKS.map((item) => (
+            item.mega ? (
+              <div key={item.label} className={`drawer-group ${prodExpanded ? "open" : ""}`}>
+                <button className="drawer-group-trigger"
+                  onClick={() => setProdExpanded(v => !v)}
+                  aria-expanded={prodExpanded}>
+                  <span>{item.label}</span>
+                  <span className="drawer-group-caret" aria-hidden="true">▾</span>
+                </button>
+                {prodExpanded && (
+                  <div className="drawer-group-list">
+                    {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => (
+                      <a key={cat.slug} href={`/${cat.slug}`} onClick={onClose}>
+                        {cat.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <a key={item.label} href={item.href} onClick={onClose}>{item.label}</a>
+            )
           ))}
         </div>
         <div className="drawer-bottom">
           <a className="btn btn-clay" href="tel:+15483331419">(548) 333-1419</a>
-          <a className="btn btn-walnut" href="#cta" onClick={onClose}>Get a quote</a>
+          <a className="btn btn-walnut" href="/contact" onClick={onClose}>Get a quote</a>
         </div>
       </aside>
     </>
