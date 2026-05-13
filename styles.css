@@ -2005,17 +2005,18 @@ a.contact-card:hover {
 
 /* ── PRODUCT-PAGE FAQ ────────────────────────────────────── */
 .product-faq {
-  margin-top: clamp(40px, 5vw, 72px);
-  padding-top: clamp(36px, 4.5vw, 64px);
+  margin-top:    clamp(56px, 7vw, 96px);
+  margin-bottom: clamp(56px, 7vw, 96px);
+  padding-top:   clamp(56px, 7vw, 96px);
   border-top: 1px solid var(--rule);
 }
 .product-faq-head {
-  margin-bottom: clamp(20px, 2.5vw, 32px);
+  margin-bottom: clamp(24px, 3vw, 40px);
 }
 .product-faq-head .display {
   font-size: clamp(26px, 3vw, 42px);
   color: var(--walnut);
-  margin: 6px 0 0;
+  margin: 10px 0 0;
   letter-spacing: -0.025em;
 }
 
