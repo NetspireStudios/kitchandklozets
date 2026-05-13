@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Kitchen & Klosets — Wireframes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="royal.jsx"></script>
+<script type="text/babel" src="minimal.jsx"></script>
+<script type="text/babel" src="craftsman.jsx"></script>
+<script type="text/babel" src="mobile.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "minimalism": false,
+  "showMobile": true
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    document.body.classList.toggle("minimalism", !!t.minimalism);
+  }, [t.minimalism]);
+
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection id="desktop" title="Kitchen & Klosets — three directions"
+                   subtitle="Desktop · 1440 wide. Drag to reorder. Click expand on any board to view fullscreen.">
+          <DCArtboard id="royal"   label="01 · Royal Atelier — navy + champagne"     width={1440} height={6500}>
+            <RoyalHomepage/>
+          </DCArtboard>
+          <DCArtboard id="arch"    label="02 · Architectural Gallery — off-white + brass" width={1440} height={6000}>
+            <ArchHomepage/>
+          </DCArtboard>
+          <DCArtboard id="craft"   label="03 · Warm Craftsman — bone + walnut + clay"  width={1440} height={6300}>
+            <CraftHomepage/>
+          </DCArtboard>
+        </DCSection>
+
+        {t.showMobile && (
+          <DCSection id="mobile" title="Mobile peek" subtitle="One condensed mobile view per direction · 390 wide.">
+            <DCArtboard id="royal-m" label="Royal · mobile"        width={390} height={1900}>
+              <RoyalMobile/>
+            </DCArtboard>
+            <DCArtboard id="arch-m"  label="Architectural · mobile" width={390} height={1700}>
+              <ArchMobile/>
+            </DCArtboard>
+            <DCArtboard id="craft-m" label="Craftsman · mobile"     width={390} height={2050}>
+              <CraftMobile/>
+            </DCArtboard>
+          </DCSection>
+        )}
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="View"/>
+        <TweakToggle  label="Minimalism mode"
+                      hint="Strips ornament and marquees site-wide"
+                      value={t.minimalism}
+                      onChange={(v) => setTweak('minimalism', v)}/>
+        <TweakToggle  label="Show mobile peeks"
+                      value={t.showMobile}
+                      onChange={(v) => setTweak('showMobile', v)}/>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

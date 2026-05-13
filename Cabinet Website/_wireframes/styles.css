@@ -1,0 +1,126 @@
+/* kitchenandklosets wireframes — shared base */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:wght@200;300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap");
+
+* { box-sizing: border-box; }
+
+/* Each artboard scopes itself via .theme-{name} so styles don't leak. */
+
+/* ── ROYAL ATELIER ─────────────────────────────── */
+.theme-royal {
+  --bg: #F4EFE3;
+  --paper: #FBF7EC;
+  --ink: #0B132A;
+  --navy: #0E1E3A;
+  --navy-soft: #1A2A4A;
+  --gold: #B8924B;
+  --champagne: #D9B97A;
+  --muted: #6B6F7B;
+  --rule: rgba(11, 19, 42, 0.14);
+  font-family: "Inter Tight", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  letter-spacing: -0.005em;
+}
+.theme-royal .display {
+  font-family: "Fraunces", "Inter Tight", serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+/* ── ARCHITECTURAL GALLERY ─────────────────────── */
+.theme-arch {
+  --bg: #F4F2EC;
+  --paper: #FFFFFF;
+  --ink: #131310;
+  --charcoal: #1B1B1B;
+  --brass: #A87A3C;
+  --concrete: #C9C5BC;
+  --muted: #7A7770;
+  --rule: rgba(19, 19, 16, 0.12);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  letter-spacing: -0.01em;
+}
+.theme-arch .display {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+}
+
+/* ── WARM CRAFTSMAN ────────────────────────────── */
+.theme-craft {
+  --bg: #EFE7D7;
+  --paper: #F7F0E0;
+  --ink: #2A1F15;
+  --walnut: #3B2A1E;
+  --walnut-soft: #5B4434;
+  --clay: #B85A3F;
+  --sage: #7E8B6F;
+  --cream: #FAF4E8;
+  --muted: #7A6A58;
+  --rule: rgba(42, 31, 21, 0.14);
+  font-family: "Inter Tight", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  letter-spacing: -0.005em;
+}
+.theme-craft .display {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+
+/* generic hi-fi placeholder boxes */
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+}
+.ph::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(180deg, transparent 0 50%, rgba(255,255,255,0.04) 50%),
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08), transparent 40%);
+  pointer-events: none;
+}
+.ph .lbl {
+  position: absolute;
+  left: 14px; bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* fine animations */
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+@keyframes blink-cursor {
+  0%, 60% { opacity: 1; } 61%, 100% { opacity: 0; }
+}
+
+/* Minimalism tweak — collapses decorative ornamentation across all themes */
+.minimalism .deco { display: none !important; }
+.minimalism .ornament { display: none !important; }
+.minimalism .filmstrip-meta-overlay { opacity: 0.5; }

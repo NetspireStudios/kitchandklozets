@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Kitchen &amp; Klosets · Custom cabinetmakers in Watertown, MA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Family-run cabinetmakers building furniture-grade kitchens, closets, and built-ins out of solid hardwood. Watertown, Massachusetts. Established 2008."/>
+<meta name="theme-color" content="#3B2A1E"/>
+<meta name="color-scheme" content="light"/>
+<link rel="canonical" href="https://kitchandklozets.com/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kitchen & Klosets"/>
+<meta property="og:title" content="Kitchen & Klosets · Custom cabinetmakers in Watertown, MA"/>
+<meta property="og:description" content="Furniture-grade kitchens, closets, and built-ins. Solid hardwood, six-person shop, 10-year warranty."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80&auto=format&fit=crop"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kitchen & Klosets · Custom cabinetmakers"/>
+<meta name="twitter:description" content="Furniture-grade kitchens and closets in solid hardwood. Watertown, MA."/>
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80&auto=format&fit=crop"/>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%233B2A1E'/%3E%3Ctext x='32' y='44' font-family='Inter,system-ui,sans-serif' font-size='34' font-weight='700' fill='%23FAF4E8' text-anchor='middle'%3Ek%26%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
+<link rel="dns-prefetch" href="https://images.unsplash.com"/>
+
+<link rel="preload" as="image" fetchpriority="high"
+      href="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80&auto=format&fit=crop"/>
+
+<link rel="stylesheet" href="styles.css"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://kitchandklozets.com/#business",
+  "name": "Kitchen & Klosets",
+  "description": "Family-run cabinetmakers building furniture-grade kitchens and closets out of solid hardwood.",
+  "url": "https://kitchandklozets.com/",
+  "telephone": "+1-548-333-1419",
+  "email": "sales@kitchandklozets.com",
+  "foundingDate": "2008",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "84 Pleasant Street",
+    "addressLocality": "Watertown",
+    "addressRegion": "MA",
+    "postalCode": "02472",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Greater Boston" },
+    { "@type": "AdministrativeArea", "name": "New England" }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "description": "By appointment"
+    }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom kitchens" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom closets" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pantries" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bath vanities" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Built-ins" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mudrooms" } }
+  ]
+}
+</script>
+</head>
+<body style="background-color: rgb(250, 238, 223)">
+<a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<div id="root"></div>
+
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="utils.jsx"></script>
+<script type="text/babel" src="top.jsx"></script>
+<script type="text/babel" src="middle.jsx"></script>
+<script type="text/babel" src="bottom.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  // Global reveal observer for any [data-reveal] outside of useReveal hooks.
+  // MUST have [] deps; without them, the effect tears down and recreates the
+  // observer on every render before its initial async callback can fire.
+  React.useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in-view");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll("[data-reveal]:not(.in-view)").forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  // Close drawer on resize past breakpoint
+  React.useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 720) setDrawerOpen(false); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return (
+    <>
+      <Nav onMenu={() => setDrawerOpen(true)}/>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+      <main>
+        <Hero/>
+        <Services/>
+        <ByTheBench/>
+        <WoodLibrary/>
+        <Workshop/>
+        <Testimonials/>
+        <MapGallery/>
+        <CTA/>
+      </main>
+      <Footer/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
