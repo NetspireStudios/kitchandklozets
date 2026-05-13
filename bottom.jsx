@@ -192,7 +192,7 @@ function CTA() {
           <div className="cta-actions">
             <a className="btn btn-walnut" href="tel:+15483331419">Call (548) 333-1419</a>
             <a className="btn btn-cream" href="mailto:sales@kitchandklozets.com">sales@kitchandklozets.com</a>
-            <div className="cta-call">Shop hours · Thu &amp; Fri 10–4 · Saturday by appointment</div>
+            <div className="cta-call">Sales hours · Open 7 days a week, 9am–5pm</div>
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@ function Footer() {
             </div>
             <div className="footer-about">
               84 Pleasant Street, Watertown MA 02472<br/>
-              Open Thursday &amp; Friday, 10–4. Saturday by appointment.
+              Sales hours: open 7 days a week, 9am–5pm.
             </div>
           </div>
           {[
