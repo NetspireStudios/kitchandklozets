@@ -3434,5 +3434,25 @@ a.contact-card:hover {
   justify-content: center;
 }
 
+/* --- RTA Per-finish FAQ (above the wishlist CTA) --- */
+.rta-faq {
+  margin: 44px auto 28px;
+  max-width: 880px;
+}
+.rta-faq-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.rta-faq-head .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+.rta-faq-head .display {
+  font-size: clamp(22px, 2.8vw, 30px);
+  letter-spacing: -0.015em;
+  margin: 4px 0 0;
+}
+.rta-faq-list { margin: 0; }
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }

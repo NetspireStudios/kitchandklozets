@@ -856,6 +856,7 @@ function RtaFinishLanding({ category, section }) {
 
         <RtaAboutBlock section={sec}/>
         <RtaFeaturesBlock/>
+        <RtaFaqBlock section={sec}/>
       </div>
     </section>
   );
@@ -901,6 +902,33 @@ function RtaFeaturesBlock() {
             <h3 className="display">{f.title}</h3>
             <p>{f.blurb}</p>
           </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function RtaFaqBlock({ section }) {
+  const items = section?.faq || [];
+  const [open, setOpen] = React.useState(0);
+  if (!items.length) return null;
+  return (
+    <section className="rta-faq" data-reveal>
+      <header className="rta-faq-head">
+        <span className="eyebrow">Frequently asked</span>
+        <h2 className="display">{section.title} · the short version.</h2>
+      </header>
+      <div className="faq-list rta-faq-list">
+        {items.map((item, i) => (
+          <details key={i} className="faq-item" open={open === i}
+            onToggle={(e) => { if (e.currentTarget.open) setOpen(i); }}>
+            <summary>
+              <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
+              <span className="faq-q">{item.q}</span>
+              <span className="faq-mark">＋</span>
+            </summary>
+            <div className="faq-a">{item.a}</div>
+          </details>
         ))}
       </div>
     </section>
@@ -985,6 +1013,7 @@ function RtaBoardBrowser({ category, section, product }) {
 
         <RtaAboutBlock section={sec}/>
         <RtaFeaturesBlock/>
+        <RtaFaqBlock section={sec}/>
 
         <section className="rta-quick-contact" id="inquire" data-reveal>
           <div className="rta-quick-contact-head">

@@ -93,6 +93,14 @@ const CATALOG = {
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",
           "Doors and drawer fronts are painted maple in a soft chalk white. The plywood option uses a furniture-grade ply carcass with a maple interior; the particle option uses a high-density particleboard box with the same door and hardware spec. Both ship with dovetailed drawer boxes on soft-close undermount slides."
         ],
+        faq: [
+          { q: "Is the 1.5-inch slim stile as strong as the standard 2-inch shaker?",
+            a: "Yes. The frame is the same painted maple, glued and pinned to the same tolerance; the door panel handles most of the load. The narrower stile is purely a visual choice, not a structural compromise." },
+          { q: "Will slim shaker read correctly in a traditional kitchen?",
+            a: "It leans transitional. If the room is strictly traditional (raised-panel doors, deep crown, beaded inset), the standard single shaker is the more obvious pick. Slim shaker reads best with flat trim, simple crown, and contemporary hardware." },
+          { q: "Does the painted white yellow over time?",
+            a: "No. The topcoat is a UV-stable conversion-varnish lacquer. Painted maple doors are far more colour-stable than oiled or stained wood; the white you order is the white you live with." }
+        ],
         products: BOARD_OPTIONS
       },
       "white-shaker": {
@@ -102,6 +110,14 @@ const CATALOG = {
         about: [
           "White single shaker is the most-ordered finish across the dealer network. A standard 2-inch shaker stile, painted maple in a warm soft white. Reads correctly in farmhouse, transitional, and modern rooms; pairs cleanly with quartz, marble, and natural stone counters.",
           "Both the plywood and the particle option use the same painted-maple front spec, the same soft-close hinges, and the same dovetailed drawer box. The carcass material is the only difference between the two."
+        ],
+        faq: [
+          { q: "How is this different from White Slim Shaker?",
+            a: "Same paint, same maple, same construction. The only difference is the stile width — 2 inches on the single shaker, 1.5 inches on the slim. Single shaker reads more traditional; slim reads more transitional." },
+          { q: "Can I touch up nicks and scratches on site?",
+            a: "Yes. A small touch-up bottle of the conversion-varnish lacquer ships with every kitchen order. For deeper damage, a replacement door front ships from stock the same week it's requested." },
+          { q: "What counter tops pair best with white single shaker?",
+            a: "Almost anything — calacatta marble, white quartz, soapstone, butcher block, and any of the darker stones. The neutral white doesn't dictate the rest of the palette." }
         ],
         products: BOARD_OPTIONS
       },
@@ -113,6 +129,14 @@ const CATALOG = {
           "Blue single shaker is the moodier choice for kitchens that want to read modern without giving up the shaker frame. A deep navy painted on maple, the kind of color that holds up to natural light and reads almost-black in the evening.",
           "Looks particularly good as a perimeter color against a lighter island, or as a full run with stone counters and brass pulls. Five-year warranty on the joint, the finish, and the hardware on both the plywood and particle options."
         ],
+        faq: [
+          { q: "How dark is the navy in real light?",
+            a: "Roughly Hale Navy in tone — deep enough to read almost-black at dusk, blue enough to register as navy in direct sunlight. A hand-painted sample swatch ships on request before the order goes in." },
+          { q: "Should I run a full kitchen in navy, or just the island?",
+            a: "Either works. Full perimeter reads moody and modern; island-only reads classic against a white or grey perimeter. Most dealer orders pair navy uppers with a white-painted base, or run navy as a feature island." },
+          { q: "What hardware reads best with the navy?",
+            a: "Brass and antique brass are the most-ordered pairing. Polished chrome works for a more contemporary read; matte black tends to sink the cabinet into the wall in low light." }
+        ],
         products: BOARD_OPTIONS
       },
       "grey-shaker": {
@@ -122,6 +146,14 @@ const CATALOG = {
         about: [
           "Grey single shaker is the quieter alternative to white. A mid-grey painted on maple, neutral enough to read as taupe in warm light and as cool charcoal at dusk. The most flexible color in the program for designers who don't want to commit to a strong perimeter.",
           "Pairs with both warm-toned and cool-toned stone counters, and with both brass and chrome hardware. Construction and slide spec are identical to the rest of the line; both plywood and particle options carry the same warranty."
+        ],
+        faq: [
+          { q: "Is the grey warm or cool?",
+            a: "Mid-grey with a slight warm bias. Reads as taupe under incandescent light and as a cool charcoal under daylight. Not a true neutral, so designers tend to pair it with warm-toned brass or chrome rather than gold." },
+          { q: "Will mid-grey date faster than white?",
+            a: "Less than navy and less than the painted whites, in our experience. Mid-grey has been a stable kitchen colour for over a decade and shows no sign of dropping out of favour. It's the safest pick in the program if resale is on your mind." },
+          { q: "Does grey hide fingerprints better than white?",
+            a: "Yes, considerably. The mid-tone hides finger oils and minor smudging in a way white doesn't. The conversion-varnish topcoat is smudge-resistant on both colours." }
         ],
         products: BOARD_OPTIONS
       },
@@ -133,6 +165,14 @@ const CATALOG = {
           "Natural wood is quarter-sawn white oak shaker, finished with a clear oil only. No stain, no tinted topcoat. The grain runs straight, the wood reads tobacco-warm, and the surface deepens slowly through the first year of use as oxidation sets in.",
           "For rooms that want the cabinetry to read like millwork rather than painted casework. Plywood option carries a hardwood interior to match the front; particle option uses a paper-foil interior with the same hardwood face frame."
         ],
+        faq: [
+          { q: "Will the wood darken over time?",
+            a: "Yes. Quarter-sawn white oak deepens through the first year of use, especially in rooms that get direct sun. The change is gradual; the wood reads tobacco-warmer at six months and a touch warmer still at a year." },
+          { q: "Is the clear oil finish durable?",
+            a: "Yes. The oil is a hand-rubbed, hard-curing penetrating oil rather than a surface film. Drink rings and small marks can be re-oiled rather than refinished, which means the cabinetry actually improves with age." },
+          { q: "Can I add a stain later if I change my mind?",
+            a: "Yes. White oak takes stain well. A sample oak panel ships with three or four stain options on request, so you can test the colour before committing." }
+        ],
         products: BOARD_OPTIONS
       },
       "smoked-oak": {
@@ -143,6 +183,14 @@ const CATALOG = {
           "Smoked oak is quarter-sawn oak fumed with ammonia to draw the tannins out and darken the wood from the inside, rather than with a surface stain. The result is darker than natural oak and lighter than ebonized; the grain still reads through.",
           "A natural pair with brass or blackened-steel hardware, and a strong cabinet color for rooms that have a lot of stone or tile. Sealed with a hand-applied conversion-varnish topcoat; both plywood and particle options ship with the same finish."
         ],
+        faq: [
+          { q: "Is the smoked oak actually smoked, or just stained?",
+            a: "Fumed with ammonia, not smoked or stained. The ammonia draws tannins out of the wood, darkening it from the inside rather than coating the surface. The grain reads through; a stain would obscure it." },
+          { q: "Will smoked oak look different five years from now?",
+            a: "Some gradual lightening over a long timescale (years, not months). The conversion-varnish topcoat slows oxidation; even after a decade the colour stays close to what we shipped." },
+          { q: "What hardware works best with smoked oak?",
+            a: "Brass, blackened steel, and antique brass. Matte black reads slightly washed-out against the smoked wood; polished nickel works but reads cooler than most rooms want." }
+        ],
         products: BOARD_OPTIONS
       },
       "high-gloss-white": {
@@ -152,6 +200,14 @@ const CATALOG = {
         about: [
           "White high gloss is the slab line. Polyester-coated MDF fronts in a high-gloss white, reflective and modern, sized for European-style kitchens. There's no shaker frame or grain to dust around, and fingerprints come right off the surface.",
           "Carcass options carry concealed soft-close hinges and integrated push-to-open hardware on the drawer fronts. Plywood option uses a furniture-grade ply box; particle option uses a high-density particleboard box with the same gloss finish across the run."
+        ],
+        faq: [
+          { q: "How do I clean the gloss surface?",
+            a: "Microfibre cloth and warm water. Avoid abrasive cleaners and any solvent stronger than mild dish soap. The polyester topcoat resists fingerprints far better than painted shaker; smudges come right off." },
+          { q: "Does the high gloss scratch easily?",
+            a: "It's harder than most painted finishes — cured polyester is closer to car-paint hardness than to kitchen-paint hardness. Surface scratches do show in direct light, but the panel itself is more durable than it looks." },
+          { q: "Can I order slab fronts in a non-white gloss?",
+            a: "Yes, on special order. A small set of high-gloss greys and navy are available with a six-to-eight-week lead time. Talk to your dealer; we'll quote against the specific colour." }
         ],
         products: BOARD_OPTIONS
       }
