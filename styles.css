@@ -967,7 +967,7 @@ section { position: relative; }
 .testimonial-foot b { color: var(--walnut); font-weight: 700; }
 
 /* ── CTA ──────────────────────────────── */
-.cta-section { padding: 0 var(--pad-x) clamp(48px, 6vw, 64px); }
+.cta-section { padding: clamp(48px, 6vw, 80px) var(--pad-x) clamp(64px, 7vw, 96px); }
 .cta-card {
   max-width: var(--max);
   margin: 0 auto;
@@ -1397,7 +1397,7 @@ section { position: relative; }
 
 /* ── CATALOG PAGES (category, section, product) ───── */
 .catalog-page {
-  padding: clamp(80px, 9vw, 130px) 0 clamp(60px, 7vw, 100px);
+  padding: clamp(80px, 9vw, 130px) 0 clamp(28px, 4vw, 48px);
   background: var(--bg);
 }
 
@@ -2709,7 +2709,7 @@ a.contact-card:hover {
 /* feature-value 3-paragraph block (crafted) */
 .feature-value {
   max-width: 880px;
-  margin: 56px auto 64px;
+  margin: clamp(48px, 6vw, 72px) auto 0;
   display: grid;
   gap: 22px;
   text-align: center;
@@ -2725,12 +2725,12 @@ a.contact-card:hover {
 .feature-value-p:nth-child(3) { color: var(--walnut-soft); font-size: 15.5px; font-style: italic; }
 
 /* crafted rooms wrapper */
-.crafted-rooms-section { margin: 24px 0 64px; }
+.crafted-rooms-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 
 /* materials-copy single paragraph block */
 .materials-copy {
   max-width: 880px;
-  margin: 24px auto 64px;
+  margin: clamp(48px, 6vw, 72px) auto 0;
   padding: 38px 32px;
   background: rgba(255, 250, 240, 0.5);
   border: 1px solid var(--line);
@@ -2751,7 +2751,7 @@ a.contact-card:hover {
 }
 
 /* faq accordion section (shared by both pages) */
-.faq-accordion-section { margin: 24px 0 60px; }
+.faq-accordion-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 .faq-accordion-section .faq-list {
   max-width: 880px;
   margin: 0 auto;
@@ -2764,7 +2764,7 @@ a.contact-card:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  margin: 48px 0 56px;
+  margin: clamp(48px, 6vw, 72px) 0 0;
   padding: 32px 28px;
   background: rgba(255, 250, 240, 0.5);
   border: 1px solid var(--line);
@@ -2791,10 +2791,10 @@ a.contact-card:hover {
 }
 
 /* configs section (uses existing .closet-config-grid) */
-.closet-configs-section { margin: 24px 0 60px; }
+.closet-configs-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 
 /* 4-tab cabinet families */
-.closet-tabs-section { margin: 24px 0 60px; }
+.closet-tabs-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 .closet-tabs {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -2847,7 +2847,7 @@ a.contact-card:hover {
 }
 
 /* add-ons grid (4 cards) */
-.closet-addons-section { margin: 24px 0 60px; }
+.closet-addons-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 .closet-addons-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2880,7 +2880,7 @@ a.contact-card:hover {
 }
 
 /* dealer/B2B paragraphs */
-.closet-dealer-section { margin: 24px 0 60px; }
+.closet-dealer-section { margin: clamp(48px, 6vw, 72px) 0 0; }
 .closet-dealer-list {
   max-width: 880px;
   margin: 0 auto;
@@ -3097,7 +3097,7 @@ a.contact-card:hover {
 .cookie-btn-primary:hover { background: #a8503a; border-color: #a8503a; }
 
 /* --- RTA Finish Landing (Plywood / Particle chooser) --- */
-.rta-finish-landing { padding: 28px 0 60px; }
+.rta-finish-landing { padding: 28px 0 0; }
 .rta-landing-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
@@ -3157,7 +3157,7 @@ a.contact-card:hover {
 }
 
 /* --- RTA Board Browser (Base / Wall / Pantry / Double Oven tabs) --- */
-.rta-board-page { padding: 28px 0 60px; }
+.rta-board-page { padding: 28px 0 0; }
 .rta-board-head {
   margin: 18px 0 28px;
   max-width: 760px;
@@ -3305,7 +3305,7 @@ a.contact-card:hover {
 
 /* --- RTA About block (info paragraphs + matching image) --- */
 .rta-about {
-  margin: 56px 0 24px;
+  margin: clamp(56px, 7vw, 88px) 0 0;
   padding: 0;
 }
 .rta-about-grid {
@@ -3354,7 +3354,7 @@ a.contact-card:hover {
 
 /* --- RTA Features (3-card row with image + title + blurb) --- */
 .rta-features {
-  margin: 32px 0 12px;
+  margin: clamp(48px, 6vw, 72px) 0 0;
 }
 .rta-features-grid {
   display: grid;
@@ -3403,8 +3403,8 @@ a.contact-card:hover {
 
 /* --- RTA quick contact section under the board browser --- */
 .rta-quick-contact {
-  margin: 44px 0 24px;
-  padding: 28px;
+  margin: clamp(48px, 6vw, 72px) 0 0;
+  padding: clamp(28px, 4vw, 40px);
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 250, 240, 0.5);
@@ -3436,7 +3436,7 @@ a.contact-card:hover {
 
 /* --- RTA Per-finish FAQ (above the wishlist CTA) --- */
 .rta-faq {
-  margin: 44px auto 28px;
+  margin: clamp(48px, 6vw, 72px) auto 0;
   max-width: 880px;
 }
 .rta-faq-head {
