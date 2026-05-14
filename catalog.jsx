@@ -853,6 +853,55 @@ function RtaFinishLanding({ category, section }) {
             </div>
           </div>
         </div>
+
+        <RtaAboutBlock section={sec}/>
+        <RtaFeaturesBlock/>
+      </div>
+    </section>
+  );
+}
+
+// ─── RTA About + Features blocks (shared between landing and board pages) ───
+function RtaAboutBlock({ section }) {
+  if (!section?.about?.length) return null;
+  return (
+    <section className="rta-about" data-reveal>
+      <div className="rta-about-grid">
+        <div className="rta-about-body">
+          <span className="eyebrow">About</span>
+          <h2 className="display">{section.title}</h2>
+          {section.about.map((p, i) => (<p key={i}>{p}</p>))}
+          <p className="rta-about-avail">Available in Plywood &amp; Particle boards.</p>
+        </div>
+        <div className="rta-about-img ph"
+             style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
+          {section.img
+            ? <Img src={section.img} alt={section.title} w={900}/>
+            : <CabinetOverlay opacity={0.22}/>}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RtaFeaturesBlock() {
+  const features = window.FINISH_FEATURES || [];
+  if (!features.length) return null;
+  return (
+    <section className="rta-features" data-reveal>
+      <div className="rta-features-grid">
+        {features.map((f, i) => (
+          <article key={i} className="rta-feature-card">
+            <div className="rta-feature-img ph"
+                 style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+              {f.img
+                ? <Img src={f.img} alt={f.title} w={600}/>
+                : <CabinetOverlay opacity={0.28}/>}
+            </div>
+            <h3 className="display">{f.title}</h3>
+            <p>{f.blurb}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -930,12 +979,21 @@ function RtaBoardBrowser({ category, section, product }) {
 
           <div className="rta-board-skus">
             <span className="eyebrow">SKUs</span>
-            <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Quote a finished room directly from the contact page until then.</p>
-            <a className="btn btn-walnut" href="/contact" style={{ marginTop: 12 }}>
-              Request the SKU sheet <span className="arrow">→</span>
-            </a>
+            <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Until then, send a quick note and we'll reply with a quote from the Sudbury warehouse.</p>
           </div>
         </div>
+
+        <RtaAboutBlock section={sec}/>
+        <RtaFeaturesBlock/>
+
+        <section className="rta-quick-contact" id="inquire" data-reveal>
+          <div className="rta-quick-contact-head">
+            <span className="eyebrow">Send a quick note</span>
+            <h2 className="display">Ask about {sec.title} · {prod.title}.</h2>
+            <p>Name, email, the room sketch if you have one. We reply within one business day from the Sudbury warehouse.</p>
+          </div>
+          <ContactForm product={`${sec.title} · ${prod.title}`} category="RTA Kitchen"/>
+        </section>
       </div>
     </section>
   );

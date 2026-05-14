@@ -3303,5 +3303,136 @@ a.contact-card:hover {
 }
 .rta-board-skus .eyebrow { display: block; margin-bottom: 10px; }
 
+/* --- RTA About block (info paragraphs + matching image) --- */
+.rta-about {
+  margin: 56px 0 24px;
+  padding: 0;
+}
+.rta-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .rta-about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .rta-about-img  { order: -1; }
+}
+.rta-about-body { padding: 6px 0; }
+.rta-about-body .eyebrow { display: block; margin-bottom: 8px; }
+.rta-about-body .display {
+  font-size: clamp(26px, 3.4vw, 38px);
+  letter-spacing: -0.02em;
+  margin: 4px 0 18px;
+  color: var(--walnut);
+}
+.rta-about-body p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 14px;
+  max-width: 540px;
+}
+.rta-about-avail {
+  font-size: 15px !important;
+  color: var(--walnut) !important;
+  font-weight: 600;
+  margin-top: 6px !important;
+}
+.rta-about-img {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  background: rgba(255, 250, 240, 0.6);
+}
+.rta-about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- RTA Features (3-card row with image + title + blurb) --- */
+.rta-features {
+  margin: 32px 0 12px;
+}
+.rta-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 980px) { .rta-features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .rta-features-grid { grid-template-columns: 1fr; } }
+.rta-feature-card {
+  background: rgba(255, 250, 240, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.rta-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(59, 42, 30, 0.08);
+}
+.rta-feature-img {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+.rta-feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rta-feature-card .display {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--walnut);
+  margin: 4px 0 4px;
+}
+.rta-feature-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* --- RTA quick contact section under the board browser --- */
+.rta-quick-contact {
+  margin: 44px 0 24px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 250, 240, 0.5);
+}
+.rta-quick-contact-head {
+  max-width: 640px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+.rta-quick-contact-head .eyebrow { display: block; margin-bottom: 8px; }
+.rta-quick-contact-head .display {
+  font-size: clamp(22px, 2.8vw, 28px);
+  margin: 4px 0 10px;
+  letter-spacing: -0.015em;
+}
+.rta-quick-contact-head p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* tighten the SKU placeholder column since the button is gone */
+.rta-board-skus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
