@@ -97,7 +97,7 @@ function Services() {
             <span className="eyebrow">What we build</span>
             <h2 className="display">Custom kitchens, closets &amp; built-ins.</h2>
             <p style={{ marginTop: 14, color: "var(--muted)", fontSize: "var(--t-body)", maxWidth: 520 }}>
-              Shaker, inset, and slab doors in walnut, white oak, cherry, maple, ash, or reclaimed chestnut. Designed and built for Greater Boston homes.
+              Shaker, inset, and slab doors in walnut, white oak, cherry, maple, ash, or reclaimed chestnut. Designed and built for Northern Ontario homes.
             </p>
           </div>
           <p className="hint">Every cabinet leaves through the same set of doors. Same crew, same materials, same warranty.</p>
@@ -107,7 +107,7 @@ function Services() {
           {SERVICES.map((s, i) => (
             <article key={s.t} className="service-card" data-reveal style={{ "--delay": `${i * 60}ms` }}>
               <div className="service-thumb ph" style={{ background: `linear-gradient(160deg, ${["#3B2A1E","#5B4434","#7a3a23","#7E8B6F","#26211c","#B85A3F"][i]}, #1c130a)` }}>
-                <Img src={s.img} alt={`Custom ${s.t.toLowerCase()} by Kitch and Klozets, Watertown MA`} w={600}/>
+                <Img src={s.img} alt={`Custom ${s.t.toLowerCase()} by Kitch and Klozets, Sudbury ON`} w={600}/>
                 <CabinetOverlay opacity={0.32}/>
               </div>
               <div className="service-head">

@@ -33,8 +33,8 @@ const HEAD_COMMON = ({ title, description, canonical, keywords, ogTitle, ogDescr
 ${keywords ? `<meta name="keywords" content="${keywords}"/>\n` : ""}<meta name="theme-color" content="#3B2A1E"/>
 <meta name="color-scheme" content="light"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
-<meta name="geo.region" content="US-MA"/>
-<meta name="geo.placename" content="Watertown"/>
+<meta name="geo.region" content="CA-ON"/>
+<meta name="geo.placename" content="Sudbury"/>
 <link rel="canonical" href="${canonical}"/>
 
 <meta property="og:type" content="website"/>
@@ -136,7 +136,7 @@ ${JSON.stringify({
 function buildCategoryPage(catSlug) {
   const cat = CATALOG[catSlug];
   const canonical = `${BASE}/${catSlug}`;
-  const title = `${cat.title} | Kitch & Klozets · Watertown MA`;
+  const title = `${cat.title} | Kitch & Klozets · Sudbury ON`;
   const desc  = `${cat.short} ${cat.blurb}`.replace(/\s+/g, " ").slice(0, 158);
 
   const head = HEAD_COMMON({
@@ -295,9 +295,15 @@ function writeFile(relPath, content) {
 // ─── generate everything ───────────────────────────────────────────────────
 let cats = 0, secs = 0, prods = 0, flatCats = 0;
 
+// Categories whose root index.html is hand-written content (not catalog-driven).
+// Skip generating index.html for these so the hand-written page survives a run.
+const HAND_WRITTEN_INDEX = new Set(["rta-kitchen"]);
+
 Object.keys(CATALOG).forEach((catSlug) => {
   const cat = CATALOG[catSlug];
-  writeFile(`${catSlug}/index.html`, buildCategoryPage(catSlug));
+  if (!HAND_WRITTEN_INDEX.has(catSlug)) {
+    writeFile(`${catSlug}/index.html`, buildCategoryPage(catSlug));
+  }
   cats++;
 
   if (cat.sections) {

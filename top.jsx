@@ -7,6 +7,9 @@ function Nav({ onMenu }) {
   const closeMega = () => setMegaOpen(false);
   const closeDrop = () => setDropOpen(null);
   const closeAll  = () => { closeMega(); closeDrop(); };
+  // Lock body scroll while the mega panel is open so wheel events
+  // don't fall through to the page underneath.
+  useScrollLock(megaOpen);
   React.useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") closeAll(); };
     window.addEventListener("keydown", onKey);
@@ -20,7 +23,7 @@ function Nav({ onMenu }) {
           <img className="nav-mark" src="/assets/logo.png" alt="" width="56" height="56"/>
           <div className="nav-title">
             <b>Kitch &amp; Klozets</b>
-            <small>Cabinetmakers · Watertown MA</small>
+            <small>Cabinetmakers · Sudbury ON</small>
           </div>
         </a>
         <nav className="nav-links" aria-label="Primary">
@@ -81,6 +84,9 @@ function Nav({ onMenu }) {
           </button>
         </div>
       </div>
+      {megaOpen && (
+        <div className="mega-backdrop" onClick={closeMega} aria-hidden="true"/>
+      )}
       <MegaMenu open={megaOpen} onClose={closeMega}/>
     </header>
   );
@@ -223,13 +229,13 @@ function Hero() {
           <div data-reveal>
             <div className="hero-eyebrow">
               <span className="dot"/>
-              <span className="eyebrow">Family-run · Watertown, MA</span>
+              <span className="eyebrow">Family-run · Sudbury, ON</span>
             </div>
             <h1 className="display hero-title">
               Custom cabinets your <span className="accent">grandkids</span> will still slam.
             </h1>
             <p className="hero-lede">
-              A six-person cabinet shop in Watertown, MA, building furniture-grade custom kitchens, closets, and built-ins out of solid hardwood. Serving Cambridge, Newton, Brookline, Belmont, and Greater Boston since 2008.
+              A six-person cabinet shop in Sudbury, ON, building furniture-grade custom kitchens, closets, and built-ins out of solid hardwood. Serving Cambridge, Newton, Brookline, Belmont, and Northern Ontario since 2008.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-walnut" href="#cta">

@@ -10,7 +10,7 @@ const CONFIG = {
   brand: {
     name:    "Kitch & Klozets",
     short:   "Kitch & Klozets",
-    tagline: "Cabinetmakers · Watertown MA",
+    tagline: "Cabinetmakers · Sudbury ON",
     sinceYear: 2008,
   },
   contact: {
@@ -20,8 +20,8 @@ const CONFIG = {
     emailMailto:  "mailto:sales@kitchandklozets.com",
   },
   address: {
-    street:  "84 Pleasant Street",
-    city:    "Watertown",
+    street:  "100 Lasalle Boulevard",
+    city:    "Sudbury",
     region:  "MA",
     postal:  "02472",
     country: "US",
@@ -34,7 +34,7 @@ const CONFIG = {
   domain: "kitchandklozets.com",
   url:    "https://kitchandklozets.com",
   serviceArea: [
-    "Watertown", "Cambridge", "Newton", "Brookline",
+    "Sudbury", "Cambridge", "Newton", "Brookline",
     "Belmont", "Wellesley", "Arlington", "Somerville"
   ],
 };
@@ -97,12 +97,12 @@ const WORKSHOP = [
   { w: "Week 1",     t: "Site visit",     d: "Coffee, measurements, your wishlist on a yellow pad.",                              img: IMG.wk_visit,     tint: "#3B2A1E" },
   { w: "Week 2–3",   t: "Drawings",       d: "Hand-drawn elevations. We bring them by and mark them up together at the table.",  img: IMG.wk_drawings,  tint: "#5B4434" },
   { w: "Week 4",     t: "Material picks", d: "You hold the woods, the stones, the brass. We narrow down to three options.",      img: IMG.wk_materials, tint: "#7E8B6F" },
-  { w: "Week 5–14",  t: "On the bench",   d: "Built in our Watertown shop. Photographed weekly. Drop by Saturdays if you want.",   img: IMG.wk_build,     tint: "#B85A3F" },
+  { w: "Week 5–14",  t: "On the bench",   d: "Built in our Sudbury shop. Photographed weekly. Drop by Saturdays if you want.",   img: IMG.wk_build,     tint: "#B85A3F" },
   { w: "Week 15",    t: "Install",        d: "Two weeks on-site. Final adjustments after a month of real life with the room.",   img: IMG.wk_install,   tint: "#7a3a23" },
 ];
 
 const PINS = [
-  { x: 30, y: 38, t: "Watertown shop", s: "Our workshop",        kind: "shop" },
+  { x: 30, y: 38, t: "Sudbury shop", s: "Our workshop",        kind: "shop" },
   { x: 44, y: 42, t: "Beacon Hill",    s: "Townhouse kitchen" },
   { x: 50, y: 36, t: "Cambridge",      s: "Pantry conversion" },
   { x: 38, y: 28, t: "Belmont",        s: "Family kitchen" },

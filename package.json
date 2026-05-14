@@ -2,7 +2,7 @@
   "name": "kitchandklozets",
   "version": "1.0.0",
   "private": true,
-  "description": "Custom cabinetmaker brochure site for Kitch & Klozets, Watertown MA. Static HTML + JSX shared components; catalog HTML generated from data.",
+  "description": "Custom cabinetmaker brochure site for Kitch & Klozets, Sudbury ON. Static HTML + JSX shared components; catalog HTML generated from data.",
   "homepage": "https://kitchandklozets.com",
   "repository": {
     "type": "git",

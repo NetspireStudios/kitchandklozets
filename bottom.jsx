@@ -126,7 +126,7 @@ function MapGallery() {
           ))}
 
           <div className="map-legend-overlay">
-            <b>Greater Boston</b>
+            <b>Northern Ontario</b>
             <div style={{ color: "var(--muted)", marginTop: 4 }}>9 of 340 projects shown.</div>
             <a className="more link-underline">See all on the map →</a>
           </div>
@@ -172,12 +172,12 @@ function Testimonials() {
 
 const FAQ_ITEMS = [
   {
-    q: "How much do custom kitchen cabinets cost in Massachusetts?",
+    q: "How much do custom kitchen cabinets cost in Ontario?",
     a: "A custom solid-hardwood kitchen from us typically runs $45,000–$120,000 depending on size, wood species, and hardware. A free in-home consultation gives you a real number against your floor plan; we send a fixed quote within two weeks, not a moving estimate."
   },
   {
     q: "How long does a custom kitchen or closet project take?",
-    a: "About four months end to end. One week of site measurement, two to three weeks of hand-drawn elevations, one week of material picks, eight to ten weeks on the bench in our Watertown shop, and two weeks of on-site install. We quote a date and hold it."
+    a: "About four months end to end. One week of site measurement, two to three weeks of hand-drawn elevations, one week of material picks, eight to ten weeks on the bench in our Sudbury shop, and two weeks of on-site install. We quote a date and hold it."
   },
   {
     q: "What's the difference between custom, semi-custom, and stock cabinets?",
@@ -189,7 +189,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you handle the full remodel or just build the cabinetry?",
-    a: "We build, finish, and install all the cabinetry, vanities, built-ins, and millwork. For full remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Boston contractors we've worked with for years."
+    a: "We build, finish, and install all the cabinetry, vanities, built-ins, and millwork. For full remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Sudbury contractors we've worked with for years."
   }
 ];
 
@@ -267,7 +267,7 @@ function Footer() {
               <div className="display name">Kitch &amp; Klozets</div>
             </div>
             <div className="footer-about">
-              84 Pleasant Street, Watertown MA 02472<br/>
+              100 Lasalle Boulevard, Sudbury ON 02472<br/>
               Sales hours: open 7 days a week, 9am–5pm.
             </div>
           </div>
@@ -292,7 +292,7 @@ function Footer() {
           ))}
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Kitch &amp; Klozets · Custom cabinetmakers · Watertown, MA</span>
+          <span>© 2026 Kitch &amp; Klozets · Custom cabinetmakers · Sudbury, ON</span>
           <span>10-year warranty on every joint we cut</span>
         </div>
       </div>

@@ -502,7 +502,7 @@ function ProductLayout({ category, section, product }) {
           <div>
             <h2 className="display">What to expect</h2>
             <ul className="product-detail-list">
-              <li>Hand-built in our Watertown, MA shop.</li>
+              <li>Hand-built in our Sudbury, ON shop.</li>
               <li>Solid hardwood throughout; no MDF carcass.</li>
               <li>10-year warranty on every joint we cut.</li>
               <li>Free in-home consultation; fixed quote within two weeks.</li>

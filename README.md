@@ -1,6 +1,6 @@
 # Kitch & Klozets
 
-Production site for [kitchandklozets.com](https://kitchandklozets.com) — a custom cabinetmaker in Watertown, Massachusetts.
+Production site for [kitchandklozets.com](https://kitchandklozets.com) — a custom cabinetmaker in Sudbury, Ontario.
 
 Static HTML + shared JSX components, generated from a single catalog data file. 134 indexable routes. Hosted on **Firebase Hosting** with a Cloud Function relaying contact form leads through Resend.
 
@@ -95,9 +95,9 @@ Business identity lives in one place:
 window.CONFIG.contact.phone        // "(548) 333-1419"
 window.CONFIG.contact.phoneTel     // "tel:+15483331419"
 window.CONFIG.contact.email        // "sales@kitchandklozets.com"
-window.CONFIG.address.street       // "84 Pleasant Street"
+window.CONFIG.address.street       // "100 Lasalle Boulevard"
 window.CONFIG.hours.summary        // "Open 7 days a week, 9am–5pm"
-window.CONFIG.serviceArea          // ["Watertown", "Cambridge", ...]
+window.CONFIG.serviceArea          // ["Sudbury", "Cambridge", ...]
 ```
 
 When you change a phone or address, change it here. Older hand-coded literals in some HTML schemas haven't been swapped yet — incremental cleanup.
@@ -232,4 +232,4 @@ In order of leverage:
 
 ---
 
-© 2026 Kitch & Klozets · custom cabinetmakers · Watertown, MA
+© 2026 Kitch & Klozets · custom cabinetmakers · Sudbury, ON
