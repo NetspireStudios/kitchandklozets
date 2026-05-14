@@ -124,22 +124,23 @@ function WholesaleHero() {
           </div>
 
           <div className="wh-hero-art" data-reveal="scale">
-            <div className="wh-tile" style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-              <CabinetOverlay opacity={0.32}/>
-              <span className="wh-tile-tag">White Shaker</span>
-            </div>
-            <div className="wh-tile" style={{ background: "linear-gradient(160deg, #2a3a5c, #11192e)" }}>
-              <CabinetOverlay opacity={0.32}/>
-              <span className="wh-tile-tag">Blue Shaker</span>
-            </div>
-            <div className="wh-tile" style={{ background: "linear-gradient(160deg, #5B4434, #2c1f14)" }}>
-              <CabinetOverlay opacity={0.32}/>
-              <span className="wh-tile-tag">Smoked Oak</span>
-            </div>
-            <div className="wh-tile" style={{ background: "linear-gradient(160deg, #c9a874, #8d6b40)" }}>
-              <CabinetOverlay opacity={0.28}/>
-              <span className="wh-tile-tag wh-tile-tag-dark">Natural Wood</span>
-            </div>
+            {[
+              { key: "white-shaker", grad: "linear-gradient(160deg, #3B2A1E, #1c130a)" },
+              { key: "blue-shaker",  grad: "linear-gradient(160deg, #2a3a5c, #11192e)" },
+              { key: "smoked-oak",   grad: "linear-gradient(160deg, #5B4434, #2c1f14)" },
+              { key: "natural-wood", grad: "linear-gradient(160deg, #c9a874, #8d6b40)", dark: true }
+            ].map(t => {
+              const sec = CATALOG["rta-kitchen"].sections[t.key];
+              return (
+                <a key={t.key} href={`/rta-kitchen/${t.key}`} className="wh-tile ph"
+                   style={{ background: t.grad }}>
+                  {sec.img
+                    ? <Img src={sec.img} alt={sec.title} w={500}/>
+                    : <CabinetOverlay opacity={0.32}/>}
+                  <span className={`wh-tile-tag ${t.dark ? "wh-tile-tag-dark" : ""}`}>{sec.title}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -201,7 +202,9 @@ function RTAShowcase() {
                className="rta-card" data-reveal style={{ "--delay": `${i * 50}ms` }}>
               <div className="rta-thumb ph"
                    style={{ background: `linear-gradient(160deg, ${["#FAF4E8","#FAF4E8","#2a3a5c","#7a808b","#c9a874","#5B4434","#FAF4E8","#3B2A1E"][i]}, ${["#d8c8a8","#d8c8a8","#11192e","#3f4750","#8d6b40","#2c1f14","#d8c8a8","#1c130a"][i]})` }}>
-                <CabinetOverlay opacity={0.28}/>
+                {sec.img
+                  ? <Img src={sec.img} alt={sec.title} w={600}/>
+                  : <CabinetOverlay opacity={0.28}/>}
               </div>
               <div className="rta-meta">
                 <span className="rta-num">0{i + 1}</span>

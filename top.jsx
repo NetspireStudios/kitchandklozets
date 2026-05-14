@@ -2,45 +2,80 @@
 
 function Nav({ onMenu }) {
   const scrolled = useScrolled(8);
-  const [megaOpen, setMegaOpen] = React.useState(false);
+  const [megaOpen, setMegaOpen]   = React.useState(false);
+  const [dropOpen, setDropOpen]   = React.useState(null); // label of open child-dropdown
   const closeMega = () => setMegaOpen(false);
+  const closeDrop = () => setDropOpen(null);
+  const closeAll  = () => { closeMega(); closeDrop(); };
   React.useEffect(() => {
-    const onKey = (e) => { if (e.key === "Escape") closeMega(); };
+    const onKey = (e) => { if (e.key === "Escape") closeAll(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
   return (
     <header className={`nav ${scrolled ? "scrolled" : ""} ${megaOpen ? "mega-open" : ""}`}
-            onMouseLeave={closeMega}>
+            onMouseLeave={closeAll}>
       <div className="container nav-inner">
         <a href="/" className="nav-logo" aria-label="Kitch and Klozets, home">
-          <img className="nav-mark" src="/assets/logo.png" alt="" width="64" height="64"/>
+          <img className="nav-mark" src="/assets/logo.png" alt="" width="56" height="56"/>
           <div className="nav-title">
             <b>Kitch &amp; Klozets</b>
             <small>Cabinetmakers · Watertown MA</small>
           </div>
         </a>
         <nav className="nav-links" aria-label="Primary">
-          {NAV_LINKS.map((item) => (
-            item.mega ? (
-              <button key={item.label}
-                className={`nav-mega-trigger link-underline ${megaOpen ? "active" : ""}`}
-                onMouseEnter={() => setMegaOpen(true)}
-                onFocus={() => setMegaOpen(true)}
-                onClick={() => setMegaOpen(o => !o)}
-                aria-haspopup="true" aria-expanded={megaOpen}>
-                {item.label}
-                <span className="nav-mega-caret" aria-hidden="true">▾</span>
-              </button>
-            ) : (
+          {NAV_LINKS.map((item) => {
+            if (item.mega) {
+              return (
+                <button key={item.label}
+                  className={`nav-mega-trigger link-underline ${megaOpen ? "active" : ""}`}
+                  onMouseEnter={() => { setMegaOpen(true); closeDrop(); }}
+                  onFocus={() => { setMegaOpen(true); closeDrop(); }}
+                  onClick={() => setMegaOpen(o => !o)}
+                  aria-haspopup="true" aria-expanded={megaOpen}>
+                  {item.label}
+                  <span className="nav-mega-caret" aria-hidden="true">▾</span>
+                </button>
+              );
+            }
+            if (item.children) {
+              const isOpen = dropOpen === item.label;
+              return (
+                <div key={item.label} className={`nav-drop ${isOpen ? "open" : ""}`}
+                     onMouseEnter={() => { setDropOpen(item.label); closeMega(); }}
+                     onMouseLeave={closeDrop}>
+                  <button className={`nav-mega-trigger link-underline ${isOpen ? "active" : ""}`}
+                    onClick={() => setDropOpen(o => o === item.label ? null : item.label)}
+                    aria-haspopup="true" aria-expanded={isOpen}>
+                    {item.label}
+                    <span className="nav-mega-caret" aria-hidden="true">▾</span>
+                  </button>
+                  <div className="nav-drop-panel" role="menu" aria-label={item.label}>
+                    {item.children.map(child => (
+                      <a key={child.label} href={child.href} role="menuitem" className="nav-drop-item">
+                        <span className="nav-drop-label">{child.label}</span>
+                        {child.hint && <span className="nav-drop-hint">{child.hint}</span>}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
               <a key={item.label} href={item.href} className="link-underline"
-                 onMouseEnter={closeMega}>{item.label}</a>
-            )
-          ))}
+                 onMouseEnter={closeAll}>{item.label}</a>
+            );
+          })}
         </nav>
         <div className="nav-cta">
-          <a href="tel:+15483331419" className="nav-phone">(548) 333-1419</a>
-          <a href="/contact" className="btn btn-walnut">Get a quote</a>
+          <a href="tel:+15483331419" className="nav-phone" aria-label="Call (548) 333-1419">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>(548) 333-1419</span>
+          </a>
+          <a href="/become-a-dealer" className="btn btn-walnut nav-quote-btn">Become a dealer</a>
           <button className="nav-toggle" onClick={onMenu} aria-label="Open menu">
             <svg width="22" height="14" viewBox="0 0 22 14"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
           </button>
@@ -53,9 +88,10 @@ function Nav({ onMenu }) {
 
 function MobileDrawer({ open, onClose }) {
   useScrollLock(open);
-  const [prodExpanded, setProdExpanded] = React.useState(false);
-  const [openCat, setOpenCat] = React.useState(null);
-  const toggleCat = (slug) => setOpenCat(prev => prev === slug ? null : slug);
+  const [openGroup, setOpenGroup] = React.useState(null); // label of expanded mega/children group
+  const [openCat, setOpenCat]     = React.useState(null); // slug of expanded category
+  const toggleGroup = (label) => setOpenGroup(prev => prev === label ? null : label);
+  const toggleCat   = (slug)  => setOpenCat(prev => prev === slug ? null : slug);
 
   return (
     <>
@@ -63,7 +99,7 @@ function MobileDrawer({ open, onClose }) {
       <aside className={`drawer ${open ? "open" : ""}`} aria-hidden={!open}>
         <div className="drawer-head">
           <a href="/" className="nav-logo" onClick={onClose}>
-            <img className="nav-mark" src="/assets/logo.png" alt="" width="64" height="64"/>
+            <img className="nav-mark" src="/assets/logo.png" alt="" width="56" height="56"/>
             <div className="nav-title"><b>Kitch &amp; Klozets</b></div>
           </a>
           <button className="nav-toggle" onClick={onClose} aria-label="Close menu">
@@ -71,53 +107,89 @@ function MobileDrawer({ open, onClose }) {
           </button>
         </div>
         <div className="drawer-links">
-          {NAV_LINKS.map((item) => (
-            item.mega ? (
-              <div key={item.label} className={`drawer-group ${prodExpanded ? "open" : ""}`}>
-                <button className="drawer-group-trigger"
-                  onClick={() => setProdExpanded(v => !v)}
-                  aria-expanded={prodExpanded}>
-                  <span>{item.label}</span>
-                  <span className="drawer-group-caret" aria-hidden="true">▾</span>
-                </button>
-                {prodExpanded && (
-                  <div className="drawer-group-list">
-                    {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => {
-                      const isOpen = openCat === cat.slug;
-                      return (
-                        <div key={cat.slug} className={`drawer-subgroup ${isOpen ? "open" : ""}`}>
-                          <button className="drawer-subgroup-trigger"
-                            onClick={() => toggleCat(cat.slug)}
-                            aria-expanded={isOpen}>
-                            <span>{cat.title}</span>
-                            <span className="drawer-subgroup-caret" aria-hidden="true">▾</span>
-                          </button>
-                          {isOpen && (
-                            <div className="drawer-subgroup-list">
-                              <a href={`/${cat.slug}`} className="drawer-subgroup-all" onClick={onClose}>
-                                See all in {cat.title} →
+          {NAV_LINKS.map((item) => {
+            if (item.mega) {
+              const isOpen = openGroup === item.label;
+              return (
+                <div key={item.label} className={`drawer-group ${isOpen ? "open" : ""}`}>
+                  <button className="drawer-group-trigger"
+                    onClick={() => toggleGroup(item.label)}
+                    aria-expanded={isOpen}>
+                    <span>{item.label}</span>
+                    <span className="drawer-group-caret" aria-hidden="true">▾</span>
+                  </button>
+                  {isOpen && (
+                    <div className="drawer-group-list">
+                      {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => {
+                        const catOpen = openCat === cat.slug;
+                        const hasSubs = !!cat.sections;
+                        return (
+                          <div key={cat.slug} className={`drawer-subgroup ${catOpen ? "open" : ""}`}>
+                            {hasSubs ? (
+                              <button className="drawer-subgroup-trigger"
+                                onClick={() => toggleCat(cat.slug)}
+                                aria-expanded={catOpen}>
+                                <span>{cat.title}</span>
+                                <span className="drawer-subgroup-caret" aria-hidden="true">▾</span>
+                              </button>
+                            ) : (
+                              <a className="drawer-subgroup-trigger" href={`/${cat.slug}`} onClick={onClose}>
+                                <span>{cat.title}</span>
+                                <span className="drawer-subgroup-caret" aria-hidden="true">›</span>
                               </a>
-                              {Object.values(cat.sections).map(sec => (
-                                <a key={sec.slug} href={`/${cat.slug}/${sec.slug}`} onClick={onClose}>
-                                  {sec.title}
+                            )}
+                            {hasSubs && catOpen && (
+                              <div className="drawer-subgroup-list">
+                                <a href={`/${cat.slug}`} className="drawer-subgroup-all" onClick={onClose}>
+                                  See all in {cat.title} →
                                 </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            ) : (
+                                {Object.values(cat.sections).map(sec => (
+                                  <a key={sec.slug} href={`/${cat.slug}/${sec.slug}`} onClick={onClose}>
+                                    {sec.title}
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            if (item.children) {
+              const isOpen = openGroup === item.label;
+              return (
+                <div key={item.label} className={`drawer-group ${isOpen ? "open" : ""}`}>
+                  <button className="drawer-group-trigger"
+                    onClick={() => toggleGroup(item.label)}
+                    aria-expanded={isOpen}>
+                    <span>{item.label}</span>
+                    <span className="drawer-group-caret" aria-hidden="true">▾</span>
+                  </button>
+                  {isOpen && (
+                    <div className="drawer-group-list">
+                      {item.children.map(child => (
+                        <a key={child.label} href={child.href} onClick={onClose}
+                           className="drawer-child-link">
+                          <span>{child.label}</span>
+                          {child.hint && <small>{child.hint}</small>}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            return (
               <a key={item.label} href={item.href} onClick={onClose}>{item.label}</a>
-            )
-          ))}
+            );
+          })}
         </div>
         <div className="drawer-bottom">
           <a className="btn btn-clay" href="tel:+15483331419">(548) 333-1419</a>
-          <a className="btn btn-walnut" href="/contact" onClick={onClose}>Get a quote</a>
+          <a className="btn btn-walnut" href="/become-a-dealer" onClick={onClose}>Become a dealer</a>
         </div>
       </aside>
     </>

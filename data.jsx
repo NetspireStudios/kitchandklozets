@@ -123,15 +123,17 @@ const TESTIMONIALS = [
     n: "B. Olin",       loc: "Wellesley, MA", rot: -2, img: IMG.tC, date: "Winter 2023" },
 ];
 
+// 4 top-level items keeps the nav row clean. Logo doubles as Home.
+// "Cabinets" opens the mega-menu (RTA / Closet / Crafted with sections).
+// "For the Trade" opens a small dropdown grouping dealer + advice routes.
 const NAV_LINKS = [
-  { label: "Home",             href: "/" },
-  { label: "RTA Kitchen",      href: "/rta-kitchen", mega: true },
-  { label: "Closet Line",      href: "/closet-line" },
-  { label: "Crafted Cabinets", href: "/crafted-cabinets" },
-  { label: "Become a Dealer",  href: "/become-a-dealer" },
-  { label: "Advice & Tips",    href: "/advice" },
-  { label: "About",            href: "/about" },
-  { label: "Contact",          href: "/contact" }
+  { label: "Cabinets",      mega: true },
+  { label: "For the Trade", children: [
+    { label: "Become a Dealer", href: "/become-a-dealer", hint: "Apply in two minutes" },
+    { label: "Advice & Tips",   href: "/advice",          hint: "Install + spec notes" }
+  ]},
+  { label: "About",   href: "/about" },
+  { label: "Contact", href: "/contact" }
 ];
 
 Object.assign(window, { CONFIG, IMG, WOODS, SERVICES, STATS, WORKSHOP, PINS, TESTIMONIALS, NAV_LINKS });

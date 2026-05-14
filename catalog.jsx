@@ -87,6 +87,8 @@ function flattenProducts(catSlug) {
         for (const prod of sec.products) {
           out.push({
             ...prod,
+            // Inherit section.img -> cat.img if product has no img of its own.
+            img: prod.img || sec.img || cat.img || null,
             catSlug: cat.slug, catTitle: cat.title,
             secSlug: sec.slug, secTitle: sec.title,
             attrs: productAttrs(cat.slug, sec.slug, prod),
@@ -99,6 +101,7 @@ function flattenProducts(catSlug) {
       for (const prod of cat.products) {
         out.push({
           ...prod,
+          img: prod.img || cat.img || null,
           catSlug: cat.slug, catTitle: cat.title,
           secSlug: null, secTitle: cat.title,
           attrs: productAttrs(cat.slug, null, prod),
@@ -226,7 +229,9 @@ function CatalogProductCard({ product, index }) {
        style={{ "--delay": `${(index % 8) * 50}ms` }}>
       <div className="product-thumb ph"
            style={{ background: `linear-gradient(160deg, ${colors[index % colors.length]}, #1c130a)` }}>
-        <CabinetOverlay opacity={0.28}/>
+        {product.img
+          ? <Img src={product.img} alt={product.title} w={600}/>
+          : <CabinetOverlay opacity={0.28}/>}
       </div>
       <div className="product-meta">
         <span className="product-num">{product.secTitle}</span>
@@ -427,12 +432,15 @@ function SectionLayout({ category, section }) {
 
 function ProductCard({ cat, sec, product, index }) {
   const colors = ["#3B2A1E","#7a3a23","#5B4434","#7E8B6F","#26211c","#B85A3F"];
+  // Inherit section img if product doesn't have one
+  const secImg = CATALOG[cat]?.sections?.[sec]?.img;
+  const img = product.img || secImg || null;
   return (
     <a href={productPath(cat, sec, product.slug)} className="product-card" data-reveal
        style={{ "--delay": `${index * 80}ms` }}>
       <div className="product-thumb ph"
            style={{ background: `linear-gradient(160deg, ${colors[index % colors.length]}, #1c130a)` }}>
-        <CabinetOverlay opacity={0.28}/>
+        {img ? <Img src={img} alt={product.title} w={600}/> : <CabinetOverlay opacity={0.28}/>}
       </div>
       <div className="product-meta">
         <span className="product-num">0{index + 1}</span>
@@ -470,7 +478,9 @@ function ProductLayout({ category, section, product }) {
         <div className="product-hero-grid" data-reveal>
           <div className="product-hero-img ph"
                style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-            <CabinetOverlay opacity={0.3}/>
+            {(p.img || sec?.img || cat?.img)
+              ? <Img src={p.img || sec?.img || cat?.img} alt={p.title} w={900}/>
+              : <CabinetOverlay opacity={0.3}/>}
             <LikeButton productKey={productLikeKey(category, section, product)} variant="hero"/>
           </div>
           <div className="product-hero-body">
@@ -749,16 +759,21 @@ function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
     .map(p => {
       const cat = CATALOG[p.cat];
       if (!cat) return null;
-      let product, secTitle;
+      let product, secTitle, secImg;
       if (p.sec && cat.sections?.[p.sec]) {
         product = cat.sections[p.sec].products.find(x => x.slug === p.slug);
         secTitle = cat.sections[p.sec].title;
+        secImg   = cat.sections[p.sec].img;
       } else if (cat.products) {
         product = cat.products.find(x => x.slug === p.slug);
         secTitle = cat.title;
       }
       if (!product) return null;
-      return { ...product, catSlug: p.cat, secSlug: p.sec || null, catTitle: cat.title, secTitle };
+      return {
+        ...product,
+        img: product.img || secImg || cat.img || null,
+        catSlug: p.cat, secSlug: p.sec || null, catTitle: cat.title, secTitle
+      };
     })
     .filter(Boolean);
 
@@ -781,7 +796,9 @@ function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
                style={{ "--delay": `${i * 60}ms` }}>
               <div className="strip-thumb ph"
                    style={{ background: `linear-gradient(160deg, ${["#3B2A1E","#7a3a23","#5B4434","#7E8B6F","#26211c","#B85A3F"][i % 6]}, #1c130a)` }}>
-                <CabinetOverlay opacity={0.28}/>
+                {p.img
+                  ? <Img src={p.img} alt={p.title} w={500}/>
+                  : <CabinetOverlay opacity={0.28}/>}
               </div>
               <div className="strip-card-meta">
                 <span className="strip-cat">{p.catTitle}</span>

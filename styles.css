@@ -228,47 +228,125 @@ section { position: relative; }
   display: flex; align-items: center; gap: 12px;
 }
 .nav-mark {
-  width: 64px; height: 64px;
+  width: 56px; height: 56px;
   display: block;
   object-fit: contain;
   transition: transform 0.4s var(--easing);
 }
 .nav-logo:hover .nav-mark { transform: rotate(-8deg); }
-.nav-title { lineheight: 1.1; }
+.nav-title { line-height: 1.1; }
 .nav-title b { display: block; font-size: 14px; color: var(--walnut); font-weight: 700; letter-spacing: -0.01em; }
 .nav-title small {
   display: block; font-size: 10px; color: var(--muted);
   letter-spacing: 0.16em; text-transform: uppercase; margin-top: 1px;
 }
 .nav-links {
-  display: flex; gap: clamp(20px, 2.2vw, 32px); justify-content: center;
+  display: flex; gap: clamp(18px, 2vw, 28px); justify-content: center; align-items: center;
   font-size: 14px; font-weight: 500; color: var(--walnut);
   white-space: nowrap; flex-wrap: nowrap; min-width: 0;
 }
 .nav-links a { white-space: nowrap; }
-.nav-cta { display: flex; gap: 14px; align-items: center; }
+.nav-cta { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
 .nav-phone {
   font-size: 13px; font-weight: 600; color: var(--clay);
-  display: flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 10px; border-radius: 100px;
+  transition: background 0.2s var(--easing);
+}
+.nav-phone:hover { background: rgba(184,90,63,0.08); }
+.nav-phone svg { flex-shrink: 0; }
+.nav-quote-btn { white-space: nowrap; }
+
+/* Hide secondary nav-cta bits at narrower widths so nothing overlaps. */
+@media (max-width: 1180px) {
+  .nav-phone span { display: none; }
+  .nav-phone { padding: 8px; }
+}
+@media (max-width: 1080px) {
+  .nav-quote-btn { display: none; }
 }
 
 .nav-toggle {
   display: none; background: none; border: none;
-  width: 38px; height: 38px; cursor: pointer; padding: 0;
+  width: 40px; height: 40px; cursor: pointer; padding: 0;
   color: var(--walnut); border-radius: 8px;
+  align-items: center; justify-content: center;
   transition: background 0.2s;
 }
 .nav-toggle:hover { background: rgba(42,31,21,0.06); }
 
-@media (max-width: 1024px) {
+/* Burger appears the moment .nav-links hides so 720–1080 isn't dead space. */
+@media (max-width: 1080px) {
   .nav-links { display: none; }
+  .nav-toggle { display: flex; }
 }
-@media (max-width: 720px) {
-  .nav-inner { grid-template-columns: auto auto; }
+@media (max-width: 640px) {
   .nav-cta .btn, .nav-phone { display: none; }
-  .nav-toggle { display: flex; align-items: center; justify-content: center; }
   .nav-title small { display: none; }
 }
+
+/* ── "For the Trade" mini-dropdown ──────────────────────── */
+.nav-drop { position: relative; }
+.nav-drop-panel {
+  position: absolute;
+  top: calc(100% + 18px); left: 50%;
+  min-width: 240px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(42,31,21,0.16);
+  padding: 8px;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.2s var(--easing), transform 0.2s var(--easing),
+              visibility 0s linear 0.2s;
+  z-index: 95;
+}
+.nav-drop.open .nav-drop-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition-delay: 0s;
+}
+.nav-drop-panel::before {
+  content: ""; position: absolute;
+  top: -7px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: var(--cream);
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+.nav-drop-item {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  color: var(--walnut);
+  transition: background 0.2s var(--easing), padding-left 0.2s var(--easing);
+}
+.nav-drop-item:hover {
+  background: rgba(184,90,63,0.08);
+  padding-left: 18px;
+}
+.nav-drop-label { font-size: 14px; font-weight: 600; letter-spacing: -0.005em; }
+.nav-drop-hint  {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+
+/* drawer child-link rows (For the Trade entries on mobile) */
+.drawer-child-link {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 8px 0;
+  color: var(--walnut-soft);
+}
+.drawer-child-link > span {
+  font-size: 15px; font-weight: 600; color: var(--walnut-soft);
+}
+.drawer-child-link > small {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.drawer-child-link:hover > span { color: var(--clay); }
 
 /* mobile drawer */
 .drawer-backdrop {
@@ -1060,6 +1138,60 @@ section { position: relative; }
   font: inherit; color: inherit;
   display: inline-flex; align-items: center; gap: 6px;
   padding: 0; margin: 0;
+}
+
+/* simple dropdown (For the Trade) */
+.nav-drop { position: relative; }
+.nav-drop-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translate(-50%, -8px);
+  min-width: 240px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(42,31,21,0.18);
+  padding: 8px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s var(--easing), transform 0.2s var(--easing), visibility 0s linear 0.2s;
+  z-index: 80;
+}
+.nav-drop.open .nav-drop-panel {
+  opacity: 1; visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}
+.nav-drop-panel::before {
+  content: ""; position: absolute;
+  top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  width: 10px; height: 10px;
+  background: var(--cream);
+  border-left: 1px solid var(--rule);
+  border-top: 1px solid var(--rule);
+}
+.nav-drop-item {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s var(--easing);
+}
+.nav-drop-item:hover { background: rgba(184,90,63,0.08); }
+.nav-drop-label {
+  font-size: 14px; font-weight: 600; color: var(--walnut);
+  letter-spacing: -0.005em;
+}
+.nav-drop-hint {
+  font-size: 12px; color: var(--muted);
+}
+
+/* mobile drawer child-link variant (with hint text) */
+.drawer-child-link {
+  display: flex !important; flex-direction: column; gap: 2px;
+  padding: 8px 0;
+}
+.drawer-child-link small {
+  font-size: 12px; color: var(--muted); font-weight: 400;
 }
 .nav-mega-trigger.active { color: var(--clay); }
 .nav-mega-caret {
@@ -2252,6 +2384,80 @@ a.contact-card:hover {
   margin: clamp(36px, 5vw, 56px) auto 0;
   text-align: center;
   display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+}
+
+/* ── NAV: small dropdown (For the Trade) ─────────────────── */
+.nav-drop { position: relative; }
+.nav-drop-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%; transform: translateX(-50%) translateY(-6px);
+  min-width: 240px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(42,31,21,0.16);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 90;
+  transition: opacity 0.2s var(--easing),
+              transform 0.2s var(--easing),
+              visibility 0s linear 0.2s;
+}
+.nav-drop.open .nav-drop-panel {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  transition-delay: 0s;
+}
+.nav-drop-item {
+  display: flex; flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s var(--easing);
+}
+.nav-drop-item:hover { background: rgba(184,90,63,0.08); }
+.nav-drop-label {
+  font-size: 14px; font-weight: 600; color: var(--walnut);
+  letter-spacing: -0.01em;
+}
+.nav-drop-hint {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* nav-phone icon + responsive tightening */
+.nav-phone {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600;
+  color: var(--clay);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+.nav-phone svg { flex-shrink: 0; }
+.nav-phone:hover { color: var(--clay-deep); }
+.nav-quote-btn { white-space: nowrap; }
+
+@media (max-width: 1180px) {
+  .nav-phone span { display: none; }
+}
+@media (max-width: 720px) {
+  .nav-phone, .nav-quote-btn { display: none; }
+}
+
+/* mobile drawer child link (For the Trade items) */
+.drawer-child-link {
+  display: flex !important; flex-direction: column;
+  padding: 12px 0 !important;
+  gap: 2px;
+}
+.drawer-child-link > span {
+  font-size: 16px; color: var(--walnut); font-weight: 500;
+}
+.drawer-child-link > small {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase;
 }
 
 /* ── ADVICE & TIPS ───────────────────────────────────────── */
