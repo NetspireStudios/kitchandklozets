@@ -124,12 +124,14 @@ const TESTIMONIALS = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home",     href: "/" },
-  { label: "Products", mega: true },
-  { label: "About",    href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "FAQ",      href: "/faq" },
-  { label: "Contact",  href: "/contact" },
+  { label: "Home",             href: "/" },
+  { label: "RTA Kitchen",      href: "/rta-kitchen", mega: true },
+  { label: "Closet Line",      href: "/closet-line" },
+  { label: "Crafted Cabinets", href: "/crafted-cabinets" },
+  { label: "Become a Dealer",  href: "/become-a-dealer" },
+  { label: "Advice & Tips",    href: "/advice" },
+  { label: "About",            href: "/about" },
+  { label: "Contact",          href: "/contact" }
 ];
 
 Object.assign(window, { CONFIG, IMG, WOODS, SERVICES, STATS, WORKSHOP, PINS, TESTIMONIALS, NAV_LINKS });

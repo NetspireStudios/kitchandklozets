@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Advice &amp; Tips | Kitch &amp; Klozets · Cabinet Trade Notes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Short notes for dealers and homeowners: cabinet specs, install tips, finish care, and project guidance from a Watertown, MA RTA cabinet shop."/>
+<meta name="theme-color" content="#3B2A1E"/>
+<meta name="color-scheme" content="light"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://kitchandklozets.com/advice"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kitch &amp; Klozets"/>
+<meta property="og:title" content="Advice &amp; Tips | Kitch &amp; Klozets"/>
+<meta property="og:description" content="Short notes for dealers and homeowners. Specs, install tips, finish care."/>
+<meta property="og:url" content="https://kitchandklozets.com/advice"/>
+<meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+
+<link rel="icon" type="image/png" href="/assets/logo.png"/>
+<link rel="apple-touch-icon" href="/assets/logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
+<link rel="stylesheet" href="/styles.css"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "url": "https://kitchandklozets.com/advice",
+  "name": "Advice & Tips",
+  "description": "Short notes from a Watertown, MA RTA cabinet shop.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kitchandklozets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Advice & Tips" }
+    ]
+  }
+}
+</script>
+</head>
+<body style="background-color: rgb(250, 238, 223)">
+<a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<div id="root"></div>
+
+<script type="text/babel" src="/data.jsx"></script>
+<script type="text/babel" src="/catalog-data.jsx"></script>
+<script type="text/babel" src="/utils.jsx"></script>
+<script type="text/babel" src="/top.jsx"></script>
+<script type="text/babel" src="/middle.jsx"></script>
+<script type="text/babel" src="/bottom.jsx"></script>
+<script type="text/babel" src="/catalog.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const ADVICE_TOPICS = [
+  { tag: "Install",       title: "Assembling an RTA box in under 30 minutes",
+    blurb: "The cam-lock sequence we recommend: bottom panel first, then the two sides, then the back, then the top rails. Drawer slides go on before the box closes up." },
+  { tag: "Specs",         title: "Reading the dealer cut sheet",
+    blurb: "What the SKU codes mean, how to spot a base vs. a wall cabinet at a glance, and where to find the toe-kick height and the hinge offset on the data card." },
+  { tag: "Finish care",   title: "Keeping painted shaker doors looking new",
+    blurb: "Microfiber and warm water for daily cleaning. Once a year, a coat of paste wax on the kick panels keeps the floor scuffs off. Never citrus or ammonia cleaners on painted maple." },
+  { tag: "Sourcing",      title: "Why we run only eight RTA finish lines",
+    blurb: "More lines means more SKU inventory, slower lead times, and harder-to-train installers. Eight covers about 92% of the orders we see; the rest goes to the crafted line." },
+  { tag: "Project notes", title: "When to recommend Crafted over RTA",
+    blurb: "Non-square rooms, ceiling heights above 9 feet, integrated appliance panels, or any built-in that needs to wrap a structural column. The cost difference is usually 1.4× to 1.8×." },
+  { tag: "Hardware",      title: "Soft-close drawers — what failure looks like",
+    blurb: "If a drawer slams the last inch, the soft-close cylinder is spent. Five-year warranty replaces the slide; we ship from stock the same week." }
+];
+
+function App() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  React.useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll("[data-reveal]:not(.in-view)").forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <>
+      <Nav onMenu={() => setDrawerOpen(true)}/>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+      <main id="top">
+        <section className="catalog-page">
+          <div className="container">
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Advice & Tips" }]}/>
+            <header className="cat-hero" data-reveal>
+              <span className="eyebrow">Trade notes &middot; advice &amp; tips</span>
+              <h1 className="display">Short notes from the warehouse.</h1>
+              <p className="cat-lede">
+                Install sequences, finish-care notes, sourcing decisions, project guidance. The point of this page is to save you a phone call &mdash; or to give you the answer fast when the call comes from a customer.
+              </p>
+            </header>
+
+            <div className="advice-grid" data-reveal>
+              {ADVICE_TOPICS.map((t, i) => (
+                <article key={i} className="advice-card" style={{ "--delay": `${i * 60}ms` }}>
+                  <span className="advice-tag">{t.tag}</span>
+                  <h2 className="display">{t.title}</h2>
+                  <p>{t.blurb}</p>
+                  <span className="advice-meta">Full note coming soon &rarr;</span>
+                </article>
+              ))}
+            </div>
+
+            <div className="projects-placeholder" data-reveal style={{ marginTop: 56 }}>
+              <div className="projects-placeholder-card">
+                <span className="eyebrow">More notes incoming</span>
+                <h3 className="display">Long-form posts are being written.</h3>
+                <p>Each tile above will turn into a full note over the next few weeks. If there's a specific question your customers keep asking, let us know and we'll write it.</p>
+                <div className="projects-placeholder-ctas">
+                  <a className="btn btn-walnut" href="/contact">Suggest a topic <span className="arrow">&rarr;</span></a>
+                  <a className="btn btn-ghost" href="tel:+15483331419">Call (548) 333-1419</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <CTA/>
+      </main>
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

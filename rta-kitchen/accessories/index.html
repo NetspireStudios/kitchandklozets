@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Kitchen Accessories · RTA Kitchen | Kitch &amp; Klozets</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer."/>
+<meta name="keywords" content="RTA kitchen cabinets wholesale, dealer cabinets, shaker RTA, flat pack kitchen cabinets, white shaker navy shaker"/>
+<meta name="theme-color" content="#3B2A1E"/>
+<meta name="color-scheme" content="light"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta name="geo.region" content="US-MA"/>
+<meta name="geo.placename" content="Watertown"/>
+<link rel="canonical" href="https://kitchandklozets.com/rta-kitchen/accessories"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kitch &amp; Klozets"/>
+<meta property="og:title" content="Kitchen Accessories · RTA Kitchen | Kitch &amp; Klozets"/>
+<meta property="og:description" content="Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer."/>
+<meta property="og:url" content="https://kitchandklozets.com/rta-kitchen/accessories"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kitchen Accessories · RTA Kitchen | Kitch &amp; Klozets"/>
+<meta name="twitter:description" content="Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer."/>
+<meta name="twitter:image" content="https://kitchandklozets.com/assets/logo.png"/>
+
+<link rel="icon" type="image/png" href="/assets/logo.png"/>
+<link rel="apple-touch-icon" href="/assets/logo.png"/>
+
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
+
+<link rel="stylesheet" href="/styles.css"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "url": "https://kitchandklozets.com/rta-kitchen/accessories",
+  "name": "Kitchen Accessories",
+  "description": "Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer.",
+  "isPartOf": {
+    "@id": "https://kitchandklozets.com/rta-kitchen"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Drawer Organizer Set",
+        "url": "https://kitchandklozets.com/rta-kitchen/accessories/drawer-organizer-set"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Recycling Pull-Out",
+        "url": "https://kitchandklozets.com/rta-kitchen/accessories/recycling-pullout"
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kitchandklozets.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "RTA Kitchen",
+      "item": "https://kitchandklozets.com/rta-kitchen"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kitchen Accessories"
+    }
+  ]
+}
+</script>
+</head>
+<body style="background-color: rgb(250, 238, 223)">
+<a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<div id="root"></div>
+
+<script type="text/babel" src="/data.jsx"></script>
+<script type="text/babel" src="/catalog-data.jsx"></script>
+<script type="text/babel" src="/utils.jsx"></script>
+<script type="text/babel" src="/top.jsx"></script>
+<script type="text/babel" src="/middle.jsx"></script>
+<script type="text/babel" src="/bottom.jsx"></script>
+<script type="text/babel" src="/catalog.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  React.useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll("[data-reveal]:not(.in-view)").forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return (
+    <>
+      <Nav onMenu={() => setDrawerOpen(true)}/>
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+      <main id="top">
+        <SectionLayout category="rta-kitchen" section="accessories"/>
+        <CTA/>
+      </main>
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
