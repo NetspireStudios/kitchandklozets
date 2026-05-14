@@ -86,8 +86,8 @@ function App() {
   }, []);
 
   const cat = CATALOG["rta-kitchen"];
-  // Support both shapes — flat (products) and hierarchical (sections).
-  const finishes = cat.products || (cat.sections ? Object.values(cat.sections) : []);
+  // Finishes live under sections (each one carries plywood + particle products).
+  const finishes = cat.sections ? Object.values(cat.sections) : (cat.products || []);
 
   return (
     <>
@@ -99,9 +99,9 @@ function App() {
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "RTA Kitchen" }]}/>
             <header className="cat-hero" data-reveal>
               <span className="eyebrow">RTA Kitchen · dealer-direct</span>
-              <h1 className="display">Eight finish lines, one warehouse.</h1>
+              <h1 className="display">Seven finishes, plywood or particle.</h1>
               <p className="cat-lede">
-                Ready-to-assemble kitchen cabinets in eight finishes. Solid-hardwood doors and drawer fronts, plywood boxes, all-wood dovetailed drawers with soft-close undermount slides. Three to five-week lead time. Five-year warranty on every line.
+                Ready-to-assemble kitchen cabinets in seven finish lines, each offered in plywood or particle board. Solid-hardwood doors and drawer fronts, dovetailed drawer boxes on soft-close undermount slides. Three to five-week lead time. Five-year warranty on every line.
               </p>
               <div className="hero-ctas" style={{ marginTop: 28 }}>
                 <a className="btn btn-walnut" href="/contact">Request a quote <span className="arrow">→</span></a>

@@ -222,7 +222,8 @@ ${JSON.stringify({
     { name: sec.title }
   ]);
 
-  const inner = `<SectionLayout category="${catSlug}" section="${secSlug}"/>`;
+  const layout = catSlug === "rta-kitchen" ? "RtaFinishLanding" : "SectionLayout";
+  const inner = `<${layout} category="${catSlug}" section="${secSlug}"/>`;
   return wrap(head, [collectionSchema, bc], APP_BOILERPLATE(inner));
 }
 
@@ -280,7 +281,11 @@ ${JSON.stringify({
   ]);
 
   const secAttr = secSlug ? ` section="${secSlug}"` : "";
-  const inner = `<ProductLayout category="${catSlug}"${secAttr} product="${prodSlug}"/>`;
+  // RTA Kitchen section products are board options (plywood/particle); they use
+  // the tabbed cabinet browser. Flat products at the category root (accessories)
+  // continue to use the generic ProductLayout.
+  const layout = (catSlug === "rta-kitchen" && secSlug) ? "RtaBoardBrowser" : "ProductLayout";
+  const inner = `<${layout} category="${catSlug}"${secAttr} product="${prodSlug}"/>`;
   return wrap(head, [productSchema, bc], APP_BOILERPLATE(inner));
 }
 

@@ -691,8 +691,14 @@ function ContactForm({ product, category }) {
 function MegaMenu({ open, onClose }) {
   if (!open) return null;
   const cat = CATALOG["rta-kitchen"];
-  // Support both shapes — flat (cat.products) and hierarchical (cat.sections).
-  const items = cat?.products || (cat?.sections && Object.values(cat.sections)) || [];
+  // Finishes live under sections (each has plywood + particle); link to the
+  // section landing page. Flat products (accessories) appear after.
+  const finishes = cat?.sections ? Object.values(cat.sections) : [];
+  const flat     = cat?.products || [];
+  const items = [
+    ...finishes.map(s => ({ slug: s.slug, title: s.title, img: s.img, href: `/rta-kitchen/${s.slug}` })),
+    ...flat.map(p => ({ slug: p.slug, title: p.title, img: p.img, href: `/rta-kitchen/${p.slug}` }))
+  ];
   if (!items.length) return null;
   return (
     <div className="mega-menu mega-menu-rta" onMouseLeave={onClose}
@@ -706,7 +712,7 @@ function MegaMenu({ open, onClose }) {
         </div>
         <div className="mega-rta-list" role="menubar">
           {items.map(item => (
-            <a key={item.slug} href={`/rta-kitchen/${item.slug}`}
+            <a key={item.slug} href={item.href}
                className="mega-rta-item" role="menuitem">
               <span className="mega-rta-swatch ph"
                     style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
@@ -809,9 +815,136 @@ function ProductsStrip({ eyebrow, title, hint, picks, allHref }) {
   );
 }
 
+// ─── RTA Finish Landing — minimal page with two CTAs (Plywood / Particle) ───
+function RtaFinishLanding({ category, section }) {
+  const cat = CATALOG[category];
+  const sec = cat?.sections?.[section];
+  if (!cat || !sec) return <p className="container">Finish not found.</p>;
+
+  return (
+    <section className="catalog-page rta-finish-landing">
+      <div className="container">
+        <Breadcrumbs items={[
+          { label: "Home", href: "/" },
+          { label: cat.title, href: `/${category}` },
+          { label: sec.title }
+        ]}/>
+
+        <div className="rta-landing-grid" data-reveal>
+          <div className="rta-landing-img ph"
+               style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+            {sec.img
+              ? <Img src={sec.img} alt={sec.title} w={1200}/>
+              : <CabinetOverlay opacity={0.3}/>}
+          </div>
+          <div className="rta-landing-body">
+            <h1 className="display rta-landing-title">
+              {sec.title} {sec.code ? <span className="rta-landing-code">({sec.code})</span> : null}
+            </h1>
+            <p className="rta-landing-sub">Available in Plywood &amp; Particle boards.</p>
+            <p className="rta-landing-blurb">{sec.blurb}</p>
+            <div className="rta-landing-ctas">
+              {(sec.products || []).map(p => (
+                <a key={p.slug} className="btn btn-walnut rta-landing-cta"
+                   href={`/${category}/${section}/${p.slug}`}>
+                  Go to {p.title} <span className="arrow">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── RTA Board Browser — tabbed cabinet families (Base / Wall / Pantry / etc.)
+function RtaBoardBrowser({ category, section, product }) {
+  const cat = CATALOG[category];
+  const sec = cat?.sections?.[section];
+  const prod = sec?.products?.find(p => p.slug === product);
+  if (!cat || !sec || !prod) return <p className="container">Page not found.</p>;
+
+  const families = window.CABINET_FAMILIES || [];
+  const [activeFamily, setActiveFamily] = React.useState(families[0]?.slug);
+  const family = families.find(f => f.slug === activeFamily) || families[0];
+  const [activeSub, setActiveSub] = React.useState(family?.subcategories[0]?.slug);
+
+  React.useEffect(() => {
+    setActiveSub(family?.subcategories[0]?.slug);
+  }, [activeFamily]);
+
+  const sub = family?.subcategories.find(s => s.slug === activeSub) || family?.subcategories[0];
+
+  return (
+    <section className="catalog-page rta-board-page">
+      <div className="container">
+        <Breadcrumbs items={[
+          { label: "Home", href: "/" },
+          { label: cat.title, href: `/${category}` },
+          { label: sec.title, href: `/${category}/${section}` },
+          { label: prod.title }
+        ]}/>
+
+        <header className="rta-board-head" data-reveal>
+          <span className="eyebrow">{sec.title}{sec.code ? ` · ${sec.code}` : ""}</span>
+          <h1 className="display">{prod.title}</h1>
+          <p className="rta-board-lede">{prod.blurb}</p>
+        </header>
+
+        <div className="rta-board-tabs" role="tablist">
+          {families.map(f => (
+            <button key={f.slug}
+                    role="tab"
+                    aria-selected={activeFamily === f.slug}
+                    className={`rta-board-tab ${activeFamily === f.slug ? "is-active" : ""}`}
+                    onClick={() => setActiveFamily(f.slug)}>
+              {f.title}
+            </button>
+          ))}
+        </div>
+
+        <div className="rta-board-grid">
+          <aside className="rta-board-rail" role="tablist" aria-label={`${family?.title} subcategories`}>
+            {(family?.subcategories || []).map(s => (
+              <button key={s.slug}
+                      role="tab"
+                      aria-selected={activeSub === s.slug}
+                      className={`rta-board-rail-item ${activeSub === s.slug ? "is-active" : ""}`}
+                      onClick={() => setActiveSub(s.slug)}>
+                <span className="rta-board-rail-title">{s.title}</span>
+                {s.subtitle && <span className="rta-board-rail-sub">{s.subtitle}</span>}
+              </button>
+            ))}
+          </aside>
+
+          <div className="rta-board-diagram ph"
+               style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
+            <div className="rta-board-diagram-inner">
+              <span className="eyebrow">Diagram</span>
+              <h3 className="display">{sub?.title}</h3>
+              {sub?.subtitle && <p>{sub.subtitle}</p>}
+              <p className="rta-board-placeholder">Dimensioned diagram and Includes spec list ship with the SKU sheet.</p>
+            </div>
+          </div>
+
+          <div className="rta-board-skus">
+            <span className="eyebrow">SKUs</span>
+            <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Quote a finished room directly from the contact page until then.</p>
+            <a className="btn btn-walnut" href="/contact" style={{ marginTop: 12 }}>
+              Request the SKU sheet <span className="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 Object.assign(window, {
   Breadcrumbs,
   CategoryLayout, SectionLayout, ProductLayout,
+  RtaFinishLanding, RtaBoardBrowser,
   CategoryTabs, ProductFilters, CatalogProductCard,
   ProductCard, ContactForm, MegaMenu, ProductsStrip,
   LikeButton, SimilarProducts, ProductFAQ,

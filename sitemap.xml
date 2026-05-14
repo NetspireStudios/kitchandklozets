@@ -58,10 +58,34 @@
     <loc>https://kitchandklozets.com/rta-kitchen/white-slim-shaker</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/white-slim-shaker/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/white-slim-shaker/particle</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://kitchandklozets.com/rta-kitchen/white-shaker</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/white-shaker/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/white-shaker/particle</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -70,10 +94,34 @@
     <loc>https://kitchandklozets.com/rta-kitchen/blue-shaker</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/blue-shaker/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/blue-shaker/particle</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://kitchandklozets.com/rta-kitchen/grey-shaker</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/grey-shaker/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/grey-shaker/particle</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -82,16 +130,52 @@
     <loc>https://kitchandklozets.com/rta-kitchen/natural-wood</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/natural-wood/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/natural-wood/particle</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://kitchandklozets.com/rta-kitchen/smoked-oak</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/smoked-oak/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/smoked-oak/particle</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://kitchandklozets.com/rta-kitchen/high-gloss-white</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/high-gloss-white/plywood</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kitchandklozets.com/rta-kitchen/high-gloss-white/particle</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
