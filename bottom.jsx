@@ -72,7 +72,7 @@ function MapGallery() {
         <div className="section-head map-head" data-reveal>
           <div>
             <span className="eyebrow">Where we've worked</span>
-            <h2 className="display">340 rooms across<br/>New England.</h2>
+            <h2 className="display">Shipping across<br/>Ontario and beyond.</h2>
           </div>
           <div className="legend">
             <span className="swatch"><span className="pin-mark"/>Completed project</span>
@@ -293,7 +293,7 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 Kitch &amp; Klozets · Custom cabinetmakers · Sudbury, ON</span>
-          <span>10-year warranty on every joint we cut</span>
+          <span>Five-year warranty on every joint we cut</span>
         </div>
       </div>
     </footer>

@@ -10,8 +10,8 @@ const CONFIG = {
   brand: {
     name:    "Kitch & Klozets",
     short:   "Kitch & Klozets",
-    tagline: "Cabinetmakers · Sudbury ON",
-    sinceYear: 2008,
+    tagline: "Wholesale Cabinets · Sudbury ON",
+    sinceYear: 2025,
   },
   contact: {
     phone:        "(548) 333-1419",
@@ -22,9 +22,9 @@ const CONFIG = {
   address: {
     street:  "100 Lasalle Boulevard",
     city:    "Sudbury",
-    region:  "MA",
-    postal:  "02472",
-    country: "US",
+    region:  "ON",
+    postal:  "P3A 0A1",
+    country: "CA",
   },
   hours: {
     summary: "Open 7 days a week, 9am–5pm",
@@ -87,10 +87,10 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { v: 18,   suf: "",    l: "Years on the bench", s: "Since 2008" },
-  { v: 340,  suf: "+",   l: "Rooms built",        s: "Homes across New England" },
+  { v: 8,    suf: "",    l: "Finish lines",       s: "Stocked in Sudbury" },
+  { v: 35,   suf: "",    l: "Days to ship",       s: "Three to five-week lead time" },
   { v: 6,    suf: "",    l: "Cabinetmakers",      s: "No subcontracted joinery" },
-  { v: 10,   suf: " yr", l: "Warranty",           s: "On every joint we cut" },
+  { v: 5,    suf: " yr", l: "Warranty",           s: "On every joint we cut" },
 ];
 
 const WORKSHOP = [

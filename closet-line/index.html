@@ -62,34 +62,73 @@
 <script type="text/babel" src="/catalog.jsx"></script>
 
 <script type="text/babel" data-presets="react">
-const CLOSET_CONFIGS = [
-  { title: "Walk-In with Island",
-    blurb: "8x10 walk-in kit with two drawer towers, two double-hang sections, one shoe ladder, and a center island with a stone-ready deck." },
-  { title: "Reach-In Kit",
-    blurb: "Six-foot reach-in kit with one drawer tower, a double-hang section, and a top shelf bank. Trim and end caps included." },
-  { title: "Wardrobe Wall",
-    blurb: "Free-standing wardrobe wall in 10, 12, and 14-foot widths, fitted with hanging, drawer, and shoe sections for bedrooms without built-in closets." },
-  { title: "His and Hers Walk-In",
-    blurb: "Pair of mirrored walk-in kits flanking a central island. Two drawer towers per side, double-hang sections, and a shared shoe ladder at the back wall." },
-  { title: "Dressing-Room Island",
-    blurb: "Stand-alone island for an existing walk-in. Stone-ready top deck, two drawer banks, and a shared cabinet at the foot." },
-  { title: "Pantry Closet Kit",
-    blurb: "Six-foot reach-in kit configured for pantry use: adjustable shelves, a counter-height workstation, and an appliance garage with a tambour door." }
+const CLOSET_FEATURES = [
+  { eyebrow: "All-wood", title: "Plywood box, hardwood fronts",
+    blurb: "Same construction as our kitchen line: 3/4-inch ply box, solid-hardwood doors and drawer fronts, dovetailed drawer boxes on soft-close undermount slides." },
+  { eyebrow: "Eight finishes", title: "Matches the RTA kitchen palette",
+    blurb: "White, navy, grey, natural oak, smoked oak, high-gloss, and two slim-shaker variants. Closet and kitchen ship in the same finish without a custom run." },
+  { eyebrow: "One pallet", title: "Ships with the kitchen order",
+    blurb: "Closet and kitchen orders consolidate at the Sudbury warehouse. One pallet, one PO, one delivery window. Three to five-week lead time across the line." }
 ];
 
-const CLOSET_SPECS = [
-  { eyebrow: "Construction", title: "Plywood box, solid-hardwood fronts",
-    blurb: "All-wood construction. No MDF carcass. Dovetailed drawer boxes on undermount soft-close slides; the same hardware spec as the RTA kitchen line." },
-  { eyebrow: "Finish options", title: "Eight finishes, all from the RTA palette",
-    blurb: "White, blue, grey, natural oak, smoked oak, and high-gloss. Run one closet system in the same color family as the kitchen, or contrast." },
-  { eyebrow: "Lead time", title: "3 to 5 weeks, ships on the same truck",
-    blurb: "Closet and kitchen orders consolidate at the warehouse. One pallet, one delivery window, one PO. Dealer pricing tier carries across both lines." },
-  { eyebrow: "Warranty", title: "Five years on every joint and slide",
-    blurb: "Same coverage as the kitchen program: five years on hardware, five on the joint, five on the finish. We carry replacement parts from stock." }
+const CLOSET_CONFIGS = [
+  { title: "Walk-In with Island",
+    blurb: "Eight by ten walk-in kit with two drawer towers, two double-hang sections, a shoe ladder, and a center island with a stone-ready deck." },
+  { title: "Reach-In Kit",
+    blurb: "Six-foot reach-in with one drawer tower, a double-hang section, and a top shelf bank. Trim, end caps, and toe-kick included." },
+  { title: "Wardrobe Wall",
+    blurb: "Free-standing wardrobe in ten, twelve, and fourteen-foot widths. Hanging, drawer, and shoe sections fitted for bedrooms without a built-in closet." },
+  { title: "His and Hers",
+    blurb: "Mirrored walk-in kits flanking a central island. Two drawer towers per side, double-hang sections, and a shared shoe ladder along the back wall." },
+  { title: "Dressing-Room Island",
+    blurb: "Stand-alone island for an existing walk-in. Stone-ready top deck, two drawer banks, and a shared cabinet at the foot of the run." },
+  { title: "Pantry Closet Kit",
+    blurb: "Six-foot reach-in configured for pantry use. Adjustable shelves, counter-height workstation, and an appliance garage with a tambour door." }
+];
+
+const CLOSET_COMPONENTS = [
+  { title: "Base cabinets",
+    blurb: "Drawer banks in three, four, and five-drawer towers. Soft-close undermounts; full-extension slides. Sized to clear standard baseboard returns." },
+  { title: "Hanging sections",
+    blurb: "Single, double, and long-hang rod sections in two widths. Pre-drilled for chrome or brass rods; reinforced top rail rated for loaded coat runs." },
+  { title: "Shelving",
+    blurb: "Adjustable shelves in three depths. Pin-and-locking-clip mounts, hardwood edge band, and matched end caps for an open-cabinet finish." },
+  { title: "Corner solutions",
+    blurb: "Rotating corner shoe drum, fixed L-return shelves, and an angled hanging tower for L-shaped and U-shaped walk-ins." }
+];
+
+const CLOSET_ADDONS = [
+  { title: "Drawer organizers",
+    blurb: "Felt-lined dividers, jewelry trays, tie rolls, and watch boxes, sized to drop into the drawer banks." },
+  { title: "Lighting",
+    blurb: "Low-voltage LED strips with under-shelf channels. Motion-sensor or wired hard-switch options; warm 2700K only." },
+  { title: "Hardware kit",
+    blurb: "Six pull profiles in brushed nickel, matte black, brass, and chrome. Bulk-priced for dealer floor stock." },
+  { title: "Mirror and bench",
+    blurb: "Full-length mirror panel and an upholstered bench top for the dressing-room island. Both ship flat with the closet pallet." }
+];
+
+const CLOSET_DEALER = [
+  "Dealer pricing tier carries across the kitchen and closet lines. One credit application, one volume rebate, one rep on the phone.",
+  "All eight finishes are stocked in Sudbury, so closet and kitchen orders ship on the same truck within a three to five-week window. No mixed lead times.",
+  "Showroom display kits are sold at cost for dealers who carry the line. A walk-in kit, a wardrobe wall, and a hardware tower; together they read as a finished room in a 150-square-foot footprint.",
+  "Replacement parts ship from stock the same week. Hinges, slides, drawer fronts, and end panels are tracked by SKU across the entire program."
+];
+
+const CLOSET_FAQ = [
+  { q: "Do I need to be a dealer to order the closet line?",
+    a: "Yes. Closet Line and the rest of our wholesale program ship through approved dealers and trade partners. If you're a homeowner, talk to your kitchen designer or contractor; they can quote a closet alongside the kitchen on the same PO." },
+  { q: "Can the closets be customized?",
+    a: "Cabinet boxes ship in the configurations shown. Internal layouts (drawer count, shelf height, hardware) are configured on the order form, not in the carcass. For a fully built-to-measure closet, see our Crafted Cabinets line." },
+  { q: "What's the warranty on the closet line?",
+    a: "Five years on the joint, the finish, and the hardware, same as the RTA kitchen program. Replacement parts ship the same week they're requested." }
 ];
 
 function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [openFaq, setOpenFaq] = React.useState(0);
+  const [activeTab, setActiveTab] = React.useState(0);
+
   React.useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
@@ -106,11 +145,12 @@ function App() {
         <section className="catalog-page">
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Closet Line" }]}/>
-            <header className="cat-hero" data-reveal>
+
+            <header className="cat-hero cat-hero-centered" data-reveal>
               <span className="eyebrow">Closet Line · dealer-direct</span>
-              <h1 className="display">Closet systems that ship on the same truck.</h1>
+              <h1 className="display">Closet systems on the same truck as the kitchen.</h1>
               <p className="cat-lede">
-                Wholesale closet systems for the bedroom, entry, and bath. Drawer banks, hanging rails, shoe ladders, and island add-ons that share hardware with the RTA kitchen line, so a single delivery covers both rooms.
+                Wholesale closet systems for the bedroom, entry, and bath. Drawer banks, hanging rails, shoe ladders, and island add-ons that share hardware and finish with the RTA kitchen line.
               </p>
               <div className="hero-ctas" style={{ marginTop: 28 }}>
                 <a className="btn btn-walnut" href="/contact">Request a quote <span className="arrow">→</span></a>
@@ -118,31 +158,105 @@ function App() {
               </div>
             </header>
 
-            <div className="closet-config-grid" data-reveal>
-              {CLOSET_CONFIGS.map((c, i) => (
-                <article key={i} className="closet-config-card">
-                  <div className="closet-config-num">{String(i + 1).padStart(2, "0")}</div>
-                  <h3 className="display">{c.title}</h3>
-                  <p>{c.blurb}</p>
-                </article>
+            <section className="closet-features-row" data-reveal>
+              {CLOSET_FEATURES.map((f, i) => (
+                <div key={i} className="closet-feature">
+                  <span className="eyebrow">{f.eyebrow}</span>
+                  <h3 className="display">{f.title}</h3>
+                  <p>{f.blurb}</p>
+                </div>
               ))}
-            </div>
+            </section>
 
-            <div className="closet-specs" data-reveal>
+            <section className="closet-configs-section" data-reveal>
               <header className="closet-specs-head">
-                <span className="eyebrow">What's in the line</span>
-                <h2 className="display">Built to the same spec as the kitchens.</h2>
+                <span className="eyebrow">Configurations</span>
+                <h2 className="display">Six closet kits, stocked.</h2>
               </header>
-              <div className="closet-specs-grid">
-                {CLOSET_SPECS.map((s, i) => (
-                  <div key={i} className="closet-spec-card">
-                    <span className="eyebrow">{s.eyebrow}</span>
-                    <h3 className="display">{s.title}</h3>
-                    <p>{s.blurb}</p>
+              <div className="closet-config-grid">
+                {CLOSET_CONFIGS.map((c, i) => (
+                  <article key={i} className="closet-config-card">
+                    <div className="closet-config-num">{String(i + 1).padStart(2, "0")}</div>
+                    <h3 className="display">{c.title}</h3>
+                    <p>{c.blurb}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="closet-tabs-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">What's in the box</span>
+                <h2 className="display">Four cabinet families, one hardware spec.</h2>
+              </header>
+              <div className="closet-tabs">
+                <div className="closet-tab-buttons" role="tablist">
+                  {CLOSET_COMPONENTS.map((c, i) => (
+                    <button key={i}
+                            role="tab"
+                            aria-selected={activeTab === i}
+                            className={`closet-tab-btn ${activeTab === i ? "is-active" : ""}`}
+                            onClick={() => setActiveTab(i)}>
+                      {c.title}
+                    </button>
+                  ))}
+                </div>
+                <div className="closet-tab-panel">
+                  <h3 className="display">{CLOSET_COMPONENTS[activeTab].title}</h3>
+                  <p>{CLOSET_COMPONENTS[activeTab].blurb}</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="closet-addons-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">Add-ons</span>
+                <h2 className="display">Trim, lighting, and the small parts.</h2>
+              </header>
+              <div className="closet-addons-grid">
+                {CLOSET_ADDONS.map((a, i) => (
+                  <div key={i} className="closet-addon-card">
+                    <h3 className="display">{a.title}</h3>
+                    <p>{a.blurb}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
+
+            <section className="closet-dealer-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">For dealers</span>
+                <h2 className="display">How the wholesale program runs.</h2>
+              </header>
+              <div className="closet-dealer-list">
+                {CLOSET_DEALER.map((p, i) => (
+                  <p key={i} className="closet-dealer-p">
+                    <span className="closet-dealer-num">{String(i + 1).padStart(2, "0")}</span>
+                    <span>{p}</span>
+                  </p>
+                ))}
+              </div>
+            </section>
+
+            <section className="faq-accordion-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">Common questions</span>
+                <h2 className="display">Three things dealers ask first.</h2>
+              </header>
+              <div className="faq-list">
+                {CLOSET_FAQ.map((item, i) => (
+                  <details key={i} className="faq-item" open={openFaq === i}
+                    onToggle={(e) => { if (e.currentTarget.open) setOpenFaq(i); }}>
+                    <summary>
+                      <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="faq-q">{item.q}</span>
+                      <span className="faq-mark">＋</span>
+                    </summary>
+                    <div className="faq-a">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
           </div>
         </section>
         <CTA/>

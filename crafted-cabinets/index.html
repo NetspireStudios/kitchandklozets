@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>Crafted Cabinets | Kitch &amp; Klozets · Custom Cabinetry, Room by Room</title>
+<title>Crafted Cabinets | Kitch &amp; Klozets · Custom Cabinetry for the Whole Home</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Built-to-measure cabinetry for the kitchen, bath, mudroom, pantry, library, and bedroom. Sold direct to homeowners; offered to dealers as a custom trade tier."/>
-<meta name="keywords" content="custom cabinets Sudbury ON, crafted cabinetry, custom kitchen, custom vanity, custom mudroom, custom built-ins, trade custom line"/>
+<meta name="description" content="Built-to-measure cabinetry for the kitchen, bath, mudroom, pantry, library, and bedroom. Solid hardwood. Drawn to your room. Built in Sudbury, ON."/>
+<meta name="keywords" content="custom cabinets Sudbury ON, crafted cabinetry, custom kitchen, custom vanity, custom mudroom, custom built-ins, hardwood cabinetry"/>
 <meta name="theme-color" content="#3B2A1E"/>
 <meta name="color-scheme" content="light"/>
 <meta name="robots" content="index, follow"/>
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Kitch &amp; Klozets"/>
 <meta property="og:title" content="Crafted Cabinets | Kitch &amp; Klozets"/>
-<meta property="og:description" content="Built-to-measure cabinetry for every room. Custom trade tier for dealers."/>
+<meta property="og:description" content="Built-to-measure cabinetry for every room of the house."/>
 <meta property="og:url" content="https://kitchandklozets.com/crafted-cabinets"/>
 <meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -37,7 +37,7 @@
   "@type": "WebPage",
   "url": "https://kitchandklozets.com/crafted-cabinets",
   "name": "Crafted Cabinets",
-  "description": "Built-to-measure cabinetry by Kitch & Klozets. Custom kitchens, vanities, mudrooms, pantries, built-ins, and bedroom cabinetry.",
+  "description": "Built-to-measure cabinetry by Kitch & Klozets. Custom kitchens, vanities, mudrooms, pantries, built-ins, and bedroom cabinetry in Sudbury, Ontario.",
   "mainEntity": { "@id": "https://kitchandklozets.com/#business" },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -62,31 +62,40 @@
 <script type="text/babel" src="/catalog.jsx"></script>
 
 <script type="text/babel" data-presets="react">
+const CRAFTED_VALUES = [
+  "Crafted Cabinets is our built-to-measure line. Every box is drawn to the room, joined in solid hardwood, finished by hand in the Sudbury shop, and installed by the same crew that built it. No flat-pack carcasses, no third-party finishers, no warehouse stock.",
+  "We treat the room as a single piece of furniture. Sightlines, returns, scribe panels, and trim are drawn on the elevation before we cut anything. The kitchen, the vanity, the closet, and the built-in next to the fireplace all read as one project rather than six.",
+  "Drawn for one address at a time. Quoted as one number, in writing, before the saw runs. Built on a fixed bench schedule, photographed each week, and warrantied for five years on the joint, the finish, and the hardware."
+];
+
 const CRAFTED_ROOMS = [
-  { title: "Custom Kitchen",     img: "1556909114-f6e7ad7d3136",
-    blurb: "Built-to-measure kitchen cabinetry in solid hardwood, drawn to the room rather than picked from fixed widths. Shaker, inset, or slab doors; painted or stained." },
-  { title: "Custom Bath Vanity", img: "1584622650111-993a426fbf0a",
-    blurb: "Single and double vanities in solid hardwood with integrated stone tops, concealed under-mount outlets, and undermount full-extension drawer slides." },
-  { title: "Custom Mudroom",     img: "1582268611958-ebfd161ef9cf",
-    blurb: "Lockers, bench seating, bootlines, dog showers, and the integrated coat hooks that make the back hall actually work for a family." },
-  { title: "Custom Pantry",      img: "1556909195-4d33aa56a8e6",
+  { title: "Custom Kitchen", img: "1556909114-f6e7ad7d3136",
+    blurb: "A working kitchen drawn to your floor plan. Solid-hardwood doors and drawer fronts, plywood carcass, dovetailed drawer boxes. Shaker, inset, beaded inset, or slab; painted or oiled." },
+  { title: "Bath Vanity", img: "1584622650111-993a426fbf0a",
+    blurb: "Single and double vanities with integrated stone tops, concealed under-mount outlets, and undermount full-extension drawer slides. Designed to clear the plumbing rather than around it." },
+  { title: "Mudroom", img: "1582268611958-ebfd161ef9cf",
+    blurb: "Lockers, bench seating, bootlines, dog showers, and the integrated coat hooks that make the back hall actually work for the family that uses it." },
+  { title: "Pantry", img: "1556909195-4d33aa56a8e6",
     blurb: "Walk-in and butler's pantries with adjustable shelving, a counter-height workstation, and an appliance garage when there's a row of small appliances to hide." },
-  { title: "Custom Built-Ins",   img: "1505691938895-1758d7feb511",
-    blurb: "Libraries, window seats, banquettes, and media walls. Floor to ceiling, drawn to the room and finished in the shop." },
-  { title: "Custom Bedroom",     img: "1565538810643-b5bdb714032a",
+  { title: "Built-Ins", img: "1505691938895-1758d7feb511",
+    blurb: "Libraries, window seats, banquettes, and media walls. Floor to ceiling, drawn to the room, finished in the shop and installed in two clean days." },
+  { title: "Bedroom & Wardrobe", img: "1565538810643-b5bdb714032a",
     blurb: "Wardrobe walls, fitted dressers, headboard walls with integrated reading lights, and bed surrounds. Sold alongside the closet line as a single bedroom package." }
 ];
 
-const CRAFTED_PROCESS = [
-  { n: "01", t: "Site visit",     d: "Coffee, measurements, your wishlist on a yellow pad. We sketch the constraints on the spot." },
-  { n: "02", t: "Drawings",       d: "Hand-drawn elevations within two to three weeks. We bring them by and mark them up at your table." },
-  { n: "03", t: "Materials",      d: "You hold the wood, the stone, and the hardware in your hand. We narrow to three combinations." },
-  { n: "04", t: "On the bench",   d: "Built in the Sudbury shop. Photographed weekly. Drop by Saturdays if you want to see a piece in progress." },
-  { n: "05", t: "Install",        d: "Two weeks on site. Final adjustments after a month of real life with the room." }
+const CRAFTED_FAQ = [
+  { q: "How is Crafted different from the RTA Kitchen line?",
+    a: "The RTA line is flat-packed, stocked in eight finishes, and built around fixed widths in 3-inch increments. Crafted is drawn to your room: any width, any height, any hardwood. RTA ships from the warehouse in three to five weeks. Crafted runs about four months, from first sketch to final adjustment, and is installed by our own crew." },
+  { q: "What's the price range for a crafted project?",
+    a: "A built-to-measure kitchen typically falls between forty-five and a hundred and twenty thousand, depending on size, wood species, and hardware. A vanity, mudroom, or library runs roughly twelve to thirty. We send a fixed written quote after the first set of measured drawings, not a moving estimate." },
+  { q: "Where do you work?",
+    a: "We build for homes in Greater Sudbury and across Northern Ontario, with select projects in the GTA when the room is the right fit. The shop is on Lasalle Boulevard in Sudbury; we install with our own two-person crew and don't subcontract joinery, finishing, or fitting." }
 ];
 
 function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [openFaq, setOpenFaq] = React.useState(0);
+
   React.useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); } });
@@ -103,11 +112,12 @@ function App() {
         <section className="catalog-page">
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Crafted Cabinets" }]}/>
-            <header className="cat-hero" data-reveal>
-              <span className="eyebrow">Crafted Cabinets · signature line</span>
-              <h1 className="display">When the room won't fit a flat-pack kit.</h1>
+
+            <header className="cat-hero cat-hero-centered" data-reveal>
+              <span className="eyebrow">Crafted Cabinets · built to measure</span>
+              <h1 className="display">Cabinetry drawn to the room.</h1>
               <p className="cat-lede">
-                Built-to-measure cabinetry for the kitchen, bath, mudroom, pantry, library, and bedroom. Sold direct to homeowners through our own installers, and offered to dealers as a fully-finished custom tier alongside the RTA program.
+                A built-to-measure line for the kitchen, bath, mudroom, pantry, library, and bedroom. Solid hardwood throughout. Hand-finished in the Sudbury shop and installed by the crew that built it.
               </p>
               <div className="hero-ctas" style={{ marginTop: 28 }}>
                 <a className="btn btn-walnut" href="/contact">Start a project <span className="arrow">→</span></a>
@@ -115,38 +125,60 @@ function App() {
               </div>
             </header>
 
-            <div className="crafted-rooms-grid" data-reveal>
-              {CRAFTED_ROOMS.map((r, i) => (
-                <article key={i} className="crafted-room-card">
-                  <div className="crafted-room-thumb ph"
-                       style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-                    {r.img
-                      ? <Img src={r.img} alt={r.title} w={600}/>
-                      : <CabinetOverlay opacity={0.28}/>}
-                  </div>
-                  <h3 className="display">{r.title}</h3>
-                  <p>{r.blurb}</p>
-                </article>
+            <section className="feature-value" data-reveal>
+              {CRAFTED_VALUES.map((p, i) => (
+                <p key={i} className="feature-value-p">{p}</p>
               ))}
-            </div>
+            </section>
 
-            <div className="crafted-process" data-reveal>
-              <header className="crafted-process-head">
-                <span className="eyebrow">How a crafted project runs</span>
-                <h2 className="display">Five stages. Four months end to end.</h2>
+            <section className="crafted-rooms-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">Where Crafted goes</span>
+                <h2 className="display">Six rooms, one workshop.</h2>
               </header>
-              <ol className="steps-list">
-                {CRAFTED_PROCESS.map((s, i) => (
-                  <li key={i} className="step-item" style={{ "--delay": `${i * 100}ms` }}>
-                    <span className="step-num">{s.n}</span>
-                    <div>
-                      <h3 className="display">{s.t}</h3>
-                      <p>{s.d}</p>
+              <div className="crafted-rooms-grid">
+                {CRAFTED_ROOMS.map((r, i) => (
+                  <article key={i} className="crafted-room-card">
+                    <div className="crafted-room-thumb ph"
+                         style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+                      {r.img
+                        ? <Img src={r.img} alt={r.title} w={600}/>
+                        : <CabinetOverlay opacity={0.28}/>}
                     </div>
-                  </li>
+                    <h3 className="display">{r.title}</h3>
+                    <p>{r.blurb}</p>
+                  </article>
                 ))}
-              </ol>
-            </div>
+              </div>
+            </section>
+
+            <section className="materials-copy" data-reveal>
+              <span className="eyebrow">Materials</span>
+              <h2 className="display">Hardwoods, plywood, and hand-applied finishes.</h2>
+              <p>
+                Doors and drawer fronts are joined in black walnut, rift white oak, cherry, hard maple, ebonized ash, or reclaimed chestnut. Boxes are 3/4-inch furniture-grade plywood with hardwood interiors. Hinges, slides, and pulls are spec-matched across the run. Finishes are hand-applied in the shop: oil, wax, milk paint, conversion-varnish lacquer, and a small set of fumed and cerused options. We pick three combinations together before any wood is cut.
+              </p>
+            </section>
+
+            <section className="faq-accordion-section" data-reveal>
+              <header className="closet-specs-head">
+                <span className="eyebrow">Common questions</span>
+                <h2 className="display">Three things people ask first.</h2>
+              </header>
+              <div className="faq-list">
+                {CRAFTED_FAQ.map((item, i) => (
+                  <details key={i} className="faq-item" open={openFaq === i}
+                    onToggle={(e) => { if (e.currentTarget.open) setOpenFaq(i); }}>
+                    <summary>
+                      <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="faq-q">{item.q}</span>
+                      <span className="faq-mark">＋</span>
+                    </summary>
+                    <div className="faq-a">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
           </div>
         </section>
         <CTA/>

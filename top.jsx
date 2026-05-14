@@ -235,7 +235,7 @@ function Hero() {
               Custom cabinets your <span className="accent">grandkids</span> will still slam.
             </h1>
             <p className="hero-lede">
-              A six-person cabinet shop in Sudbury, ON, building furniture-grade custom kitchens, closets, and built-ins out of solid hardwood. Serving Cambridge, Newton, Brookline, Belmont, and Northern Ontario since 2008.
+              A wholesale cabinet shop in Sudbury, Ontario. Ready-to-assemble kitchens in eight finishes, a matching closet program, and a built-to-measure Crafted line for the rooms that won't take a flat-pack kit.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-walnut" href="#cta">
@@ -274,7 +274,7 @@ function Hero() {
           <div className="press-row">
             <span className="label">As featured in</span>
             <span className="item">This Old House</span>
-            <span className="item">Boston Globe</span>
+            <span className="item">Sudbury Star</span>
             <span className="item">Houzz Pro</span>
             <span className="item">NKBA</span>
             <span className="item">Architectural Digest</span>

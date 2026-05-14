@@ -504,7 +504,7 @@ function ProductLayout({ category, section, product }) {
             <ul className="product-detail-list">
               <li>Hand-built in our Sudbury, ON shop.</li>
               <li>Solid hardwood throughout; no MDF carcass.</li>
-              <li>10-year warranty on every joint we cut.</li>
+              <li>Five-year warranty on every joint we cut.</li>
               <li>Free in-home consultation; fixed quote within two weeks.</li>
               <li>Delivered, installed, and adjusted after a month of real use.</li>
             </ul>
@@ -545,7 +545,7 @@ const PRODUCT_FAQ = [
   { q: "What ballpark does this cost?",
     a: "We don't publish a list price because every project is drawn to your room and your material picks. A free in-home consultation gives you a real number against your floor plan; the fixed quote arrives within two weeks." },
   { q: "Do you install or just deliver?",
-    a: "We design, build, finish, and install in-house. For broader remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Boston contractors we've worked with for years." },
+    a: "We design, build, finish, and install in-house. For broader remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Sudbury contractors we've worked with for years." },
   { q: "Can the materials be swapped?",
     a: "Yes. The page shows a representative finish, but every species, hardware, and stone pick is up to you. Six FSC-certified hardwoods, four door styles, and an open hardware catalog." }
 ];
