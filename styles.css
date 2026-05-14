@@ -3454,5 +3454,48 @@ a.contact-card:hover {
 }
 .rta-faq-list { margin: 0; }
 
+/* --- translucent page backgrounds (home, closet-line, crafted-cabinets) --- */
+/* A near-opaque cream wash sits over a fixed-position photo so the image
+   reads like a watermark behind the page chrome. Each page passes a
+   different photo via its own body class. */
+body.bg-image {
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+body.bg-image-kitchen {
+  background-image:
+    linear-gradient(rgba(250, 238, 223, 0.94), rgba(250, 238, 223, 0.94)),
+    url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2000&q=80&auto=format&fit=crop");
+}
+body.bg-image-closet {
+  background-image:
+    linear-gradient(rgba(250, 238, 223, 0.94), rgba(250, 238, 223, 0.94)),
+    url("https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=2000&q=80&auto=format&fit=crop");
+}
+body.bg-image-shop {
+  background-image:
+    linear-gradient(rgba(250, 238, 223, 0.94), rgba(250, 238, 223, 0.94)),
+    url("https://images.unsplash.com/photo-1572297566717-c2e57bcb1fe1?w=2000&q=80&auto=format&fit=crop");
+}
+/* fixed attachment misbehaves on iOS — fall back to scrolling background */
+@supports (-webkit-touch-callout: none) {
+  body.bg-image { background-attachment: scroll; }
+}
+/* Section containers default to a solid cream background; on bg-image pages
+   we let the body's watermarked photo show through them. */
+body.bg-image .catalog-page,
+body.bg-image .wholesale-hero,
+body.bg-image .rta-showcase,
+body.bg-image .products-strip {
+  background: transparent;
+}
+/* let the body image read through the main page wrappers */
+body.bg-image .catalog-page,
+body.bg-image .wholesale-hero {
+  background: transparent;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
