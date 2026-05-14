@@ -491,8 +491,8 @@ function ProductLayout({ category, section, product }) {
               <a className="btn btn-walnut" href="#inquire">
                 Inquire about this <span className="arrow">→</span>
               </a>
-              <a className="btn btn-ghost" href="tel:+15483331419">
-                Call (548) 333-1419
+              <a className="btn btn-ghost" href="mailto:sales@kitchandklozets.com">
+                Email sales
               </a>
             </div>
           </div>
@@ -626,7 +626,7 @@ function ContactForm({ product, category }) {
       }
       setSent(true);
     } catch (e2) {
-      setErr(e2.message + " Please call (548) 333-1419 or email sales@kitchandklozets.com.");
+      setErr(e2.message + " Please email sales@kitchandklozets.com.");
     } finally {
       setBusy(false);
     }
@@ -636,7 +636,7 @@ function ContactForm({ product, category }) {
     return (
       <div className="contact-form-thanks">
         <h3 className="display">Thanks. We'll be in touch.</h3>
-        <p>We received your inquiry about <b>{product}</b>. Expect a reply within one business day from sales@kitchandklozets.com or by phone at (548) 333-1419.</p>
+        <p>We received your inquiry about <b>{product}</b>. Expect a reply within one business day from sales@kitchandklozets.com.</p>
       </div>
     );
   }

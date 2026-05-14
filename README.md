@@ -92,12 +92,11 @@ Two important calls out:
 Business identity lives in one place:
 
 ```js
-window.CONFIG.contact.phone        // "(548) 333-1419"
-window.CONFIG.contact.phoneTel     // "tel:+15483331419"
 window.CONFIG.contact.email        // "sales@kitchandklozets.com"
-window.CONFIG.address.street       // "100 Lasalle Boulevard"
-window.CONFIG.hours.summary        // "Open 7 days a week, 9am–5pm"
-window.CONFIG.serviceArea          // ["Sudbury", "Cambridge", ...]
+window.CONFIG.contact.emailMailto  // "mailto:sales@kitchandklozets.com"
+window.CONFIG.address.city         // "Sudbury"
+window.CONFIG.hours.summary        // "Open 7 days a week, 9am to 5pm"
+window.CONFIG.serviceArea          // ["Sudbury", ...]
 ```
 
 When you change a phone or address, change it here. Older hand-coded literals in some HTML schemas haven't been swapped yet — incremental cleanup.

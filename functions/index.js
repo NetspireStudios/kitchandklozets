@@ -112,7 +112,7 @@ exports.submitContact = onRequest(
       });
     } catch (e) {
       logger.error("Resend send failed", e);
-      return res.status(502).json({ error: "Email service failed; please try again or call (548) 333-1419." });
+      return res.status(502).json({ error: "Email service failed; please try again or email sales@kitchandklozets.com directly." });
     }
 
     return res.json({ ok: true, id: docId });

@@ -242,13 +242,13 @@ function CTA() {
               Bring us a wishlist,<br/>we'll bring the bench.
             </h2>
             <p>
-              Pick up the phone. In-home consultations are free, usually 90 minutes, and end with a yellow pad full of notes and three material samples.
+              Send a note. In-home consultations are free, usually 90 minutes, and end with a yellow pad full of notes and three material samples.
             </p>
           </div>
           <div className="cta-actions">
-            <a className="btn btn-walnut" href="tel:+15483331419">Call (548) 333-1419</a>
+            <a className="btn btn-walnut" href="/contact">Request a quote</a>
             <a className="btn btn-cream" href="mailto:sales@kitchandklozets.com">sales@kitchandklozets.com</a>
-            <div className="cta-call">Sales hours · Open 7 days a week, 9am–5pm</div>
+            <div className="cta-call">Sales hours · Open 7 days a week, 9am to 5pm</div>
           </div>
         </div>
       </div>
@@ -276,7 +276,6 @@ function Footer() {
             ["Build with us", ["What we build", "Wood library", "Get a quote", "Financing"]],
             ["The workshop",  ["About us", "The cabinetmakers", "Our process", "Press"]],
             ["Stay in touch", [
-              { label: "(548) 333-1419",          href: "tel:+15483331419" },
               { label: "sales@kitchandklozets.com", href: "mailto:sales@kitchandklozets.com" },
               { label: "kitchandklozets.com",     href: "https://kitchandklozets.com" },
               { label: "Instagram",               href: "#" },

@@ -14,8 +14,6 @@ const CONFIG = {
     sinceYear: 2025,
   },
   contact: {
-    phone:        "(548) 333-1419",
-    phoneTel:     "tel:+15483331419",
     email:        "sales@kitchandklozets.com",
     emailMailto:  "mailto:sales@kitchandklozets.com",
   },
