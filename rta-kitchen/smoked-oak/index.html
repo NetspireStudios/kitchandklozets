@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>Smoked Oak · RTA Kitchen | Kitch &amp; Klozets</title>
+<title>Smoked Oak | Kitch &amp; Klozets</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads."/>
+<meta name="description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads. Pairs cleanly with brass or black"/>
 <meta name="keywords" content="RTA kitchen cabinets wholesale, dealer cabinets, shaker RTA, flat pack kitchen cabinets, white shaker navy shaker"/>
 <meta name="theme-color" content="#3B2A1E"/>
 <meta name="color-scheme" content="light"/>
@@ -15,14 +15,14 @@
 
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Kitch &amp; Klozets"/>
-<meta property="og:title" content="Smoked Oak · RTA Kitchen | Kitch &amp; Klozets"/>
-<meta property="og:description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads."/>
+<meta property="og:title" content="Smoked Oak | Kitch &amp; Klozets"/>
+<meta property="og:description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads. Pairs cleanly with brass or black"/>
 <meta property="og:url" content="https://kitchandklozets.com/rta-kitchen/smoked-oak"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:image" content="https://kitchandklozets.com/assets/logo.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Smoked Oak · RTA Kitchen | Kitch &amp; Klozets"/>
-<meta name="twitter:description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads."/>
+<meta name="twitter:title" content="Smoked Oak | Kitch &amp; Klozets"/>
+<meta name="twitter:description" content="Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads. Pairs cleanly with brass or black"/>
 <meta name="twitter:image" content="https://kitchandklozets.com/assets/logo.png"/>
 
 <link rel="icon" type="image/png" href="/assets/logo.png"/>
@@ -41,29 +41,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "url": "https://kitchandklozets.com/rta-kitchen/smoked-oak",
+  "@type": "Product",
   "name": "Smoked Oak",
-  "description": "Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads.",
-  "isPartOf": {
-    "@id": "https://kitchandklozets.com/rta-kitchen"
+  "description": "Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads. Pairs cleanly with brass or blackened-steel pulls.",
+  "url": "https://kitchandklozets.com/rta-kitchen/smoked-oak",
+  "image": "https://kitchandklozets.com/assets/logo.png",
+  "category": "RTA Kitchen",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kitch & Klozets"
   },
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Smoked Oak Base Suite",
-        "url": "https://kitchandklozets.com/rta-kitchen/smoked-oak/smoked-oak-base-suite"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Smoked Oak Tall Suite",
-        "url": "https://kitchandklozets.com/rta-kitchen/smoked-oak/smoked-oak-tall-suite"
-      }
-    ]
+  "manufacturer": {
+    "@id": "https://kitchandklozets.com/#business"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "url": "https://kitchandklozets.com/rta-kitchen/smoked-oak",
+    "seller": {
+      "@id": "https://kitchandklozets.com/#business"
+    }
   }
 }
 </script>
@@ -121,7 +119,7 @@ function App() {
       <Nav onMenu={() => setDrawerOpen(true)}/>
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
       <main id="top">
-        <SectionLayout category="rta-kitchen" section="smoked-oak"/>
+        <ProductLayout category="rta-kitchen" product="smoked-oak"/>
         <CTA/>
       </main>
       <Footer/>

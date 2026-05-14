@@ -86,7 +86,8 @@ function App() {
   }, []);
 
   const cat = CATALOG["rta-kitchen"];
-  const sections = Object.values(cat.sections);
+  // Support both shapes — flat (products) and hierarchical (sections).
+  const finishes = cat.products || (cat.sections ? Object.values(cat.sections) : []);
 
   return (
     <>
@@ -109,21 +110,21 @@ function App() {
             </header>
 
             <div className="rta-grid" data-reveal>
-              {sections.map((sec, i) => (
-                <a key={sec.slug} href={`/rta-kitchen/${sec.slug}`}
+              {finishes.map((f, i) => (
+                <a key={f.slug} href={`/rta-kitchen/${f.slug}`}
                    className="rta-card" style={{ "--delay": `${i * 50}ms` }}>
                   <div className="rta-thumb ph"
                        style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-                    {sec.img
-                      ? <Img src={sec.img} alt={sec.title} w={500}/>
+                    {f.img
+                      ? <Img src={f.img} alt={f.title} w={600}/>
                       : <CabinetOverlay opacity={0.28}/>}
                   </div>
                   <div className="rta-meta">
                     <span className="rta-num">0{i + 1}</span>
                     <span className="rta-arrow">→</span>
                   </div>
-                  <h3 className="display">{sec.title}</h3>
-                  <p>{sec.blurb}</p>
+                  <h3 className="display">{f.title}</h3>
+                  <p>{f.blurb}</p>
                 </a>
               ))}
             </div>

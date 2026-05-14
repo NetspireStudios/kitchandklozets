@@ -691,31 +691,34 @@ function ContactForm({ product, category }) {
 function MegaMenu({ open, onClose }) {
   if (!open) return null;
   const cat = CATALOG["rta-kitchen"];
-  if (!cat || !cat.sections) return null;
-  const sections = Object.values(cat.sections);
+  // Support both shapes — flat (cat.products) and hierarchical (cat.sections).
+  const items = cat?.products || (cat?.sections && Object.values(cat.sections)) || [];
+  if (!items.length) return null;
   return (
-    <div className="mega-menu" onMouseLeave={onClose} role="menu" aria-label="RTA Kitchen finishes">
+    <div className="mega-menu mega-menu-rta" onMouseLeave={onClose}
+         role="menu" aria-label="RTA Kitchen finishes">
       <div className="mega-menu-inner">
         <div className="mega-rta-head">
           <div>
             <span className="eyebrow">{cat.title}</span>
-            <h4 className="display">Eight finish lines.</h4>
+            <h4 className="display">Pick a finish line.</h4>
           </div>
           <a href="/rta-kitchen" className="link-underline mega-rta-all">
-            See the full RTA catalog <span aria-hidden="true">→</span>
+            All RTA finishes <span aria-hidden="true">→</span>
           </a>
         </div>
-        <div className="mega-rta-grid">
-          {sections.map(sec => (
-            <a key={sec.slug} href={`/rta-kitchen/${sec.slug}`}
-               className="mega-rta-card" role="menuitem">
-              <div className="mega-rta-thumb ph"
-                   style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-                {sec.img
-                  ? <Img src={sec.img} alt={sec.title} w={320}/>
+        <div className="mega-rta-list" role="menubar">
+          {items.map(item => (
+            <a key={item.slug} href={`/rta-kitchen/${item.slug}`}
+               className="mega-rta-item" role="menuitem">
+              <span className="mega-rta-swatch ph"
+                    style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+                {item.img
+                  ? <Img src={item.img} alt="" w={140}/>
                   : <CabinetOverlay opacity={0.28}/>}
-              </div>
-              <div className="mega-rta-title">{sec.title}</div>
+              </span>
+              <span className="mega-rta-item-title">{item.title}</span>
+              <span className="mega-rta-item-arrow" aria-hidden="true">→</span>
             </a>
           ))}
         </div>

@@ -2311,19 +2311,18 @@ a.contact-card:hover {
 }
 .rta-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(16px, 2vw, 24px);
-  margin: clamp(36px, 5vw, 56px) 0 clamp(28px, 4vw, 40px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(22px, 2.6vw, 36px);
+  margin: clamp(40px, 5vw, 64px) 0 clamp(36px, 5vw, 56px);
 }
-@media (max-width: 1080px) { .rta-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 780px)  { .rta-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px)  { .rta-grid { grid-template-columns: 1fr; } }
+@media (max-width: 980px) { .rta-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .rta-grid { grid-template-columns: 1fr; } }
 .rta-card {
   display: flex; flex-direction: column;
   background: var(--cream);
   border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 14px;
+  border-radius: 14px;
+  padding: 18px;
   transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing), border-color 0.3s var(--easing);
 }
 .rta-card:hover {
@@ -2333,29 +2332,29 @@ a.contact-card:hover {
 }
 .rta-thumb {
   aspect-ratio: 4 / 3;
-  border-radius: 5px;
-  margin-bottom: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
 }
 .rta-meta {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 6px;
-  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--muted);
 }
 .rta-num { color: var(--clay); font-weight: 600; }
 .rta-arrow {
-  font-size: 16px; color: var(--walnut-soft);
+  font-size: 18px; color: var(--walnut-soft);
   transition: transform 0.3s var(--easing);
 }
-.rta-card:hover .rta-arrow { transform: translateX(4px); color: var(--clay); }
+.rta-card:hover .rta-arrow { transform: translateX(5px); color: var(--clay); }
 .rta-card .display {
-  font-size: clamp(15px, 1.3vw, 18px);
+  font-size: clamp(18px, 1.6vw, 22px);
   color: var(--walnut);
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
 }
 .rta-card p {
-  font-size: 12px; color: var(--muted); line-height: 1.55;
+  font-size: 14px; color: var(--muted); line-height: 1.6;
   margin: 0;
 }
 .rta-foot { text-align: center; }
@@ -2420,33 +2419,52 @@ a.contact-card:hover {
   font-size: 13px; font-weight: 600;
   letter-spacing: 0.04em; text-transform: uppercase;
 }
-.mega-rta-grid {
+.mega-menu-rta { max-height: calc(100vh - 100px); }
+.mega-rta-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(12px, 1.4vw, 18px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 28px;
 }
-@media (max-width: 980px) { .mega-rta-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 720px) { .mega-rta-grid { grid-template-columns: repeat(2, 1fr); } }
-.mega-rta-card {
-  display: flex; flex-direction: column;
+@media (max-width: 720px) { .mega-rta-list { grid-template-columns: 1fr; } }
+.mega-rta-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.25s var(--easing);
+  color: var(--walnut);
+  transition: background 0.18s var(--easing), color 0.18s var(--easing);
 }
-.mega-rta-card:hover { transform: translateY(-2px); }
-.mega-rta-thumb {
-  aspect-ratio: 4 / 3;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  overflow: hidden;
+.mega-rta-item:hover {
+  background: rgba(184, 90, 63, 0.08);
 }
-.mega-rta-title {
-  font-size: 13px; font-weight: 600; color: var(--walnut);
+.mega-rta-item:hover .mega-rta-item-title { color: var(--clay); }
+.mega-rta-swatch {
+  width: 44px; height: 44px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.mega-rta-item-title {
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: -0.005em;
-  padding: 0 4px;
-  transition: color 0.2s var(--easing);
+  transition: color 0.18s var(--easing);
 }
-.mega-rta-card:hover .mega-rta-title { color: var(--clay); }
+.mega-rta-item-arrow {
+  font-size: 14px;
+  color: var(--walnut-soft);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s var(--easing), transform 0.18s var(--easing);
+}
+.mega-rta-item:hover .mega-rta-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--clay);
+}
 
 /* ── NAV: small dropdown (For the Trade) ─────────────────── */
 .nav-drop { position: relative; }
