@@ -20,10 +20,8 @@ const CONFIG = {
     emailMailto:  "mailto:sales@kitchandklozets.com",
   },
   address: {
-    street:  "100 Lasalle Boulevard",
     city:    "Sudbury",
     region:  "ON",
-    postal:  "P3A 0A1",
     country: "CA",
   },
   hours: {

@@ -2908,5 +2908,193 @@ a.contact-card:hover {
   letter-spacing: 0.04em;
 }
 
+/* clickable crafted room card variant (button) */
+.crafted-room-card-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  padding: 0;
+}
+.crafted-room-card-btn:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
+.crafted-room-thumb { position: relative; }
+.crafted-room-zoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+.crafted-room-card:hover .crafted-room-zoom,
+.crafted-room-card:focus-visible .crafted-room-zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* lightbox modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 8, 0.88);
+  display: grid;
+  place-items: center;
+  z-index: 10000;
+  padding: 24px;
+  animation: lightbox-fade 0.22s ease;
+}
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: inherit;
+  z-index: 2;
+  transition: background 0.18s ease;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.18); }
+.lightbox-inner {
+  max-width: min(1100px, 92vw);
+  max-height: 90vh;
+  display: grid;
+  gap: 16px;
+  animation: lightbox-rise 0.28s ease;
+}
+@keyframes lightbox-rise {
+  from { opacity: 0; transform: translateY(12px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.lightbox-img-wrap {
+  background: #1c130a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+.lightbox-img-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  background: #1c130a;
+}
+.lightbox-caption {
+  background: rgba(255, 250, 240, 0.96);
+  border-radius: 10px;
+  padding: 18px 22px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.lightbox-caption .display {
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: var(--walnut);
+  letter-spacing: -0.01em;
+}
+.lightbox-caption p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--walnut);
+  color: var(--cream);
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  z-index: 9000;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+  animation: cookie-rise 0.32s ease;
+}
+@keyframes cookie-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 640px) {
+  .cookie-banner {
+    grid-template-columns: 1fr;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 16px 18px;
+  }
+}
+.cookie-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(250, 238, 223, 0.92);
+}
+.cookie-text a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 238, 223, 0.45);
+  text-underline-offset: 3px;
+}
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cookie-btn {
+  appearance: none;
+  border: 1px solid rgba(250, 238, 223, 0.3);
+  background: transparent;
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.cookie-btn:hover { background: rgba(250, 238, 223, 0.08); }
+.cookie-btn-primary {
+  background: var(--clay);
+  border-color: var(--clay);
+  color: var(--cream);
+  font-weight: 600;
+}
+.cookie-btn-primary:hover { background: #a8503a; border-color: #a8503a; }
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }

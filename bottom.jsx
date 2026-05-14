@@ -258,6 +258,7 @@ function CTA() {
 
 function Footer() {
   return (
+    <>
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
@@ -267,8 +268,8 @@ function Footer() {
               <div className="display name">Kitch &amp; Klozets</div>
             </div>
             <div className="footer-about">
-              100 Lasalle Boulevard, Sudbury ON 02472<br/>
-              Sales hours: open 7 days a week, 9am–5pm.
+              Wholesale RTA cabinets and crafted cabinetry, based in Sudbury, Ontario.<br/>
+              Sales hours: open 7 days a week, 9am to 5pm.
             </div>
           </div>
           {[
@@ -292,12 +293,46 @@ function Footer() {
           ))}
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Kitch &amp; Klozets · Custom cabinetmakers · Sudbury, ON</span>
+          <span>© {(() => { const y = new Date().getFullYear(); const s = window.CONFIG?.brand?.sinceYear || 2025; return y === s ? `${y}` : `${s}–${y}`; })()} Kitch &amp; Klozets · Wholesale cabinets · Sudbury, ON</span>
           <span>Five-year warranty on every joint we cut</span>
         </div>
       </div>
     </footer>
+    <CookieBanner/>
+    </>
   );
 }
 
-Object.assign(window, { Workshop, MapGallery, Testimonials, FAQ, CTA, Footer });
+function CookieBanner() {
+  const STORAGE_KEY = "kk-cookie-consent";
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    try {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        const t = setTimeout(() => setVisible(true), 700);
+        return () => clearTimeout(t);
+      }
+    } catch (_) { /* localStorage unavailable */ }
+  }, []);
+
+  const choose = (value) => {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (_) {}
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+  return (
+    <div className="cookie-banner" role="region" aria-label="Cookie notice">
+      <div className="cookie-text">
+        We use a small set of cookies to keep the site running and remember your preferences. No third-party tracking. <a href="/privacy">Privacy</a>.
+      </div>
+      <div className="cookie-actions">
+        <button className="cookie-btn" onClick={() => choose("declined")}>Decline</button>
+        <button className="cookie-btn cookie-btn-primary" onClick={() => choose("accepted")}>Accept</button>
+      </div>
+    </div>
+  );
+}
+
+Object.assign(window, { Workshop, MapGallery, Testimonials, FAQ, CTA, Footer, CookieBanner });

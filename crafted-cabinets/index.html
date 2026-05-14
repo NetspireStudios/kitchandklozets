@@ -69,18 +69,18 @@ const CRAFTED_VALUES = [
 ];
 
 const CRAFTED_ROOMS = [
-  { title: "Custom Kitchen", img: "1556909114-f6e7ad7d3136",
-    blurb: "A working kitchen drawn to your floor plan. Solid-hardwood doors and drawer fronts, plywood carcass, dovetailed drawer boxes. Shaker, inset, beaded inset, or slab; painted or oiled." },
-  { title: "Bath Vanity", img: "1584622650111-993a426fbf0a",
-    blurb: "Single and double vanities with integrated stone tops, concealed under-mount outlets, and undermount full-extension drawer slides. Designed to clear the plumbing rather than around it." },
-  { title: "Mudroom", img: "1582268611958-ebfd161ef9cf",
-    blurb: "Lockers, bench seating, bootlines, dog showers, and the integrated coat hooks that make the back hall actually work for the family that uses it." },
-  { title: "Pantry", img: "1556909195-4d33aa56a8e6",
-    blurb: "Walk-in and butler's pantries with adjustable shelving, a counter-height workstation, and an appliance garage when there's a row of small appliances to hide." },
-  { title: "Built-Ins", img: "1505691938895-1758d7feb511",
-    blurb: "Libraries, window seats, banquettes, and media walls. Floor to ceiling, drawn to the room, finished in the shop and installed in two clean days." },
-  { title: "Bedroom & Wardrobe", img: "1565538810643-b5bdb714032a",
-    blurb: "Wardrobe walls, fitted dressers, headboard walls with integrated reading lights, and bed surrounds. Sold alongside the closet line as a single bedroom package." }
+  { title: "Bedroom", img: "1505693416388-ac5ce068fe85",
+    blurb: "Fitted bedroom walls drawn to the room. Wardrobe runs, headboard cabinetry with integrated reading lights, and bedside towers in solid hardwood. Painted or oiled; flush or shaker fronts." },
+  { title: "Bedroom Wardrobe", img: "1565538810643-b5bdb714032a",
+    blurb: "Walk-in and wall-mounted wardrobes with drawer towers, double-hang sections, shoe ladders, and a stone-ready dressing island. Drawn for the actual ceiling height of the room." },
+  { title: "TV Cabinets", img: "1505691938895-1758d7feb511",
+    blurb: "Media walls in hardwood and veneer, sized to the screen and the speaker layout. Concealed cable runs, drop-down soundbar shelves, and integrated lighting along the underside." },
+  { title: "Wall Panels", img: "1556910010-aa9b3d50bf08",
+    blurb: "Floor-to-ceiling panel walls in fluted, reeded, or shaker profiles. Used to absorb a difficult wall, hide a doorway, or carry the casework into a living room without breaking the line." },
+  { title: "Entrance Cabinets", img: "1582268611958-ebfd161ef9cf",
+    blurb: "Foyer and mudroom cabinetry: lockers, benches, bootlines, dog showers, and the integrated hooks that make the back hall actually work for the family that uses it." },
+  { title: "Balcony Cabinets with Bar", img: "1554995207-c18c203602cb",
+    blurb: "Outdoor-rated cabinetry for a balcony or covered terrace. Sealed marine-grade ply with a hardwood-clad face, an integrated bar counter, and a wine fridge cutout when the run calls for it." }
 ];
 
 const CRAFTED_FAQ = [
@@ -89,12 +89,41 @@ const CRAFTED_FAQ = [
   { q: "What's the price range for a crafted project?",
     a: "A built-to-measure kitchen typically falls between forty-five and a hundred and twenty thousand, depending on size, wood species, and hardware. A vanity, mudroom, or library runs roughly twelve to thirty. We send a fixed written quote after the first set of measured drawings, not a moving estimate." },
   { q: "Where do you work?",
-    a: "We build for homes in Greater Sudbury and across Northern Ontario, with select projects in the GTA when the room is the right fit. The shop is on Lasalle Boulevard in Sudbury; we install with our own two-person crew and don't subcontract joinery, finishing, or fitting." }
+    a: "We build for homes in Greater Sudbury and across Northern Ontario, with select projects in the GTA when the room is the right fit. The shop is in Sudbury; we install with our own two-person crew and don't subcontract joinery, finishing, or fitting." }
 ];
+
+function Lightbox({ room, onClose }) {
+  React.useEffect(() => {
+    if (!room) return;
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [room, onClose]);
+  if (!room) return null;
+  return (
+    <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label={room.title}>
+      <button className="lightbox-close" aria-label="Close" onClick={onClose}>×</button>
+      <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
+        <div className="lightbox-img-wrap">
+          <Img src={room.img} alt={room.title} w={1600}/>
+        </div>
+        <div className="lightbox-caption">
+          <h3 className="display">{room.title}</h3>
+          <p>{room.blurb}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [openFaq, setOpenFaq] = React.useState(0);
+  const [lightboxRoom, setLightboxRoom] = React.useState(null);
 
   React.useEffect(() => {
     const io = new IntersectionObserver((entries) => {
@@ -138,16 +167,20 @@ function App() {
               </header>
               <div className="crafted-rooms-grid">
                 {CRAFTED_ROOMS.map((r, i) => (
-                  <article key={i} className="crafted-room-card">
+                  <button key={i} type="button"
+                          className="crafted-room-card crafted-room-card-btn"
+                          onClick={() => setLightboxRoom(r)}
+                          aria-label={`Open ${r.title} image`}>
                     <div className="crafted-room-thumb ph"
                          style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
                       {r.img
                         ? <Img src={r.img} alt={r.title} w={600}/>
                         : <CabinetOverlay opacity={0.28}/>}
+                      <span className="crafted-room-zoom" aria-hidden="true">⤢</span>
                     </div>
                     <h3 className="display">{r.title}</h3>
                     <p>{r.blurb}</p>
-                  </article>
+                  </button>
                 ))}
               </div>
             </section>
@@ -184,6 +217,7 @@ function App() {
         <CTA/>
       </main>
       <Footer/>
+      <Lightbox room={lightboxRoom} onClose={() => setLightboxRoom(null)}/>
     </>
   );
 }

@@ -703,9 +703,6 @@ function MegaMenu({ open, onClose }) {
             <span className="eyebrow">{cat.title}</span>
             <h4 className="display">Pick a finish line.</h4>
           </div>
-          <a href="/rta-kitchen" className="link-underline mega-rta-all">
-            All RTA finishes <span aria-hidden="true">→</span>
-          </a>
         </div>
         <div className="mega-rta-list" role="menubar">
           {items.map(item => (
