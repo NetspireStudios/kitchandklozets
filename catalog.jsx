@@ -689,59 +689,47 @@ function ContactForm({ product, category }) {
 }
 
 function MegaMenu({ open, onClose }) {
-  const cats = listCategories();
-  const [active, setActive] = React.useState(cats[0]?.slug || null);
   if (!open) return null;
-  const activeCat = active ? CATALOG[active] : null;
+  const cat = CATALOG["rta-kitchen"];
+  if (!cat || !cat.sections) return null;
+  const sections = Object.values(cat.sections);
   return (
-    <div className="mega-menu" onMouseLeave={onClose} role="menu" aria-label="Products">
+    <div className="mega-menu" onMouseLeave={onClose} role="menu" aria-label="RTA Kitchen finishes">
       <div className="mega-menu-inner">
-        <div className="mega-menu-cols">
-
-          {/* Left: 8 categories. Hover or focus reveals their sections on the right.
-              Click navigates to the category page itself. */}
-          <nav className="mm-col mm-col-cats" aria-label="Product categories">
-            {cats.map(cat => (
-              <a key={cat.slug} href={`/${cat.slug}`}
-                 className={`mm-cat ${active === cat.slug ? "active" : ""}`}
-                 onMouseEnter={() => setActive(cat.slug)}
-                 onFocus={() => setActive(cat.slug)}
-                 role="menuitem">
-                <span className="mm-cat-title">{cat.title}</span>
-                <span className="mm-cat-arrow" aria-hidden="true">›</span>
-              </a>
-            ))}
-          </nav>
-
-          {/* Middle: sections of the currently-active category. Flat
-              categories (no sections) show their products directly. */}
-          <div className="mm-col mm-col-secs" aria-label={activeCat ? `${activeCat.title} items` : ""}>
-            {activeCat && activeCat.sections && Object.values(activeCat.sections).map(sec => (
-              <a key={sec.slug} href={`/${active}/${sec.slug}`} className="mm-sec" role="menuitem">
-                {sec.title}
-              </a>
-            ))}
-            {activeCat && !activeCat.sections && activeCat.products && activeCat.products.slice(0, 8).map(prod => (
-              <a key={prod.slug} href={`/${active}/${prod.slug}`} className="mm-sec" role="menuitem">
-                {prod.title}
-              </a>
-            ))}
-            {activeCat && !activeCat.sections && activeCat.products && activeCat.products.length > 8 && (
-              <a href={`/${active}`} className="mm-sec mm-sec-more" role="menuitem">
-                See all {activeCat.products.length} {activeCat.title} →
-              </a>
-            )}
+        <div className="mega-rta-head">
+          <div>
+            <span className="eyebrow">{cat.title}</span>
+            <h4 className="display">Eight finish lines.</h4>
           </div>
-
-          {/* Right: small promo / quick action for the active category. */}
+          <a href="/rta-kitchen" className="link-underline mega-rta-all">
+            See the full RTA catalog <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div className="mega-rta-grid">
+          {sections.map(sec => (
+            <a key={sec.slug} href={`/rta-kitchen/${sec.slug}`}
+               className="mega-rta-card" role="menuitem">
+              <div className="mega-rta-thumb ph"
+                   style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+                {sec.img
+                  ? <Img src={sec.img} alt={sec.title} w={320}/>
+                  : <CabinetOverlay opacity={0.28}/>}
+              </div>
+              <div className="mega-rta-title">{sec.title}</div>
+            </a>
+          ))}
+        </div>
+        <div style={{ display: "none" }}>
+          {/* legacy three-column scaffolding retained as dead anchor in case
+              we need to revert; never rendered. */}
           <aside className="mm-col mm-col-promo" aria-hidden="true">
-            {activeCat && (
+            {cat && (
               <div className="mm-promo">
                 <span className="eyebrow">Browse the full set</span>
-                <h4 className="display">{activeCat.title}</h4>
-                <p>{activeCat.short}</p>
-                <a className="link-underline mm-promo-cta" href={`/${active}`}>
-                  See all in {activeCat.title} <span aria-hidden="true">→</span>
+                <h4 className="display">{cat.title}</h4>
+                <p>{cat.short}</p>
+                <a className="link-underline mm-promo-cta" href="/rta-kitchen">
+                  See all in {cat.title} <span aria-hidden="true">→</span>
                 </a>
               </div>
             )}

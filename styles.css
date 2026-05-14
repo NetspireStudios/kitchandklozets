@@ -2386,6 +2386,51 @@ a.contact-card:hover {
   display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
 }
 
+/* ── MEGA MENU: RTA-only layout ──────────────────────────── */
+.mega-rta-head {
+  display: flex; justify-content: space-between; align-items: end;
+  gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap;
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+}
+.mega-rta-head .display {
+  font-size: clamp(22px, 2.2vw, 30px);
+  color: var(--walnut);
+  margin: 6px 0 0;
+  letter-spacing: -0.02em;
+}
+.mega-rta-all {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.mega-rta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+}
+@media (max-width: 980px) { .mega-rta-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .mega-rta-grid { grid-template-columns: repeat(2, 1fr); } }
+.mega-rta-card {
+  display: flex; flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s var(--easing);
+}
+.mega-rta-card:hover { transform: translateY(-2px); }
+.mega-rta-thumb {
+  aspect-ratio: 4 / 3;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.mega-rta-title {
+  font-size: 13px; font-weight: 600; color: var(--walnut);
+  letter-spacing: -0.005em;
+  padding: 0 4px;
+  transition: color 0.2s var(--easing);
+}
+.mega-rta-card:hover .mega-rta-title { color: var(--clay); }
+
 /* ── NAV: small dropdown (For the Trade) ─────────────────── */
 .nav-drop { position: relative; }
 .nav-drop-panel {

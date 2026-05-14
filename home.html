@@ -109,8 +109,8 @@ function WholesaleHero() {
               Flat-packed kitchen cabinets and closet systems in eight finish lines, shipped to dealers, designers, and contractors on a three to five-week lead time. Same warehouse also runs our signature crafted line for full custom rooms.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-walnut" href="/become-a-dealer">
-                Become a dealer <span className="arrow">→</span>
+              <a className="btn btn-walnut" href="/contact">
+                Request a quote <span className="arrow">→</span>
               </a>
               <a className="video-link" href="/rta-kitchen">
                 <span className="play">▸</span> See the RTA catalog
@@ -223,22 +223,22 @@ function RTAShowcase() {
   );
 }
 
-function DealerSteps() {
+function OrderSteps() {
   const steps = [
-    { n: "01", t: "Apply", d: "A two-minute form with your business name, tax ID, and the rough volume you're looking at." },
-    { n: "02", t: "Get approved", d: "We confirm the account, set your tier, and email back a price book and the order PDF." },
-    { n: "03", t: "Place the first order", d: "Pick your cabinets, pay the invoice, and we book a delivery date within three to five weeks." },
-    { n: "04", t: "Resell", d: "Cabinets land flat-packed, assemble in under 30 minutes per box, and ship out the door under your brand if you want." }
+    { n: "01", t: "Send the room",      d: "A floor plan, a wishlist, or a couple of photos. Anything that tells us the room you're working with." },
+    { n: "02", t: "Get a fixed quote",  d: "We reply within a business day with line-item pricing, the lead-time window, and any flags we'd raise on the spec." },
+    { n: "03", t: "Place the order",    d: "Pick your finish, sign the quote, and we book a delivery date three to five weeks out for RTA — eight to twelve weeks for crafted." },
+    { n: "04", t: "Take delivery",      d: "RTA arrives flat-packed and assembles under 30 minutes per box. Crafted lands fully built and installed by the team that drew it." }
   ];
   return (
     <section className="dealer-steps">
       <div className="container">
         <div className="section-head" data-reveal>
           <div>
-            <span className="eyebrow">Become a dealer</span>
-            <h2 className="display">Four steps to the first order.</h2>
+            <span className="eyebrow">How to order</span>
+            <h2 className="display">Four steps from question to delivery.</h2>
           </div>
-          <p className="hint">No territory exclusivity, no minimum quantity to start. Your second order is what tells us where to set the tier.</p>
+          <p className="hint">No minimum quantity. No territory exclusivity. The first conversation is short and free.</p>
         </div>
         <ol className="steps-list">
           {steps.map((s, i) => (
@@ -252,7 +252,7 @@ function DealerSteps() {
           ))}
         </ol>
         <div className="dealer-cta" data-reveal>
-          <a className="btn btn-walnut" href="/become-a-dealer">Start the application <span className="arrow">→</span></a>
+          <a className="btn btn-walnut" href="/contact">Start a quote <span className="arrow">→</span></a>
           <a className="btn btn-ghost" href="tel:+15483331419">Or call us at (548) 333-1419</a>
         </div>
       </div>
@@ -303,7 +303,7 @@ function App() {
             { cat: "crafted-cabinets", slug: "custom-mudroom" }
           ]}
           allHref="/crafted-cabinets"/>
-        <DealerSteps/>
+        <OrderSteps/>
         <FAQ/>
         <CTA/>
       </main>

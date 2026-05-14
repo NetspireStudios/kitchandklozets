@@ -75,7 +75,7 @@ function Nav({ onMenu }) {
             </svg>
             <span>(548) 333-1419</span>
           </a>
-          <a href="/become-a-dealer" className="btn btn-walnut nav-quote-btn">Become a dealer</a>
+          <a href="/contact" className="btn btn-walnut nav-quote-btn">Request a quote</a>
           <button className="nav-toggle" onClick={onMenu} aria-label="Open menu">
             <svg width="22" height="14" viewBox="0 0 22 14"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
           </button>
@@ -189,7 +189,7 @@ function MobileDrawer({ open, onClose }) {
         </div>
         <div className="drawer-bottom">
           <a className="btn btn-clay" href="tel:+15483331419">(548) 333-1419</a>
-          <a className="btn btn-walnut" href="/become-a-dealer" onClick={onClose}>Become a dealer</a>
+          <a className="btn btn-walnut" href="/contact" onClick={onClose}>Request a quote</a>
         </div>
       </aside>
     </>
