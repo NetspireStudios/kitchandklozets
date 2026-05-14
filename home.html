@@ -121,25 +121,6 @@ function WholesaleHero() {
             </div>
           </div>
 
-          <div className="wh-hero-art" data-reveal="scale">
-            {[
-              { key: "white-shaker", grad: "linear-gradient(160deg, #3B2A1E, #1c130a)" },
-              { key: "blue-shaker",  grad: "linear-gradient(160deg, #2a3a5c, #11192e)" },
-              { key: "smoked-oak",   grad: "linear-gradient(160deg, #5B4434, #2c1f14)" },
-              { key: "natural-wood", grad: "linear-gradient(160deg, #c9a874, #8d6b40)", dark: true }
-            ].map(t => {
-              const sec = CATALOG["rta-kitchen"].sections[t.key];
-              return (
-                <a key={t.key} href={`/rta-kitchen/${t.key}`} className="wh-tile ph"
-                   style={{ background: t.grad }}>
-                  {sec.img
-                    ? <Img src={sec.img} alt={sec.title} w={500}/>
-                    : <CabinetOverlay opacity={0.32}/>}
-                  <span className={`wh-tile-tag ${t.dark ? "wh-tile-tag-dark" : ""}`}>{sec.title}</span>
-                </a>
-              );
-            })}
-          </div>
         </div>
       </div>
     </section>

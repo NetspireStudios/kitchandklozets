@@ -2185,11 +2185,17 @@ a.contact-card:hover {
 }
 .wh-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(36px, 5vw, 80px);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  justify-items: center;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
 }
-@media (max-width: 880px) { .wh-grid { grid-template-columns: 1fr; } }
+.wh-grid .hero-eyebrow,
+.wh-grid .hero-ctas,
+.wh-grid .wh-meta { justify-content: center; }
+.wh-grid .wh-lede { max-width: 720px; }
 .wh-title {
   font-size: clamp(44px, 7vw, 96px);
   color: var(--walnut);
