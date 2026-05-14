@@ -1011,8 +1011,6 @@ function RtaBoardBrowser({ category, section, product }) {
           </div>
         </div>
 
-        <RtaAboutBlock section={sec}/>
-        <RtaFeaturesBlock/>
         <RtaFaqBlock section={sec}/>
 
         <section className="rta-quick-contact" id="inquire" data-reveal>
