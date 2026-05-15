@@ -335,7 +335,30 @@ const CABINET_FAMILIES = [
         ],
         noThumbnails: true
       },
-      { slug: "wall-2d-42",           title: "Wall Cabinet", subtitle: "2 Door (42\")" },
+      { slug: "wall-2d-42",           title: "Wall Cabinet", subtitle: "2 Door (42\")",
+        diagrams: [
+          "/assets/cabinets/wall-2d-42-diagram.png",
+          "/assets/cabinets/wall-2d-42-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "Two (2) adjustable shelves with shelf pegs for 30\" & 36\"H cabinet.",
+          "Three (3) adjustable shelves with shelf pegs for 42\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "W2442", dims: "24\"W x 42\"H x 12\"D" },
+          { code: "W2742", dims: "27\"W x 42\"H x 12\"D" },
+          { code: "W3042", dims: "30\"W x 42\"H x 12\"D" },
+          { code: "W3342", dims: "33\"W x 42\"H x 12\"D" },
+          { code: "W3642", dims: "36\"W x 42\"H x 12\"D" }
+        ],
+        noThumbnails: true
+      },
       { slug: "wall-short-1d",        title: "Wall Cabinet", subtitle: "Short Cabinet 1 Full Door" },
       { slug: "wall-short-2d-narrow", title: "Wall Cabinet", subtitle: "Short 2 Door (12\", 15\", 18\", 21\")" },
       { slug: "wall-short-2d-24",     title: "Wall Cabinet", subtitle: "Short 2 Door (24\")" },
