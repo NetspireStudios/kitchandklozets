@@ -253,7 +253,35 @@ const CABINET_FAMILIES = [
   {
     slug: "wall-cabinet", title: "Wall Cabinet",
     subcategories: [
-      { slug: "wall-1d-30-36",        title: "Wall Cabinet", subtitle: "1 Full Door (30\" & 36\")" },
+      { slug: "wall-1d-30-36",        title: "Wall Cabinet", subtitle: "1 Full Door (30\" & 36\")",
+        diagrams: [
+          "/assets/cabinets/wall-1d-30-36-diagram.png",
+          "/assets/cabinets/wall-1d-30-36-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "Two (2) adjustable shelves with shelf pegs for 30\" & 36\"H cabinet.",
+          "Three (3) adjustable shelves with shelf pegs for 42\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "W0930", dims: "9\"W x 30\"H x 12\"D" },
+          { code: "W1230", dims: "12\"W x 30\"H x 12\"D" },
+          { code: "W1530", dims: "15\"W x 30\"H x 12\"D" },
+          { code: "W1830", dims: "18\"W x 30\"H x 12\"D" },
+          { code: "W2130", dims: "21\"W x 30\"H x 12\"D" },
+          { code: "W0936", dims: "9\"W x 36\"H x 12\"D" },
+          { code: "W1236", dims: "12\"W x 36\"H x 12\"D" },
+          { code: "W1536", dims: "15\"W x 36\"H x 12\"D" },
+          { code: "W1836", dims: "18\"W x 36\"H x 12\"D" },
+          { code: "W2136", dims: "21\"W x 36\"H x 12\"D" }
+        ],
+        noThumbnails: true
+      },
       { slug: "wall-1d-42",           title: "Wall Cabinet", subtitle: "1 Full Door (42\")" },
       { slug: "wall-2d-30-36",        title: "Wall Cabinet", subtitle: "2 Door (30\" & 36\")" },
       { slug: "wall-2d-42",           title: "Wall Cabinet", subtitle: "2 Door (42\")" },
