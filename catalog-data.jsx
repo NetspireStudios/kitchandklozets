@@ -540,7 +540,25 @@ const CABINET_FAMILIES = [
           { code: "WBC2742", dims: "27\"W x 42\"H x 12\"D" }
         ]
       },
-      { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold" },
+      { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold",
+        diagrams: [
+          "/assets/cabinets/wall-bi-fold-diagram.png",
+          "/assets/cabinets/wall-bi-fold-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with BLUM fold lift and regular hinges.",
+          "Two (2) adjustable shelves with shelf pegs.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "WBF3030", dims: "30\"W x 30\"H x 12\"D" },
+          { code: "WBF3630", dims: "36\"W x 30\"H x 12\"D" }
+        ]
+      },
       { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift" }
     ]
   },
