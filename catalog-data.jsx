@@ -497,7 +497,27 @@ const CABINET_FAMILIES = [
           { code: "WER2442", dims: "24\"W x 42\"H x 12\"D" }
         ]
       },
-      { slug: "wall-diagonal",        title: "Wall Cabinet", subtitle: "Diagonal Cabinet" },
+      { slug: "wall-diagonal",        title: "Wall Cabinet", subtitle: "Diagonal Cabinet",
+        diagrams: [
+          "/assets/cabinets/wall-diagonal-diagram.png",
+          "/assets/cabinets/wall-diagonal-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE45° (soft close).",
+          "Two (2) adjustable shelves with shelf pegs for 30\" & 36\"H cabinet.",
+          "Three (3) adjustable shelves with shelf pegs for 42\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "WDC2430", dims: "24\"W x 30\"H x 12\"D" },
+          { code: "WDC2436", dims: "24\"W x 36\"H x 12\"D" },
+          { code: "WDC2442", dims: "24\"W x 42\"H x 12\"D" }
+        ]
+      },
       { slug: "wall-blind-corner",    title: "Wall Cabinet", subtitle: "Blind Corner" },
       { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold" },
       { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift" }
