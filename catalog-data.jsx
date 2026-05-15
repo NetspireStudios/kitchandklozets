@@ -518,7 +518,28 @@ const CABINET_FAMILIES = [
           { code: "WDC2442", dims: "24\"W x 42\"H x 12\"D" }
         ]
       },
-      { slug: "wall-blind-corner",    title: "Wall Cabinet", subtitle: "Blind Corner" },
+      { slug: "wall-blind-corner",    title: "Wall Cabinet", subtitle: "Blind Corner",
+        diagrams: [
+          "/assets/cabinets/wall-blind-corner-diagram.png",
+          "/assets/cabinets/wall-blind-corner-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "Two (2) adjustable shelves with shelf pegs for 30\" & 36\"H cabinet.",
+          "Three (3) adjustable shelves with shelf pegs for 42\"H cabinet.",
+          "One (1) 6\" filler for adjusting the spacing.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "WBC2730", dims: "27\"W x 30\"H x 12\"D" },
+          { code: "WBC2736", dims: "27\"W x 36\"H x 12\"D" },
+          { code: "WBC2742", dims: "27\"W x 42\"H x 12\"D" }
+        ]
+      },
       { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold" },
       { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift" }
     ]
