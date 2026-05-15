@@ -51,10 +51,10 @@ const CABINET_FAMILIES = [
         ],
         includes: [
           "One (1) universal cabinet box.",
-          "One (1) drawer with metalbox & soft close slide.",
-          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "One (1) drawer with metalbox and soft close slide.",
+          "Two (2) door with HINGE105° (6 ways & soft close).",
           "One (1) adjustable shelf with shelf pegs.",
-          "Four (4) adjustable Legs 4 1/4\"–5 1/4\".",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
           "Screws, dowels and required hardware."
         ],
         notes: [
@@ -69,8 +69,41 @@ const CABINET_FAMILIES = [
           { code: "B36", dims: "36\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "sink-base",    title: "Sink Base Cabinet", subtitle: "(1 FK Drawer + 2 Door)" },
-      { slug: "blind-corner", title: "Base Cabinet", subtitle: "Base Blind Corner" },
+      { slug: "sink-base",    title: "Sink Base Cabinet", subtitle: "(1 FK Drawer + 2 Door)",
+        diagrams: [
+          "/assets/cabinets/sink-base-diagram.png",
+          "/assets/cabinets/sink-base-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) fake drawer panel.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ]
+      },
+      { slug: "blind-corner", title: "Base Cabinet", subtitle: "Base Blind Corner",
+        diagrams: [
+          "/assets/cabinets/blind-corner-diagram.png",
+          "/assets/cabinets/blind-corner-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "One (1) adjustable shelf with shelf pegs.",
+          "One (1) 6\" filler for adjusting the spacing.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ]
+      },
       { slug: "lazy-susan",   title: "Base Cabinet", subtitle: "Base Lazy Susan Cabinet" },
       { slug: "drawers",      title: "Base Cabinet", subtitle: "Drawers Base Cabinet" },
       { slug: "2-drawer",     title: "Base Cabinet", subtitle: "2 Drawer" },
