@@ -1041,11 +1041,11 @@ function RtaBoardBrowser({ category, section, product }) {
                   const prefix = prod.code ? `${prod.code}-${sec.code}-` : "";
                   const fullCode = `${prefix}${s.code}`;
                   const tag = sec.code ? `${sec.code}-${s.code}` : s.code;
-                  const thumb = sub.diagrams?.[1] || sub.diagrams?.[0];
+                  const thumb = sub.diagrams?.[0] || sub.diagrams?.[1];
                   return (
                     <article key={s.code} className="rta-sku-card">
-                      <div className="rta-sku-thumb ph">
-                        {thumb ? <Img src={thumb} alt={fullCode} w={240}/> : null}
+                      <div className="rta-sku-thumb">
+                        {thumb ? <img src={thumb} alt={fullCode} loading="lazy"/> : null}
                         <span className="rta-sku-tag">{tag}</span>
                       </div>
                       <div className="rta-sku-body">
