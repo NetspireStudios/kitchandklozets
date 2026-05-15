@@ -3580,16 +3580,14 @@ a.contact-card:hover {
 /* --- RTA quick contact section under the board browser --- */
 .rta-quick-contact {
   margin: clamp(48px, 6vw, 72px) 0 0;
-  padding: clamp(32px, 4.5vw, 48px) clamp(28px, 4vw, 40px) clamp(40px, 5vw, 56px);
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 4vw, 40px) clamp(64px, 7vw, 96px);
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 250, 240, 0.5);
 }
 .rta-quick-contact form,
-.rta-quick-contact .contact-form,
-.rta-quick-contact > *:last-child {
-  margin-bottom: 0;
-}
+.rta-quick-contact .contact-form { margin-bottom: 0; }
+.rta-quick-contact .cf-submit-row { margin-top: 6px; }
 .rta-quick-contact-head {
   max-width: 640px;
   margin: 0 auto 22px;
