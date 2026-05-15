@@ -44,7 +44,31 @@ const CABINET_FAMILIES = [
           { code: "BTC18", dims: "18\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "1d-2d",        title: "Base Cabinet", subtitle: "(1 Drawer + 2 Door)" },
+      { slug: "1d-2d",        title: "Base Cabinet", subtitle: "(1 Drawer + 2 Door)",
+        diagrams: [
+          "/assets/cabinets/base-1d2d-diagram.png",
+          "/assets/cabinets/base-1d2d-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) drawer with metalbox & soft close slide.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "One (1) adjustable shelf with shelf pegs.",
+          "Four (4) adjustable Legs 4 1/4\"–5 1/4\".",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "B24", dims: "24\"W x 30\"H x 23 7/8\"D" },
+          { code: "B27", dims: "27\"W x 30\"H x 23 7/8\"D" },
+          { code: "B30", dims: "30\"W x 30\"H x 23 7/8\"D" },
+          { code: "B33", dims: "33\"W x 30\"H x 23 7/8\"D" },
+          { code: "B36", dims: "36\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "sink-base",    title: "Sink Base Cabinet", subtitle: "(1 FK Drawer + 2 Door)" },
       { slug: "blind-corner", title: "Base Cabinet", subtitle: "Base Blind Corner" },
       { slug: "lazy-susan",   title: "Base Cabinet", subtitle: "Base Lazy Susan Cabinet" },
