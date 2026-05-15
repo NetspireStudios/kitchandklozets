@@ -429,7 +429,32 @@ const CABINET_FAMILIES = [
           { code: "W3624", dims: "36\"W x 24\"H x 12\"D" }
         ]
       },
-      { slug: "wall-fridge-2d-narrow",title: "Wall Cabinet", subtitle: "Fridge 2 Door (12\", 15\", 18\")" },
+      { slug: "wall-fridge-2d-narrow",title: "Wall Cabinet", subtitle: "Fridge 2 Door (12\", 15\", 18\")",
+        diagrams: [
+          "/assets/cabinets/wall-fridge-2d-narrow-diagram.png",
+          "/assets/cabinets/wall-fridge-2d-narrow-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "No shelf in 12\" & 15\", 18\"H.",
+          "One (1) adjustable shelf with shelf pegs for 24\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "W301224", dims: "30\"W x 12\"H x 23 7/8\"D" },
+          { code: "W331224", dims: "33\"W x 12\"H x 23 7/8\"D" },
+          { code: "W361224", dims: "36\"W x 12\"H x 23 7/8\"D" },
+          { code: "W301524", dims: "30\"W x 15\"H x 23 7/8\"D" },
+          { code: "W331524", dims: "33\"W x 15\"H x 23 7/8\"D" },
+          { code: "W361524", dims: "36\"W x 15\"H x 23 7/8\"D" },
+          { code: "W331824", dims: "33\"W x 18\"H x 23 7/8\"D" },
+          { code: "W361824", dims: "36\"W x 18\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "wall-fridge-2d-24",    title: "Wall Cabinet", subtitle: "Fridge 2 Door (24\")" },
       { slug: "wall-easy-reach",      title: "Wall Cabinet", subtitle: "Easy Reach Cabinet" },
       { slug: "wall-diagonal",        title: "Wall Cabinet", subtitle: "Diagonal Cabinet" },
