@@ -84,6 +84,11 @@ const CABINET_FAMILIES = [
         notes: [
           "Use BEP/MBEP panels to cover exterior sides if exposed.",
           "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "SB30", dims: "30\"W x 30\"H x 23 7/8\"D" },
+          { code: "SB33", dims: "33\"W x 30\"H x 23 7/8\"D" },
+          { code: "SB36", dims: "36\"W x 30\"H x 23 7/8\"D" }
         ]
       },
       { slug: "blind-corner", title: "Base Cabinet", subtitle: "Base Blind Corner",
@@ -102,6 +107,10 @@ const CABINET_FAMILIES = [
         notes: [
           "Use BEP/MBEP panels to cover exterior sides if exposed.",
           "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "BBC42", dims: "42\"W x 30\"H x 23 7/8\"D" },
+          { code: "BBC45", dims: "45\"W x 30\"H x 23 7/8\"D" }
         ]
       },
       { slug: "lazy-susan",   title: "Base Cabinet", subtitle: "Base Lazy Susan Cabinet" },
