@@ -27,6 +27,7 @@ const ACCESSORY_ROWS = [
     ]
   },
   { slug: "wall-microwave", title: "Wall Microwave Cabinet",
+    diagrams: ["/assets/accessories/wall-microwave.png"],
     includes: [
       "One (1) cabinet box made of door material.",
       "Screws, dowels and required hardware."

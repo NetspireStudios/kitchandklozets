@@ -3706,5 +3706,27 @@ body.bg-image .wholesale-hero {
 }
 .rta-accessories-rail { max-height: none; }
 
+/* Accessory rows often have many small SKU cards (text-only labels, no
+   width line). Flow them as a multi-column grid instead of a tall
+   vertical stack. */
+.rta-accessories .rta-board-sku-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .rta-accessories .rta-board-sku-list { grid-template-columns: 1fr; }
+}
+
+/* Diagrams in the accessory block read small at the cabinet-row cap.
+   Grow the bento and let the image fill more of it — without making
+   the bento so tall it pushes the page rhythm. */
+.rta-accessories .rta-board-diagram-img {
+  height: clamp(280px, 28vw, 340px);
+}
+.rta-accessories .rta-board-diagram-img img {
+  max-height: clamp(220px, 22vw, 280px);
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
