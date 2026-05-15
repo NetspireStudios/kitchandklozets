@@ -474,7 +474,29 @@ const CABINET_FAMILIES = [
           { code: "W362424", dims: "36\"W x 24\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "wall-easy-reach",      title: "Wall Cabinet", subtitle: "Easy Reach Cabinet" },
+      { slug: "wall-easy-reach",      title: "Wall Cabinet", subtitle: "Easy Reach Cabinet",
+        diagrams: [
+          "/assets/cabinets/wall-easy-reach-diagram.png",
+          "/assets/cabinets/wall-easy-reach-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) folding doors with HINGE135° (regular) and HINGE155° (soft close).",
+          "No shelf in 12\"H.",
+          "Two (2) adjustable shelves with shelf pegs for 30\" & 36\"H cabinet.",
+          "Three (3) adjustable shelves with shelf pegs for 42\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "WER2412", dims: "24\"W x 12\"H x 12\"D" },
+          { code: "WER2430", dims: "24\"W x 30\"H x 12\"D" },
+          { code: "WER2436", dims: "24\"W x 36\"H x 12\"D" },
+          { code: "WER2442", dims: "24\"W x 42\"H x 12\"D" }
+        ]
+      },
       { slug: "wall-diagonal",        title: "Wall Cabinet", subtitle: "Diagonal Cabinet" },
       { slug: "wall-blind-corner",    title: "Wall Cabinet", subtitle: "Blind Corner" },
       { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold" },
