@@ -113,7 +113,30 @@ const CABINET_FAMILIES = [
           { code: "BBC45", dims: "45\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "lazy-susan",   title: "Base Cabinet", subtitle: "Base Lazy Susan Cabinet" },
+      { slug: "lazy-susan",   title: "Base Cabinet", subtitle: "Base Lazy Susan Cabinet",
+        diagrams: [
+          "/assets/cabinets/lazy-susan-diagram.png",
+          "/assets/cabinets/lazy-susan-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "One (1) adjustable shelf with shelf pegs.",
+          "One (1) 6\" filler for adjusting the spacing.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "BER33", dims: "33\"W x 30\"H x 23 7/8\"D" },
+          { code: "BER36", dims: "36\"W x 30\"H x 23 7/8\"D" },
+          { code: "BLS33", dims: "33\"W x 30\"H x 23 7/8\"D" },
+          { code: "BLS36", dims: "36\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "drawers",      title: "Base Cabinet", subtitle: "Drawers Base Cabinet" },
       { slug: "2-drawer",     title: "Base Cabinet", subtitle: "2 Drawer" },
       { slug: "spice-rack",   title: "Base Cabinet", subtitle: "Base Spice Rack" },
