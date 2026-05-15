@@ -14,6 +14,28 @@
 // Base Cabinet rows are seeded from the reference site; Wall, Pantry, and
 // Double Oven get placeholder rows until copy lands.
 
+// Accessories & Hardware appears as a separate section beneath the cabinet
+// browser on every board page. One rail, no SKU column — each row renders
+// its diagram + Includes panel when available.
+const ACCESSORY_ROWS = [
+  { slug: "open-shelf", title: "Open Shelf",
+    includes: [
+      "One (1) cabinet box made of door material.",
+      "No shelf.",
+      "Screws, dowels and required hardware."
+    ]
+  },
+  { slug: "wall-microwave",     title: "Wall Microwave Cabinet" },
+  { slug: "dishwasher-end",     title: "Dishwasher End Panel" },
+  { slug: "panel-toe-kick",     title: "Panel & Toe Kick" },
+  { slug: "filler",             title: "Filler" },
+  { slug: "shaker-end-panel",   title: "Shaker Style End Panel" },
+  { slug: "exclusive-shaker",   title: "Exclusive for Shaker" },
+  { slug: "hardware",           title: "Hardware" },
+  { slug: "glass-door",         title: "Glass Door" },
+  { slug: "floating-shelf",     title: "Floating Shelf" }
+];
+
 const CABINET_FAMILIES = [
   {
     slug: "base-cabinet", title: "Base Cabinet",
@@ -854,6 +876,6 @@ function listCategories() { return Object.values(CATALOG); }
 function listSections(catSlug) { return Object.values(CATALOG[catSlug]?.sections || {}); }
 
 Object.assign(window, {
-  CATALOG, CABINET_FAMILIES, BOARD_OPTIONS, FINISH_FEATURES,
+  CATALOG, CABINET_FAMILIES, ACCESSORY_ROWS, BOARD_OPTIONS, FINISH_FEATURES,
   getCategory, getSection, getProduct, listCategories, listSections
 });

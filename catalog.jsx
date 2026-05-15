@@ -908,6 +908,67 @@ function RtaFeaturesBlock() {
   );
 }
 
+// ─── Accessories & Hardware secondary section (board page) ─────────────────
+function RtaAccessoriesBlock() {
+  const rows = window.ACCESSORY_ROWS || [];
+  const [activeSlug, setActiveSlug] = React.useState(rows[0]?.slug);
+  if (!rows.length) return null;
+  const row = rows.find(r => r.slug === activeSlug) || rows[0];
+
+  return (
+    <section className="rta-accessories" data-reveal>
+      <header className="rta-accessories-head">
+        <h2 className="display">Accessories &amp; Hardware</h2>
+      </header>
+      <div className="rta-accessories-grid">
+        <aside className="rta-board-rail rta-accessories-rail" role="tablist" aria-label="Accessories rows">
+          {rows.map(r => (
+            <button key={r.slug}
+                    role="tab"
+                    aria-selected={activeSlug === r.slug}
+                    className={`rta-board-rail-item ${activeSlug === r.slug ? "is-active" : ""}`}
+                    onClick={() => setActiveSlug(r.slug)}>
+              <span className="rta-board-rail-title">{r.title}</span>
+              {r.subtitle && <span className="rta-board-rail-sub">{r.subtitle}</span>}
+            </button>
+          ))}
+        </aside>
+
+        <div className="rta-board-center">
+          {row?.diagrams?.length ? (
+            <div className="rta-board-diagrams">
+              {row.diagrams.map((d, i) => (
+                <figure key={i} className="rta-board-diagram-img">
+                  <img src={d} alt={row.title} loading="lazy"/>
+                </figure>
+              ))}
+            </div>
+          ) : null}
+
+          {row?.includes?.length ? (
+            <div className="rta-board-includes">
+              <h4 className="display">Includes:</h4>
+              <ul>
+                {row.includes.map((line, i) => (<li key={i}>{line}</li>))}
+              </ul>
+              {row.notes?.length ? (
+                <div className="rta-board-includes-note">
+                  <span className="eyebrow">Note</span>
+                  <ul>
+                    {row.notes.map((line, i) => (<li key={i}>{line}</li>))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <p className="rta-board-placeholder">Spec sheet for {row.title} is coming soon.</p>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RtaFaqBlock({ section }) {
   const items = section?.faq || [];
   const [open, setOpen] = React.useState(0);
@@ -1070,6 +1131,8 @@ function RtaBoardBrowser({ category, section, product }) {
             )}
           </div>
         </div>
+
+        <RtaAccessoriesBlock/>
 
         <RtaFaqBlock section={sec}/>
 

@@ -3673,5 +3673,30 @@ body.bg-image .wholesale-hero {
   background: transparent;
 }
 
+/* --- Accessories & Hardware section (below the cabinet browser) --- */
+.rta-accessories {
+  margin: clamp(48px, 6vw, 72px) 0 0;
+}
+.rta-accessories-head {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.rta-accessories-head .display {
+  font-size: clamp(24px, 3.2vw, 34px);
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: var(--walnut);
+}
+.rta-accessories-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .rta-accessories-grid { grid-template-columns: 1fr; }
+}
+.rta-accessories-rail { max-height: none; }
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
