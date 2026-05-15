@@ -3706,16 +3706,22 @@ body.bg-image .wholesale-hero {
 }
 .rta-accessories-rail { max-height: none; }
 
-/* Accessory rows often have many small SKU cards (text-only labels, no
-   width line). Flow them as a multi-column grid instead of a tall
-   vertical stack. */
-.rta-accessories .rta-board-sku-list {
+/* Accessory rows: SKU cards stack in a single column by default, the
+   same rhythm the cabinet browser uses. Hardware is the exception —
+   it's all text-only labels and runs long, so it flows as a 2-column
+   grid and gets a little extra left padding so it doesn't crowd the
+   diagram/Includes block. */
+.rta-accessories-skus-hardware .rta-board-sku-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+.rta-accessories-skus-hardware {
+  padding-left: clamp(24px, 4vw, 64px);
+}
 @media (max-width: 720px) {
-  .rta-accessories .rta-board-sku-list { grid-template-columns: 1fr; }
+  .rta-accessories-skus-hardware .rta-board-sku-list { grid-template-columns: 1fr; }
+  .rta-accessories-skus-hardware { padding-left: 0; }
 }
 
 /* Diagrams in the accessory block read small at the cabinet-row cap.

@@ -967,7 +967,7 @@ function RtaAccessoriesBlock() {
         </div>
 
         {hasSkus ? (
-          <div className="rta-board-skus">
+          <div className={`rta-board-skus rta-accessories-skus rta-accessories-skus-${row.slug}`}>
             <div className="rta-board-sku-list">
               {row.skus.map(s => (
                 <article key={s.code} className="rta-sku-card">
