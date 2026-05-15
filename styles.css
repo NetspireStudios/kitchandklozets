@@ -3693,8 +3693,16 @@ body.bg-image .wholesale-hero {
   gap: 24px;
   align-items: start;
 }
+.rta-accessories-grid.with-skus {
+  grid-template-columns: 260px minmax(0, 1.2fr) minmax(0, 1fr);
+}
+@media (max-width: 1080px) {
+  .rta-accessories-grid.with-skus { grid-template-columns: 220px 1fr; }
+  .rta-accessories-grid.with-skus .rta-board-skus { grid-column: 1 / -1; }
+}
 @media (max-width: 880px) {
-  .rta-accessories-grid { grid-template-columns: 1fr; }
+  .rta-accessories-grid,
+  .rta-accessories-grid.with-skus { grid-template-columns: 1fr; }
 }
 .rta-accessories-rail { max-height: none; }
 

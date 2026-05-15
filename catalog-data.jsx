@@ -19,21 +19,134 @@
 // its diagram + Includes panel when available.
 const ACCESSORY_ROWS = [
   { slug: "open-shelf", title: "Open Shelf",
+    diagrams: ["/assets/accessories/open-shelf.png"],
     includes: [
       "One (1) cabinet box made of door material.",
       "No shelf.",
       "Screws, dowels and required hardware."
     ]
   },
-  { slug: "wall-microwave",     title: "Wall Microwave Cabinet" },
-  { slug: "dishwasher-end",     title: "Dishwasher End Panel" },
-  { slug: "panel-toe-kick",     title: "Panel & Toe Kick" },
-  { slug: "filler",             title: "Filler" },
-  { slug: "shaker-end-panel",   title: "Shaker Style End Panel" },
-  { slug: "exclusive-shaker",   title: "Exclusive for Shaker" },
-  { slug: "hardware",           title: "Hardware" },
-  { slug: "glass-door",         title: "Glass Door" },
-  { slug: "floating-shelf",     title: "Floating Shelf" }
+  { slug: "wall-microwave", title: "Wall Microwave Cabinet",
+    includes: [
+      "One (1) cabinet box made of door material.",
+      "Screws, dowels and required hardware."
+    ],
+    notes: [
+      "The bottom panel extends out for 6\" to hold the microwave."
+    ]
+  },
+  { slug: "dishwasher-end", title: "Dishwasher End Panel",
+    diagrams: ["/assets/accessories/dishwasher-end-panel.png"],
+    includes: [
+      "One (1) return panel 34 1/2\"H x 24\"D.",
+      "One (1) filler 3\"W x 34 1/2\"H x 3/4\"D.",
+      "Screws, dowels and required hardware."
+    ],
+    notes: [
+      "The filler covers return panel."
+    ],
+    skus: [
+      { code: "BSS-DWEP3" }
+    ]
+  },
+  { slug: "panel-toe-kick", title: "Panel & Toe Kick",
+    diagrams: ["/assets/accessories/panel-toe-kick.png"],
+    includes: [
+      "One (1) decorative panel."
+    ],
+    skus: [
+      { code: "BSS-BEP24" },
+      { code: "BSS-BEP26" },
+      { code: "BSS-BEP36" },
+      { code: "BSS-BEP48" },
+      { code: "BSS-WEP1230" },
+      { code: "BSS-WEP1236" },
+      { code: "BSS-WEP1242" },
+      { code: "BSS-REF2496" },
+      { code: "BSS-REF3696" },
+      { code: "BSS-PNL3696" },
+      { code: "BSS-TK8" }
+    ]
+  },
+  { slug: "filler", title: "Filler",
+    diagrams: ["/assets/accessories/filler.png"],
+    includes: [
+      "One (1) filler.",
+      "One (1) Carcass panel in same size to easier installation."
+    ],
+    skus: [
+      { code: "BSS-WF330" },
+      { code: "BSS-WF336" },
+      { code: "BSS-WF342" },
+      { code: "BSS-TF396" },
+      { code: "BSS-WF630" },
+      { code: "BSS-WF636" },
+      { code: "BSS-WF642" },
+      { code: "BSS-TF696" }
+    ]
+  },
+  { slug: "shaker-end-panel", title: "Shaker Style End Panel",
+    diagrams: ["/assets/accessories/shaker-end-panel.png"],
+    includes: [
+      "One (1) decorative panel."
+    ],
+    skus: [
+      { code: "BSS-MWEP1230" },
+      { code: "BSS-MWEP1236" },
+      { code: "BSS-MWEP1242" },
+      { code: "BSS-MBEP2430" },
+      { code: "BSS-MTEP2484" },
+      { code: "BSS-MTEP2490" },
+      { code: "BSS-MTEP2496" }
+    ]
+  },
+  { slug: "exclusive-shaker", title: "Exclusive for Shaker",
+    diagrams: [
+      "/assets/accessories/exclusive-shaker-1.png",
+      "/assets/accessories/exclusive-shaker-2.png"
+    ],
+    includes: [
+      "One (1) piece of moulding."
+    ],
+    notes: [
+      "CVCM and CM4 should be used with RISER."
+    ],
+    skus: [
+      { code: "BSS-CVCM" },
+      { code: "BSS-CM4" },
+      { code: "BSS-BM8" },
+      { code: "BSS-RISER" },
+      { code: "BSS-SM8" },
+      { code: "BSS-LM8" },
+      { code: "BSS-OCM8" },
+      { code: "BSS-VAL36" },
+      { code: "BSS-VAL48" }
+    ]
+  },
+  { slug: "hardware", title: "Hardware",
+    skus: [
+      { code: "HW-BLS33-TRAY" },
+      { code: "HW-BLS36-TRAY" },
+      { code: "HW-DRAWER-HIGH" },
+      { code: "HW-DRAWER-LOW" },
+      { code: "HW-HINGE45" },
+      { code: "HW-HINGE135" },
+      { code: "HW-HINGE155" }
+    ]
+  },
+  { slug: "glass-door", title: "Glass Door",
+    diagrams: ["/assets/accessories/glass-door.png"],
+    includes: [
+      "One (1) decorative door."
+    ]
+  },
+  { slug: "floating-shelf", title: "Floating Shelf",
+    diagrams: ["/assets/accessories/floating-shelf.png"],
+    includes: [
+      "One (1) floating shelf.",
+      "Two (2) T-supporter."
+    ]
+  }
 ];
 
 const CABINET_FAMILIES = [

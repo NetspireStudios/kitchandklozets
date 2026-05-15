@@ -914,13 +914,14 @@ function RtaAccessoriesBlock() {
   const [activeSlug, setActiveSlug] = React.useState(rows[0]?.slug);
   if (!rows.length) return null;
   const row = rows.find(r => r.slug === activeSlug) || rows[0];
+  const hasSkus = !!row?.skus?.length;
 
   return (
     <section className="rta-accessories" data-reveal>
       <header className="rta-accessories-head">
         <h2 className="display">Accessories &amp; Hardware</h2>
       </header>
-      <div className="rta-accessories-grid">
+      <div className={`rta-accessories-grid ${hasSkus ? "with-skus" : ""}`}>
         <aside className="rta-board-rail rta-accessories-rail" role="tablist" aria-label="Accessories rows">
           {rows.map(r => (
             <button key={r.slug}
@@ -960,10 +961,32 @@ function RtaAccessoriesBlock() {
                 </div>
               ) : null}
             </div>
-          ) : (
+          ) : (!row?.diagrams?.length ? (
             <p className="rta-board-placeholder">Spec sheet for {row.title} is coming soon.</p>
-          )}
+          ) : null)}
         </div>
+
+        {hasSkus ? (
+          <div className="rta-board-skus">
+            <div className="rta-board-sku-list">
+              {row.skus.map(s => (
+                <article key={s.code} className="rta-sku-card">
+                  <div className="rta-sku-thumb is-empty">
+                    <svg className="rta-sku-thumb-placeholder" viewBox="0 0 32 24" aria-hidden="true">
+                      <rect x="1" y="1" width="30" height="22" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+                      <circle cx="10" cy="9" r="2" fill="currentColor"/>
+                      <path d="M5 19 L13 11 L19 17 L23 13 L28 19" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div className="rta-sku-body">
+                    <div className="rta-sku-code">{s.code}</div>
+                    {s.dims && <div className="rta-sku-dims">{s.dims}</div>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );
