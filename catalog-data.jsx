@@ -253,9 +253,20 @@ const CABINET_FAMILIES = [
   {
     slug: "wall-cabinet", title: "Wall Cabinet",
     subcategories: [
-      { slug: "wall-1d",       title: "Wall Cabinet", subtitle: "(1 Door)" },
-      { slug: "wall-2d",       title: "Wall Cabinet", subtitle: "(2 Door)" },
-      { slug: "wall-corner",   title: "Wall Cabinet", subtitle: "Corner" }
+      { slug: "wall-1d-30-36",        title: "Wall Cabinet", subtitle: "1 Full Door (30\" & 36\")" },
+      { slug: "wall-1d-42",           title: "Wall Cabinet", subtitle: "1 Full Door (42\")" },
+      { slug: "wall-2d-30-36",        title: "Wall Cabinet", subtitle: "2 Door (30\" & 36\")" },
+      { slug: "wall-2d-42",           title: "Wall Cabinet", subtitle: "2 Door (42\")" },
+      { slug: "wall-short-1d",        title: "Wall Cabinet", subtitle: "Short Cabinet 1 Full Door" },
+      { slug: "wall-short-2d-narrow", title: "Wall Cabinet", subtitle: "Short 2 Door (12\", 15\", 18\", 21\")" },
+      { slug: "wall-short-2d-24",     title: "Wall Cabinet", subtitle: "Short 2 Door (24\")" },
+      { slug: "wall-fridge-2d-narrow",title: "Wall Cabinet", subtitle: "Fridge 2 Door (12\", 15\", 18\")" },
+      { slug: "wall-fridge-2d-24",    title: "Wall Cabinet", subtitle: "Fridge 2 Door (24\")" },
+      { slug: "wall-easy-reach",      title: "Wall Cabinet", subtitle: "Easy Reach Cabinet" },
+      { slug: "wall-diagonal",        title: "Wall Cabinet", subtitle: "Diagonal Cabinet" },
+      { slug: "wall-blind-corner",    title: "Wall Cabinet", subtitle: "Blind Corner" },
+      { slug: "wall-bi-fold",         title: "Wall Cabinet", subtitle: "Bi-Fold" },
+      { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift" }
     ]
   },
   {
