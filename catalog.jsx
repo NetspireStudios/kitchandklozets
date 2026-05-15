@@ -995,19 +995,74 @@ function RtaBoardBrowser({ category, section, product }) {
             ))}
           </aside>
 
-          <div className="rta-board-diagram ph"
-               style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
-            <div className="rta-board-diagram-inner">
-              <span className="eyebrow">Diagram</span>
-              <h3 className="display">{sub?.title}</h3>
-              {sub?.subtitle && <p>{sub.subtitle}</p>}
-              <p className="rta-board-placeholder">Dimensioned diagram and Includes spec list ship with the SKU sheet.</p>
-            </div>
+          <div className="rta-board-center">
+            {sub?.diagrams?.length ? (
+              <div className="rta-board-diagrams">
+                {sub.diagrams.map((d, i) => (
+                  <div key={i} className="rta-board-diagram-img ph"
+                       style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
+                    <Img src={d} alt={`${sub.title} ${sub.subtitle || ""}`} w={900}/>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="rta-board-diagram ph"
+                   style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
+                <div className="rta-board-diagram-inner">
+                  <span className="eyebrow">Diagram</span>
+                  <h3 className="display">{sub?.title}</h3>
+                  {sub?.subtitle && <p>{sub.subtitle}</p>}
+                  <p className="rta-board-placeholder">Dimensioned diagram and Includes spec list ship with the SKU sheet.</p>
+                </div>
+              </div>
+            )}
+
+            {sub?.includes?.length ? (
+              <div className="rta-board-includes">
+                <h4 className="display">Includes:</h4>
+                <ul>
+                  {sub.includes.map((line, i) => (<li key={i}>{line}</li>))}
+                </ul>
+                {sub.notes?.length ? (
+                  <div className="rta-board-includes-note">
+                    <span className="eyebrow">Note</span>
+                    <ul>
+                      {sub.notes.map((line, i) => (<li key={i}>{line}</li>))}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
 
           <div className="rta-board-skus">
-            <span className="eyebrow">SKUs</span>
-            <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Until then, send a quick note and we'll reply with a quote from the Sudbury warehouse.</p>
+            {sub?.skus?.length ? (
+              <div className="rta-board-sku-list">
+                {sub.skus.map(s => {
+                  const prefix = prod.code ? `${prod.code}-${sec.code}-` : "";
+                  const fullCode = `${prefix}${s.code}`;
+                  const tag = sec.code ? `${sec.code}-${s.code}` : s.code;
+                  const thumb = sub.diagrams?.[1] || sub.diagrams?.[0];
+                  return (
+                    <article key={s.code} className="rta-sku-card">
+                      <div className="rta-sku-thumb ph">
+                        {thumb ? <Img src={thumb} alt={fullCode} w={240}/> : null}
+                        <span className="rta-sku-tag">{tag}</span>
+                      </div>
+                      <div className="rta-sku-body">
+                        <div className="rta-sku-code">{fullCode}</div>
+                        <div className="rta-sku-dims">{s.dims}</div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            ) : (
+              <>
+                <span className="eyebrow">SKUs</span>
+                <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Until then, send a quick note and we'll reply with a quote from the Sudbury warehouse.</p>
+              </>
+            )}
           </div>
         </div>
 

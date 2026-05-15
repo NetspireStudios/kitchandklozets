@@ -52,10 +52,15 @@ function Counter({ to, from = 0, duration = 1800, suffix = "", prefix = "", form
 function Img({ src, alt, sizes = "100vw", w = 1200, q = 80 }) {
   const [loaded, setLoaded] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
-  // Unsplash photo id format: 1556909114-f6e7ad7d3136
+  // Three accepted shapes:
+  //   1. Absolute URL          — used directly
+  //   2. Local /assets path    — used directly (no CDN params)
+  //   3. Unsplash photo id     — formatted into a CDN URL
   const url = src.startsWith("http")
     ? src
-    : `https://images.unsplash.com/photo-${src}?w=${w}&q=${q}&auto=format&fit=crop`;
+    : src.startsWith("/")
+      ? src
+      : `https://images.unsplash.com/photo-${src}?w=${w}&q=${q}&auto=format&fit=crop`;
   return failed ? null : (
     <img
       src={url}

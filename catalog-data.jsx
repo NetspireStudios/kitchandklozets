@@ -18,7 +18,32 @@ const CABINET_FAMILIES = [
   {
     slug: "base-cabinet", title: "Base Cabinet",
     subcategories: [
-      { slug: "1d-1d",        title: "Base Cabinet", subtitle: "(1 Drawer + 1 Door)" },
+      { slug: "1d-1d",        title: "Base Cabinet", subtitle: "(1 Drawer + 1 Door)",
+        diagrams: [
+          "/assets/cabinets/base-1d1d-diagram.png",
+          "/assets/cabinets/base-1d1d-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) drawer with metalbox & soft close slide.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "One (1) adjustable shelf with shelf pegs.",
+          "Four (4) adjustable Legs 4 1/4\"–5 1/4\".",
+          "One (1) trash can for BTC18.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "B12",   dims: "12\"W x 30\"H x 23 7/8\"D" },
+          { code: "B15",   dims: "15\"W x 30\"H x 23 7/8\"D" },
+          { code: "B18",   dims: "18\"W x 30\"H x 23 7/8\"D" },
+          { code: "B21",   dims: "21\"W x 30\"H x 23 7/8\"D" },
+          { code: "BTC18", dims: "18\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "1d-2d",        title: "Base Cabinet", subtitle: "(1 Drawer + 2 Door)" },
       { slug: "sink-base",    title: "Sink Base Cabinet", subtitle: "(1 FK Drawer + 2 Door)" },
       { slug: "blind-corner", title: "Base Cabinet", subtitle: "Base Blind Corner" },
@@ -54,9 +79,9 @@ const CABINET_FAMILIES = [
 ];
 
 const BOARD_OPTIONS = [
-  { slug: "plywood",  title: "Plywood Cabinets",  board: "Plywood",
+  { slug: "plywood",  title: "Plywood Cabinets",  board: "Plywood",  code: "PLY",
     blurb: "Three-quarter-inch furniture-grade plywood carcass with a hardwood interior. The premium box for moisture, weight, and long-term run integrity." },
-  { slug: "particle", title: "Particle Cabinets", board: "Particle",
+  { slug: "particle", title: "Particle Cabinets", board: "Particle", code: "PAR",
     blurb: "High-density particleboard carcass with a hardwood face frame and the same door, drawer, and hardware spec as the plywood line. The value tier." }
 ];
 
@@ -86,8 +111,8 @@ const CATALOG = {
     img: "1556909114-f6e7ad7d3136",
     sections: {
       "white-slim-shaker": {
-        slug: "white-slim-shaker", title: "White Slim Shaker", code: "WSS",
-        img: "1600585154340-be6161a56a0c",
+        slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
+        img: "/assets/finishes/white-slim-shaker-hero.jpg",
         blurb: "Painted maple shaker with a narrow 1.5-inch stile in a soft chalk white. For condos, galleys, and any room where a wide stile would eat the visual frame.",
         about: [
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",
