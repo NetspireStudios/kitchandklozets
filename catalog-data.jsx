@@ -377,7 +377,37 @@ const CABINET_FAMILIES = [
           { code: "BTC18",  dims: "18\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "wall-short-2d-narrow", title: "Wall Cabinet", subtitle: "Short 2 Door (12\", 15\", 18\", 21\")" },
+      { slug: "wall-short-2d-narrow", title: "Wall Cabinet", subtitle: "Short 2 Door (12\", 15\", 18\", 21\")",
+        diagrams: [
+          "/assets/cabinets/wall-short-2d-narrow-diagram.png",
+          "/assets/cabinets/wall-short-2d-narrow-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "No shelf in 12\" & 15\", 18\" & 21\"H.",
+          "One (1) adjustable shelf with shelf pegs for 24\"H cabinet.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "W2412", dims: "24\"W x 12\"H x 12\"D" },
+          { code: "W2712", dims: "27\"W x 12\"H x 12\"D" },
+          { code: "W3012", dims: "30\"W x 12\"H x 12\"D" },
+          { code: "W3312", dims: "33\"W x 12\"H x 12\"D" },
+          { code: "W3612", dims: "36\"W x 12\"H x 12\"D" },
+          { code: "W3015", dims: "30\"W x 15\"H x 12\"D" },
+          { code: "W3315", dims: "33\"W x 15\"H x 12\"D" },
+          { code: "W3615", dims: "36\"W x 15\"H x 12\"D" },
+          { code: "W3018", dims: "30\"W x 18\"H x 12\"D" },
+          { code: "W3318", dims: "33\"W x 18\"H x 12\"D" },
+          { code: "W3618", dims: "36\"W x 18\"H x 12\"D" },
+          { code: "W3021", dims: "30\"W x 21\"H x 12\"D" },
+          { code: "W3321", dims: "33\"W x 21\"H x 12\"D" }
+        ]
+      },
       { slug: "wall-short-2d-24",     title: "Wall Cabinet", subtitle: "Short 2 Door (24\")" },
       { slug: "wall-fridge-2d-narrow",title: "Wall Cabinet", subtitle: "Fridge 2 Door (12\", 15\", 18\")" },
       { slug: "wall-fridge-2d-24",    title: "Wall Cabinet", subtitle: "Fridge 2 Door (24\")" },
