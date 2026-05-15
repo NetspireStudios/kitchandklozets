@@ -261,8 +261,55 @@ const CABINET_FAMILIES = [
   {
     slug: "pantry", title: "Pantry",
     subcategories: [
-      { slug: "pantry-tall",   title: "Pantry Cabinet", subtitle: "Tall, 4 Door" },
-      { slug: "pantry-utility",title: "Pantry Cabinet", subtitle: "Utility" }
+      { slug: "pantry-1-side-door", title: "Pantry Cabinet", subtitle: "1 Side Door",
+        diagrams: [
+          "/assets/cabinets/pantry-1-side-door.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "Three (3) adjustable shelves with shelf pegs and One (1) fixed shelf.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Height of cabinet includes feet's height.",
+          "Use REF/MTEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "PC1884", dims: "18\"W x 84\"H x 23 7/8\"D" },
+          { code: "PC1890", dims: "18\"W x 90\"H x 23 7/8\"D" },
+          { code: "PC1896", dims: "18\"W x 96\"H x 23 7/8\"D" }
+        ],
+        noThumbnails: true
+      },
+      { slug: "pantry-2-full-door", title: "Pantry Cabinet", subtitle: "2 Full Door",
+        diagrams: [
+          "/assets/cabinets/pantry-2-full-door.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Four (4) doors with HINGE105° (6 ways & soft close).",
+          "Three (3) adjustable shelves with shelf pegs and One (1) fixed shelf.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Height of cabinet includes feet's height.",
+          "Use REF/MTEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "PC2484", dims: "24\"W x 84\"H x 23 7/8\"D" },
+          { code: "PC3084", dims: "30\"W x 84\"H x 23 7/8\"D" },
+          { code: "PC2490", dims: "24\"W x 90\"H x 23 7/8\"D" },
+          { code: "PC3090", dims: "30\"W x 90\"H x 23 7/8\"D" },
+          { code: "PC2496", dims: "24\"W x 96\"H x 23 7/8\"D" },
+          { code: "PC3096", dims: "30\"W x 96\"H x 23 7/8\"D" }
+        ],
+        noThumbnails: true
+      }
     ]
   },
   {
