@@ -205,7 +205,28 @@ const CABINET_FAMILIES = [
           { code: "BSR12", dims: "12\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "full-height",  title: "Base Cabinet", subtitle: "Full Height" },
+      { slug: "full-height",  title: "Base Cabinet", subtitle: "Full Height",
+        diagrams: [
+          "/assets/cabinets/full-height-diagram.png",
+          "/assets/cabinets/full-height-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door for BSR cabinet.",
+          "One (1) door with HINGE105° (6 ways & soft close) for BFH cabinet.",
+          "One (1) adjustable shelf with shelf pegs for BFH cabinet.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "B06FH", dims: "6\"W x 30\"H x 23 7/8\"D" },
+          { code: "B09FH", dims: "9\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "microwave",    title: "Base Cabinet", subtitle: "Microwave Cabinet" }
     ]
   },
