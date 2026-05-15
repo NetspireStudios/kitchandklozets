@@ -137,7 +137,32 @@ const CABINET_FAMILIES = [
           { code: "BLS36", dims: "36\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "drawers",      title: "Base Cabinet", subtitle: "Drawers Base Cabinet" },
+      { slug: "drawers",      title: "Base Cabinet", subtitle: "Drawers Base Cabinet",
+        diagrams: [
+          "/assets/cabinets/drawers-base-diagram.png",
+          "/assets/cabinets/drawers-base-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Three (3) drawers with metalbox and soft close slide.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "3DB12", dims: "12\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB15", dims: "15\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB18", dims: "18\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB21", dims: "21\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB24", dims: "24\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB30", dims: "30\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB33", dims: "33\"W x 30\"H x 23 7/8\"D" },
+          { code: "3DB36", dims: "36\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "2-drawer",     title: "Base Cabinet", subtitle: "2 Drawer" },
       { slug: "spice-rack",   title: "Base Cabinet", subtitle: "Base Spice Rack" },
       { slug: "full-height",  title: "Base Cabinet", subtitle: "Full Height" },
