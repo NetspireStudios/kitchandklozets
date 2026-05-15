@@ -163,7 +163,26 @@ const CABINET_FAMILIES = [
           { code: "3DB36", dims: "36\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "2-drawer",     title: "Base Cabinet", subtitle: "2 Drawer" },
+      { slug: "2-drawer",     title: "Base Cabinet", subtitle: "2 Drawer",
+        diagrams: [
+          "/assets/cabinets/2-drawer-diagram.png",
+          "/assets/cabinets/2-drawer-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) drawers with metalbox and soft close slide.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "2DB30", dims: "30\"W x 30\"H x 23 7/8\"D" },
+          { code: "2DB36", dims: "36\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "spice-rack",   title: "Base Cabinet", subtitle: "Base Spice Rack" },
       { slug: "full-height",  title: "Base Cabinet", subtitle: "Full Height" },
       { slug: "microwave",    title: "Base Cabinet", subtitle: "Microwave Cabinet" }
