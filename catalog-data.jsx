@@ -227,7 +227,27 @@ const CABINET_FAMILIES = [
           { code: "B09FH", dims: "9\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "microwave",    title: "Base Cabinet", subtitle: "Microwave Cabinet" }
+      { slug: "microwave",    title: "Base Cabinet", subtitle: "Microwave Cabinet",
+        diagrams: [
+          "/assets/cabinets/microwave-diagram.png",
+          "/assets/cabinets/microwave-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) drawer with metalbox and soft close slide.",
+          "One (1) 2\" filler at the top to adjust the spacing.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\".",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "BMC24", dims: "24\"W x 30\"H x 23 7/8\"D" },
+          { code: "BMC30", dims: "30\"W x 30\"H x 23 7/8\"D" }
+        ]
+      }
     ]
   },
   {
