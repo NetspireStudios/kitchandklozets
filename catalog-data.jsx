@@ -559,7 +559,27 @@ const CABINET_FAMILIES = [
           { code: "WBF3630", dims: "36\"W x 30\"H x 12\"D" }
         ]
       },
-      { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift" }
+      { slug: "wall-stay-lift",       title: "Wall Cabinet", subtitle: "Stay Lift",
+        diagrams: [
+          "/assets/cabinets/wall-stay-lift-diagram.png",
+          "/assets/cabinets/wall-stay-lift-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with BLUM stay lift HINGE105° (6 ways & soft close).",
+          "No Shelf.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "WSL3015", dims: "30\"W x 15\"H x 12\"D" },
+          { code: "WSL3615", dims: "36\"W x 15\"H x 12\"D" },
+          { code: "WSL3018", dims: "30\"W x 18\"H x 12\"D" },
+          { code: "WSL3618", dims: "36\"W x 18\"H x 12\"D" }
+        ]
+      }
     ]
   },
   {
