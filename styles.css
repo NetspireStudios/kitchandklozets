@@ -1,7 +1,7 @@
 /* Kitch & Klozets — Warm Craftsman site
    Responsive, mobile-first. Fluid type via clamp(). */
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Caveat:wght@400;500;600;700&display=swap");
 
 :root {
   --bg:         #EFE7D7;
@@ -36,7 +36,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -51,10 +51,11 @@ button { font-family: inherit; }
 img { display: block; max-width: 100%; }
 
 .display {
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 0.96;
+  font-family: "Fraunces", "Inter", Georgia, serif;
+  font-weight: 500;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
 }
 
 .script {
@@ -443,7 +444,7 @@ section { position: relative; }
   font-size: 18px; color: var(--walnut);
 }
 .polaroid-cap small {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px; color: var(--muted);
   letter-spacing: 0;
 }
@@ -3736,6 +3737,73 @@ body.bg-image .wholesale-hero {
 }
 .rta-accessories .rta-board-diagram-img img {
   max-height: clamp(220px, 22vw, 280px);
+}
+
+/* --- Why Choose section on the RTA finish landing + board pages --- */
+.rta-why-choose {
+  margin: clamp(48px, 6vw, 72px) 0 0;
+}
+.rta-why-choose-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+.rta-why-choose-head .eyebrow { display: block; margin-bottom: 8px; }
+.rta-why-choose-head .display {
+  font-size: clamp(28px, 3.6vw, 40px);
+  letter-spacing: -0.02em;
+  margin: 4px 0 0;
+  color: var(--walnut);
+}
+.rta-why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1080px) { .rta-why-choose-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .rta-why-choose-grid { grid-template-columns: 1fr; } }
+.rta-why-choose-card {
+  position: relative;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.rta-why-choose-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(59, 42, 30, 0.08);
+}
+.rta-why-choose-num {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-family: "DM Mono", "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--clay);
+  letter-spacing: 0.06em;
+}
+.rta-why-choose-card .eyebrow {
+  display: block;
+  margin-top: 4px;
+}
+.rta-why-choose-card .display {
+  font-size: clamp(17px, 1.5vw, 21px);
+  color: var(--walnut);
+  margin: 6px 0 8px;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+  text-wrap: balance;
+  padding-right: 36px;
+}
+.rta-why-choose-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* selection */
