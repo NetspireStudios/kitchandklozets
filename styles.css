@@ -3542,6 +3542,14 @@ a.contact-card:hover {
   max-height: 100%;
   object-fit: contain;
 }
+.rta-sku-thumb.is-empty {
+  background: rgba(59, 42, 30, 0.04);
+}
+.rta-sku-thumb-placeholder {
+  width: 36px;
+  height: 28px;
+  color: rgba(59, 42, 30, 0.32);
+}
 .rta-sku-tag {
   position: absolute;
   left: 6px;

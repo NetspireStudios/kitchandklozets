@@ -268,7 +268,32 @@ const CABINET_FAMILIES = [
   {
     slug: "double-oven", title: "Double Oven Cabinet",
     subcategories: [
-      { slug: "oven-standard", title: "Double Oven Cabinet", subtitle: "Standard" }
+      { slug: "oven-standard", title: "Cabinet", subtitle: "Double Oven Cabinet",
+        diagrams: [
+          "/assets/cabinets/double-oven-diagram.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "Two (2) doors with HINGE105° (6 ways & soft close).",
+          "One (1) drawer with metalbox and soft close slide.",
+          "One (1) 2 1/2\" filler at the top and bottom of cut-out space.",
+          "One (1) adjustable shelf with shelf pegs on the top for 96\" cabinet.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Height of cabinet includes feet's height.",
+          "Appliance cut-out height is 55 1/8\".",
+          "Use REF/MTEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "DOC3084", dims: "30\"W x 84\"H x 23 7/8\"D" },
+          { code: "DOC3090", dims: "30\"W x 90\"H x 23 7/8\"D" },
+          { code: "DOC3096", dims: "30\"W x 96\"H x 23 7/8\"D" }
+        ],
+        noThumbnails: true
+      }
     ]
   }
 ];

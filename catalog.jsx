@@ -1041,11 +1041,17 @@ function RtaBoardBrowser({ category, section, product }) {
                   const prefix = prod.code ? `${prod.code}-${sec.code}-` : "";
                   const fullCode = `${prefix}${s.code}`;
                   const tag = sec.code ? `${sec.code}-${s.code}` : s.code;
-                  const thumb = sub.diagrams?.[0] || sub.diagrams?.[1];
+                  const thumb = sub.noThumbnails ? null : (sub.diagrams?.[0] || sub.diagrams?.[1]);
                   return (
                     <article key={s.code} className="rta-sku-card">
-                      <div className="rta-sku-thumb">
-                        {thumb ? <img src={thumb} alt={fullCode} loading="lazy"/> : null}
+                      <div className={`rta-sku-thumb ${thumb ? "" : "is-empty"}`}>
+                        {thumb ? <img src={thumb} alt={fullCode} loading="lazy"/> : (
+                          <svg className="rta-sku-thumb-placeholder" viewBox="0 0 32 24" aria-hidden="true">
+                            <rect x="1" y="1" width="30" height="22" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+                            <circle cx="10" cy="9" r="2" fill="currentColor"/>
+                            <path d="M5 19 L13 11 L19 17 L23 13 L28 19" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        )}
                         <span className="rta-sku-tag">{tag}</span>
                       </div>
                       <div className="rta-sku-body">
