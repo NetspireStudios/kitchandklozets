@@ -999,10 +999,9 @@ function RtaBoardBrowser({ category, section, product }) {
             {sub?.diagrams?.length ? (
               <div className="rta-board-diagrams">
                 {sub.diagrams.map((d, i) => (
-                  <div key={i} className="rta-board-diagram-img ph"
-                       style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
-                    <Img src={d} alt={`${sub.title} ${sub.subtitle || ""}`} w={900}/>
-                  </div>
+                  <figure key={i} className="rta-board-diagram-img">
+                    <img src={d} alt={`${sub.title} ${sub.subtitle || ""}`} loading="lazy"/>
+                  </figure>
                 ))}
               </div>
             ) : (

@@ -3429,16 +3429,21 @@ a.contact-card:hover {
   align-content: start;
 }
 .rta-board-diagram-img {
+  margin: 0;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 10px;
+  padding: 18px;
   display: grid;
   place-items: center;
   background: var(--cream);
+  min-height: 240px;
 }
 .rta-board-diagram-img img {
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
   display: block;
 }
 
