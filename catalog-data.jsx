@@ -183,7 +183,28 @@ const CABINET_FAMILIES = [
           { code: "2DB36", dims: "36\"W x 30\"H x 23 7/8\"D" }
         ]
       },
-      { slug: "spice-rack",   title: "Base Cabinet", subtitle: "Base Spice Rack" },
+      { slug: "spice-rack",   title: "Base Cabinet", subtitle: "Base Spice Rack",
+        diagrams: [
+          "/assets/cabinets/spice-rack-diagram.png",
+          "/assets/cabinets/spice-rack-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door and spice rack for BSR cabinet.",
+          "One (1) door with HINGE105° (6 ways & soft close) for BFH cabinet.",
+          "One (1) adjustable shelf with shelf pegs for BFH cabinet.",
+          "Four (4) adjustable Legs 4 1/4\"~5 1/4\"",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use BEP/MBEP panels to cover exterior sides if exposed.",
+          "Need to install TK8/A-TK10/B-TK10 at the bottom of the cabinet."
+        ],
+        skus: [
+          { code: "BSR09", dims: "9\"W x 30\"H x 23 7/8\"D" },
+          { code: "BSR12", dims: "12\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "full-height",  title: "Base Cabinet", subtitle: "Full Height" },
       { slug: "microwave",    title: "Base Cabinet", subtitle: "Microwave Cabinet" }
     ]
