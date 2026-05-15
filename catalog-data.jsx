@@ -279,8 +279,7 @@ const CABINET_FAMILIES = [
           { code: "W1536", dims: "15\"W x 36\"H x 12\"D" },
           { code: "W1836", dims: "18\"W x 36\"H x 12\"D" },
           { code: "W2136", dims: "21\"W x 36\"H x 12\"D" }
-        ],
-        noThumbnails: true
+        ]
       },
       { slug: "wall-1d-42",           title: "Wall Cabinet", subtitle: "1 Full Door (42\")",
         diagrams: [
@@ -303,8 +302,7 @@ const CABINET_FAMILIES = [
           { code: "W1542", dims: "15\"W x 42\"H x 12\"D" },
           { code: "W1842", dims: "18\"W x 42\"H x 12\"D" },
           { code: "W2142", dims: "21\"W x 42\"H x 12\"D" }
-        ],
-        noThumbnails: true
+        ]
       },
       { slug: "wall-2d-30-36",        title: "Wall Cabinet", subtitle: "2 Door (30\" & 36\")",
         diagrams: [
@@ -332,8 +330,7 @@ const CABINET_FAMILIES = [
           { code: "W3036", dims: "30\"W x 36\"H x 12\"D" },
           { code: "W3336", dims: "33\"W x 36\"H x 12\"D" },
           { code: "W3636", dims: "36\"W x 36\"H x 12\"D" }
-        ],
-        noThumbnails: true
+        ]
       },
       { slug: "wall-2d-42",           title: "Wall Cabinet", subtitle: "2 Door (42\")",
         diagrams: [
@@ -356,10 +353,30 @@ const CABINET_FAMILIES = [
           { code: "W3042", dims: "30\"W x 42\"H x 12\"D" },
           { code: "W3342", dims: "33\"W x 42\"H x 12\"D" },
           { code: "W3642", dims: "36\"W x 42\"H x 12\"D" }
-        ],
-        noThumbnails: true
+        ]
       },
-      { slug: "wall-short-1d",        title: "Wall Cabinet", subtitle: "Short Cabinet 1 Full Door" },
+      { slug: "wall-short-1d",        title: "Wall Cabinet", subtitle: "Short Cabinet 1 Full Door",
+        diagrams: [
+          "/assets/cabinets/wall-short-1d-diagram.png",
+          "/assets/cabinets/wall-short-1d-front.png"
+        ],
+        includes: [
+          "One (1) universal cabinet box.",
+          "One (1) door with HINGE105° (6 ways & soft close).",
+          "No Shelf.",
+          "Screws, dowels and required hardware."
+        ],
+        notes: [
+          "Use WEP/MWEP panels to cover exterior sides if exposed."
+        ],
+        skus: [
+          { code: "W1212",  dims: "12\"W x 12\"H x 12\"D" },
+          { code: "W1512",  dims: "15\"W x 12\"H x 12\"D" },
+          { code: "W1812",  dims: "18\"W x 12\"H x 12\"D" },
+          { code: "W2112",  dims: "21\"W x 12\"H x 12\"D" },
+          { code: "BTC18",  dims: "18\"W x 30\"H x 23 7/8\"D" }
+        ]
+      },
       { slug: "wall-short-2d-narrow", title: "Wall Cabinet", subtitle: "Short 2 Door (12\", 15\", 18\", 21\")" },
       { slug: "wall-short-2d-24",     title: "Wall Cabinet", subtitle: "Short 2 Door (24\")" },
       { slug: "wall-fridge-2d-narrow",title: "Wall Cabinet", subtitle: "Fridge 2 Door (12\", 15\", 18\")" },
