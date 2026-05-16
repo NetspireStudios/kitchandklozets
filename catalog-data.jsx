@@ -841,6 +841,7 @@ const CATALOG = {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
         img: "/assets/finishes/card-white-slim-shaker.jpg",
         cardImg: "/assets/finishes/card-white-slim-shaker.jpg",
+        heroPhoto: "/assets/finishes/white-slim-shaker-hero.jpg",
         aboutImg: "/assets/finishes/white-slim-shaker-about-v2.jpg",
         features: [
           { title: "Slim Shaker", img: "/assets/finishes/wss-feature-1.jpg",

@@ -822,43 +822,70 @@ function RtaFinishLanding({ category, section }) {
   if (!cat || !sec) return <p className="container">Finish not found.</p>;
 
   return (
-    <section className="catalog-page rta-finish-landing">
-      <div className="container">
-        <Breadcrumbs items={[
-          { label: "Home", href: "/" },
-          { label: cat.title, href: `/${category}` },
-          { label: sec.title }
-        ]}/>
-
-        <div className="rta-landing-grid" data-reveal>
-          <div className="rta-landing-img ph"
-               style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-            {sec.img
-              ? <Img src={sec.img} alt={sec.title} w={1200}/>
-              : <CabinetOverlay opacity={0.3}/>}
-          </div>
-          <div className="rta-landing-body">
-            <h1 className="display rta-landing-title">
-              {sec.title} {sec.code ? <span className="rta-landing-code">({sec.code})</span> : null}
-            </h1>
-            <p className="rta-landing-sub">Available in Plywood &amp; Particle boards.</p>
-            <p className="rta-landing-blurb">{sec.blurb}</p>
-            <div className="rta-landing-ctas">
-              {(sec.products || []).map(p => (
-                <a key={p.slug} className="btn btn-walnut rta-landing-cta"
-                   href={`/${category}/${section}/${p.slug}`}>
-                  Go to {p.title} <span className="arrow">→</span>
-                </a>
-              ))}
+    <>
+      {sec.heroPhoto ? (
+        <section className="finish-photo-hero" data-reveal>
+          <div className="finish-photo-hero-img"
+               style={{ backgroundImage: `url('${sec.heroPhoto}')` }}>
+            <div className="finish-photo-hero-wash"/>
+            <div className="finish-photo-hero-caption">
+              <span className="eyebrow">RTA Kitchen{sec.code ? ` · ${sec.code}` : ""}</span>
+              <h1 className="display">{sec.title}</h1>
+              <p className="finish-photo-hero-tag">Available in Plywood &amp; Particle boards. {sec.blurb}</p>
+              <div className="hero-ctas finish-photo-hero-ctas">
+                {(sec.products || []).map(p => (
+                  <a key={p.slug}
+                     className={`btn ${p.slug === "plywood" ? "btn-walnut" : "btn-ghost btn-on-photo"}`}
+                     href={`/${category}/${section}/${p.slug}`}>
+                    Go to {p.title} <span className="arrow">→</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+      ) : null}
 
-        <RtaAboutBlock section={sec}/>
-        <RtaFeaturesBlock section={sec}/>
-        <RtaFaqBlock section={sec}/>
-      </div>
-    </section>
+      <section className="catalog-page rta-finish-landing">
+        <div className="container">
+          <Breadcrumbs items={[
+            { label: "Home", href: "/" },
+            { label: cat.title, href: `/${category}` },
+            { label: sec.title }
+          ]}/>
+
+          {sec.heroPhoto ? null : (
+            <div className="rta-landing-grid" data-reveal>
+              <div className="rta-landing-img ph"
+                   style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+                {sec.img
+                  ? <Img src={sec.img} alt={sec.title} w={1200}/>
+                  : <CabinetOverlay opacity={0.3}/>}
+              </div>
+              <div className="rta-landing-body">
+                <h1 className="display rta-landing-title">
+                  {sec.title} {sec.code ? <span className="rta-landing-code">({sec.code})</span> : null}
+                </h1>
+                <p className="rta-landing-sub">Available in Plywood &amp; Particle boards.</p>
+                <p className="rta-landing-blurb">{sec.blurb}</p>
+                <div className="rta-landing-ctas">
+                  {(sec.products || []).map(p => (
+                    <a key={p.slug} className="btn btn-walnut rta-landing-cta"
+                       href={`/${category}/${section}/${p.slug}`}>
+                      Go to {p.title} <span className="arrow">→</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          <RtaAboutBlock section={sec}/>
+          <RtaFeaturesBlock section={sec}/>
+          <RtaFaqBlock section={sec}/>
+        </div>
+      </section>
+    </>
   );
 }
 
