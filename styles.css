@@ -4328,9 +4328,16 @@ body.bg-image .wholesale-hero {
   max-width: 52ch;
 }
 .why-choose-v2-banner-img {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+.why-choose-v2-banner-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* --- Home: RTA list (image + text rows) --- */
