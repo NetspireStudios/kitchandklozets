@@ -696,8 +696,8 @@ function MegaMenu({ open, onClose }) {
   const finishes = cat?.sections ? Object.values(cat.sections) : [];
   const flat     = cat?.products || [];
   const items = [
-    ...finishes.map(s => ({ slug: s.slug, title: s.title, img: s.img, href: `/rta-kitchen/${s.slug}` })),
-    ...flat.map(p => ({ slug: p.slug, title: p.title, img: p.img, href: `/rta-kitchen/${p.slug}` }))
+    ...finishes.map(s => ({ slug: s.slug, title: s.title, img: s.cardImg || s.img, href: `/rta-kitchen/${s.slug}` })),
+    ...flat.map(p => ({ slug: p.slug, title: p.title, img: p.cardImg || p.img, href: `/rta-kitchen/${p.slug}` }))
   ];
   if (!items.length) return null;
   return (

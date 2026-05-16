@@ -203,10 +203,9 @@ function RTACabinetList() {
           {sections.map((sec, i) => (
             <a key={sec.slug} href={`/rta-kitchen/${sec.slug}`}
                className="home-rta-row" data-reveal style={{ "--delay": `${i * 60}ms` }}>
-              <div className="home-rta-row-img ph"
-                   style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-                {sec.img
-                  ? <Img src={sec.img} alt={sec.title} w={500}/>
+              <div className="home-rta-row-img">
+                {(sec.cardImg || sec.img)
+                  ? <img src={sec.cardImg || (sec.img && sec.img.startsWith("/") ? sec.img : `https://images.unsplash.com/photo-${sec.img}?w=500&q=80&auto=format&fit=crop`)} alt={sec.title} loading="lazy"/>
                   : <CabinetOverlay opacity={0.28}/>}
               </div>
               <div className="home-rta-row-body">

@@ -840,6 +840,7 @@ const CATALOG = {
       "white-slim-shaker": {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
         img: "/assets/finishes/white-slim-shaker-hero.jpg",
+        cardImg: "/assets/finishes/card-white-slim-shaker.jpg",
         aboutImg: "/assets/finishes/white-slim-shaker-about.jpg",
         features: [
           { title: "Slim Shaker", img: "/assets/finishes/wss-feature-1.jpg",
@@ -867,6 +868,7 @@ const CATALOG = {
       "white-shaker": {
         slug: "white-shaker", title: "White Single Shaker", code: "WSH",
         img: "1556909114-f6e7ad7d3136",
+        cardImg: "/assets/finishes/card-white-shaker.jpg",
         blurb: "The classic. Two-inch single-shaker stile, painted maple in a soft white. The most-ordered finish across the dealer network.",
         about: [
           "White single shaker is the most-ordered finish across the dealer network. A standard 2-inch shaker stile, painted maple in a warm soft white. Reads correctly in farmhouse, transitional, and modern rooms; pairs cleanly with quartz, marble, and natural stone counters.",
@@ -885,6 +887,7 @@ const CATALOG = {
       "blue-shaker": {
         slug: "blue-shaker", title: "Blue Single Shaker", code: "BSS",
         img: "1556909114-f6e7ad7d3136",
+        cardImg: "/assets/finishes/card-blue-shaker.jpg",
         blurb: "Painted maple single-shaker in a deep navy. Reads moody and modern; pair with brass, chrome, or blackened-steel hardware.",
         about: [
           "Blue single shaker is the moodier choice for kitchens that want to read modern without giving up the shaker frame. A deep navy painted on maple, the kind of color that holds up to natural light and reads almost-black in the evening.",
@@ -903,6 +906,7 @@ const CATALOG = {
       "grey-shaker": {
         slug: "grey-shaker", title: "Grey Single Shaker", code: "GSS",
         img: "1505691938895-1758d7feb511",
+        cardImg: "/assets/finishes/card-grey-shaker.jpg",
         blurb: "Mid-grey painted maple single-shaker. A confident alternative to white that pairs with both warm and cool stone tops.",
         about: [
           "Grey single shaker is the quieter alternative to white. A mid-grey painted on maple, neutral enough to read as taupe in warm light and as cool charcoal at dusk. The most flexible color in the program for designers who don't want to commit to a strong perimeter.",
@@ -921,6 +925,7 @@ const CATALOG = {
       "natural-wood": {
         slug: "natural-wood", title: "Natural Wood", code: "NTW",
         img: "1556909114-f6e7ad7d3136",
+        cardImg: "/assets/finishes/card-natural-wood.jpg",
         blurb: "Quarter-sawn white oak shaker fronts with a clear oil finish. No stain. The grain reads tobacco-warm and deepens through the first year of use.",
         about: [
           "Natural wood is quarter-sawn white oak shaker, finished with a clear oil only. No stain, no tinted topcoat. The grain runs straight, the wood reads tobacco-warm, and the surface deepens slowly through the first year of use as oxidation sets in.",
@@ -939,6 +944,7 @@ const CATALOG = {
       "smoked-oak": {
         slug: "smoked-oak", title: "Smoked Oak", code: "MSO",
         img: "1505691938895-1758d7feb511",
+        cardImg: "/assets/finishes/card-smoked-oak.jpg",
         blurb: "Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads.",
         about: [
           "Smoked oak is quarter-sawn oak fumed with ammonia to draw the tannins out and darken the wood from the inside, rather than with a surface stain. The result is darker than natural oak and lighter than ebonized; the grain still reads through.",
@@ -957,6 +963,7 @@ const CATALOG = {
       "high-gloss-white": {
         slug: "high-gloss-white", title: "White High Gloss", code: "HGW",
         img: "1600585154340-be6161a56a0c",
+        cardImg: "/assets/finishes/card-high-gloss-white.jpg",
         blurb: "Slab fronts in a high-gloss polyester white. Reflective, modern, and the easiest finish to wipe clean.",
         about: [
           "White high gloss is the slab line. Polyester-coated MDF fronts in a high-gloss white, reflective and modern, sized for European-style kitchens. There's no shaker frame or grain to dust around, and fingerprints come right off the surface.",
@@ -976,6 +983,7 @@ const CATALOG = {
     products: [
       { slug: "accessories", title: "Kitchen Accessories",
         img: "1556909114-f6e7ad7d3136",
+        cardImg: "/assets/finishes/card-accessories.png",
         blurb: "Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer." }
     ]
   }

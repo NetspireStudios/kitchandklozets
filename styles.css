@@ -4396,6 +4396,13 @@ body.bg-image .wholesale-hero {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  background: #fff;
+}
+.home-rta-row-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .home-rta-row-body { min-width: 0; }
 .home-rta-row-code {
