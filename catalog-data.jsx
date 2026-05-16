@@ -889,6 +889,16 @@ const CATALOG = {
         slug: "blue-shaker", title: "Blue Single Shaker", code: "BSS",
         img: "/assets/finishes/card-blue-shaker.jpg",
         cardImg: "/assets/finishes/card-blue-shaker.jpg",
+        heroPhoto: "/assets/finishes/blue-shaker-hero.png",
+        aboutImg: "/assets/finishes/blue-shaker-about.png",
+        features: [
+          { title: "Deep Navy", img: "/assets/finishes/bss-feature-1.png",
+            blurb: "Painted maple in a deep navy that reads almost-black in low light and registers as navy under daylight. Holds its colour across morning, afternoon, and dusk." },
+          { title: "Shaker Frame", img: "/assets/finishes/bss-feature-2.png",
+            blurb: "Standard 2-inch single-shaker stile and rail, joined on the bench and pinned in the shop. The frame keeps the cabinetry grounded even when the colour pushes modern." },
+          { title: "Hardware Pairing", img: "/assets/finishes/bss-feature-3.png",
+            blurb: "Brass, antique brass, and polished chrome read best against the navy. Matte black sinks the cabinet into the wall in low light, which some rooms want." }
+        ],
         blurb: "Painted maple single-shaker in a deep navy. Reads moody and modern; pair with brass, chrome, or blackened-steel hardware.",
         about: [
           "Blue single shaker is the moodier choice for kitchens that want to read modern without giving up the shaker frame. A deep navy painted on maple, the kind of color that holds up to natural light and reads almost-black in the evening.",
