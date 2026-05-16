@@ -146,9 +146,50 @@ function App() {
         { code: "MPW-ER3084", dims: "30\"W x 84\"H x 30\"D" }
       ]
     },
-    { slug: "basic-hanging", title: "Closet Basic Section for Hanging" },
-    { slug: "basic-shelves", title: "Closet Basic Section for Shelves" },
-    { slug: "corner-section", title: "Closet Corner Section" }
+    { slug: "basic-hanging", title: "Closet Basic Section for Hanging",
+      diagrams: ["/assets/closet/closet-hanging.jpg"],
+      includes: [
+        "One (1) universal cabinet box.",
+        "Screws, dowels and required hardware."
+      ],
+      notes: ["Basic section unit comes with 1 adjustable shelf & 2 hanging rods."],
+      skus: [
+        { code: "MPW-C3084H",  dims: "30\"W x 84\"H x 15\"D" },
+        { code: "MPW-C3684H",  dims: "36\"W x 84\"H x 15\"D" },
+        { code: "MPW-C3084HD", dims: "30\"W x 84\"H x 24\"D" },
+        { code: "MPW-C3684HD", dims: "36\"W x 84\"H x 24\"D" }
+      ],
+      thumb: "/assets/closet/closet-hanging.jpg"
+    },
+    { slug: "basic-shelves", title: "Closet Basic Section for Shelves",
+      diagrams: ["/assets/closet/closet-shelves.jpg"],
+      includes: [
+        "One (1) universal cabinet box.",
+        "Screws, dowels and required hardware."
+      ],
+      notes: ["Basic section unit comes with 4 adjustable shelves."],
+      skus: [
+        { code: "MPW-C1584",  dims: "15\"W x 84\"H x 15\"D" },
+        { code: "MPW-C1884",  dims: "18\"W x 84\"H x 15\"D" },
+        { code: "MPW-C2484",  dims: "24\"W x 84\"H x 15\"D" },
+        { code: "MPW-C3084",  dims: "30\"W x 84\"H x 15\"D" },
+        { code: "MPW-C3684",  dims: "36\"W x 84\"H x 15\"D" },
+        { code: "MPW-C1584D", dims: "15\"W x 84\"H x 24\"D" },
+        { code: "MPW-C1884D", dims: "18\"W x 84\"H x 24\"D" },
+        { code: "MPW-C2484D", dims: "24\"W x 84\"H x 24\"D" },
+        { code: "MPW-C3084D", dims: "30\"W x 84\"H x 24\"D" },
+        { code: "MPW-C3684D", dims: "36\"W x 84\"H x 24\"D" }
+      ],
+      thumb: "/assets/closet/closet-shelves.jpg"
+    },
+    { slug: "corner-section", title: "Closet Corner Section",
+      diagrams: ["/assets/closet/closet-corner.jpg"],
+      includes: [
+        "One (1) universal cabinet box.",
+        "Screws, dowels and required hardware."
+      ],
+      notes: ["Side panel depth 15\", comes with 1 adjustable shelf and 2 hanging rods."]
+    }
   ];
   const closetSub = CLOSET_SECTIONS.find(s => s.slug === activeClosetSub) || CLOSET_SECTIONS[0];
 
@@ -292,7 +333,7 @@ function App() {
                       {closetSub.skus.map(s => (
                         <article key={s.code} className="rta-sku-card">
                           <div className="rta-sku-thumb">
-                            <img src="/assets/closet/closet-section-diagram.png" alt={s.code} loading="lazy"/>
+                            <img src={closetSub.thumb || closetSub.diagrams?.[0] || "/assets/closet/closet-section-diagram.png"} alt={s.code} loading="lazy"/>
                           </div>
                           <div className="rta-sku-body">
                             <div className="rta-sku-code">{s.code}</div>
