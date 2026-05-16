@@ -927,7 +927,16 @@ const CATALOG = {
         slug: "grey-shaker", title: "Grey Single Shaker", code: "GSS",
         img: "/assets/finishes/card-grey-shaker.jpg",
         cardImg: "/assets/finishes/card-grey-shaker.jpg",
-        blurb: "Mid-grey painted maple single-shaker. A confident alternative to white that pairs with both warm and cool stone tops.",
+        heroPhoto: "/assets/finishes/grey-shaker-hero.png",
+        aboutImg: "/assets/finishes/grey-shaker-about.png",
+        features: [
+          { title: "Mid-Grey Tone", img: "/assets/finishes/gss-feature-1.png",
+            blurb: "Painted maple in a balanced mid-grey. Reads as taupe in incandescent light and as cool charcoal under daylight, never fully cool or warm." },
+          { title: "Single Shaker Frame", img: "/assets/finishes/gss-feature-2.png",
+            blurb: "Standard 2-inch single-shaker stile and rail. The frame holds the line whether the room runs traditional, transitional, or modern." },
+          { title: "Easy Pairings", img: "/assets/finishes/gss-feature-3.png",
+            blurb: "Pairs with warm and cool stone counters, brass or chrome hardware, oak or walnut floors. The most flexible colour in the program for designers who want options." }
+        ],
         about: [
           "Grey single shaker is the quieter alternative to white. A mid-grey painted on maple, neutral enough to read as taupe in warm light and as cool charcoal at dusk. The most flexible color in the program for designers who don't want to commit to a strong perimeter.",
           "Pairs with both warm-toned and cool-toned stone counters, and with both brass and chrome hardware. Construction and slide spec are identical to the rest of the line; both plywood and particle options carry the same warranty."
@@ -946,7 +955,16 @@ const CATALOG = {
         slug: "natural-wood", title: "Natural Wood", code: "NTW",
         img: "/assets/finishes/card-natural-wood.jpg",
         cardImg: "/assets/finishes/card-natural-wood.jpg",
-        blurb: "Quarter-sawn white oak shaker fronts with a clear oil finish. No stain. The grain reads tobacco-warm and deepens through the first year of use.",
+        heroPhoto: "/assets/finishes/natural-wood-hero.jpg",
+        aboutImg: "/assets/finishes/natural-wood-about.png",
+        features: [
+          { title: "Quarter-Sawn Oak", img: "/assets/finishes/ntw-feature-1.jpg",
+            blurb: "Quarter-sawn white oak doors and drawer fronts. The grain runs straight, the figure stays consistent, and the wood holds its shape better than flat-sawn through humidity swings." },
+          { title: "Clear Oil Finish", img: "/assets/finishes/ntw-feature-2.jpg",
+            blurb: "No stain, no tinted topcoat. A hand-rubbed penetrating oil that lets the wood read tobacco-warm and deepens through the first year of use as oxidation sets in." },
+          { title: "Reads as Millwork", img: "/assets/finishes/ntw-feature-3.jpg",
+            blurb: "For rooms that want the cabinetry to read like millwork rather than painted casework. Pairs with stone, plaster walls, and natural-fiber rugs without competing." }
+        ],
         about: [
           "Natural wood is quarter-sawn white oak shaker, finished with a clear oil only. No stain, no tinted topcoat. The grain runs straight, the wood reads tobacco-warm, and the surface deepens slowly through the first year of use as oxidation sets in.",
           "For rooms that want the cabinetry to read like millwork rather than painted casework. Plywood option carries a hardwood interior to match the front; particle option uses a paper-foil interior with the same hardwood face frame."
