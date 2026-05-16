@@ -75,7 +75,7 @@
 }
 </script>
 </head>
-<body class="bg-image bg-image-kitchen" style="background-color: rgb(250, 238, 223)">
+<body style="background-color: rgb(250, 238, 223)">
 <a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 <div id="root"></div>
 
@@ -91,38 +91,48 @@
 
 function WholesaleHero() {
   return (
-    <section className="wholesale-hero" id="top">
-      <div className="container">
-        <div className="wh-grid">
-          <div data-reveal>
-            <div className="hero-eyebrow">
-              <span className="dot"/>
-              <span className="eyebrow">Wholesale · since 2025 · Sudbury ON</span>
-            </div>
-            <h1 className="display wh-title">
-              RTA cabinets, <span className="accent">dealer-direct</span>.
-            </h1>
-            <p className="wh-lede">
-              Flat-packed kitchen cabinets and closet systems in eight finish lines, shipped to dealers, designers, and contractors on a three to five-week lead time. Same warehouse also runs our signature crafted line for full custom rooms.
+    <>
+      <section className="home-photo-hero" id="top">
+        <div className="home-photo-hero-img"
+             style={{ backgroundImage: "url('/assets/home/home-hero.jpg')" }}>
+          <div className="home-photo-hero-wash"/>
+          <div className="home-photo-hero-caption">
+            <span className="eyebrow">Wholesale cabinets · Sudbury, ON</span>
+            <h1 className="display">Welcome to Kitch &amp; Klozets.</h1>
+            <p className="home-photo-hero-tag">
+              Ready-to-assemble kitchens, closet systems, and built-to-measure crafted cabinetry, all out of one Sudbury shop.
             </p>
-            <div className="hero-ctas">
-              <a className="btn btn-walnut" href="/contact">
-                Request a quote <span className="arrow">→</span>
-              </a>
-              <a className="video-link" href="/rta-kitchen">
-                <span className="play">▸</span> See the RTA catalog
-              </a>
-            </div>
-            <div className="wh-meta">
-              <div><b>5-year</b><span>warranty on every line</span></div>
-              <div><b>3–5 wk</b><span>typical lead time</span></div>
-              <div><b>8 finish</b><span>lines in the RTA range</span></div>
+            <div className="hero-ctas home-photo-hero-ctas">
+              <a className="btn btn-walnut" href="/contact">Request a quote <span className="arrow">→</span></a>
+              <a className="btn btn-ghost btn-on-photo" href="/rta-kitchen">See the RTA catalog</a>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="home-stats" data-reveal>
+        <div className="container">
+          <div className="home-stats-row">
+            <div className="home-stat">
+              <span className="home-stat-num">8</span>
+              <span className="home-stat-label">finish lines, stocked in the warehouse</span>
+            </div>
+            <div className="home-stat">
+              <span className="home-stat-num">3–5</span>
+              <span className="home-stat-label">week lead time on every RTA order</span>
+            </div>
+            <div className="home-stat">
+              <span className="home-stat-num">5 yr</span>
+              <span className="home-stat-label">warranty on the joint, finish, and hardware</span>
+            </div>
+            <div className="home-stat">
+              <span className="home-stat-num">100%</span>
+              <span className="home-stat-label">cabinetry built and shipped from Sudbury</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
