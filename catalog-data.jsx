@@ -983,7 +983,16 @@ const CATALOG = {
         slug: "smoked-oak", title: "Smoked Oak", code: "MSO",
         img: "/assets/finishes/card-smoked-oak.jpg",
         cardImg: "/assets/finishes/card-smoked-oak.jpg",
-        blurb: "Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads.",
+        heroPhoto: "/assets/finishes/smoked-oak-hero.jpg",
+        aboutImg: "/assets/finishes/smoked-oak-about.jpg",
+        features: [
+          { title: "Fumed, Not Stained", img: "/assets/finishes/mso-feature-1.jpg",
+            blurb: "Quarter-sawn oak fumed with ammonia to draw the tannins out and darken the wood from the inside. The grain still reads through, the way a surface stain never lets it." },
+          { title: "Between Natural and Ebonized", img: "/assets/finishes/mso-feature-2.jpg",
+            blurb: "Darker than natural oak, lighter than full ebonized. A useful middle tone for rooms with a lot of stone, plaster, or dark trim that need a wood note without going black." },
+          { title: "Brass and Blackened Steel", img: "/assets/finishes/mso-feature-3.jpg",
+            blurb: "Brass, antique brass, and blackened steel all read clean against the smoked surface. Matte black tends to wash out at this depth; polished nickel works but reads cool." }
+        ],
         about: [
           "Smoked oak is quarter-sawn oak fumed with ammonia to draw the tannins out and darken the wood from the inside, rather than with a surface stain. The result is darker than natural oak and lighter than ebonized; the grain still reads through.",
           "A natural pair with brass or blackened-steel hardware, and a strong cabinet color for rooms that have a lot of stone or tile. Sealed with a hand-applied conversion-varnish topcoat; both plywood and particle options ship with the same finish."
