@@ -189,6 +189,18 @@ section { position: relative; }
 .btn-ghost  { background: transparent; color: var(--walnut); border: 1.5px solid var(--walnut); }
 .btn-ghost:hover { background: var(--walnut); color: var(--cream); }
 
+/* Variant that reads against a dark photo background. Cream fill, walnut text. */
+.btn-on-photo {
+  background: var(--cream);
+  color: var(--walnut);
+  border: 1.5px solid var(--cream);
+}
+.btn-on-photo:hover {
+  background: rgba(250, 244, 232, 0.85);
+  color: var(--walnut);
+  border-color: rgba(250, 244, 232, 0.85);
+}
+
 .btn .arrow {
   display: inline-block; transition: transform 0.25s var(--easing);
 }
@@ -4217,6 +4229,108 @@ body.bg-image .wholesale-hero {
   line-height: 1.5;
   letter-spacing: 0.01em;
   max-width: 26ch;
+}
+
+/* --- Home: Why Choose (v2) — 2x2 icon + body, then a dark image banner --- */
+.why-choose-v2 {
+  padding: clamp(56px, 7vw, 96px) 0 0;
+}
+.why-choose-v2-head {
+  text-align: center;
+  margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+.why-choose-v2-head .display {
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--walnut);
+}
+.why-choose-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 40px) clamp(28px, 4vw, 56px);
+  max-width: 980px;
+  margin: 0 auto clamp(56px, 7vw, 96px);
+}
+@media (max-width: 720px) { .why-choose-v2-grid { grid-template-columns: 1fr; } }
+.why-choose-v2-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.why-choose-v2-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--clay);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.why-choose-v2-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+.why-choose-v2-body .display {
+  font-size: clamp(18px, 1.8vw, 22px);
+  letter-spacing: -0.015em;
+  margin: 4px 0 8px;
+  color: var(--walnut);
+}
+.why-choose-v2-body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.why-choose-v2-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  background: #1d1612;
+  min-height: clamp(380px, 38vw, 520px);
+}
+@media (max-width: 880px) {
+  .why-choose-v2-banner { grid-template-columns: 1fr; }
+  .why-choose-v2-banner-img { min-height: 280px; }
+}
+.why-choose-v2-banner-body {
+  color: var(--cream);
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  align-items: center;
+}
+.why-choose-v2-banner-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--clay);
+  margin-bottom: 8px;
+}
+.why-choose-v2-banner-body .display {
+  font-size: clamp(28px, 3.6vw, 44px);
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.why-choose-v2-banner-body p {
+  margin: 0;
+  color: rgba(250, 244, 232, 0.78);
+  font-size: 14.5px;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+.why-choose-v2-banner-img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* selection */

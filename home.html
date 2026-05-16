@@ -138,35 +138,50 @@ function WholesaleHero() {
 
 function WhyChoose() {
   const pillars = [
-    { eyebrow: "Affordability", title: "Wholesale pricing, predictable margins.",
-      blurb: "Tiered dealer pricing locks in your unit costs for the year. No surprise surcharges, no quarterly rate changes." },
-    { eyebrow: "Customizability", title: "Eight finish lines, common hardware.",
-      blurb: "Mix and match within a kitchen, or carry a single line through closet and pantry. Shared hardware and drawer specs across all lines." },
-    { eyebrow: "Easy installation", title: "Cam-locks, dovetailed boxes, soft-close.",
-      blurb: "Cabinets assemble at the install in under 30 minutes per box. Dovetailed all-wood drawers, soft-close undermounts, plywood carcasses." },
-    { eyebrow: "Durability", title: "Five-year warranty, every line.",
-      blurb: "If a joint we cut fails in normal use within five years, we replace the part or the whole box. Five years on hardware too." }
+    { title: "Affordability", icon: "dollar",
+      blurb: "Kitch & Klozets cabinets offer a real wholesale alternative to traditional custom-built work. Dealer pricing keeps your unit costs predictable without giving up on quality." },
+    { title: "Customizability", icon: "wand",
+      blurb: "Eight finish lines, shared hardware, and accessory programs that mix and match across kitchen, pantry, and closet. Build the look your client asked for without leaving the line." },
+    { title: "Easy Installation", icon: "wrench",
+      blurb: "Cam-locks, pre-drilled 32mm systems, and clear instructions. A trained installer puts a box together in under thirty minutes; handy homeowners can manage it too." },
+    { title: "Durability", icon: "hex",
+      blurb: "Furniture-grade plywood carcasses, dovetailed drawer boxes, soft-close undermount slides. Five-year warranty on every joint we cut, with replacement parts shipped from stock." }
   ];
+  const Icon = ({ kind }) => {
+    if (kind === "dollar")  return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>);
+    if (kind === "wand")    return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 4V2M15 16v-2M8 9h2M20 9h2M17.8 11.8 19 13M15 9h.01M17.8 6.2 19 5M3 21l9-9M12.2 6.2 11 5"/></svg>);
+    if (kind === "wrench")  return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>);
+    if (kind === "hex")     return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>);
+    return null;
+  };
   return (
-    <section className="why-choose">
+    <section className="why-choose-v2">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <div>
-            <span className="eyebrow">Why dealers stay</span>
-            <h2 className="display">Four reasons the order pad keeps coming back.</h2>
-          </div>
-          <p className="hint">A small program, on purpose. We carry eight RTA lines and one custom shop. Everything fits on one truck.</p>
-        </div>
-        <div className="why-grid">
+        <header className="why-choose-v2-head" data-reveal>
+          <h2 className="display">Why Choose Kitch &amp; Klozets Cabinets?</h2>
+        </header>
+        <div className="why-choose-v2-grid">
           {pillars.map((p, i) => (
-            <article key={i} className="why-card" data-reveal style={{ "--delay": `${i * 80}ms` }}>
-              <span className="why-num">0{i + 1}</span>
-              <span className="eyebrow">{p.eyebrow}</span>
-              <h3 className="display">{p.title}</h3>
-              <p>{p.blurb}</p>
+            <article key={i} className="why-choose-v2-card" data-reveal style={{ "--delay": `${i * 80}ms` }}>
+              <div className="why-choose-v2-icon">
+                <Icon kind={p.icon}/>
+              </div>
+              <div className="why-choose-v2-body">
+                <h3 className="display">{p.title}</h3>
+                <p>{p.blurb}</p>
+              </div>
             </article>
           ))}
         </div>
+      </div>
+
+      <div className="why-choose-v2-banner" data-reveal>
+        <div className="why-choose-v2-banner-body">
+          <span className="why-choose-v2-banner-mark" aria-hidden="true"/>
+          <h2 className="display">High-Quality Cabinets.</h2>
+          <p>Kitch &amp; Klozets carries a curated lineup of ready-to-assemble cabinets, closet systems, and built-to-measure crafted cabinetry for dealers, designers, and contractors across Ontario. One Sudbury warehouse, one delivery window, one rep on the phone.</p>
+        </div>
+        <div className="why-choose-v2-banner-img" style={{ backgroundImage: "url('/assets/home/why-choose-bg.jpg')" }}/>
       </div>
     </section>
   );
