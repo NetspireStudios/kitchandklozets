@@ -841,6 +841,14 @@ const CATALOG = {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
         img: "/assets/finishes/white-slim-shaker-hero.jpg",
         aboutImg: "/assets/finishes/white-slim-shaker-about.jpg",
+        features: [
+          { title: "Slim Shaker", img: "/assets/finishes/wss-feature-1.jpg",
+            blurb: "Narrower stiles and rails compared to traditional shaker cabinets. Cleaner visual frame, more door panel showing, and a quieter line on a tight wall." },
+          { title: "Slim Profile", img: "/assets/finishes/wss-feature-2.jpg",
+            blurb: "The slim profile also opens up the room. Works in modern, transitional, and minimalist farmhouse kitchens without ever competing with the rest of the layout." },
+          { title: "Functionality", img: "/assets/finishes/wss-feature-3.jpg",
+            blurb: "Plenty of storage where it counts. Adjustable shelves, drawer banks, and accessory programs keep the kitchen organized at the install and every year after." }
+        ],
         blurb: "Painted maple shaker with a narrow 1.5-inch stile in a soft chalk white. For condos, galleys, and any room where a wide stile would eat the visual frame.",
         about: [
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",

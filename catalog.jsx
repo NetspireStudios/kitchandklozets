@@ -855,7 +855,7 @@ function RtaFinishLanding({ category, section }) {
         </div>
 
         <RtaAboutBlock section={sec}/>
-        <RtaFeaturesBlock/>
+        <RtaFeaturesBlock section={sec}/>
         <RtaWhyChooseBlock/>
         <RtaFaqBlock section={sec}/>
       </div>
@@ -886,8 +886,10 @@ function RtaAboutBlock({ section }) {
   );
 }
 
-function RtaFeaturesBlock() {
-  const features = window.FINISH_FEATURES || [];
+function RtaFeaturesBlock({ section }) {
+  const features = (section && section.features && section.features.length)
+    ? section.features
+    : (window.FINISH_FEATURES || []);
   if (!features.length) return null;
   return (
     <section className="rta-features" data-reveal>
