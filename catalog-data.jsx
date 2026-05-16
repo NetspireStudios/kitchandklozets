@@ -1011,7 +1011,16 @@ const CATALOG = {
         slug: "high-gloss-white", title: "White High Gloss", code: "HGW",
         img: "/assets/finishes/card-high-gloss-white.jpg",
         cardImg: "/assets/finishes/card-high-gloss-white.jpg",
-        blurb: "Slab fronts in a high-gloss polyester white. Reflective, modern, and the easiest finish to wipe clean.",
+        heroPhoto: "/assets/finishes/high-gloss-white-hero.jpg",
+        aboutImg: "/assets/finishes/high-gloss-white-about.jpg",
+        features: [
+          { title: "Slab Fronts", img: "/assets/finishes/hgw-feature-1.jpg",
+            blurb: "No shaker frame, no door panel, no profile. A flat slab face with concealed soft-close hinges and integrated push-to-open hardware on the drawer fronts." },
+          { title: "Polyester Topcoat", img: "/assets/finishes/hgw-feature-2.jpg",
+            blurb: "High-gloss polyester finish cured to a hardness closer to car paint than to kitchen paint. Reflective on the surface, durable in daily use." },
+          { title: "Wipes Clean", img: "/assets/finishes/hgw-feature-3.jpg",
+            blurb: "Fingerprints come right off with a microfibre cloth. No grain or shaker corner to dust around, so the visible surface stays clean between deep cleans." }
+        ],
         about: [
           "White high gloss is the slab line. Polyester-coated MDF fronts in a high-gloss white, reflective and modern, sized for European-style kitchens. There's no shaker frame or grain to dust around, and fingerprints come right off the surface.",
           "Carcass options carry concealed soft-close hinges and integrated push-to-open hardware on the drawer fronts. Plywood option uses a furniture-grade ply box; particle option uses a high-density particleboard box with the same gloss finish across the run."
