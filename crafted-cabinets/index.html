@@ -49,7 +49,7 @@
 }
 </script>
 </head>
-<body class="bg-image bg-image-shop" style="background-color: rgb(250, 238, 223)">
+<body style="background-color: rgb(250, 238, 223)">
 <a href="#top" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 <div id="root"></div>
 
@@ -138,21 +138,20 @@ function App() {
       <Nav onMenu={() => setDrawerOpen(true)}/>
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
       <main id="top">
+        <section className="closet-photo-hero" data-reveal>
+          <div className="closet-photo-hero-img"
+               style={{ backgroundImage: "url('/assets/crafted/crafted-hero.jpeg')" }}>
+            <div className="closet-photo-hero-wash"/>
+            <div className="closet-photo-hero-caption">
+              <h1 className="display">— Crafted Cabinets —</h1>
+              <p className="closet-photo-hero-tag">Built-to-measure cabinetry, drawn to the room and finished in the Sudbury shop.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="catalog-page">
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Crafted Cabinets" }]}/>
-
-            <header className="cat-hero cat-hero-centered" data-reveal>
-              <span className="eyebrow">Crafted Cabinets · built to measure</span>
-              <h1 className="display">Cabinetry drawn to the room.</h1>
-              <p className="cat-lede">
-                A built-to-measure line for the kitchen, bath, mudroom, pantry, library, and bedroom. Solid hardwood throughout. Hand-finished in the Sudbury shop and installed by the crew that built it.
-              </p>
-              <div className="hero-ctas" style={{ marginTop: 28 }}>
-                <a className="btn btn-walnut" href="/contact">Start a project <span className="arrow">→</span></a>
-                <a className="btn btn-ghost" href="mailto:sales@kitchandklozets.com">Email sales</a>
-              </div>
-            </header>
 
             <section className="feature-value" data-reveal>
               {CRAFTED_VALUES.map((p, i) => (
