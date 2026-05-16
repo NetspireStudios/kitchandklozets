@@ -841,7 +841,7 @@ const CATALOG = {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
         img: "/assets/finishes/card-white-slim-shaker.jpg",
         cardImg: "/assets/finishes/card-white-slim-shaker.jpg",
-        aboutImg: "/assets/finishes/white-slim-shaker-about.jpg",
+        aboutImg: "/assets/finishes/white-slim-shaker-about-v2.jpg",
         features: [
           { title: "Slim Shaker", img: "/assets/finishes/wss-feature-1.jpg",
             blurb: "Narrower stiles and rails compared to traditional shaker cabinets. Cleaner visual frame, more door panel showing, and a quieter line on a tight wall." },

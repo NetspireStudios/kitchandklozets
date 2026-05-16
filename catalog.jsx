@@ -856,7 +856,6 @@ function RtaFinishLanding({ category, section }) {
 
         <RtaAboutBlock section={sec}/>
         <RtaFeaturesBlock section={sec}/>
-        <RtaWhyChooseBlock/>
         <RtaFaqBlock section={sec}/>
       </div>
     </section>
