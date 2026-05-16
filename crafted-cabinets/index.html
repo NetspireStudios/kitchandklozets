@@ -153,10 +153,17 @@ function App() {
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Crafted Cabinets" }]}/>
 
-            <section className="feature-value" data-reveal>
-              {CRAFTED_VALUES.map((p, i) => (
-                <p key={i} className="feature-value-p">{p}</p>
-              ))}
+            <section className="crafted-intro" data-reveal>
+              <div className="crafted-intro-body">
+                <p>Crafted Cabinets is the built-to-measure side of the Kitch &amp; Klozets shop, drawn for one home at a time. Every project starts on the bench in Sudbury and ends on the wall of a room we measured ourselves — kitchens, vanities, mudrooms, libraries, and the rooms that don't fit a flat-pack kit.</p>
+                <p>The line is built around customization. Wood species, finish, hardware, door profile, sightline, and scribe all get drawn before the saw runs. If a room has a slanted ceiling, a heritage window casing, or a sixteenth-inch off-square corner, the cabinetry is cut for that room and no other.</p>
+                <p>It's a collaborative process. The first conversation is at your kitchen table. The second is hand-drawn elevations marked up at the same table. The third is a tray of wood and stone samples in your light, in your room. Nothing is committed until the three of you agree.</p>
+                <p>Crafted Cabinets sit beside the RTA program as the made-to-measure tier — the same shop, the same five-year warranty, the same dovetailed drawer boxes and soft-close hardware. The difference is fit. Every joint is drawn for one address.</p>
+                <a className="btn btn-walnut crafted-intro-cta" href="/contact">Contact us to learn more <span className="arrow">→</span></a>
+              </div>
+              <figure className="crafted-intro-img">
+                <img src="/assets/crafted/crafted-intro.png" alt="Crafted bedroom cabinetry installation" loading="lazy"/>
+              </figure>
             </section>
 
             <section className="crafted-rooms-section" data-reveal>
