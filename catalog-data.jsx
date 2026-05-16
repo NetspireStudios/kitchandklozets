@@ -870,7 +870,16 @@ const CATALOG = {
         slug: "white-shaker", title: "White Single Shaker", code: "WSH",
         img: "/assets/finishes/card-white-shaker.jpg",
         cardImg: "/assets/finishes/card-white-shaker.jpg",
-        blurb: "The classic. Two-inch single-shaker stile, painted maple in a soft white. The most-ordered finish across the dealer network.",
+        heroPhoto: "/assets/finishes/white-shaker-hero.jpg",
+        aboutImg: "/assets/finishes/white-shaker-about.jpg",
+        features: [
+          { title: "Painted Maple", img: "/assets/finishes/wsh-feature-1.jpg",
+            blurb: "Solid-maple doors and drawer fronts painted in a soft, warm white. The most-ordered finish across the dealer network for a reason: it reads correctly almost anywhere." },
+          { title: "Single Shaker Frame", img: "/assets/finishes/wsh-feature-2.jpg",
+            blurb: "Standard 2-inch single-shaker stile and rail. Familiar, grounded, and easy to spec next to almost any door style in the rest of the home." },
+          { title: "Stone Pairing", img: "/assets/finishes/wsh-feature-3.jpg",
+            blurb: "Works with calacatta marble, white quartz, soapstone, butcher block, and any of the darker stones. The neutral white never dictates the rest of the palette." }
+        ],
         about: [
           "White single shaker is the most-ordered finish across the dealer network. A standard 2-inch shaker stile, painted maple in a warm soft white. Reads correctly in farmhouse, transitional, and modern rooms; pairs cleanly with quartz, marble, and natural stone counters.",
           "Both the plywood and the particle option use the same painted-maple front spec, the same soft-close hinges, and the same dovetailed drawer box. The carcass material is the only difference between the two."
