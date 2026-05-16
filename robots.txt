@@ -1,5 +1,17 @@
 User-agent: *
 Allow: /
 Disallow: /_wireframes/
+Disallow: /functions/
+Disallow: /scripts/
+
+# Major crawlers — explicit allow with crawl delay
+User-agent: Googlebot
+Allow: /
+Disallow: /_wireframes/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /_wireframes/
+Crawl-delay: 2
 
 Sitemap: https://kitchandklozets.com/sitemap.xml

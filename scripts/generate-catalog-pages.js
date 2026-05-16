@@ -338,14 +338,17 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const urls = [];
 const pushUrl = (loc, priority, changefreq) => urls.push({ loc, priority, changefreq });
 
-pushUrl(`${BASE}/`,                  "1.0", "monthly");
-pushUrl(`${BASE}/about`,             "0.7", "monthly");
-pushUrl(`${BASE}/advice`,            "0.6", "monthly");
-pushUrl(`${BASE}/projects`,          "0.5", "monthly");
-pushUrl(`${BASE}/faq`,               "0.7", "monthly");
-pushUrl(`${BASE}/contact`,           "0.8", "monthly");
-pushUrl(`${BASE}/closet-line`,       "0.8", "monthly");
-pushUrl(`${BASE}/crafted-cabinets`,  "0.8", "monthly");
+pushUrl(`${BASE}/`,                                                          "1.0", "monthly");
+pushUrl(`${BASE}/about`,                                                     "0.7", "monthly");
+pushUrl(`${BASE}/advice`,                                                    "0.6", "monthly");
+pushUrl(`${BASE}/advice/rta-vs-custom-kitchen-cabinets-ontario`,             "0.7", "monthly");
+pushUrl(`${BASE}/advice/white-kitchen-cabinet-finishes-compared`,            "0.7", "monthly");
+pushUrl(`${BASE}/advice/kitchen-cabinet-lead-times-ontario`,                 "0.7", "monthly");
+pushUrl(`${BASE}/projects`,                                                  "0.5", "monthly");
+pushUrl(`${BASE}/faq`,                                                       "0.7", "monthly");
+pushUrl(`${BASE}/contact`,                                                   "0.8", "monthly");
+pushUrl(`${BASE}/closet-line`,                                               "0.8", "monthly");
+pushUrl(`${BASE}/crafted-cabinets`,                                          "0.8", "monthly");
 
 Object.keys(CATALOG).forEach((catSlug) => {
   const cat = CATALOG[catSlug];

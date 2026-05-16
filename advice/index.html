@@ -60,18 +60,24 @@
 
 <script type="text/babel" data-presets="react">
 const ADVICE_TOPICS = [
-  { tag: "Install",       title: "Assembling an RTA box in under 30 minutes",
+  { tag: "Buyer's guide",  title: "RTA vs Custom Kitchen Cabinets: How to Choose for Your Ontario Kitchen",
+    blurb: "A practical walk through cost, lead time, fit, and quality for Ontario kitchen renovations. When to pick ready-to-assemble, when to spec a built-to-measure crafted program.",
+    href: "/advice/rta-vs-custom-kitchen-cabinets-ontario",
+    img: "/assets/finishes/white-shaker-hero.jpg" },
+  { tag: "Finishes guide", title: "Eight Kitchen Cabinet Finishes Compared",
+    blurb: "Slim shaker, single shaker, navy, grey, natural oak, smoked oak, and high gloss side by side. Stile widths, paint tone, grain reads, and which hardware fits each finish.",
+    href: "/advice/white-kitchen-cabinet-finishes-compared",
+    img: "/assets/finishes/white-slim-shaker-hero.jpg" },
+  { tag: "Planning",       title: "Kitchen Cabinet Lead Times in Ontario: What to Expect",
+    blurb: "A week-by-week timeline for RTA and built-to-measure orders, plus the three things that slow a kitchen renovation down and how to sequence the trades around the cabinet schedule.",
+    href: "/advice/kitchen-cabinet-lead-times-ontario",
+    img: "/assets/home/home-hero.jpg" },
+  { tag: "Install",        title: "Assembling an RTA box in under 30 minutes",
     blurb: "The cam-lock sequence we recommend: bottom panel first, then the two sides, then the back, then the top rails. Drawer slides go on before the box closes up." },
-  { tag: "Specs",         title: "Reading the dealer cut sheet",
+  { tag: "Specs",          title: "Reading the dealer cut sheet",
     blurb: "What the SKU codes mean, how to spot a base vs. a wall cabinet at a glance, and where to find the toe-kick height and the hinge offset on the data card." },
-  { tag: "Finish care",   title: "Keeping painted shaker doors looking new",
-    blurb: "Microfiber and warm water for daily cleaning. Once a year, a coat of paste wax on the kick panels keeps the floor scuffs off. Never citrus or ammonia cleaners on painted maple." },
-  { tag: "Sourcing",      title: "Why we run only eight RTA finish lines",
-    blurb: "More lines means more SKU inventory, slower lead times, and harder-to-train installers. Eight covers about 92% of the orders we see; the rest goes to the crafted line." },
-  { tag: "Project notes", title: "When to recommend Crafted over RTA",
-    blurb: "Non-square rooms, ceiling heights above 9 feet, integrated appliance panels, or any built-in that needs to wrap a structural column. The cost difference is usually 1.4× to 1.8×." },
-  { tag: "Hardware",      title: "Soft-close drawers — what failure looks like",
-    blurb: "If a drawer slams the last inch, the soft-close cylinder is spent. Five-year warranty replaces the slide; we ship from stock the same week." }
+  { tag: "Finish care",    title: "Keeping painted shaker doors looking new",
+    blurb: "Microfiber and warm water for daily cleaning. Once a year, a coat of paste wax on the kick panels keeps the floor scuffs off. Never citrus or ammonia cleaners on painted maple." }
 ];
 
 function App() {
@@ -101,14 +107,34 @@ function App() {
             </header>
 
             <div className="advice-grid" data-reveal>
-              {ADVICE_TOPICS.map((t, i) => (
-                <article key={i} className="advice-card" style={{ "--delay": `${i * 60}ms` }}>
-                  <span className="advice-tag">{t.tag}</span>
-                  <h2 className="display">{t.title}</h2>
-                  <p>{t.blurb}</p>
-                  <span className="advice-meta">Full note coming soon &rarr;</span>
-                </article>
-              ))}
+              {ADVICE_TOPICS.map((t, i) => {
+                const isLink = !!t.href;
+                const inner = (
+                  <>
+                    {t.img ? (
+                      <div className="advice-card-img">
+                        <img src={t.img} alt={t.title} loading="lazy"/>
+                      </div>
+                    ) : null}
+                    <span className="advice-tag">{t.tag}</span>
+                    <h2 className="display">{t.title}</h2>
+                    <p>{t.blurb}</p>
+                    <span className="advice-meta">{isLink ? "Read the post →" : "Full note coming soon →"}</span>
+                  </>
+                );
+                return isLink ? (
+                  <a key={i} href={t.href}
+                     className="advice-card advice-card-link"
+                     style={{ "--delay": `${i * 60}ms` }}>
+                    {inner}
+                  </a>
+                ) : (
+                  <article key={i} className="advice-card"
+                           style={{ "--delay": `${i * 60}ms` }}>
+                    {inner}
+                  </article>
+                );
+              })}
             </div>
 
             <div className="projects-placeholder" data-reveal style={{ marginTop: 56 }}>
