@@ -3833,9 +3833,13 @@ body.bg-image .wholesale-hero {
 .closet-pure-white {
   margin: clamp(48px, 6vw, 72px) 0 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr);
   gap: clamp(28px, 4vw, 56px);
   align-items: center;
+}
+.closet-pure-white-img { max-width: 360px; justify-self: end; }
+@media (max-width: 880px) {
+  .closet-pure-white-img { justify-self: stretch; max-width: 100%; }
 }
 @media (max-width: 880px) {
   .closet-pure-white { grid-template-columns: 1fr; }
