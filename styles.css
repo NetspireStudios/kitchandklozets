@@ -218,6 +218,34 @@ section { position: relative; }
 }
 .link-underline:hover { background-size: 100% 1.5px; }
 
+/* Active page indicator: permanent underline on the current page's nav link. */
+.nav-links .link-underline.is-current,
+.nav-links .nav-mega-trigger.is-current,
+.nav-links .nav-drop > button.is-current {
+  background-image: linear-gradient(var(--clay), var(--clay));
+  background-size: 100% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  color: var(--clay);
+}
+.nav-drop-item[aria-current="page"] {
+  background: rgba(184,90,63,0.10);
+}
+.nav-drop-item[aria-current="page"] .nav-drop-label {
+  color: var(--clay);
+}
+.drawer-link.is-current,
+.drawer-child-link.is-current > span,
+.drawer-group-trigger.is-current > span:first-child {
+  color: var(--clay);
+}
+.drawer-link.is-current {
+  background-image: linear-gradient(var(--clay), var(--clay));
+  background-size: 24px 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
 /* ── NAV ───────────────────────────────────── */
 .nav {
   position: sticky; top: 0; z-index: 50;
@@ -288,10 +316,15 @@ section { position: relative; }
 }
 .nav-toggle:hover { background: rgba(42,31,21,0.06); }
 
-/* Burger appears the moment .nav-links hides so 720–1080 isn't dead space. */
+/* Burger appears the moment .nav-links hides so 720–1080 isn't dead space.
+   With .nav-links hidden, the 3-col grid (auto 1fr auto) would put .nav-cta
+   into the middle 1fr column, so the hamburger floats. Re-define the grid
+   so .nav-cta sits in the right-most column flush against the gutter. */
 @media (max-width: 1080px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
+  .nav-inner { grid-template-columns: auto 1fr; }
+  .nav-cta { justify-self: end; }
 }
 @media (max-width: 640px) {
   .nav-cta .btn, .nav-phone { display: none; }
@@ -4810,3 +4843,113 @@ body.bg-image .wholesale-hero {
 
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
+
+/* ────────────────────────────────────────────────────────────────
+   Mobile polish: focused tweaks for fit, tap targets, and overflow.
+   Most layouts already break to one column at their own thresholds;
+   these rules tighten the edges where buttons clip, text crowds the
+   gutter, or iOS Safari auto-zooms on form focus.
+   ──────────────────────────────────────────────────────────────── */
+
+/* Stop iOS from zooming the viewport when a form input gains focus.
+   Browsers only auto-zoom when an input's font-size is below 16px. */
+@media (max-width: 640px) {
+  .cf-field input,
+  .cf-field textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Buttons: allow wrap on very small phones so long labels don't push
+   the row off-screen. Pad a hair less so two CTAs still fit side by side. */
+@media (max-width: 420px) {
+  .btn {
+    white-space: normal;
+    padding: 12px 18px;
+    font-size: 13.5px;
+    text-align: center;
+  }
+  .home-photo-hero-ctas .btn,
+  .finish-photo-hero-ctas .btn,
+  .hero-ctas .btn,
+  .projects-placeholder-ctas .btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* Photo heroes: trim the floor on small phones so the hero doesn't eat
+   the entire first viewport before any content appears. */
+@media (max-width: 640px) {
+  .home-photo-hero { min-height: clamp(440px, 80vw, 560px); }
+  .finish-photo-hero { min-height: clamp(380px, 70vw, 480px); }
+  .home-photo-hero-img,
+  .finish-photo-hero-img {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Quick-contact card: drop the side gutter on small screens so the form
+   fields fill the card width instead of pinching to ~250px. */
+@media (max-width: 640px) {
+  .rta-quick-contact {
+    padding: 28px 18px 56px;
+    border-radius: 12px;
+  }
+  .rta-quick-contact-head .display { font-size: 22px; }
+}
+
+/* Nav: tighter inner padding on phones so the logo + hamburger don't
+   crowd the screen edges. */
+@media (max-width: 480px) {
+  .nav-inner { gap: 12px; padding: 12px 0; }
+  .nav-mark { width: 44px; height: 44px; }
+  .nav-title b { font-size: 13px; }
+}
+
+/* Mobile drawer: ensure the list scrolls when it overflows the viewport
+   (eg. when the RTA mega group is fully expanded). flex:1 + min-height:0
+   lets the column fill the available space and scroll past it cleanly. */
+.drawer-links {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* RTA row on phones: when the image column shrinks to 96px the right-side
+   chevron stays useful, but the meta code badge can wrap and crowd. Hide it
+   on the tightest phones to keep the row two lines tall. */
+@media (max-width: 480px) {
+  .home-rta-row-code { display: none; }
+  .home-rta-row-body p { display: none; }
+  .home-rta-row { padding: 10px; }
+}
+
+/* Pillars strip on phones: when tiles stack, add a touch of horizontal
+   padding so the body text isn't flush with the screen edge. */
+@media (max-width: 880px) {
+  .home-pillar-tile { padding: 20px 22px; }
+}
+
+/* Footer bottom row on very small phones: stack rather than wrap so the
+   copyright and the tagline line up neatly. */
+@media (max-width: 420px) {
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* Catalog hero on phones: tighten the lede width so it doesn't crowd. */
+@media (max-width: 640px) {
+  .cat-hero .display { font-size: clamp(28px, 8vw, 38px); }
+  .cat-hero .cat-lede { font-size: 14.5px; }
+}
+
+/* Anything that uses `100vw`-derived sizing can leak past the viewport on
+   phones thanks to the scrollbar. Cap section content widths defensively. */
+img, video, figure { max-width: 100%; }
+.container { width: 100%; }

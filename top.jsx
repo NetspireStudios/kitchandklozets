@@ -1,5 +1,16 @@
 // top.jsx — Nav, MobileDrawer, Hero
 
+// Returns true when the current page URL matches the given nav href.
+// Top-level routes match by prefix so a finish landing page still highlights
+// the parent "RTA Kitchen" entry.
+function isActiveNavHref(href) {
+  if (!href || typeof window === "undefined") return false;
+  const path = (window.location.pathname || "/").replace(/\/+$/, "") || "/";
+  const target = href.replace(/\/+$/, "") || "/";
+  if (target === "/") return path === "/";
+  return path === target || path.startsWith(target + "/");
+}
+
 function Nav({ onMenu }) {
   const scrolled = useScrolled(8);
   const [megaOpen, setMegaOpen]   = React.useState(false);
@@ -28,10 +39,12 @@ function Nav({ onMenu }) {
         </a>
         <nav className="nav-links" aria-label="Primary">
           {NAV_LINKS.map((item) => {
+            const isCurrent = isActiveNavHref(item.href);
             if (item.mega) {
               return (
                 <button key={item.label}
-                  className={`nav-mega-trigger link-underline ${megaOpen ? "active" : ""}`}
+                  className={`nav-mega-trigger link-underline ${megaOpen ? "active" : ""} ${isCurrent ? "is-current" : ""}`}
+                  aria-current={isCurrent ? "page" : undefined}
                   onMouseEnter={() => { setMegaOpen(true); closeDrop(); }}
                   onFocus={() => { setMegaOpen(true); closeDrop(); }}
                   onClick={() => setMegaOpen(o => !o)}
@@ -43,11 +56,13 @@ function Nav({ onMenu }) {
             }
             if (item.children) {
               const isOpen = dropOpen === item.label;
+              const childActive = item.children.some(c => isActiveNavHref(c.href));
               return (
                 <div key={item.label} className={`nav-drop ${isOpen ? "open" : ""}`}
                      onMouseEnter={() => { setDropOpen(item.label); closeMega(); }}
                      onMouseLeave={closeDrop}>
-                  <button className={`nav-mega-trigger link-underline ${isOpen ? "active" : ""}`}
+                  <button className={`nav-mega-trigger link-underline ${isOpen ? "active" : ""} ${childActive ? "is-current" : ""}`}
+                    aria-current={childActive ? "page" : undefined}
                     onClick={() => setDropOpen(o => o === item.label ? null : item.label)}
                     aria-haspopup="true" aria-expanded={isOpen}>
                     {item.label}
@@ -55,7 +70,8 @@ function Nav({ onMenu }) {
                   </button>
                   <div className="nav-drop-panel" role="menu" aria-label={item.label}>
                     {item.children.map(child => (
-                      <a key={child.label} href={child.href} role="menuitem" className="nav-drop-item">
+                      <a key={child.label} href={child.href} role="menuitem" className="nav-drop-item"
+                         aria-current={isActiveNavHref(child.href) ? "page" : undefined}>
                         <span className="nav-drop-label">{child.label}</span>
                         {child.hint && <span className="nav-drop-hint">{child.hint}</span>}
                       </a>
@@ -65,7 +81,9 @@ function Nav({ onMenu }) {
               );
             }
             return (
-              <a key={item.label} href={item.href} className="link-underline"
+              <a key={item.label} href={item.href}
+                 className={`link-underline ${isCurrent ? "is-current" : ""}`}
+                 aria-current={isCurrent ? "page" : undefined}
                  onMouseEnter={closeAll}>{item.label}</a>
             );
           })}
@@ -109,17 +127,37 @@ function MobileDrawer({ open, onClose }) {
           {NAV_LINKS.map((item) => {
             if (item.mega) {
               const isOpen = openGroup === item.label;
+              const megaActive = isActiveNavHref(item.href);
+              const cats = typeof CATALOG !== "undefined" ? Object.values(CATALOG) : [];
+              // If there's only one catalog category (current state: "RTA Kitchen"),
+              // flatten — show the section links directly so the user doesn't have
+              // to tap "RTA Kitchen" twice. If a second category appears later, fall
+              // back to the original two-level layout with per-category accordions.
+              const flatten = cats.length === 1 && cats[0].sections;
               return (
                 <div key={item.label} className={`drawer-group ${isOpen ? "open" : ""}`}>
-                  <button className="drawer-group-trigger"
+                  <button className={`drawer-group-trigger ${megaActive ? "is-current" : ""}`}
+                    aria-current={megaActive ? "page" : undefined}
                     onClick={() => toggleGroup(item.label)}
                     aria-expanded={isOpen}>
                     <span>{item.label}</span>
                     <span className="drawer-group-caret" aria-hidden="true">▾</span>
                   </button>
-                  {isOpen && (
+                  {isOpen && flatten && (
                     <div className="drawer-group-list">
-                      {(typeof CATALOG !== "undefined" ? Object.values(CATALOG) : []).map(cat => {
+                      <a href={`/${cats[0].slug}`} className="drawer-subgroup-all" onClick={onClose}>
+                        See all in {cats[0].title} →
+                      </a>
+                      {Object.values(cats[0].sections).map(sec => (
+                        <a key={sec.slug} href={`/${cats[0].slug}/${sec.slug}`} onClick={onClose}>
+                          {sec.title}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {isOpen && !flatten && (
+                    <div className="drawer-group-list">
+                      {cats.map(cat => {
                         const catOpen = openCat === cat.slug;
                         const hasSubs = !!cat.sections;
                         return (
@@ -159,9 +197,11 @@ function MobileDrawer({ open, onClose }) {
             }
             if (item.children) {
               const isOpen = openGroup === item.label;
+              const childActive = item.children.some(c => isActiveNavHref(c.href));
               return (
                 <div key={item.label} className={`drawer-group ${isOpen ? "open" : ""}`}>
-                  <button className="drawer-group-trigger"
+                  <button className={`drawer-group-trigger ${childActive ? "is-current" : ""}`}
+                    aria-current={childActive ? "page" : undefined}
                     onClick={() => toggleGroup(item.label)}
                     aria-expanded={isOpen}>
                     <span>{item.label}</span>
@@ -169,20 +209,27 @@ function MobileDrawer({ open, onClose }) {
                   </button>
                   {isOpen && (
                     <div className="drawer-group-list">
-                      {item.children.map(child => (
-                        <a key={child.label} href={child.href} onClick={onClose}
-                           className="drawer-child-link">
-                          <span>{child.label}</span>
-                          {child.hint && <small>{child.hint}</small>}
-                        </a>
-                      ))}
+                      {item.children.map(child => {
+                        const childCurrent = isActiveNavHref(child.href);
+                        return (
+                          <a key={child.label} href={child.href} onClick={onClose}
+                             className={`drawer-child-link ${childCurrent ? "is-current" : ""}`}
+                             aria-current={childCurrent ? "page" : undefined}>
+                            <span>{child.label}</span>
+                            {child.hint && <small>{child.hint}</small>}
+                          </a>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
               );
             }
+            const isCurrent = isActiveNavHref(item.href);
             return (
-              <a key={item.label} href={item.href} onClick={onClose}>{item.label}</a>
+              <a key={item.label} href={item.href} onClick={onClose}
+                 className={`drawer-link ${isCurrent ? "is-current" : ""}`}
+                 aria-current={isCurrent ? "page" : undefined}>{item.label}</a>
             );
           })}
         </div>
