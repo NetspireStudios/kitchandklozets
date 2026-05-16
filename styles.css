@@ -4025,5 +4025,29 @@ body.bg-image .wholesale-hero {
   padding: 0 4px;
 }
 
+/* --- Closet Line: section browser (Pure White Closet · Closet tab) --- */
+.closet-section-browser {
+  margin: clamp(56px, 7vw, 88px) 0 0;
+}
+.closet-section-browser-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.closet-section-browser-head .display {
+  font-size: clamp(28px, 3.8vw, 44px);
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--walnut);
+}
+/* The Closet browser reuses the .rta-board-* skeleton; its single tab is
+   always-active and decorative, so we keep the underline indicator. */
+.closet-section-browser .rta-board-tabs {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.closet-section-grid {
+  align-items: start;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }

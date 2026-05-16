@@ -128,6 +128,29 @@ function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [openFaq, setOpenFaq] = React.useState(0);
   const [activeTab, setActiveTab] = React.useState(0);
+  const [activeClosetSub, setActiveClosetSub] = React.useState("base-section");
+
+  const CLOSET_SECTIONS = [
+    { slug: "base-section", title: "Closet Base Section",
+      diagrams: ["/assets/closet/closet-section-diagram.png"],
+      includes: [
+        "One (1) universal cabinet box.",
+        "Screws, dowels and required hardware."
+      ],
+      notes: ["Can be flexibly used with DN and DH drawers."],
+      skus: [
+        { code: "MPW-CB24",   dims: "24\"W x 42\"H x 15\"D" },
+        { code: "MPW-CB30",   dims: "30\"W x 42\"H x 15\"D" },
+        { code: "MPW-CB24D",  dims: "24\"W x 42\"H x 24\"D" },
+        { code: "MPW-CB30D",  dims: "30\"W x 42\"H x 24\"D" },
+        { code: "MPW-ER3084", dims: "30\"W x 84\"H x 30\"D" }
+      ]
+    },
+    { slug: "basic-hanging", title: "Closet Basic Section for Hanging" },
+    { slug: "basic-shelves", title: "Closet Basic Section for Shelves" },
+    { slug: "corner-section", title: "Closet Corner Section" }
+  ];
+  const closetSub = CLOSET_SECTIONS.find(s => s.slug === activeClosetSub) || CLOSET_SECTIONS[0];
 
   React.useEffect(() => {
     const io = new IntersectionObserver((entries) => {
@@ -209,6 +232,79 @@ function App() {
                   <img src="/assets/closet/configuration-2.png" alt="Closet drawer bank close-up" loading="lazy"/>
                   <figcaption>Four-drawer bank with bottom-mount DTC slides.</figcaption>
                 </figure>
+              </div>
+            </section>
+
+            <section className="closet-section-browser" data-reveal>
+              <header className="closet-section-browser-head">
+                <h2 className="display">Pure White Closet</h2>
+              </header>
+              <div className="rta-board-tabs" role="tablist" aria-label="Closet section family">
+                <button role="tab" aria-selected="true" className="rta-board-tab is-active">Closet</button>
+              </div>
+              <div className="rta-board-grid closet-section-grid">
+                <aside className="rta-board-rail" role="tablist" aria-label="Closet sections">
+                  {CLOSET_SECTIONS.map(s => (
+                    <button key={s.slug}
+                            role="tab"
+                            aria-selected={activeClosetSub === s.slug}
+                            className={`rta-board-rail-item ${activeClosetSub === s.slug ? "is-active" : ""}`}
+                            onClick={() => setActiveClosetSub(s.slug)}>
+                      <span className="rta-board-rail-title">{s.title}</span>
+                    </button>
+                  ))}
+                </aside>
+
+                <div className="rta-board-center">
+                  {closetSub.diagrams?.length ? (
+                    <div className="rta-board-diagrams">
+                      {closetSub.diagrams.map((d, i) => (
+                        <figure key={i} className="rta-board-diagram-img">
+                          <img src={d} alt={closetSub.title} loading="lazy"/>
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {closetSub.includes?.length ? (
+                    <div className="rta-board-includes">
+                      <h4 className="display">Includes:</h4>
+                      <ul>
+                        {closetSub.includes.map((line, i) => (<li key={i}>{line}</li>))}
+                      </ul>
+                      {closetSub.notes?.length ? (
+                        <div className="rta-board-includes-note">
+                          <span className="eyebrow">Note</span>
+                          <ul>
+                            {closetSub.notes.map((line, i) => (<li key={i}>{line}</li>))}
+                          </ul>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : (
+                    <p className="rta-board-placeholder">Spec sheet for {closetSub.title} is coming soon.</p>
+                  )}
+                </div>
+
+                <div className="rta-board-skus">
+                  {closetSub.skus?.length ? (
+                    <div className="rta-board-sku-list">
+                      {closetSub.skus.map(s => (
+                        <article key={s.code} className="rta-sku-card">
+                          <div className="rta-sku-thumb">
+                            <img src="/assets/closet/closet-section-diagram.png" alt={s.code} loading="lazy"/>
+                          </div>
+                          <div className="rta-sku-body">
+                            <div className="rta-sku-code">{s.code}</div>
+                            <div className="rta-sku-dims">{s.dims}</div>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="rta-board-placeholder">SKU list lands once content is finalized.</p>
+                  )}
+                </div>
               </div>
             </section>
 
