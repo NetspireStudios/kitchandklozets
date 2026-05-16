@@ -3809,14 +3809,14 @@ body.bg-image .wholesale-hero {
 /* --- Closet Line: full-bleed photo hero + "Pure White Closet" about --- */
 .closet-photo-hero {
   position: relative;
-  min-height: clamp(360px, 44vw, 520px);
+  min-height: clamp(460px, 58vw, 680px);
   overflow: hidden;
   display: grid;
 }
 .closet-photo-hero-img {
   position: relative;
   background-size: cover;
-  background-position: center 35%;
+  background-position: center center;
   background-repeat: no-repeat;
   min-height: inherit;
   display: grid;
