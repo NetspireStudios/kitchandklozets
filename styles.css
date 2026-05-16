@@ -3910,5 +3910,120 @@ body.bg-image .wholesale-hero {
   object-fit: cover;
 }
 
+/* --- Closet Line: Anatomy block + 3-image configurations row --- */
+.closet-anatomy {
+  margin: clamp(56px, 7vw, 88px) 0 0;
+}
+.closet-anatomy-head {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+.closet-anatomy-head .eyebrow { display: block; margin-bottom: 8px; }
+.closet-anatomy-head .display {
+  font-size: clamp(28px, 3.8vw, 44px);
+  letter-spacing: -0.02em;
+  margin: 4px 0 10px;
+  color: var(--walnut);
+}
+.closet-anatomy-head p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.closet-anatomy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+@media (max-width: 880px) {
+  .closet-anatomy-grid { grid-template-columns: 1fr; }
+}
+.closet-anatomy-img {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+.closet-anatomy-img img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+}
+
+.closet-anatomy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 22px;
+}
+@media (max-width: 560px) {
+  .closet-anatomy-list { grid-template-columns: 1fr; }
+}
+.closet-anatomy-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.closet-anatomy-list li b {
+  color: var(--walnut);
+  font-weight: 600;
+}
+.closet-anatomy-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--clay);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  font-family: "DM Mono", "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.closet-anatomy-shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+@media (max-width: 880px) { .closet-anatomy-shots { grid-template-columns: 1fr; } }
+.closet-anatomy-shots figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.closet-anatomy-shots img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.closet-anatomy-shots figcaption {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  padding: 0 4px;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }
