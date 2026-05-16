@@ -187,6 +187,83 @@ function WhyChoose() {
   );
 }
 
+function RTACabinetList() {
+  const sections = Object.values(CATALOG["rta-kitchen"].sections);
+  return (
+    <section className="home-rta-list" id="rta">
+      <div className="container">
+        <header className="home-rta-list-head" data-reveal>
+          <span className="eyebrow">RTA Kitchen · 8 finish lines</span>
+          <h2 className="display">Pick a finish, ship in three to five weeks.</h2>
+          <p>Every finish ships in plywood or particle board, dovetailed drawers and soft-close hardware on both. Click through for full SKU sheets.</p>
+        </header>
+        <div className="home-rta-list-rows">
+          {sections.map((sec, i) => (
+            <a key={sec.slug} href={`/rta-kitchen/${sec.slug}`}
+               className="home-rta-row" data-reveal style={{ "--delay": `${i * 60}ms` }}>
+              <div className="home-rta-row-img ph"
+                   style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
+                {sec.img
+                  ? <Img src={sec.img} alt={sec.title} w={500}/>
+                  : <CabinetOverlay opacity={0.28}/>}
+              </div>
+              <div className="home-rta-row-body">
+                <span className="home-rta-row-code">{sec.code}</span>
+                <h3 className="display">{sec.title}</h3>
+                <p>{sec.blurb}</p>
+              </div>
+              <div className="home-rta-row-arrow" aria-hidden="true">→</div>
+            </a>
+          ))}
+        </div>
+        <div className="rta-foot" data-reveal>
+          <a className="btn btn-walnut" href="/rta-kitchen">See the full RTA catalog <span className="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ClosetLineQuick() {
+  return (
+    <section className="home-line-quick home-line-closet" data-reveal>
+      <div className="container">
+        <div className="home-line-quick-grid">
+          <figure className="home-line-quick-img">
+            <img src="/assets/closet/closet-hero.jpg" alt="Pure white walk-in closet" loading="lazy"/>
+          </figure>
+          <div className="home-line-quick-body">
+            <span className="eyebrow">Closet Line</span>
+            <h2 className="display">Closet systems on the same truck as the kitchen.</h2>
+            <p>Pure White cabinet boxes, ready for hanging, shelving, or corner returns. Drawer banks with bottom-mount DTC slides, adjustable shelves, and a corner section that takes the awkward inside angle out of the design.</p>
+            <a className="btn btn-walnut" href="/closet-line">See the Closet Line <span className="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CraftedQuick() {
+  return (
+    <section className="home-line-quick home-line-crafted" data-reveal>
+      <div className="container">
+        <div className="home-line-quick-grid flip">
+          <div className="home-line-quick-body">
+            <span className="eyebrow">Crafted Cabinets</span>
+            <h2 className="display">Built-to-measure for the rooms that won't take a kit.</h2>
+            <p>Drawn for one home at a time. Wood species, finish, hardware, sightline, scribe — all of it gets specified before the saw runs. Kitchens, vanities, mudrooms, libraries, and the rooms with a slanted ceiling or a heritage casing.</p>
+            <a className="btn btn-walnut" href="/crafted-cabinets">See Crafted Cabinets <span className="arrow">→</span></a>
+          </div>
+          <figure className="home-line-quick-img">
+            <img src="/assets/crafted/crafted-intro.png" alt="Crafted cabinet installation" loading="lazy"/>
+          </figure>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RTAShowcase() {
   const sections = Object.values(CATALOG["rta-kitchen"].sections);
   return (
@@ -285,27 +362,9 @@ function App() {
       <main>
         <WholesaleHero/>
         <WhyChoose/>
-        <RTAShowcase/>
-        <ProductsStrip
-          eyebrow="Closet Line"
-          title="Walk-ins, reach-ins, wardrobe walls."
-          hint="Closet systems that ship in the same week as your kitchen order, on the same truck. Six configurations cover most builds."
-          picks={[
-            { cat: "closet-line", slug: "walk-in-closet-with-island" },
-            { cat: "closet-line", slug: "his-and-hers-walk-in" },
-            { cat: "closet-line", slug: "wardrobe-wall" }
-          ]}
-          allHref="/closet-line"/>
-        <ProductsStrip
-          eyebrow="Crafted Cabinets · signature line"
-          title="When the room won't fit a flat-pack kit."
-          hint="Built-to-measure cabinetry from the same shop. For dealers who want a custom tier alongside the RTA program, or for homeowners we work with directly."
-          picks={[
-            { cat: "crafted-cabinets", slug: "custom-kitchen" },
-            { cat: "crafted-cabinets", slug: "custom-bath-vanity" },
-            { cat: "crafted-cabinets", slug: "custom-mudroom" }
-          ]}
-          allHref="/crafted-cabinets"/>
+        <RTACabinetList/>
+        <ClosetLineQuick/>
+        <CraftedQuick/>
         <OrderSteps/>
         <FAQ/>
         <CTA/>
