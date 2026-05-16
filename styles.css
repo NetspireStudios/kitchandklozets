@@ -3408,14 +3408,21 @@ a.contact-card:hover {
 .rta-about-img {
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 5;
   position: relative;
-  background: rgba(255, 250, 240, 0.6);
+  background: #fff;
+  max-width: 360px;
+  width: 100%;
+  justify-self: end;
+}
+@media (max-width: 880px) {
+  .rta-about-img { justify-self: stretch; max-width: 100%; aspect-ratio: 4 / 5; }
 }
 .rta-about-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 16px;
 }
 
 /* --- RTA Features (3-card row with image + title + blurb) --- */
