@@ -266,6 +266,41 @@ function CraftedQuick() {
   );
 }
 
+function HomePillars() {
+  return (
+    <section className="home-pillars" data-reveal>
+      <div className="home-pillars-strip">
+        <div className="home-pillars-photo">
+          <img src="/assets/finishes/white-slim-shaker-01.jpg" alt="Kitchen run" loading="lazy"/>
+        </div>
+        <div className="home-pillars-photo">
+          <img src="/assets/finishes/white-slim-shaker-03.jpg" alt="Galley kitchen" loading="lazy"/>
+        </div>
+        <div className="home-pillars-photo">
+          <img src="/assets/crafted/room-bedroom-wardrobe.jpeg" alt="Bedroom wardrobe" loading="lazy"/>
+        </div>
+
+        <div className="home-pillar-tile tile-tl tile-dark">
+          <h3 className="display">Functional</h3>
+          <p>Integrated doors &amp; boxes</p>
+        </div>
+        <div className="home-pillar-tile tile-tm tile-cream">
+          <h3 className="display">Style</h3>
+          <p>Classic &amp; modern profiles</p>
+        </div>
+        <div className="home-pillar-tile tile-bm tile-cream">
+          <h3 className="display">Structure</h3>
+          <p>Plywood box, dovetailed drawers</p>
+        </div>
+        <div className="home-pillar-tile tile-br tile-clay">
+          <h3 className="display">Design</h3>
+          <p>Drawn for the room</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RTAShowcase() {
   const sections = Object.values(CATALOG["rta-kitchen"].sections);
   return (
@@ -367,6 +402,7 @@ function App() {
         <RTACabinetList/>
         <ClosetLineQuick/>
         <CraftedQuick/>
+        <HomePillars/>
         <OrderSteps/>
         <FAQ/>
         <CTA/>
