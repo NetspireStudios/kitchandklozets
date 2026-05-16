@@ -840,6 +840,7 @@ const CATALOG = {
       "white-slim-shaker": {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
         img: "/assets/finishes/white-slim-shaker-hero.jpg",
+        aboutImg: "/assets/finishes/white-slim-shaker-about.jpg",
         blurb: "Painted maple shaker with a narrow 1.5-inch stile in a soft chalk white. For condos, galleys, and any room where a wide stile would eat the visual frame.",
         about: [
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",

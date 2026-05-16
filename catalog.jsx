@@ -877,8 +877,8 @@ function RtaAboutBlock({ section }) {
         </div>
         <div className="rta-about-img ph"
              style={{ background: "linear-gradient(160deg, #FAF4E8, #ece1c9)" }}>
-          {section.img
-            ? <Img src={section.img} alt={section.title} w={900}/>
+          {(section.aboutImg || section.img)
+            ? <Img src={section.aboutImg || section.img} alt={section.title} w={900}/>
             : <CabinetOverlay opacity={0.22}/>}
         </div>
       </div>
