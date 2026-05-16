@@ -3806,5 +3806,80 @@ body.bg-image .wholesale-hero {
   margin: 0;
 }
 
+/* --- Closet Line: full-bleed photo hero + "Pure White Closet" about --- */
+.closet-photo-hero {
+  position: relative;
+  height: clamp(280px, 38vw, 520px);
+  overflow: hidden;
+  margin-bottom: clamp(-48px, -4vw, -24px); /* tuck the catalog-page padding up */
+}
+.closet-photo-hero-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+}
+.closet-photo-hero-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(250, 238, 223, 0.28) 0%,
+      rgba(250, 238, 223, 0.18) 50%,
+      rgba(250, 238, 223, 0.85) 100%);
+}
+
+.closet-pure-white {
+  margin: clamp(48px, 6vw, 72px) 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .closet-pure-white { grid-template-columns: 1fr; }
+}
+.closet-pure-white-body .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+.closet-pure-white-body .display {
+  font-size: clamp(28px, 3.8vw, 44px);
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  color: var(--walnut);
+}
+.closet-pure-white-list {
+  list-style: decimal;
+  padding-left: 22px;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.closet-pure-white-list li {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  padding-left: 4px;
+}
+.closet-pure-white-list li::marker {
+  color: var(--clay);
+  font-weight: 600;
+}
+.closet-pure-white-img {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.closet-pure-white-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* selection */
 ::selection { background: var(--clay); color: var(--cream); }

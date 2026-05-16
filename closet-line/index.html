@@ -142,6 +142,13 @@ function App() {
       <Nav onMenu={() => setDrawerOpen(true)}/>
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
       <main id="top">
+        <section className="closet-photo-hero" data-reveal>
+          <div className="closet-photo-hero-img"
+               style={{ backgroundImage: "url('/assets/closet/closet-hero.jpg')" }}>
+            <div className="closet-photo-hero-wash"/>
+          </div>
+        </section>
+
         <section className="catalog-page">
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Closet Line" }]}/>
@@ -157,6 +164,24 @@ function App() {
                 <a className="btn btn-ghost" href="mailto:sales@kitchandklozets.com">Email sales</a>
               </div>
             </header>
+
+            <section className="closet-pure-white" data-reveal>
+              <div className="closet-pure-white-body">
+                <span className="eyebrow">About</span>
+                <h2 className="display">Pure White Closet</h2>
+                <ol className="closet-pure-white-list">
+                  <li>Basic unit comes in two depths, 24" and 15". 32mm system drills are applied on side panel, all hardware and accessories are easy to install. Various customization possibilities.</li>
+                  <li>The grain direction of side panel is vertical, and horizontal for bottom, top &amp; shelf panel.</li>
+                  <li>The closet box is assembled using a cam-lock and dowel system.</li>
+                  <li>The back panel is full length and 9mm in thickness.</li>
+                  <li>The thickness of the drawer boxes is 12mm.</li>
+                  <li>Match finish drawer box with bottom mount 550mm &amp; 300mm using DTC slides.</li>
+                </ol>
+              </div>
+              <figure className="closet-pure-white-img">
+                <img src="/assets/closet/pure-white-closet.png" alt="Pure White Closet panel" loading="lazy"/>
+              </figure>
+            </section>
 
             <section className="closet-features-row" data-reveal>
               {CLOSET_FEATURES.map((f, i) => (
