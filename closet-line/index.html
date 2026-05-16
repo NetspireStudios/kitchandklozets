@@ -146,8 +146,16 @@ function App() {
           <div className="closet-photo-hero-img"
                style={{ backgroundImage: "url('/assets/closet/closet-hero.jpg')" }}>
             <div className="closet-photo-hero-wash"/>
-            <div className="closet-photo-hero-caption">
-              <h2 className="display">Closet Line</h2>
+            <div className="container closet-photo-hero-caption">
+              <span className="eyebrow">Closet Line · dealer-direct</span>
+              <h1 className="display">Closet systems on the same truck as the kitchen.</h1>
+              <p className="closet-photo-hero-lede">
+                Wholesale closet systems for the bedroom, entry, and bath. Drawer banks, hanging rails, shoe ladders, and island add-ons that share hardware and finish with the RTA kitchen line.
+              </p>
+              <div className="hero-ctas">
+                <a className="btn btn-walnut" href="/contact">Request a quote <span className="arrow">→</span></a>
+                <a className="btn btn-ghost btn-on-photo" href="mailto:sales@kitchandklozets.com">Email sales</a>
+              </div>
             </div>
           </div>
         </section>
@@ -155,18 +163,6 @@ function App() {
         <section className="catalog-page">
           <div className="container">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Closet Line" }]}/>
-
-            <header className="cat-hero cat-hero-centered" data-reveal>
-              <span className="eyebrow">Closet Line · dealer-direct</span>
-              <h1 className="display">Closet systems on the same truck as the kitchen.</h1>
-              <p className="cat-lede">
-                Wholesale closet systems for the bedroom, entry, and bath. Drawer banks, hanging rails, shoe ladders, and island add-ons that share hardware and finish with the RTA kitchen line.
-              </p>
-              <div className="hero-ctas" style={{ marginTop: 28 }}>
-                <a className="btn btn-walnut" href="/contact">Request a quote <span className="arrow">→</span></a>
-                <a className="btn btn-ghost" href="mailto:sales@kitchandklozets.com">Email sales</a>
-              </div>
-            </header>
 
             <section className="closet-pure-white" data-reveal>
               <div className="closet-pure-white-body">

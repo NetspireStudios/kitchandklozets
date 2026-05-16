@@ -3809,42 +3809,72 @@ body.bg-image .wholesale-hero {
 /* --- Closet Line: full-bleed photo hero + "Pure White Closet" about --- */
 .closet-photo-hero {
   position: relative;
-  height: clamp(280px, 38vw, 520px);
+  min-height: clamp(440px, 60vw, 640px);
   overflow: hidden;
-  margin-bottom: clamp(-48px, -4vw, -24px); /* tuck the catalog-page padding up */
+  display: grid;
 }
 .closet-photo-hero-img {
-  position: absolute;
-  inset: 0;
+  position: relative;
   background-size: cover;
-  background-position: center 38%;
+  background-position: center 35%;
   background-repeat: no-repeat;
+  min-height: inherit;
+  display: grid;
+  align-items: end;
+  padding-bottom: clamp(40px, 6vw, 80px);
+  padding-top: clamp(80px, 9vw, 130px);
 }
 .closet-photo-hero-wash {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(250, 238, 223, 0.28) 0%,
-      rgba(0, 0, 0, 0.22) 45%,
-      rgba(250, 238, 223, 0.85) 100%);
-}
-.closet-photo-hero-caption {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 0 24px;
+      rgba(0, 0, 0, 0.20) 0%,
+      rgba(0, 0, 0, 0.10) 35%,
+      rgba(0, 0, 0, 0.55) 100%);
   pointer-events: none;
 }
-.closet-photo-hero-caption .display {
-  margin: 0;
+.closet-photo-hero-caption {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
   color: #fff;
-  font-size: clamp(40px, 6vw, 80px);
-  letter-spacing: -0.02em;
-  text-align: center;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
+.closet-photo-hero-caption .eyebrow {
+  color: rgba(255, 255, 255, 0.82);
+  display: block;
+  margin-bottom: 14px;
+}
+.closet-photo-hero-caption .display {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(36px, 5.6vw, 72px);
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  max-width: 18ch;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+.closet-photo-hero-lede {
+  margin: 0 0 26px;
+  color: rgba(255, 250, 240, 0.92);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.7;
+  max-width: 56ch;
+}
+.closet-photo-hero-caption .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn-on-photo {
+  border-color: rgba(255, 255, 255, 0.42) !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.btn-on-photo:hover { background: rgba(255, 255, 255, 0.18) !important; }
 
 .closet-pure-white {
   margin: clamp(48px, 6vw, 72px) 0 0;
