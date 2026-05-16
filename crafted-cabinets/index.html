@@ -69,17 +69,17 @@ const CRAFTED_VALUES = [
 ];
 
 const CRAFTED_ROOMS = [
-  { title: "Bedroom", img: "1505693416388-ac5ce068fe85",
-    blurb: "Fitted bedroom walls drawn to the room. Wardrobe runs, headboard cabinetry with integrated reading lights, and bedside towers in solid hardwood. Painted or oiled; flush or shaker fronts." },
-  { title: "Bedroom Wardrobe", img: "1565538810643-b5bdb714032a",
+  { title: "Bedroom", img: "/assets/crafted/room-bedroom.jpeg",
+    blurb: "Fitted bedroom walls drawn to the room. Wardrobe runs, headboard cabinetry with integrated reading lights, and bedside towers in solid hardwood. Painted or oiled, flush or shaker fronts." },
+  { title: "Bedroom Wardrobe", img: "/assets/crafted/room-bedroom-wardrobe.jpeg",
     blurb: "Walk-in and wall-mounted wardrobes with drawer towers, double-hang sections, shoe ladders, and a stone-ready dressing island. Drawn for the actual ceiling height of the room." },
-  { title: "TV Cabinets", img: "1505691938895-1758d7feb511",
+  { title: "TV Cabinets", img: "/assets/crafted/room-tv-cabinets.jpeg",
     blurb: "Media walls in hardwood and veneer, sized to the screen and the speaker layout. Concealed cable runs, drop-down soundbar shelves, and integrated lighting along the underside." },
-  { title: "Wall Panels", img: "1556910010-aa9b3d50bf08",
+  { title: "Wall Panels", img: "/assets/crafted/room-wall-panels.jpeg",
     blurb: "Floor-to-ceiling panel walls in fluted, reeded, or shaker profiles. Used to absorb a difficult wall, hide a doorway, or carry the casework into a living room without breaking the line." },
-  { title: "Entrance Cabinets", img: "1582268611958-ebfd161ef9cf",
-    blurb: "Foyer and mudroom cabinetry: lockers, benches, bootlines, dog showers, and the integrated hooks that make the back hall actually work for the family that uses it." },
-  { title: "Balcony Cabinets with Bar", img: "1554995207-c18c203602cb",
+  { title: "Entrance Cabinets", img: "/assets/crafted/room-entrance-cabinets.jpeg",
+    blurb: "Foyer and mudroom cabinetry. Lockers, benches, bootlines, dog showers, and the integrated hooks that make the back hall actually work for the family that uses it." },
+  { title: "Balcony Cabinets with Bar", img: "/assets/crafted/room-balcony.jpeg",
     blurb: "Outdoor-rated cabinetry for a balcony or covered terrace. Sealed marine-grade ply with a hardwood-clad face, an integrated bar counter, and a wine fridge cutout when the run calls for it." }
 ];
 
@@ -155,10 +155,10 @@ function App() {
 
             <section className="crafted-intro" data-reveal>
               <div className="crafted-intro-body">
-                <p>Crafted Cabinets is the built-to-measure side of the Kitch &amp; Klozets shop, drawn for one home at a time. Every project starts on the bench in Sudbury and ends on the wall of a room we measured ourselves — kitchens, vanities, mudrooms, libraries, and the rooms that don't fit a flat-pack kit.</p>
-                <p>The line is built around customization. Wood species, finish, hardware, door profile, sightline, and scribe all get drawn before the saw runs. If a room has a slanted ceiling, a heritage window casing, or a sixteenth-inch off-square corner, the cabinetry is cut for that room and no other.</p>
-                <p>It's a collaborative process. The first conversation is at your kitchen table. The second is hand-drawn elevations marked up at the same table. The third is a tray of wood and stone samples in your light, in your room. Nothing is committed until the three of you agree.</p>
-                <p>Crafted Cabinets sit beside the RTA program as the made-to-measure tier — the same shop, the same five-year warranty, the same dovetailed drawer boxes and soft-close hardware. The difference is fit. Every joint is drawn for one address.</p>
+                <p>Crafted Cabinets is the made-to-measure side of the shop. Every project is drawn for one home, built on the bench in Sudbury, and installed by the same crew that drew it. Kitchens, vanities, mudrooms, libraries, and the rooms that won't take a flat-pack kit.</p>
+                <p>The line is built around customization. Wood species, finish, hardware, door profile, sightline, scribe. All of it gets drawn before the saw runs. If your room has a slanted ceiling, a heritage window casing, or a corner that sits a sixteenth off-square, the cabinetry is cut for that room and no other.</p>
+                <p>The process is collaborative. First conversation is at your kitchen table. Second is hand-drawn elevations marked up at the same table. Third is a tray of wood and stone samples sitting in your light, in your room. Nothing is committed until the three of you agree.</p>
+                <p>Crafted Cabinets sit alongside the RTA program as the made-to-measure tier. Same shop, same five-year warranty, same dovetailed drawer boxes and soft-close hardware. What changes is fit. Every joint is drawn for one address.</p>
                 <a className="btn btn-walnut crafted-intro-cta" href="/contact">Contact us to learn more <span className="arrow">→</span></a>
               </div>
               <figure className="crafted-intro-img">
@@ -167,25 +167,23 @@ function App() {
             </section>
 
             <section className="crafted-rooms-section" data-reveal>
-              <header className="closet-specs-head">
-                <span className="eyebrow">Where Crafted goes</span>
-                <h2 className="display">Six rooms, one workshop.</h2>
-              </header>
+              <p className="crafted-rooms-intro">
+                Materials matter as much as the drawing. The Crafted line works in classic hardwoods and modern composites, picked to match your taste and the way the room gets used. A few examples below.
+              </p>
               <div className="crafted-rooms-grid">
                 {CRAFTED_ROOMS.map((r, i) => (
                   <button key={i} type="button"
                           className="crafted-room-card crafted-room-card-btn"
                           onClick={() => setLightboxRoom(r)}
                           aria-label={`Open ${r.title} image`}>
-                    <div className="crafted-room-thumb ph"
+                    <h3 className="display">{r.title}</h3>
+                    <div className="crafted-room-thumb"
                          style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
                       {r.img
-                        ? <Img src={r.img} alt={r.title} w={600}/>
+                        ? <img src={r.img} alt={r.title} loading="lazy"/>
                         : <CabinetOverlay opacity={0.28}/>}
                       <span className="crafted-room-zoom" aria-hidden="true">⤢</span>
                     </div>
-                    <h3 className="display">{r.title}</h3>
-                    <p>{r.blurb}</p>
                   </button>
                 ))}
               </div>
