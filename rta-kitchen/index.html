@@ -113,10 +113,9 @@ function App() {
               {finishes.map((f, i) => (
                 <a key={f.slug} href={`/rta-kitchen/${f.slug}`}
                    className="rta-card" style={{ "--delay": `${i * 50}ms` }}>
-                  <div className="rta-thumb ph"
-                       style={{ background: "linear-gradient(160deg, #3B2A1E, #1c130a)" }}>
-                    {f.img
-                      ? <Img src={f.img} alt={f.title} w={600}/>
+                  <div className="rta-thumb">
+                    {(f.cardImg || f.img)
+                      ? <img src={f.cardImg || f.img} alt={f.title} loading="lazy"/>
                       : <CabinetOverlay opacity={0.28}/>}
                   </div>
                   <div className="rta-meta">

@@ -839,7 +839,7 @@ const CATALOG = {
     sections: {
       "white-slim-shaker": {
         slug: "white-slim-shaker", title: "White Slim Shaker", code: "SSW",
-        img: "/assets/finishes/white-slim-shaker-hero.jpg",
+        img: "/assets/finishes/card-white-slim-shaker.jpg",
         cardImg: "/assets/finishes/card-white-slim-shaker.jpg",
         aboutImg: "/assets/finishes/white-slim-shaker-about.jpg",
         features: [
@@ -867,7 +867,7 @@ const CATALOG = {
       },
       "white-shaker": {
         slug: "white-shaker", title: "White Single Shaker", code: "WSH",
-        img: "1556909114-f6e7ad7d3136",
+        img: "/assets/finishes/card-white-shaker.jpg",
         cardImg: "/assets/finishes/card-white-shaker.jpg",
         blurb: "The classic. Two-inch single-shaker stile, painted maple in a soft white. The most-ordered finish across the dealer network.",
         about: [
@@ -886,7 +886,7 @@ const CATALOG = {
       },
       "blue-shaker": {
         slug: "blue-shaker", title: "Blue Single Shaker", code: "BSS",
-        img: "1556909114-f6e7ad7d3136",
+        img: "/assets/finishes/card-blue-shaker.jpg",
         cardImg: "/assets/finishes/card-blue-shaker.jpg",
         blurb: "Painted maple single-shaker in a deep navy. Reads moody and modern; pair with brass, chrome, or blackened-steel hardware.",
         about: [
@@ -905,7 +905,7 @@ const CATALOG = {
       },
       "grey-shaker": {
         slug: "grey-shaker", title: "Grey Single Shaker", code: "GSS",
-        img: "1505691938895-1758d7feb511",
+        img: "/assets/finishes/card-grey-shaker.jpg",
         cardImg: "/assets/finishes/card-grey-shaker.jpg",
         blurb: "Mid-grey painted maple single-shaker. A confident alternative to white that pairs with both warm and cool stone tops.",
         about: [
@@ -924,7 +924,7 @@ const CATALOG = {
       },
       "natural-wood": {
         slug: "natural-wood", title: "Natural Wood", code: "NTW",
-        img: "1556909114-f6e7ad7d3136",
+        img: "/assets/finishes/card-natural-wood.jpg",
         cardImg: "/assets/finishes/card-natural-wood.jpg",
         blurb: "Quarter-sawn white oak shaker fronts with a clear oil finish. No stain. The grain reads tobacco-warm and deepens through the first year of use.",
         about: [
@@ -943,7 +943,7 @@ const CATALOG = {
       },
       "smoked-oak": {
         slug: "smoked-oak", title: "Smoked Oak", code: "MSO",
-        img: "1505691938895-1758d7feb511",
+        img: "/assets/finishes/card-smoked-oak.jpg",
         cardImg: "/assets/finishes/card-smoked-oak.jpg",
         blurb: "Quarter-sawn oak shaker fronts with a fumed-smoke finish. Darker than natural, lighter than ebonized; the grain still reads.",
         about: [
@@ -962,7 +962,7 @@ const CATALOG = {
       },
       "high-gloss-white": {
         slug: "high-gloss-white", title: "White High Gloss", code: "HGW",
-        img: "1600585154340-be6161a56a0c",
+        img: "/assets/finishes/card-high-gloss-white.jpg",
         cardImg: "/assets/finishes/card-high-gloss-white.jpg",
         blurb: "Slab fronts in a high-gloss polyester white. Reflective, modern, and the easiest finish to wipe clean.",
         about: [
@@ -982,7 +982,7 @@ const CATALOG = {
     },
     products: [
       { slug: "accessories", title: "Kitchen Accessories",
-        img: "1556909114-f6e7ad7d3136",
+        img: "/assets/finishes/card-accessories.png",
         cardImg: "/assets/finishes/card-accessories.png",
         blurb: "Roll-outs, drawer organizers, knife blocks, and pull-out bins in widths that match the cabinet program. Ship loose with the kit or installed at the dealer." }
     ]
