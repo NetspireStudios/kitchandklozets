@@ -103,15 +103,20 @@ exports.submitContact = onRequest(
         docId ? `Firestore doc: contacts/${docId}` : `Firestore write failed (see logs)`,
       ].join("\n");
 
-      await resend.emails.send({
-        from:     "Kitch & Klozets <leads@kitchandklozets.com>",
+      const { data, error } = await resend.emails.send({
+        from:     "Kitch & Klozets <sales@kitchandklozets.com>",
         to:       ["sales@kitchandklozets.com"],
         replyTo:  email,
         subject,
         text,
       });
+      if (error) {
+        logger.error("Resend returned error", { error, lead: { email, product, category } });
+        return res.status(502).json({ error: "Email service failed; please try again or email sales@kitchandklozets.com directly." });
+      }
+      logger.info("Resend send ok", { id: data && data.id, to: "sales@kitchandklozets.com" });
     } catch (e) {
-      logger.error("Resend send failed", e);
+      logger.error("Resend send threw", e);
       return res.status(502).json({ error: "Email service failed; please try again or email sales@kitchandklozets.com directly." });
     }
 
