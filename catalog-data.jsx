@@ -807,24 +807,24 @@ const CABINET_FAMILIES = [
 
 const BOARD_OPTIONS = [
   { slug: "plywood",  title: "Plywood Cabinets",  board: "Plywood",  code: "PLY",
-    blurb: "Three-quarter-inch furniture-grade plywood carcass with a hardwood interior. The premium box for moisture, weight, and long-term run integrity." },
+    blurb: "Plywood construction across the carcass. See the showroom for the full spec sheet." },
   { slug: "particle", title: "Particle Cabinets", board: "Particle", code: "PAR",
-    blurb: "High-density particleboard carcass with a hardwood face frame and the same door, drawer, and hardware spec as the plywood line. The value tier." }
+    blurb: "Particle board construction across the carcass. See the showroom for the full spec sheet." }
 ];
 
-// Shared feature cards rendered on every finish landing + board browser page.
-// The construction spec is identical across the program; what changes between
-// finishes is the door material and the painted/oiled topcoat.
+// Generic feature cards shown when a finish doesn't supply its own. Kept
+// neutral on purpose: per-product specs come from the manufacturer's data
+// sheet, not from us, so we don't make claims the spec might not back up.
 const FINISH_FEATURES = [
-  { title: "Solid-hardwood fronts",
+  { title: "Two construction options",
     img: "1600585154340-be6161a56a0c",
-    blurb: "Doors and drawer fronts joined in solid hardwood. Painted maple on the shaker lines, oiled oak on the natural and smoked lines, and a polyester-coated slab on the high-gloss line." },
-  { title: "Furniture-grade plywood",
+    blurb: "Each finish ships in plywood or particle board. Pick the construction tier that fits the budget and the room." },
+  { title: "Eight finish lines",
     img: "1505691938895-1758d7feb511",
-    blurb: "Three-quarter-inch ply carcass with a hardwood interior. No MDF box, no stapled corners. Cam-lock construction so the box can be re-tightened on site after a year of use." },
-  { title: "Soft-close everything",
+    blurb: "Slim shaker, single shaker, blue, grey, natural oak, smoked oak, high gloss white. See the doors in person at the Sudbury or Toronto showroom." },
+  { title: "Ships from the GTA",
     img: "1556909114-f6e7ad7d3136",
-    blurb: "Dovetailed drawer boxes on undermount full-extension soft-close slides. Soft-close hinges on every door. Same hardware spec on every finish in the line." }
+    blurb: "Three-to-five-week lead time on most orders. Freight quoted to your postal code." }
 ];
 
 const CATALOG = {
@@ -833,7 +833,7 @@ const CATALOG = {
     slug: "rta-kitchen",
     title: "RTA Kitchen",
     short: "Ready-to-assemble kitchen cabinets, dealer-direct.",
-    blurb: "Flat-packed kitchen cabinets in seven finish lines, each offered in plywood or particle board construction. Solid-hardwood doors and drawer fronts, dovetailed drawer boxes on soft-close undermount slides. Three to five-week lead time, shipping from the GTA.",
+    blurb: "Flat-packed kitchen cabinets in eight finish lines, each offered in plywood or particle board construction. Three-to-five-week lead time, shipping from the GTA.",
     keywords: "RTA kitchen cabinets wholesale, dealer cabinets, shaker RTA, plywood RTA cabinets, particle board cabinets, white shaker navy shaker",
     img: "1556909114-f6e7ad7d3136",
     sections: {
@@ -854,7 +854,7 @@ const CATALOG = {
         blurb: "Painted maple shaker with a narrow 1.5-inch stile in a soft chalk white. For condos, galleys, and any room where a wide stile would eat the visual frame.",
         about: [
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",
-          "Doors and drawer fronts are painted maple in a soft chalk white. The plywood option uses a furniture-grade ply carcass with a maple interior; the particle option uses a high-density particleboard box with the same door and hardware spec. Both ship with dovetailed drawer boxes on soft-close undermount slides."
+          "Doors and drawer fronts are painted in a soft chalk white. The plywood option uses a plywood carcass; the particle option uses a particle board carcass with the same door spec. See the showroom for full construction specs."
         ],
         faq: [
           { q: "Is the 1.5-inch slim stile as strong as the standard 2-inch shaker?",
@@ -862,7 +862,7 @@ const CATALOG = {
           { q: "Will slim shaker read correctly in a traditional kitchen?",
             a: "It leans transitional. If the room is strictly traditional (raised-panel doors, deep crown, beaded inset), the standard single shaker is the more obvious pick. Slim shaker reads best with flat trim, simple crown, and contemporary hardware." },
           { q: "Does the painted white yellow over time?",
-            a: "No. The topcoat is a UV-stable conversion-varnish lacquer. Painted maple doors are far more colour-stable than oiled or stained wood; the white you order is the white you live with." }
+            a: "Painted finishes are colour-stable over time. The white you order is the white you live with. See the showroom for finish samples and the manufacturer's spec sheet." }
         ],
         products: BOARD_OPTIONS
       },
@@ -882,13 +882,13 @@ const CATALOG = {
         ],
         about: [
           "White single shaker is the most-ordered finish across the dealer network. A standard 2-inch shaker stile, painted maple in a warm soft white. Reads correctly in farmhouse, transitional, and modern rooms; pairs cleanly with quartz, marble, and natural stone counters.",
-          "Both the plywood and the particle option use the same painted-maple front spec, the same soft-close hinges, and the same dovetailed drawer box. The carcass material is the only difference between the two."
+          "Both the plywood and the particle option use the same painted door spec. The carcass material is the difference between the two; see the showroom for the full construction breakdown."
         ],
         faq: [
           { q: "How is this different from White Slim Shaker?",
             a: "Same paint, same maple, same construction. The only difference is the stile width — 2 inches on the single shaker, 1.5 inches on the slim. Single shaker reads more traditional; slim reads more transitional." },
           { q: "Can I touch up nicks and scratches on site?",
-            a: "Yes. A small touch-up bottle of the conversion-varnish lacquer ships with every kitchen order. For deeper damage, a replacement door front ships from stock the same week it's requested." },
+            a: "Yes. Touch-up paint and replacement parts are available; ask sales for current options when you place the order." },
           { q: "What counter tops pair best with white single shaker?",
             a: "Almost anything — calacatta marble, white quartz, soapstone, butcher block, and any of the darker stones. The neutral white doesn't dictate the rest of the palette." }
         ],
@@ -911,7 +911,7 @@ const CATALOG = {
         blurb: "Painted maple single-shaker in a deep navy. Reads moody and modern; pair with brass, chrome, or blackened-steel hardware.",
         about: [
           "Blue single shaker is the moodier choice for kitchens that want to read modern without giving up the shaker frame. A deep navy painted on maple, the kind of color that holds up to natural light and reads almost-black in the evening.",
-          "Looks particularly good as a perimeter color against a lighter island, or as a full run with stone counters and brass pulls. Five-year warranty on the joint, the finish, and the hardware on both the plywood and particle options."
+          "Looks particularly good as a perimeter color against a lighter island, or as a full run with stone counters and brass pulls. Available in both plywood and particle options."
         ],
         faq: [
           { q: "How dark is the navy in real light?",
@@ -947,7 +947,7 @@ const CATALOG = {
           { q: "Will mid-grey date faster than white?",
             a: "Less than navy and less than the painted whites, in our experience. Mid-grey has been a stable kitchen colour for over a decade and shows no sign of dropping out of favour. It's the safest pick in the program if resale is on your mind." },
           { q: "Does grey hide fingerprints better than white?",
-            a: "Yes, considerably. The mid-tone hides finger oils and minor smudging in a way white doesn't. The conversion-varnish topcoat is smudge-resistant on both colours." }
+            a: "Yes, considerably. The mid-tone hides finger oils and minor smudging in a way white doesn't." }
         ],
         products: BOARD_OPTIONS
       },
@@ -995,13 +995,13 @@ const CATALOG = {
         ],
         about: [
           "Smoked oak is quarter-sawn oak fumed with ammonia to draw the tannins out and darken the wood from the inside, rather than with a surface stain. The result is darker than natural oak and lighter than ebonized; the grain still reads through.",
-          "A natural pair with brass or blackened-steel hardware, and a strong cabinet color for rooms that have a lot of stone or tile. Sealed with a hand-applied conversion-varnish topcoat; both plywood and particle options ship with the same finish."
+          "A natural pair with brass or blackened-steel hardware, and a strong cabinet color for rooms that have a lot of stone or tile. Both plywood and particle options ship in the same finish."
         ],
         faq: [
           { q: "Is the smoked oak actually smoked, or just stained?",
             a: "Fumed with ammonia, not smoked or stained. The ammonia draws tannins out of the wood, darkening it from the inside rather than coating the surface. The grain reads through; a stain would obscure it." },
           { q: "Will smoked oak look different five years from now?",
-            a: "Some gradual lightening over a long timescale (years, not months). The conversion-varnish topcoat slows oxidation; even after a decade the colour stays close to what we shipped." },
+            a: "Some gradual lightening over a long timescale (years, not months). The factory topcoat is colour-stable; the finish ages slowly and predictably." },
           { q: "What hardware works best with smoked oak?",
             a: "Brass, blackened steel, and antique brass. Matte black reads slightly washed-out against the smoked wood; polished nickel works but reads cooler than most rooms want." }
         ],
@@ -1015,7 +1015,7 @@ const CATALOG = {
         aboutImg: "/assets/finishes/high-gloss-white-about.jpg",
         features: [
           { title: "Slab Fronts", img: "/assets/finishes/hgw-feature-1.jpg",
-            blurb: "No shaker frame, no door panel, no profile. A flat slab face with concealed soft-close hinges and integrated push-to-open hardware on the drawer fronts." },
+            blurb: "No shaker frame, no door panel, no profile. A flat slab face on the doors and drawer fronts." },
           { title: "Polyester Topcoat", img: "/assets/finishes/hgw-feature-2.jpg",
             blurb: "High-gloss polyester finish cured to a hardness closer to car paint than to kitchen paint. Reflective on the surface, durable in daily use." },
           { title: "Wipes Clean", img: "/assets/finishes/hgw-feature-3.jpg",
@@ -1023,7 +1023,7 @@ const CATALOG = {
         ],
         about: [
           "White high gloss is the slab line. Polyester-coated MDF fronts in a high-gloss white, reflective and modern, sized for European-style kitchens. There's no shaker frame or grain to dust around, and fingerprints come right off the surface.",
-          "Carcass options carry concealed soft-close hinges and integrated push-to-open hardware on the drawer fronts. Plywood option uses a furniture-grade ply box; particle option uses a high-density particleboard box with the same gloss finish across the run."
+          "Available in plywood and particle carcass options, both shipping in the same gloss finish across the run. See the showroom for the full spec sheet."
         ],
         faq: [
           { q: "How do I clean the gloss surface?",

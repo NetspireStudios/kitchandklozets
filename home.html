@@ -161,14 +161,14 @@ function WholesaleHero() {
 
 function WhyChoose() {
   const pillars = [
-    { title: "Affordability", icon: "dollar",
-      blurb: "Kitch & Klozets cabinets offer a real wholesale alternative to traditional custom-built work. Dealer pricing keeps your unit costs predictable without giving up on quality." },
-    { title: "Customizability", icon: "wand",
-      blurb: "Eight finish lines, shared hardware, and accessory programs that mix and match across kitchen, pantry, and closet. Build the look your client asked for without leaving the line." },
-    { title: "Easy Installation", icon: "wrench",
-      blurb: "Cam-locks, pre-drilled 32mm systems, and clear instructions. A trained installer puts a box together in under thirty minutes; handy homeowners can manage it too." },
-    { title: "Durability", icon: "hex",
-      blurb: "Furniture-grade plywood carcasses, dovetailed drawer boxes, soft-close undermount slides. Five-year warranty on every joint we cut, with replacement parts shipped from stock." }
+    { title: "Two showrooms", icon: "dollar",
+      blurb: "Visit us in Sudbury or Toronto by appointment. Door samples, finish chips, and full SKU sheets in person so you can see what you're ordering before it ships." },
+    { title: "Two product lines", icon: "wand",
+      blurb: "RTA dealer cabinets in eight finishes for the projects that fit our stock catalog, and finished kitchens from Oppein for the rooms that don't. Pick the lane that fits the project." },
+    { title: "Ships from the GTA", icon: "wrench",
+      blurb: "All orders ship from our GTA warehouse to homeowners, designers, and dealers across Ontario and Eastern Canada. Freight quoted to your postal code." },
+    { title: "Open all week", icon: "hex",
+      blurb: "Sales hours run nine to five, seven days a week. Call, email, or fill in the form on the contact page and we reply within one business day." }
   ];
   const Icon = ({ kind }) => {
     if (kind === "dollar")  return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>);
@@ -220,7 +220,7 @@ function RTACabinetList() {
         <header className="home-rta-list-head" data-reveal>
           <span className="eyebrow">RTA Kitchen · 8 finish lines</span>
           <h2 className="display">Pick a finish, ship in three to five weeks.</h2>
-          <p>Every finish ships in plywood or particle board, dovetailed drawers and soft-close hardware on both. Click through for full SKU sheets.</p>
+          <p>Each finish ships in plywood or particle board construction. Click through for full SKU sheets and pricing.</p>
         </header>
         <div className="home-rta-list-rows">
           {sections.map((sec, i) => (
@@ -259,7 +259,7 @@ function ClosetLineQuick() {
           <div className="home-line-quick-body">
             <span className="eyebrow">Closet Line</span>
             <h2 className="display">Closet systems on the same truck as the kitchen.</h2>
-            <p>Pure White cabinet boxes, ready for hanging, shelving, or corner returns. Drawer banks with bottom-mount DTC slides, adjustable shelves, and a corner section that takes the awkward inside angle out of the design.</p>
+            <p>Pure White cabinet boxes for hanging, shelving, or corner returns. Drawer banks, adjustable shelves, and a corner section that handles the awkward inside angle. See the closet page for the full SKU sheet.</p>
             <a className="btn btn-walnut" href="/closet-line">See the Closet Line <span className="arrow">→</span></a>
           </div>
         </div>
@@ -275,8 +275,8 @@ function CraftedQuick() {
         <div className="home-line-quick-grid flip">
           <div className="home-line-quick-body">
             <span className="eyebrow">Crafted Cabinets</span>
-            <h2 className="display">Built-to-measure for the rooms that won't take a kit.</h2>
-            <p>Drawn for one home at a time. Wood species, finish, hardware, sightline, scribe — all of it gets specified before the saw runs. Kitchens, vanities, mudrooms, libraries, and the rooms with a slanted ceiling or a heritage casing.</p>
+            <h2 className="display">Finished kitchens, delivered ready to install.</h2>
+            <p>Full rooms built at the Oppein factory and delivered finished. Skip the long custom-shop lead time and the on-site build. Visit the showroom in Sudbury or Toronto to see the doors and finishes in person.</p>
             <a className="btn btn-walnut" href="/crafted-cabinets">See Crafted Cabinets <span className="arrow">→</span></a>
           </div>
           <figure className="home-line-quick-img">
@@ -303,20 +303,20 @@ function HomePillars() {
         </div>
 
         <div className="home-pillar-tile tile-tl tile-dark">
-          <h3 className="display">Functional</h3>
-          <p>Integrated doors &amp; boxes</p>
+          <h3 className="display">Range</h3>
+          <p>Eight RTA finishes</p>
         </div>
         <div className="home-pillar-tile tile-tm tile-cream">
           <h3 className="display">Style</h3>
           <p>Classic &amp; modern profiles</p>
         </div>
         <div className="home-pillar-tile tile-bm tile-cream">
-          <h3 className="display">Structure</h3>
-          <p>Plywood box, dovetailed drawers</p>
+          <h3 className="display">Construction</h3>
+          <p>Plywood or particle board</p>
         </div>
         <div className="home-pillar-tile tile-br tile-clay">
-          <h3 className="display">Design</h3>
-          <p>Drawn for the room</p>
+          <h3 className="display">Showrooms</h3>
+          <p>Sudbury &amp; Toronto</p>
         </div>
       </div>
     </section>
@@ -333,7 +333,7 @@ function RTAShowcase() {
             <span className="eyebrow">RTA Kitchen · 8 finish lines</span>
             <h2 className="display">One catalog, eight ways to walk through a kitchen.</h2>
           </div>
-          <p className="hint">All eight share the same plywood box, the same dovetailed drawer boxes, the same soft-close hinges. Only the doors and the finish change.</p>
+          <p className="hint">Same box construction across all eight finishes. Pick the finish, pick plywood or particle, the rest of the spec stays consistent.</p>
         </div>
         <div className="rta-grid">
           {sections.map((sec, i) => (

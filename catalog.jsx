@@ -1021,38 +1021,6 @@ function RtaAccessoriesBlock() {
   );
 }
 
-const WHY_CHOOSE_PILLARS = [
-  { eyebrow: "Affordability", title: "Wholesale pricing, predictable margins.",
-    blurb: "Tiered dealer pricing locks in your unit costs for the year. No surprise surcharges, no quarterly rate changes." },
-  { eyebrow: "Customizability", title: "Eight finish lines, common hardware.",
-    blurb: "Mix and match within a kitchen, or carry a single line through closet and pantry. Shared hardware and drawer specs across all lines." },
-  { eyebrow: "Easy installation", title: "Cam-locks, dovetailed boxes, soft-close.",
-    blurb: "Cabinets assemble at the install in under 30 minutes per box. Dovetailed all-wood drawers, soft-close undermounts, plywood carcasses." },
-  { eyebrow: "Durability", title: "Five-year warranty, every line.",
-    blurb: "If a joint we cut fails in normal use within five years, we replace the part or the whole box. Five years on hardware too." }
-];
-
-function RtaWhyChooseBlock() {
-  return (
-    <section className="rta-why-choose" data-reveal>
-      <header className="rta-why-choose-head">
-        <span className="eyebrow">Why dealers stay</span>
-        <h2 className="display">Four reasons the order pad keeps coming back.</h2>
-      </header>
-      <div className="rta-why-choose-grid">
-        {WHY_CHOOSE_PILLARS.map((p, i) => (
-          <article key={i} className="rta-why-choose-card">
-            <span className="rta-why-choose-num">0{i + 1}</span>
-            <span className="eyebrow">{p.eyebrow}</span>
-            <h3 className="display">{p.title}</h3>
-            <p>{p.blurb}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function RtaFaqBlock({ section }) {
   const items = section?.faq || [];
   const [open, setOpen] = React.useState(0);
@@ -1218,15 +1186,13 @@ function RtaBoardBrowser({ category, section, product }) {
 
         <RtaAccessoriesBlock/>
 
-        <RtaWhyChooseBlock/>
-
         <RtaFaqBlock section={sec}/>
 
         <section className="rta-quick-contact" id="inquire" data-reveal>
           <div className="rta-quick-contact-head">
             <span className="eyebrow">Send a quick note</span>
             <h2 className="display">Ask about {sec.title} · {prod.title}.</h2>
-            <p>Name, email, the room sketch if you have one. We reply within one business day from the Sudbury warehouse.</p>
+            <p>Name, email, the room sketch if you have one. We reply within one business day.</p>
           </div>
           <ContactForm product={`${sec.title} · ${prod.title}`} category="RTA Kitchen"/>
         </section>
