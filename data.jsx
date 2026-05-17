@@ -84,7 +84,7 @@ const SERVICES = [
 
 const STATS = [
   { v: 8,    suf: "",      l: "RTA finish lines", s: "Ready to ship from the GTA" },
-  { v: 2,    suf: "",      l: "Showrooms",        s: "Sudbury and Toronto" },
+  { v: 5,    suf: " yr",   l: "Warranty",         s: "Manufacturer warranty on every line" },
   { v: 35,   suf: "",      l: "Days to ship",     s: "Three to five-week lead time" },
   { v: 7,    suf: " days", l: "Sales hours",      s: "Open 9am to 5pm, all week" },
 ];

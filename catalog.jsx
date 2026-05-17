@@ -1178,7 +1178,7 @@ function RtaBoardBrowser({ category, section, product }) {
             ) : (
               <>
                 <span className="eyebrow">SKUs</span>
-                <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Until then, send a quick note and we'll reply with a quote from the Sudbury warehouse.</p>
+                <p className="rta-board-placeholder">SKU list, widths, and pricing will land here. Until then, send a quick note and we'll reply with a quote within one business day.</p>
               </>
             )}
           </div>

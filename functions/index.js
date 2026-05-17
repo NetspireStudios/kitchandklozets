@@ -236,7 +236,7 @@ function buildLeadHtml({ name, email, phone, product, category, message, docId }
 
         </table>
         <div style="font-size:11px;color:#7a6b5c;margin-top:14px;text-align:center;">
-          Kitch &amp; Klozets - Showrooms in Sudbury &amp; Toronto - Ships from GTA
+          Kitch &amp; Klozets - RTA cabinets &amp; finished kitchens, shipped from the GTA
         </div>
       </td>
     </tr>

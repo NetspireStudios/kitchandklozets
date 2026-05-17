@@ -34,7 +34,7 @@ function Nav({ onMenu }) {
           <img className="nav-mark" src="/assets/logo.png" alt="" width="56" height="56"/>
           <div className="nav-title">
             <b>Kitch &amp; Klozets</b>
-            <small>Cabinetmakers · Sudbury ON</small>
+            <small>Kitchen Cabinets · Sudbury ON</small>
           </div>
         </a>
         <nav className="nav-links" aria-label="Primary">

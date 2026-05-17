@@ -135,7 +135,7 @@ function ByTheBench() {
         <div className="section-head" data-reveal>
           <h2 className="display">By the numbers.</h2>
           <p className="hint">
-            Two showrooms, eight RTA finish lines, and finished kitchens from Oppein. Open 7 days a week for sales conversations.
+            Eight RTA finish lines plus finished kitchens from Oppein, shipped from the GTA. Open 7 days a week for sales conversations.
           </p>
         </div>
         <div className="numbers-grid" data-reveal>

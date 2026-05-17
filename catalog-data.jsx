@@ -807,9 +807,9 @@ const CABINET_FAMILIES = [
 
 const BOARD_OPTIONS = [
   { slug: "plywood",  title: "Plywood Cabinets",  board: "Plywood",  code: "PLY",
-    blurb: "Plywood construction across the carcass. See the showroom for the full spec sheet." },
+    blurb: "Plywood construction across the carcass. Contact sales for the full spec sheet." },
   { slug: "particle", title: "Particle Cabinets", board: "Particle", code: "PAR",
-    blurb: "Particle board construction across the carcass. See the showroom for the full spec sheet." }
+    blurb: "Particle board construction across the carcass. Contact sales for the full spec sheet." }
 ];
 
 // Generic feature cards shown when a finish doesn't supply its own. Kept
@@ -821,7 +821,7 @@ const FINISH_FEATURES = [
     blurb: "Each finish ships in plywood or particle board. Pick the construction tier that fits the budget and the room." },
   { title: "Eight finish lines",
     img: "1505691938895-1758d7feb511",
-    blurb: "Slim shaker, single shaker, blue, grey, natural oak, smoked oak, high gloss white. See the doors in person at the Sudbury or Toronto showroom." },
+    blurb: "Slim shaker, single shaker, blue, grey, natural oak, smoked oak, high gloss white. Sample doors and finish chips available on request." },
   { title: "Ships from the GTA",
     img: "1556909114-f6e7ad7d3136",
     blurb: "Three-to-five-week lead time on most orders. Freight quoted to your postal code." }
@@ -854,7 +854,7 @@ const CATALOG = {
         blurb: "Painted maple shaker with a narrow 1.5-inch stile in a soft chalk white. For condos, galleys, and any room where a wide stile would eat the visual frame.",
         about: [
           "White slim shaker is the slim-stile take on the classic painted shaker. A 1.5-inch frame in place of the standard 2-inch reads cleaner in tight rooms, lets the door panel do more of the visual work, and pairs naturally with modern, transitional, and farmhouse layouts.",
-          "Doors and drawer fronts are painted in a soft chalk white. The plywood option uses a plywood carcass; the particle option uses a particle board carcass with the same door spec. See the showroom for full construction specs."
+          "Doors and drawer fronts are painted in a soft chalk white. The plywood option uses a plywood carcass; the particle option uses a particle board carcass with the same door spec. Contact sales for the full construction spec."
         ],
         faq: [
           { q: "Is the 1.5-inch slim stile as strong as the standard 2-inch shaker?",
@@ -862,7 +862,7 @@ const CATALOG = {
           { q: "Will slim shaker read correctly in a traditional kitchen?",
             a: "It leans transitional. If the room is strictly traditional (raised-panel doors, deep crown, beaded inset), the standard single shaker is the more obvious pick. Slim shaker reads best with flat trim, simple crown, and contemporary hardware." },
           { q: "Does the painted white yellow over time?",
-            a: "Painted finishes are colour-stable over time. The white you order is the white you live with. See the showroom for finish samples and the manufacturer's spec sheet." }
+            a: "Painted finishes are colour-stable over time. The white you order is the white you live with. Sample door chips and the manufacturer's spec sheet are available on request." }
         ],
         products: BOARD_OPTIONS
       },
@@ -882,7 +882,7 @@ const CATALOG = {
         ],
         about: [
           "White single shaker is the most-ordered finish across the dealer network. A standard 2-inch shaker stile, painted maple in a warm soft white. Reads correctly in farmhouse, transitional, and modern rooms; pairs cleanly with quartz, marble, and natural stone counters.",
-          "Both the plywood and the particle option use the same painted door spec. The carcass material is the difference between the two; see the showroom for the full construction breakdown."
+          "Both the plywood and the particle option use the same painted door spec. The carcass material is the difference between the two; contact sales for the full construction breakdown."
         ],
         faq: [
           { q: "How is this different from White Slim Shaker?",
@@ -1023,7 +1023,7 @@ const CATALOG = {
         ],
         about: [
           "White high gloss is the slab line. Polyester-coated MDF fronts in a high-gloss white, reflective and modern, sized for European-style kitchens. There's no shaker frame or grain to dust around, and fingerprints come right off the surface.",
-          "Available in plywood and particle carcass options, both shipping in the same gloss finish across the run. See the showroom for the full spec sheet."
+          "Available in plywood and particle carcass options, both shipping in the same gloss finish across the run. Contact sales for the full spec sheet."
         ],
         faq: [
           { q: "How do I clean the gloss surface?",

@@ -180,8 +180,8 @@ const FAQ_ITEMS = [
     a: "RTA orders ship in three to five weeks. Crafted finished kitchens run eight to twelve weeks from confirmed order to delivery, depending on configuration and which finishes are in stock at the factory."
   },
   {
-    q: "Do you have a showroom I can visit?",
-    a: "Yes, two. Sudbury and Toronto. Both are by appointment so we can pull the doors and finish samples you're considering before you arrive. Sales hours run 9am to 5pm, seven days a week."
+    q: "Can I see the finishes before ordering?",
+    a: "Yes. Sample doors and finish chips ship to your door on request so you can see the colour and feel the door style in your own room. Sales hours run 9am to 5pm, seven days a week."
   },
   {
     q: "Where do you ship?",
@@ -204,7 +204,7 @@ function FAQ() {
             <h2 className="display">What homeowners ask us first.</h2>
           </div>
           <p className="hint">
-            Lead times, shipping, showroom visits. Short answers; longer ones happen on a call or at the showroom.
+            Lead times, shipping, samples. Short answers; longer ones happen on a call or by email.
           </p>
         </div>
 
@@ -268,17 +268,26 @@ function Footer() {
               <div className="display name">Kitch &amp; Klozets</div>
             </div>
             <div className="footer-about">
-              RTA cabinets and finished kitchens. Showrooms in Sudbury &amp; Toronto, ships from the GTA.<br/>
+              RTA cabinets and finished kitchens from Oppein. Ships from the GTA across Ontario.<br/>
               Sales hours: open 7 days a week, 9am to 5pm.
             </div>
           </div>
           {[
-            ["Build with us", ["What we build", "Wood library", "Get a quote", "Financing"]],
-            ["The workshop",  ["About us", "The cabinetmakers", "Our process", "Press"]],
+            ["Shop",          [
+              { label: "RTA Kitchen",      href: "/rta-kitchen" },
+              { label: "Closet Line",      href: "/closet-line" },
+              { label: "Crafted Cabinets", href: "/crafted-cabinets" },
+              { label: "Get a quote",      href: "/contact" },
+            ]],
+            ["Company",       [
+              { label: "About",       href: "/about" },
+              { label: "Advice & Tips", href: "/advice" },
+              { label: "FAQ",         href: "/faq" },
+              { label: "Contact",     href: "/contact" },
+            ]],
             ["Stay in touch", [
               { label: "sales@kitchandklozets.com", href: "mailto:sales@kitchandklozets.com" },
               { label: "kitchandklozets.com",     href: "https://kitchandklozets.com" },
-              { label: "Instagram",               href: "#" },
             ]],
           ].map(([t, links]) => (
             <div key={t} className="footer-col">
