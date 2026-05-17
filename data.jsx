@@ -83,10 +83,10 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { v: 8,    suf: "",    l: "Finish lines",       s: "Stocked in Sudbury" },
-  { v: 35,   suf: "",    l: "Days to ship",       s: "Three to five-week lead time" },
-  { v: 6,    suf: "",    l: "Cabinetmakers",      s: "No subcontracted joinery" },
-  { v: 5,    suf: " yr", l: "Warranty",           s: "On every joint we cut" },
+  { v: 8,    suf: "",      l: "RTA finish lines", s: "Ready to ship from the GTA" },
+  { v: 2,    suf: "",      l: "Showrooms",        s: "Sudbury and Toronto" },
+  { v: 35,   suf: "",      l: "Days to ship",     s: "Three to five-week lead time" },
+  { v: 7,    suf: " days", l: "Sales hours",      s: "Open 9am to 5pm, all week" },
 ];
 
 const WORKSHOP = [

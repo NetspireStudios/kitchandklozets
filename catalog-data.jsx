@@ -833,7 +833,7 @@ const CATALOG = {
     slug: "rta-kitchen",
     title: "RTA Kitchen",
     short: "Ready-to-assemble kitchen cabinets, dealer-direct.",
-    blurb: "Flat-packed kitchen cabinets in seven finish lines, each offered in plywood or particle board construction. Solid-hardwood doors and drawer fronts, dovetailed drawer boxes on soft-close undermount slides, and a five-year warranty on every line. Three to five-week lead time from the Sudbury warehouse.",
+    blurb: "Flat-packed kitchen cabinets in seven finish lines, each offered in plywood or particle board construction. Solid-hardwood doors and drawer fronts, dovetailed drawer boxes on soft-close undermount slides. Three to five-week lead time, shipping from the GTA.",
     keywords: "RTA kitchen cabinets wholesale, dealer cabinets, shaker RTA, plywood RTA cabinets, particle board cabinets, white shaker navy shaker",
     img: "1556909114-f6e7ad7d3136",
     sections: {

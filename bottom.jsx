@@ -172,24 +172,24 @@ function Testimonials() {
 
 const FAQ_ITEMS = [
   {
-    q: "How much do custom kitchen cabinets cost in Ontario?",
-    a: "A custom solid-hardwood kitchen from us typically runs $45,000–$120,000 depending on size, wood species, and hardware. A free in-home consultation gives you a real number against your floor plan; we send a fixed quote within two weeks, not a moving estimate."
+    q: "What's the difference between the RTA line and Crafted Cabinets?",
+    a: "The RTA line is flat-packed and stocked in eight finishes, built around fixed widths in 3-inch increments. Crafted is the finished-kitchen line: full rooms delivered ready to install in finishes and configurations that don't fit the stock RTA set. Both ship from the GTA."
   },
   {
-    q: "How long does a custom kitchen or closet project take?",
-    a: "About four months end to end. One week of site measurement, two to three weeks of hand-drawn elevations, one week of material picks, eight to ten weeks on the bench in our Sudbury shop, and two weeks of on-site install. We quote a date and hold it."
+    q: "How long until my cabinets arrive?",
+    a: "RTA orders ship in three to five weeks. Crafted finished kitchens run eight to twelve weeks from confirmed order to delivery, depending on configuration and which finishes are in stock at the factory."
   },
   {
-    q: "What's the difference between custom, semi-custom, and stock cabinets?",
-    a: "Stock cabinets are pre-built in fixed sizes with stapled MDF carcasses. Semi-custom lets you pick a finish but still uses modular boxes. Custom (our entire product) is drawn to your exact room, joined in solid hardwood, and finished by hand in our shop. Different category, different lifespan."
+    q: "Do you have a showroom I can visit?",
+    a: "Yes, two. Sudbury and Toronto. Both are by appointment so we can pull the doors and finish samples you're considering before you arrive. Sales hours run 9am to 5pm, seven days a week."
   },
   {
-    q: "What wood species and door styles do you offer?",
-    a: "Six FSC-certified hardwoods, all sourced within 300 miles of the shop: black walnut, rift white oak, cherry, hard maple, ebonized ash, and reclaimed chestnut. Door styles include shaker, inset, beaded inset, and slab. Finishes are hand-applied; no stains or fillers."
+    q: "Where do you ship?",
+    a: "Across Ontario and Eastern Canada. Cabinets ship from the GTA. We can quote freight on request based on your postal code and how the order is being delivered."
   },
   {
-    q: "Do you handle the full remodel or just build the cabinetry?",
-    a: "We build, finish, and install all the cabinetry, vanities, built-ins, and millwork. For full remodels involving electrical, plumbing, flooring, or stonework, we coordinate with a short list of licensed Greater Sudbury contractors we've worked with for years."
+    q: "Do I need to be a dealer to order RTA cabinets?",
+    a: "No. We sell to homeowners, designers, and contractors directly, with dealer pricing available for trade accounts. Reach out and we'll walk you through which option fits your project."
   }
 ];
 
@@ -204,7 +204,7 @@ function FAQ() {
             <h2 className="display">What homeowners ask us first.</h2>
           </div>
           <p className="hint">
-            Pricing, lead time, materials, scope. Short answers; longer ones happen at the kitchen table.
+            Lead times, shipping, showroom visits. Short answers; longer ones happen on a call or at the showroom.
           </p>
         </div>
 
@@ -268,7 +268,7 @@ function Footer() {
               <div className="display name">Kitch &amp; Klozets</div>
             </div>
             <div className="footer-about">
-              Wholesale RTA cabinets and crafted cabinetry, based in Sudbury, Ontario.<br/>
+              RTA cabinets and finished kitchens. Showrooms in Sudbury &amp; Toronto, ships from the GTA.<br/>
               Sales hours: open 7 days a week, 9am to 5pm.
             </div>
           </div>

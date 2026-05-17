@@ -133,9 +133,9 @@ function ByTheBench() {
     <section className="numbers" id="numbers">
       <div className="container">
         <div className="section-head" data-reveal>
-          <h2 className="display">By the bench.</h2>
+          <h2 className="display">By the numbers.</h2>
           <p className="hint">
-            A small shop, on purpose. Every cabinet that leaves the door has been cut, glued, and finished by someone whose name is on the wall.
+            Two showrooms, eight RTA finish lines, and finished kitchens from Oppein. Open 7 days a week for sales conversations.
           </p>
         </div>
         <div className="numbers-grid" data-reveal>

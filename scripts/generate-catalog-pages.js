@@ -34,7 +34,7 @@ ${keywords ? `<meta name="keywords" content="${keywords}"/>\n` : ""}<meta name="
 <meta name="color-scheme" content="light"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <meta name="geo.region" content="CA-ON"/>
-<meta name="geo.placename" content="Sudbury"/>
+<meta name="geo.placename" content="Toronto"/>
 <link rel="canonical" href="${canonical}"/>
 
 <meta property="og:type" content="website"/>
@@ -136,7 +136,7 @@ ${JSON.stringify({
 function buildCategoryPage(catSlug) {
   const cat = CATALOG[catSlug];
   const canonical = `${BASE}/${catSlug}`;
-  const title = `${cat.title} | Kitch & Klozets · Sudbury ON`;
+  const title = `${cat.title} | Kitch & Klozets · Sudbury & Toronto`;
   const desc  = `${cat.short} ${cat.blurb}`.replace(/\s+/g, " ").slice(0, 158);
 
   const head = HEAD_COMMON({
@@ -188,7 +188,7 @@ function buildSectionPage(catSlug, secSlug) {
   const sec = cat.sections[secSlug];
   const canonical = `${BASE}/${catSlug}/${secSlug}`;
   const title = `${sec.title} · ${cat.title} | Kitch & Klozets`;
-  const desc  = sec.blurb.replace(/\s+/g, " ").slice(0, 158);
+  const desc  = (sec.blurb || cat.blurb || "").replace(/\s+/g, " ").slice(0, 158);
 
   const head = HEAD_COMMON({
     title: title.replace(/&/g, "&amp;"),
